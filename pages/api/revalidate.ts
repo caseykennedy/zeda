@@ -73,7 +73,7 @@ async function queryStaleRoutes(
   if (body._type === 'post') {
     const exists = await client.fetch(groq`*[_id == $id][0]`, { id: body._id })
     if (!exists) {
-      let staleRoutes: StaleRoute[] = ['/']
+      const staleRoutes: StaleRoute[] = ['/']
       if ((body.slug as any)?.current) {
         staleRoutes.push(`/posts/${(body.slug as any).current}`)
       }

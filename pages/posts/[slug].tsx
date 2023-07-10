@@ -1,5 +1,3 @@
-import PostPage from 'components/PostPage'
-import PreviewPostPage from 'components/PreviewPostPage'
 import { readToken } from 'lib/sanity.api'
 import {
   getAllPostsSlugs,
@@ -7,9 +5,12 @@ import {
   getPostAndMoreStories,
   getSettings,
 } from 'lib/sanity.client'
-import { Post, Settings } from 'lib/sanity.queries'
-import { GetStaticProps } from 'next'
+import { type Post, type Settings } from 'lib/sanity.queries'
+import { type GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
+
+import PostPage from 'components/PostPage'
+import PreviewPostPage from 'components/PreviewPostPage'
 
 interface PageProps extends SharedPageProps {
   post: Post

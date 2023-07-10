@@ -1,7 +1,7 @@
-import 'tailwindcss/tailwind.css'
-
-import { AppProps } from 'next/app'
 import { lazy } from 'react'
+import { AppProps } from 'next/app'
+
+import 'styles/globals.css'
 
 export interface SharedPageProps {
   draftMode: boolean

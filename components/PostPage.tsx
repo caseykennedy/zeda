@@ -1,3 +1,7 @@
+import * as demo from 'lib/demo.data'
+import type { Post, Settings } from 'lib/sanity.queries'
+import { notFound } from 'next/navigation'
+
 import Container from 'components/BlogContainer'
 import BlogHeader from 'components/BlogHeader'
 import Layout from 'components/BlogLayout'
@@ -7,9 +11,6 @@ import PostHeader from 'components/PostHeader'
 import PostPageHead from 'components/PostPageHead'
 import PostTitle from 'components/PostTitle'
 import SectionSeparator from 'components/SectionSeparator'
-import * as demo from 'lib/demo.data'
-import type { Post, Settings } from 'lib/sanity.queries'
-import { notFound } from 'next/navigation'
 
 export interface PostPageProps {
   preview?: boolean

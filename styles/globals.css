@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Global responsive gutter / gap spacing */
+  .gutter {
+    @apply p-4 sm:p-6 md:p-8 lg:p-10;
+  }
+
+  .gutter-x {
+    @apply px-4 sm:px-6 md:px-8 lg:px-10;
+  }
+
+  .gutter-y {
+    @apply py-4 sm:py-6 md:py-8 lg:py-10;
+  }
+
+  .gap {
+    @apply gap-4 sm:gap-6 md:gap-8;
+  }
+}
+
+@layer base {
+  h1 {
+  }
+
+  h2 {
+  }
+
+  h3 {
+  }
+
+  h4 {
+  }
+
+  p {
+  }
+
+  a {
+  }
+
+  hr {
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  @apply bg-black text-zinc-100;
+}

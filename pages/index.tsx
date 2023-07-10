@@ -1,10 +1,11 @@
-import IndexPage from 'components/IndexPage'
-import PreviewIndexPage from 'components/PreviewIndexPage'
 import { readToken } from 'lib/sanity.api'
 import { getAllPosts, getClient, getSettings } from 'lib/sanity.client'
-import { Post, Settings } from 'lib/sanity.queries'
-import { GetStaticProps } from 'next'
+import { type Post, type Settings } from 'lib/sanity.queries'
+import { type GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
+
+import IndexPage from 'components/IndexPage'
+import PreviewIndexPage from 'components/PreviewIndexPage'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]

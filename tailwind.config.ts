@@ -1,10 +1,11 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import { type Config } from 'tailwindcss'
+
+export default {
   content: [
     './components/**/*.{js,ts,jsx,tsx}',
-    './intro-template/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './plugins/**/*.{js,ts,jsx,tsx}',
+    './styles/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -23,9 +24,6 @@ module.exports = {
       letterSpacing: {
         tighter: '-.04em',
       },
-      lineHeight: {
-        tight: 1.2,
-      },
       fontSize: {
         '5xl': '2.5rem',
         '6xl': '2.75rem',
@@ -39,4 +37,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+} satisfies Config
