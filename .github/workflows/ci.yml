@@ -1,5 +1,7 @@
 name: CI
 
+on: [push, pull_request]
+
 env:
   DATABASE_URL: "zeda.vercel.app/"
   MY_ENV_VAR: "your_value_here"
