@@ -1,4 +1,4 @@
-# A Next.js Blog with a Native Authoring Experience<!-- omit in toc -->
+# Zeda Inc.'s company website and blog<!-- omit in toc -->
 
 This app is a statically generated blog that uses [Next.js][nextjs] for the frontend and [Sanity][sanity-homepage] to handle its content. It comes with a native Sanity Studio that offers features like real-time collaboration, instant side-by-side content previews, and intuitive editing.
 
