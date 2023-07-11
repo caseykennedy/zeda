@@ -1,0 +1,18 @@
+[
+  {
+    "name": "company",
+    "link": "/videos"
+  },
+  {
+    "name": "solutions",
+    "link": "/articles"
+  },
+  {
+    "name": "insights",
+    "link": "/community"
+  },
+  {
+    "name": "news",
+    "link": "/merch"
+  }
+]

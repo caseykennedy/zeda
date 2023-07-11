@@ -34,15 +34,19 @@
 
 @layer base {
   h1 {
+    @apply text-7xl;
   }
 
   h2 {
+    @apply text-6xl;
   }
 
   h3 {
+    @apply text-5xl;
   }
 
   h4 {
+    @apply text-4xl;
   }
 
   p {
@@ -56,9 +60,8 @@
 }
 
 html {
-  font-size: 16px;
 }
 
 body {
-  @apply bg-black text-zinc-100;
+  @apply bg-bg-light text-black;
 }

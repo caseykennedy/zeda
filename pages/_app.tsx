@@ -1,6 +1,8 @@
 import { lazy } from 'react'
 import { AppProps } from 'next/app'
 
+import Layout from 'components/Layout'
+
 import 'styles/globals.css'
 
 export interface SharedPageProps {
@@ -16,7 +18,7 @@ export default function App({
 }: AppProps<SharedPageProps>) {
   const { draftMode, token } = pageProps
   return (
-    <>
+    <Layout>
       {draftMode ? (
         <PreviewProvider token={token}>
           <Component {...pageProps} />
@@ -24,6 +26,6 @@ export default function App({
       ) : (
         <Component {...pageProps} />
       )}
-    </>
+    </Layout>
   )
 }
