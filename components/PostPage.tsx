@@ -10,7 +10,7 @@ import PostBody from 'components/PostBody'
 import PostHeader from 'components/PostHeader'
 import PostPageHead from 'components/PostPageHead'
 import PostTitle from 'components/PostTitle'
-import SectionSeparator from 'components/SectionSeparator'
+import Separator from 'components/Separator'
 
 export interface PostPageProps {
   preview?: boolean
@@ -52,7 +52,7 @@ export default function PostPage(props: PostPageProps) {
                 />
                 <PostBody content={post.content} />
               </article>
-              <SectionSeparator />
+              <Separator />
               {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
             </>
           )}
