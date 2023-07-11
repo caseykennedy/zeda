@@ -1,9 +1,27 @@
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
+import Image from 'next/image'
 
 import IndexPageHead from 'components/IndexPageHead'
 import MoreStories from 'components/MoreStories'
 import Section from 'components/Section'
+import Separator from 'components/Separator'
+
+const HeroVideo = () => {
+  return (
+    <Section px="0" className="h-[70vh] overflow-hidden bg-black">
+      <figure className="absolute left-0 top-0 h-full w-full">
+        <Image
+          src="/images/hero-test.png"
+          alt="Zeda Inc. manufacturing facility"
+          fill={true}
+          style={{ objectFit: 'cover' }}
+          sizes="100%"
+        />
+      </figure>
+    </Section>
+  )
+}
 
 export interface IndexPageProps {
   preview?: boolean
@@ -12,7 +30,7 @@ export interface IndexPageProps {
   settings: Settings
 }
 
-export default function IndexPage(props: IndexPageProps) {
+const IndexPage = (props: IndexPageProps) => {
   const { preview, loading, posts, settings } = props
   const [heroPost, ...morePosts] = posts || []
   const { title = demo.title, description = demo.description } = settings || {}
@@ -31,9 +49,7 @@ export default function IndexPage(props: IndexPageProps) {
           <h4>Index</h4>
         </Section>
 
-        <br />
-        <hr />
-        <br />
+        <Separator className="my-6 bg-slate-300" />
 
         <Section>
           <p>
@@ -58,9 +74,7 @@ export default function IndexPage(props: IndexPageProps) {
           </p>
         </Section>
 
-        <br />
-        <hr />
-        <br />
+        <Separator className="my-6 bg-slate-300" />
 
         <Section>
           <p>
@@ -72,10 +86,4 @@ export default function IndexPage(props: IndexPageProps) {
   )
 }
 
-function HeroVideo() {
-  return (
-    <Section px="0" className="h-[70vh] bg-black">
-      <div className="relative w-full"/>
-    </Section>
-  )
-}
+export default IndexPage

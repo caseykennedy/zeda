@@ -33,6 +33,26 @@
 }
 
 @layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-display font-semibold;
+  }
+
+  /* h1::before,
+  h2::before,
+  h3::before,
+  h4::before,
+  h5::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc(0.1 * 0.5em);
+  } */
+
   h1 {
     @apply text-7xl;
   }
@@ -50,6 +70,7 @@
   }
 
   p {
+    @apply mb-6 text-lg last:mb-0;
   }
 
   a {
@@ -60,8 +81,18 @@
 }
 
 html {
+  @apply bg-black;
 }
 
 body {
   @apply bg-bg-light text-black;
+
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: 'pnum';
+  text-rendering: geometricPrecision;
+  font-feature-settings: 'pnum';
+  font-variant-numeric: proportional-nums;
+  font-variant-ligatures: discretionary-ligatures;
 }

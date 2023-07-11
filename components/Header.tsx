@@ -1,4 +1,7 @@
+import { useEffect, useState } from 'react'
+import clsx from 'clsx'
 import nav from 'config/nav.json'
+import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
 
 import Logo from 'components/Logo'
@@ -10,7 +13,7 @@ const Navigation = () => {
         <li key={idx}>
           <Link
             href={item.link}
-            className="font-display text-base capitalize tracking-wider"
+            className="font-display text-lg font-medium capitalize tracking-wider mix-blend-difference"
           >
             {item.name}
           </Link>
@@ -21,9 +24,15 @@ const Navigation = () => {
 }
 
 const Header = () => {
+  const { hasScrolled } = useScrollTop()
+
   return (
-    <header className="overflow-none fixed top-0 z-40 h-[110px] w-full items-center border-b border-zinc-800 bg-black/80 backdrop-blur-lg">
-      <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site lg:grid-cols-6">
+    <header
+      className={`overflow-none fixed top-0 z-40 w-full items-center border-b border-white/10 backdrop-blur-sm transition-all ${clsx(
+        hasScrolled ? 'h-[80px]' : 'h-[100px]'
+      )}`}
+    >
+      <div className="gutter-x gap md:max-w-site mx-auto grid h-full w-full grid-cols-2 content-center lg:grid-cols-6">
         <div className="col-span-1 lg:col-span-2">
           <Link href="/" className="">
             <Logo />
@@ -37,7 +46,7 @@ const Header = () => {
         <div className="col-span-1 col-start-2 flex items-center justify-end lg:col-start-6">
           <Link
             href="/contact"
-            className="font-display tracking-wider text-white"
+            className="font-display text-lg font-medium tracking-wider text-white"
           >
             Contact
           </Link>

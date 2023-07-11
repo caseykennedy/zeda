@@ -1,42 +1,50 @@
-import { type Config } from 'tailwindcss'
-
-export default {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
   content: [
-    './components/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './plugins/**/*.{js,ts,jsx,tsx}',
-    './styles/**/*.{js,ts,jsx,tsx}',
-  ],
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
       colors: {
         'bg-light': '#F2F1F3',
-      },
-      spacing: {
-        28: '7rem',
-      },
-      maxWidth: {
-        'site': '1680px',
-      },
-      letterSpacing: {
-        tighter: '-.04em',
-      },
-      fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
-      },
-      boxShadow: {
-        small: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
+        'border': 'hsla(100, 100%. 100%, 0.1)',
       },
       fontFamily: {
         sans: ['Inter', 'Arial', 'sans-serif'],
         mono: ['SuisseMono', 'JetBrains Mono', 'monospace'],
         display: ['Urbanist', 'Arial', 'sans-serif'],
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
     },
   },
-  plugins: [],
-} satisfies Config
+  plugins: [require("tailwindcss-animate")],
+}
