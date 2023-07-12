@@ -19,7 +19,7 @@ const Section = ({
 }: Props) => {
   return (
     <section className={`relative w-full ${className} ${py}`}>
-      <div className={`mx-auto w-full md:max-w-site ${px} ${maxWidth}`}>
+      <div className={`md:max-w-site mx-auto h-full w-full ${px} ${maxWidth}`}>
         {children}
       </div>
     </section>

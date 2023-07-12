@@ -30,6 +30,15 @@
   .gap {
     @apply gap-4 sm:gap-6 md:gap-8;
   }
+
+  .fade-in {
+    transition: opacity 1.5s ease;
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+  }
 }
 
 @layer base {
@@ -38,7 +47,7 @@
   h3,
   h4,
   h5 {
-    @apply font-display font-semibold;
+    @apply font-display font-semibold text-black;
   }
 
   /* h1::before,
@@ -85,7 +94,7 @@ html {
 }
 
 body {
-  @apply bg-bg-light text-black;
+  @apply bg-bg-light text-slate-700;
 
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;

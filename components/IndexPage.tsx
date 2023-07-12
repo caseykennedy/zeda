@@ -6,11 +6,29 @@ import IndexPageHead from 'components/IndexPageHead'
 import MoreStories from 'components/MoreStories'
 import Section from 'components/Section'
 import Separator from 'components/Separator'
+import TextFader from 'components/TextFader'
 
 const HeroVideo = () => {
   return (
-    <Section px="0" className="h-[70vh] overflow-hidden bg-black">
-      <figure className="absolute left-0 top-0 h-full w-full">
+    <Section className="dark h-[100vh] overflow-hidden bg-black text-white">
+      <div className="gap grid h-full grid-cols-2 content-end">
+        <div className="relative z-10 flex flex-col justify-end">
+          <p className=" max-w-[29ch] border-l border-white pl-6">
+            <strong>Building together</strong>
+            <br />
+            We use technology to better lives—built using trust.
+          </p>
+        </div>
+        <div className="relative z-10">
+          <h1 className="text-5xl dark:text-white">
+            Building <TextFader />
+            <br />
+            together.
+          </h1>
+        </div>
+      </div>
+
+      <figure className="absolute left-0 top-0 z-0 h-full w-full">
         <Image
           src="/images/hero-test.png"
           alt="Zeda Inc. manufacturing facility"

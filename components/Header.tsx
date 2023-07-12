@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ArrowRightIcon } from '@radix-ui/react-icons'
 import clsx from 'clsx'
 import nav from 'config/nav.json'
 import useScrollTop from 'hooks/useScrollTop'
@@ -29,7 +30,7 @@ const Header = () => {
   return (
     <header
       className={`overflow-none fixed top-0 z-40 w-full items-center border-b border-white/10 backdrop-blur-sm transition-all ${clsx(
-        hasScrolled ? 'h-[80px]' : 'h-[100px]'
+        hasScrolled ? 'h-[70px] bg-black' : 'h-[100px]'
       )}`}
     >
       <div className="gutter-x gap md:max-w-site mx-auto grid h-full w-full grid-cols-2 content-center lg:grid-cols-6">
@@ -46,8 +47,11 @@ const Header = () => {
         <div className="col-span-1 col-start-2 flex items-center justify-end lg:col-start-6">
           <Link
             href="/contact"
-            className="font-display text-lg font-medium tracking-wider text-white"
+            className="flex flex-row items-center font-display text-lg font-medium tracking-wider text-white"
           >
+            <div className="flex h-[18px] w-[18px] items-center justify-center text-emerald-400 mr-2">
+              <ArrowRightIcon />
+            </div>
             Contact
           </Link>
         </div>
