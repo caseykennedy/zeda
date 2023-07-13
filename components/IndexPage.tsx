@@ -1,7 +1,10 @@
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import Image from 'next/image'
+import Link from 'next/link'
 
+import { Button, buttonVariants } from 'components/Button'
+import Icon from 'components/Icon'
 import IndexPageHead from 'components/IndexPageHead'
 import MoreStories from 'components/MoreStories'
 import Section from 'components/Section'
@@ -20,7 +23,7 @@ const HeroVideo = () => {
           </p>
         </div>
         <div className="relative z-10">
-          <h1 className="text-5xl dark:text-white">
+          <h1 className="text-6xl dark:text-white">
             Building <TextFader />
             <br />
             together.
@@ -67,7 +70,7 @@ const IndexPage = (props: IndexPageProps) => {
           <h4>Index</h4>
         </Section>
 
-        <Separator className="my-6 bg-slate-300" />
+        <Separator className="bg-slate-300" />
 
         <Section>
           <p>
@@ -92,12 +95,40 @@ const IndexPage = (props: IndexPageProps) => {
           </p>
         </Section>
 
-        <Separator className="my-6 bg-slate-300" />
+        <Separator className="bg-slate-300" />
 
         <Section>
-          <p>
-            <a href="https://zeda-inc.com">https://zeda-inc.com</a>
-          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <Button variant="default" asChild>
+              <Link href="/">Default</Link>
+            </Button>
+            <Button variant="primary" asChild>
+              <Link href="/">Primary</Link>
+            </Button>
+            <Button variant="primary" asChild>
+              <Link href="/">
+                <Icon name="arrow-right" color="white" />
+                Icon
+              </Link>
+            </Button>
+            <Button variant="secondary" asChild>
+              <Link href="/">Secondary</Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href="/">Outline</Link>
+            </Button>
+            <Button variant="primary" size="icon" asChild>
+              <Link href="/">
+                <Icon name="arrow-right" color="white" />
+              </Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link href="/">Ghost</Link>
+            </Button>
+            <Link href="/" className={buttonVariants({ variant: 'link' })}>
+              Link
+            </Link>
+          </div>
         </Section>
       </div>
     </>

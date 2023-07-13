@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
-import { ArrowRightIcon } from '@radix-ui/react-icons'
 import clsx from 'clsx'
 import nav from 'config/nav.json'
 import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
 
+import Icon from 'components/Icon'
 import Logo from 'components/Logo'
 
 const Navigation = () => {
@@ -29,7 +28,7 @@ const Header = () => {
 
   return (
     <header
-      className={`overflow-none fixed top-0 z-40 w-full items-center border-b border-white/10 backdrop-blur-sm transition-all ${clsx(
+      className={`overflow-none fixed top-0 z-40 w-full items-center border-b border-white/10 transition-all ${clsx(
         hasScrolled ? 'h-[70px] bg-black' : 'h-[100px]'
       )}`}
     >
@@ -49,9 +48,15 @@ const Header = () => {
             href="/contact"
             className="flex flex-row items-center font-display text-lg font-medium tracking-wider text-white"
           >
-            <div className="flex h-[18px] w-[18px] items-center justify-center text-emerald-400 mr-2">
+            {/* <div className="mr-2 flex h-[18px] w-[18px] items-center justify-center text-emerald-400">
               <ArrowRightIcon />
-            </div>
+            </div> */}
+            <Icon
+              name="arrow-right"
+              color="text-emerald-400"
+              size={18}
+              className="mr-2"
+            />
             Contact
           </Link>
         </div>

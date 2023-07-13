@@ -20,10 +20,8 @@ const WORDS_TO_ANIMATE = [
   'machines',
 ]
 
-type FadeProp = { fade: 'fade-in' | 'fade-out' }
-
 export const AnimatedText = () => {
-  const [fadeProp, setFadeProp] = useState<FadeProp>({ fade: 'fade-in' })
+  const [fadeProp, setFadeProp] = useState({ fade: 'fade-in' })
   const [wordOrder, setWordOrder] = useState(0)
 
   useEffect(() => {

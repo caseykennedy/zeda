@@ -94,7 +94,7 @@ html {
 }
 
 body {
-  @apply bg-bg-light text-slate-700;
+  @apply bg-background text-slate-700;
 
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;

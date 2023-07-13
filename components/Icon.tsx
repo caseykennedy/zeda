@@ -1,5 +1,7 @@
+import clsx from 'clsx'
+
 type IconProps = {
-  name: 'ArrowRight'
+  name: 'arrow-right'
   className?: string
   color?: string
   fill?: string
@@ -8,13 +10,20 @@ type IconProps = {
   strokeWidth?: string
 }
 
-export default function Icon(props: IconProps) {
-  switch (props.name) {
-    case 'ArrowRight':
+export default function Icon({
+  name,
+  className,
+  color = 'text-black',
+  size,
+  stroke,
+  strokeWidth,
+}: IconProps) {
+  switch (name) {
+    case 'arrow-right':
       return (
-        <div>
-          <ArrowRight />
-        </div>
+        <span className={clsx('icon', color, className)}>
+          <ArrowRight size={size} />
+        </span>
       )
   }
 }
@@ -23,7 +32,7 @@ type ArrowRightProps = {
   size: number
 }
 
-function ArrowRight({ size = 15 }: ArrowRightProps) {
+function ArrowRight({ size = 18 }: ArrowRightProps) {
   return (
     <svg
       width={size}
@@ -35,9 +44,9 @@ function ArrowRight({ size = 15 }: ArrowRightProps) {
       <path
         d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
         fill="currentColor"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-      ></path>
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
     </svg>
   )
 }
