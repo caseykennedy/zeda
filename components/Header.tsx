@@ -4,6 +4,7 @@ import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
 
 import Icon from 'components/Icon'
+import LinkArrow from 'components/LinkArrow'
 import Logo from 'components/Logo'
 
 const Navigation = () => {
@@ -13,7 +14,7 @@ const Navigation = () => {
         <li key={idx}>
           <Link
             href={item.link}
-            className="font-display text-lg font-medium capitalize tracking-wider mix-blend-difference"
+            className="font-display font-medium capitalize tracking-wider mix-blend-difference"
           >
             {item.name}
           </Link>
@@ -32,7 +33,7 @@ const Header = () => {
         hasScrolled ? 'h-[70px] bg-black' : 'h-[100px]'
       )}`}
     >
-      <div className="gutter-x gap md:max-w-site mx-auto grid h-full w-full grid-cols-2 content-center lg:grid-cols-6">
+      <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site lg:grid-cols-6">
         <div className="col-span-1 lg:col-span-2">
           <Link href="/" className="">
             <Logo />
@@ -44,21 +45,7 @@ const Header = () => {
         </div>
 
         <div className="col-span-1 col-start-2 flex items-center justify-end lg:col-start-6">
-          <Link
-            href="/contact"
-            className="flex flex-row items-center font-display text-lg font-medium tracking-wider text-white"
-          >
-            {/* <div className="mr-2 flex h-[18px] w-[18px] items-center justify-center text-emerald-400">
-              <ArrowRightIcon />
-            </div> */}
-            <Icon
-              name="arrow-right"
-              color="text-emerald-400"
-              size={18}
-              className="mr-2"
-            />
-            Contact
-          </Link>
+          <LinkArrow href="/contact" title="Contact" />
         </div>
       </div>
     </header>
