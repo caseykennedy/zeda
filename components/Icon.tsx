@@ -14,7 +14,7 @@ export default function Icon({
   name,
   className,
   color,
-  size,
+  size = 18,
   stroke,
   strokeWidth,
 }: IconProps) {

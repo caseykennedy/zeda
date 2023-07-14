@@ -6,6 +6,7 @@ import { Button } from 'components/Button'
 import Icon from 'components/Icon'
 import LinkArrow from 'components/LinkArrow'
 import Logo from 'components/Logo'
+import Separator from 'components/Separator'
 
 const scrollTop = (e: React.MouseEvent<HTMLButtonElement>) => {
   window.scrollTo({
@@ -21,14 +22,14 @@ const Footer = () => {
   return (
     <footer className="gutter-y bg-black">
       <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
-        <div className="grid gap grid-cols-1 lg:grid-cols-2">
+        <div className="gap grid grid-cols-1 lg:grid-cols-2">
           <div className="mb-16">
             <Link href="/" className="">
               <Logo />
             </Link>
           </div>
 
-          <div className="gap-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-3">
             {nav.map((item) => {
               console.log(item)
               return (
@@ -67,10 +68,8 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <Button variant="default" size="icon" asChild>
-              <Link href="/">
-                <Icon name="carat-up" />
-              </Link>
+            <Button variant="default" size="icon" onClick={scrollTop}>
+              <Icon name="carat-up" />
             </Button>
           </div>
           <div>
@@ -79,7 +78,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="gutter-x mx-auto max-w-site border-t border-silver-900">
+      <Separator className="bg-silver-900" />
+
+      <div className="gutter-x mx-auto max-w-site pb-4 sm:pb-0">
         <div className="flex flex-col items-start justify-between pt-4 text-xs uppercase text-silver-800 sm:flex-row">
           <div className="flex-1">© {year} Zeda, Inc.</div>
           <div className="flex-1 sm:text-center">

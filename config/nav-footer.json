@@ -44,6 +44,20 @@
     ]
   },
   {
+    "name": "news",
+    "link": "/news",
+    "sub": [
+      {
+        "name": "press releases",
+        "link": "/partners"
+      },
+      {
+        "name": "news",
+        "link": "/news"
+      }
+    ]
+  },
+  {
     "name": "technologies",
     "link": "/technologies",
     "sub": [
@@ -79,20 +93,6 @@
       },
       {
         "name": "devices",
-        "link": "/partners"
-      },
-      {
-        "name": "news",
-        "link": "/news"
-      }
-    ]
-  },
-  {
-    "name": "news",
-    "link": "/news",
-    "sub": [
-      {
-        "name": "press releases",
         "link": "/partners"
       },
       {
