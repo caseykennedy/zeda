@@ -13,8 +13,8 @@ import TextFader from 'components/TextFader'
 
 const HeroVideo = () => {
   return (
-    <Section className="dark h-[100vh] overflow-hidden bg-black text-white">
-      <div className="gap grid h-full grid-cols-2 content-end">
+    <Section className="dark h-[100vh] max-h-[1080px] overflow-hidden bg-black text-white">
+      <div className="gap grid h-full grid-cols-1 md:grid-cols-2 content-end">
         <div className="relative z-10 flex flex-col justify-end">
           <p className=" max-w-[29ch] border-l border-white pl-6">
             <strong>Building together</strong>
@@ -23,7 +23,7 @@ const HeroVideo = () => {
           </p>
         </div>
         <div className="relative z-10">
-          <h1 className="text-6xl dark:text-white">
+          <h1 className="dark:text-white">
             Building <TextFader />
             <br />
             together.
@@ -70,7 +70,7 @@ const IndexPage = (props: IndexPageProps) => {
           <h4>Index</h4>
         </Section>
 
-        <Separator className="bg-slate-300" />
+        <Separator className="bg-silver-100" />
 
         <Section>
           <p>
@@ -95,7 +95,7 @@ const IndexPage = (props: IndexPageProps) => {
           </p>
         </Section>
 
-        <Separator className="bg-slate-300" />
+        <Separator className="bg-silver-100" />
 
         <Section>
           <div className="flex flex-wrap items-center gap-3">
@@ -105,25 +105,25 @@ const IndexPage = (props: IndexPageProps) => {
             <Button variant="primary" asChild>
               <Link href="/">Primary</Link>
             </Button>
-            <Button variant="primary" asChild>
-              <Link href="/">
-                <Icon name="arrow-right" color="white" />
-                Icon
-              </Link>
-            </Button>
             <Button variant="secondary" asChild>
               <Link href="/">Secondary</Link>
             </Button>
             <Button variant="outline" asChild>
               <Link href="/">Outline</Link>
             </Button>
-            <Button variant="primary" size="icon" asChild>
+            <Button variant="primary" asChild>
               <Link href="/">
                 <Icon name="arrow-right" color="white" />
+                Icon
               </Link>
             </Button>
             <Button variant="ghost" asChild>
               <Link href="/">Ghost</Link>
+            </Button>
+            <Button variant="primary" size="icon" asChild>
+              <Link href="/">
+                <Icon name="arrow-right" color="white" />
+              </Link>
             </Button>
             <Link href="/" className={buttonVariants({ variant: 'link' })}>
               Link

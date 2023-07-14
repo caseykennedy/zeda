@@ -27,6 +27,14 @@
     @apply py-4 sm:py-6 md:py-8 lg:py-10;
   }
 
+  .gutter-t {
+    @apply pt-4 sm:pt-6 md:pt-8 lg:pt-10;
+  }
+
+  .gutter-b {
+    @apply pb-4 sm:pb-6 md:pb-8 lg:pb-10;
+  }
+
   .gap {
     @apply gap-4 sm:gap-6 md:gap-8;
   }
@@ -63,19 +71,19 @@
   } */
 
   h1 {
-    @apply text-7xl;
+    @apply text-4xl md:text-5xl xl:text-6xl;
   }
 
   h2 {
-    @apply text-6xl;
-  }
-
-  h3 {
     @apply text-5xl;
   }
 
-  h4 {
+  h3 {
     @apply text-4xl;
+  }
+
+  h4 {
+    @apply text-3xl;
   }
 
   p {

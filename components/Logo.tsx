@@ -1,6 +1,6 @@
 const Logo = (props: { width?: number }) => (
   <svg
-    width={props.width ?? 132}
+    width={props.width ?? 138}
     viewBox="0 0 142 41"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

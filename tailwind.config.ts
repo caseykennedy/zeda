@@ -22,10 +22,24 @@ module.exports = {
       },
       colors: {
         background: '#F2F1F3',
-        purple: {
+        silver: {
+          100: 'hsla(221, 17%, 86%, 1)',
+          200: 'hsla(221, 17%, 78%, 1)',
+          300: 'hsla(221, 17%, 69%, 1)',
+          400: 'hsla(221, 17%, 63%, 1)',
+          500: 'hsla(221, 17%, 57%, 1)',
+          600: 'hsla(221, 17%, 51%, 1)',
+          700: 'hsla(221, 17%, 44%, 1)',
+          800: 'hsla(221, 17%, 33%, 1)',
+          900: 'hsla(221, 17%, 17%, 1)',
+        },
+        violet: {
           400: 'hsla(252, 100%, 77%, 1)',
           500: 'hsla(252, 100%, 72%, 1)',
           600: 'hsla(252, 100%, 67%, 1)',
+          700: 'hsla(252, 100%, 64%, 1)',
+          800: 'hsla(252, 100%, 61%, 1)',
+          900: 'hsla(252, 100%, 58%, 1)',
         },
       },
       fontFamily: {
@@ -42,6 +56,9 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+      },
+      maxWidth: {
+        'site': '1680px',
       },
       transitionDuration: {
         DEFAULT: '300ms',
