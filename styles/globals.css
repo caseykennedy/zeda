@@ -24,15 +24,15 @@
   }
 
   .gutter-y {
-    @apply py-4 sm:py-6 md:py-8 lg:py-10;
+    @apply py-6 sm:py-6 md:py-8 lg:py-10;
   }
 
   .gutter-t {
-    @apply pt-4 sm:pt-6 md:pt-8 lg:pt-10;
+    @apply pt-6 sm:pt-6 md:pt-8 lg:pt-10;
   }
 
   .gutter-b {
-    @apply pb-4 sm:pb-6 md:pb-8 lg:pb-10;
+    @apply pb-6 sm:pb-6 md:pb-8 lg:pb-10;
   }
 
   .gap {
