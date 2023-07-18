@@ -1,7 +1,6 @@
 [
   {
     "name": "company",
-    "link": "/videos",
     "sub": [
       {
         "name": "about",
@@ -22,6 +21,19 @@
       {
         "name": "contact",
         "link": "/contact"
+      }
+    ]
+  },
+  {
+    "name": "solutions",
+    "sub": [
+      {
+        "name": "technologies",
+        "link": "/technologies"
+      },
+      {
+        "name": "health",
+        "link": "/"
       }
     ]
   },
@@ -49,50 +61,6 @@
     "sub": [
       {
         "name": "press releases",
-        "link": "/partners"
-      },
-      {
-        "name": "news",
-        "link": "/news"
-      }
-    ]
-  },
-  {
-    "name": "technologies",
-    "link": "/technologies",
-    "sub": [
-      {
-        "name": "about",
-        "link": "/about"
-      },
-      {
-        "name": "capabilities",
-        "link": "/leadership"
-      },
-      {
-        "name": "resources",
-        "link": "/partners"
-      },
-      {
-        "name": "news",
-        "link": "/news"
-      }
-    ]
-  },
-  {
-    "name": "health",
-    "link": "/health",
-    "sub": [
-      {
-        "name": "about",
-        "link": "/about"
-      },
-      {
-        "name": "rethink",
-        "link": "/leadership"
-      },
-      {
-        "name": "devices",
         "link": "/partners"
       },
       {
