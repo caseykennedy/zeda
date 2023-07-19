@@ -1,3 +1,4 @@
-import IndexPage from './IndexPage'
+import { IndexPage, IndexPageProps } from './IndexPage'
+import IndexPageHead from './IndexPageHead'
 
-export default IndexPage
+export { IndexPage, IndexPageHead, type IndexPageProps }

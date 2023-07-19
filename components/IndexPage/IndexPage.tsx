@@ -15,7 +15,7 @@ export interface IndexPageProps {
   settings: Settings
 }
 
-const IndexPage = (props: IndexPageProps) => {
+export const IndexPage = (props: IndexPageProps) => {
   const { preview, loading, posts, settings } = props
   // const [heroPost, ...morePosts] = posts || []
   // const { title = demo.title, description = demo.description } = settings || {}

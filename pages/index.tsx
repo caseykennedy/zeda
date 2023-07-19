@@ -4,7 +4,7 @@ import { type Post, type Settings } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
-import IndexPage from 'components/IndexPage'
+import { IndexPage } from 'components/IndexPage'
 import PreviewIndexPage from 'components/PreviewIndexPage'
 
 interface PageProps extends SharedPageProps {
