@@ -6,6 +6,7 @@ import MoreStories from 'components/MoreStories'
 import Hero from './Hero'
 import IndexPageHead from './IndexPageHead'
 import Mission from './Mission'
+import TrustedBy from './TrustedBy'
 import WhyUs from './WhyUs'
 
 export interface IndexPageProps {
@@ -28,8 +29,9 @@ export const IndexPage = (props: IndexPageProps) => {
         <Hero />
         <Mission />
         <WhyUs />
+        <TrustedBy />
 
-        <div className="h-24 block w-full" />
+        {/* <div className="h-24 block w-full" /> */}
 
         {/* <Separator className="bg-silver-100" />IndexPage */}
       </div>

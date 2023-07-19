@@ -7,8 +7,7 @@ import SectionTitle from 'components/SectionTitle'
 import { Progress } from 'components/ui/Progress'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/Tabs'
 
-const INTERVAL_TIME = 4000
-const ANIMATION_DURATION = 10000
+const INTERVAL_TIME = 7000
 
 const Mission = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -59,15 +58,6 @@ const Mission = () => {
   useEffect(() => {
     console.log('currentTab', currentTab)
   }, [currentTab])
-
-  // useEffect(() => {
-  //   const currentTabContent = data.filter(
-  //     (item: { id: number }) => item.id === activeTab
-  //   )
-
-  //   setCurrentTab(currentTabContent[0])
-  //   console.log(currentTab.title)
-  // }, [activeTab, currentTab])
 
   return (
     <Section className="">

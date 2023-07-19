@@ -39,6 +39,10 @@
     @apply gap-4 sm:gap-6 md:gap-8;
   }
 
+  .translate-x-gutter {
+    @apply translate-x-4 sm:translate-x-6 md:translate-x-8 lg:translate-x-10;
+  }
+
   .fade-in {
     transition: opacity 1.5s ease;
   }

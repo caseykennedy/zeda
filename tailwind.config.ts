@@ -58,7 +58,7 @@ module.exports = {
         },
       },
       maxWidth: {
-        'site': '1536px',
+        'site': '1680px',
       },
       transitionDuration: {
         DEFAULT: '300ms',
