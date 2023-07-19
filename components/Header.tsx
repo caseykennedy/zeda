@@ -3,9 +3,8 @@ import nav from 'config/nav.json'
 import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
 
-import Icon from 'components/Icon'
-import LinkArrow from 'components/LinkArrow'
 import Logo from 'components/Logo'
+import LinkArrow from 'components/ui/LinkArrow'
 
 const Navigation = () => {
   return (

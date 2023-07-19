@@ -15,11 +15,11 @@ const Section = ({
   className = '',
   py = 'gutter-y',
   px = 'gutter-x',
-  maxWidth = 'w-full',
+  maxWidth = 'max-w-site',
 }: Props) => {
   return (
     <section className={`relative w-full ${className} ${py}`}>
-      <div className={`md:max-w-site mx-auto h-full w-full ${px} ${maxWidth}`}>
+      <div className={`mx-auto h-full w-full ${px} ${maxWidth}`}>
         {children}
       </div>
     </section>

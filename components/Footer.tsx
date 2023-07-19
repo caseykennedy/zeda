@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 import { Button } from 'components/Button'
 import Icon from 'components/Icon'
-import LinkArrow from 'components/LinkArrow'
 import Logo from 'components/Logo'
 import Separator from 'components/Separator'
+import LinkArrow from 'components/ui/LinkArrow'
 
 const scrollTop = (e: React.MouseEvent<HTMLButtonElement>) => {
   window.scrollTo({

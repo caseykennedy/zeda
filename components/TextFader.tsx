@@ -4,13 +4,13 @@ const FADE_INTERVAL_MS = 1750
 const WORD_CHANGE_INTERVAL_MS = FADE_INTERVAL_MS * 2
 const WORDS_TO_ANIMATE = [
   'the future',
-  'medical devices',
-  'rocket parts',
+  // 'medical devices',
+  // 'rocket parts',
   'solutions',
   'trust',
   'relationships',
-  'supply chains',
-  'better outcomes',
+  // 'supply chains',
+  // 'better outcomes',
   'tools',
   'tomorrow',
   'security',

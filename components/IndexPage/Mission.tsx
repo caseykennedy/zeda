@@ -1,40 +1,78 @@
 import { useCallback, useEffect, useState } from 'react'
+import clsx from 'clsx'
 
 import Icon from 'components/Icon'
 import Section from 'components/Section'
+import SectionTitle from 'components/SectionTitle'
+import { Progress } from 'components/ui/Progress'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/Tabs'
 
-type Props = {
-  children: React.ReactNode
-}
-
-const SectionHeader = ({ children }: Props) => (
-  <div className="mb-8 border-b border-black pb-4 uppercase leading-3">
-    {children}
-  </div>
-)
+const INTERVAL_TIME = 4000
+const ANIMATION_DURATION = 10000
 
 const Mission = () => {
   const [activeTab, setActiveTab] = useState(0)
   const [currentTab, setCurrentTab] = useState(data[0])
+  const [progress, setProgress] = useState(0)
 
   const handleTabClick = useCallback(async (currentTab: number) => {
     const currentTabContent = data.filter(
       (item: { id: number }) => item.id === currentTab
     )
-
     setActiveTab(currentTab)
     setCurrentTab(currentTabContent[0])
   }, [])
+
+  const animateProgress = useCallback(() => {
+    let startTimestamp
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp
+      const progressValue = Math.min(
+        (timestamp - startTimestamp) / INTERVAL_TIME,
+        1
+      )
+
+      setProgress(progressValue * 100)
+
+      if (progressValue < 1) {
+        requestAnimationFrame(step)
+      }
+    }
+
+    requestAnimationFrame(step)
+  }, [])
+
+  useEffect(() => {
+    const next = (activeTab + 1) % data.length
+    const id = setTimeout(() => {
+      setActiveTab(next)
+      setCurrentTab(data[next])
+    }, INTERVAL_TIME)
+
+    animateProgress()
+
+    return () => {
+      clearTimeout(id)
+    }
+  }, [activeTab, animateProgress, currentTab])
 
   useEffect(() => {
     console.log('currentTab', currentTab)
   }, [currentTab])
 
+  // useEffect(() => {
+  //   const currentTabContent = data.filter(
+  //     (item: { id: number }) => item.id === activeTab
+  //   )
+
+  //   setCurrentTab(currentTabContent[0])
+  //   console.log(currentTab.title)
+  // }, [activeTab, currentTab])
+
   return (
     <Section className="">
       <div className="">
-        <SectionHeader>Mission</SectionHeader>
+        <SectionTitle>Mission</SectionTitle>
 
         <Tabs defaultValue="additive" orientation="vertical">
           <div className="gap grid grid-cols-1 md:grid-cols-2">
@@ -52,33 +90,47 @@ const Mission = () => {
 
               <div className="mt-24">
                 <TabsList className="">
-                  {data.map((item) => (
-                    <TabsTrigger
-                      value={item.value}
-                      className="w-full py-6"
-                      onClick={() => handleTabClick(item.id)}
-                      key={item.id}
-                    >
-                      <div className="grid w-full grid-cols-8">
-                        <div className="col-start-1 self-center justify-self-start">
-                          01.
-                        </div>
-                        <div className="col-span-6 col-start-2 self-center justify-self-start">
-                          <h4>{item.title}</h4>
-                        </div>
-                        <div className="col-start-8 self-center justify-self-end">
-                          <Icon name="arrow-right" />
-                        </div>
-                      </div>
-
-                      {activeTab === item.id && (
+                  {data.map((item, idx) => (
+                    <>
+                      <TabsTrigger
+                        value={item.value}
+                        className="w-full border-b border-silver-200 py-6"
+                        onClick={() => handleTabClick(item.id)}
+                        key={idx}
+                        data-state={
+                          activeTab === item.id ? 'active' : 'inactive'
+                        }
+                      >
                         <div className="grid w-full grid-cols-8">
-                          <div className="col-span-6 col-start-2 self-center justify-self-start break-all">
-                            <p className="break-all">{item.details}</p>
+                          <div className="col-start-1 self-center justify-self-start">
+                            0{idx + 1}.
+                          </div>
+                          <div className="col-span-6 col-start-2 self-center justify-self-start">
+                            <h4>{item.title}</h4>
+                          </div>
+                          <div className="col-start-8 self-center justify-self-end">
+                            {activeTab === item.id && (
+                              <Icon name="arrow-right" />
+                            )}
                           </div>
                         </div>
+
+                        {activeTab === item.id && (
+                          <>
+                            <div className="mt-2 grid w-full grid-cols-8">
+                              <div className="col-span-6 col-start-2">
+                                <p className="justify-self-start text-left text-silver-700">
+                                  {item.details}
+                                </p>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </TabsTrigger>
+                      {activeTab === item.id && (
+                        <Progress value={progress} className="top-[-1px]" />
                       )}
-                    </TabsTrigger>
+                    </>
                   ))}
                 </TabsList>
               </div>
@@ -86,7 +138,7 @@ const Mission = () => {
 
             <div className="flex items-center justify-center">
               {currentTab && (
-                <TabsContent value={currentTab.value}>
+                <TabsContent value={currentTab.value} forceMount>
                   {currentTab.figure}
                 </TabsContent>
               )}
@@ -105,28 +157,32 @@ const data = [
     id: 0,
     value: 'additive',
     title: 'Additive manufacturing',
-    details: 'Including processes such as rapid prototyping.',
+    details:
+      'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: 'Additive manufacturing',
   },
   {
     id: 1,
     value: 'precision',
     title: 'Precision manufacturing',
-    details: 'Including processes such as rapid prototyping.',
+    details:
+      'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: 'Precision manufacturing',
   },
   {
     id: 2,
     value: 'nanotech',
     title: 'Nanotech',
-    details: 'Including processes such as rapid prototyping.',
+    details:
+      'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: 'Nanotech',
   },
   {
     id: 3,
     value: 'semiconductor',
     title: 'Semiconductor technologies',
-    details: 'Including processes such as rapid prototyping.',
+    details:
+      'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: 'Semiconductor',
   },
 ]
