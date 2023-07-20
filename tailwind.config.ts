@@ -43,7 +43,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'Arial', 'sans-serif'],
+        sans: ['Inter UI', 'Arial', 'sans-serif'],
         mono: ['SuisseMono', 'JetBrains Mono', 'monospace'],
         display: ['Urbanist', 'Arial', 'sans-serif'],
       },

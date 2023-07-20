@@ -3,7 +3,7 @@ type Props = {
 }
 
 const SectionTitle = ({ children }: Props) => (
-  <div className="mb-8 border-b border-black pb-4 uppercase leading-3">
+  <div className="mb-8 border-b border-black pb-4 uppercase leading-3 font-medium font-sans">
     {children}
   </div>
 )

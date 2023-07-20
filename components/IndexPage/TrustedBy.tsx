@@ -1,32 +1,57 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Button } from 'components/Button'
 import Icon from 'components/Icon'
+import Marquee from 'components/Marquee'
 import Section from 'components/Section'
 import SectionTitle from 'components/SectionTitle'
+import Button from 'components/ui/Button'
 
 const TrustedBy = () => {
   return (
-    <Section className="border-t border-black">
-      <h2>
-        Innovations that once took years can now be accomplished in months,
-        weeks or even days. We take great ideas and move them through complex
-        hurdles in a short period of time.
-      </h2>
+    <Section className="">
+      <div className="gap grid grid-cols-1 lg:grid-cols-12">
+        <div className="col-span-8">
+          <h2>
+            Innovations that once took years can now be accomplished in months,
+            weeks or even days. We take great ideas and move them through
+            complex hurdles in a short period of time.
+          </h2>
+        </div>
 
-      <Button variant="primary" asChild>
-        <Link href="/">
-          <Icon name="arrow-right" color="white" />
-          Partner with us
-        </Link>
-      </Button>
+        <div className="col-start-9 col-span-4 flex justify-end">
+          <Button variant="primary" asChild>
+            <Link href="/">
+              <Icon name="arrow-right" color="white" />
+              Partner with us
+            </Link>
+          </Button>
+        </div>
+      </div>
 
-      <div className="mt-24">
+      <div className="mt-72">
         <SectionTitle>Trusted by</SectionTitle>
+
+        <div>
+          <Marquee speed={40}>
+            {data?.map(({ partner }, idx) => (
+              <div className="px-8" key={idx}>
+                <Image
+                  src={`/images/partner-logos/${partner}.png`}
+                  alt="Zeda Inc. manufacturing facility"
+                  height={80}
+                  width={160}
+                  quality={100}
+                />
+              </div>
+            ))}
+          </Marquee>
+        </div>
       </div>
     </Section>
   )
 }
 
 export default TrustedBy
+
+const data = [{ partner: 'carbon' }]

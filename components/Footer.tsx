@@ -2,10 +2,10 @@ import clsx from 'clsx'
 import nav from 'config/nav-footer.json'
 import Link from 'next/link'
 
-import { Button } from 'components/Button'
 import Icon from 'components/Icon'
 import LogoSymbol from 'components/LogoSymbol'
 import Separator from 'components/Separator'
+import Button from 'components/ui/Button'
 import LinkArrow from 'components/ui/LinkArrow'
 
 const scrollTop = (e: React.MouseEvent<HTMLButtonElement>) => {

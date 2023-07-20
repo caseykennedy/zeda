@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 type Props = {
   children: React.ReactNode
   bg?: string
@@ -18,8 +20,8 @@ const Section = ({
   maxWidth = 'max-w-site',
 }: Props) => {
   return (
-    <section className={`relative w-full ${className} ${py}`}>
-      <div className={`mx-auto h-full w-full ${px} ${maxWidth}`}>
+    <section className={clsx(`relative w-full`, className, py)}>
+      <div className={clsx(`mx-auto h-full w-full`, maxWidth, px)}>
         {children}
       </div>
     </section>

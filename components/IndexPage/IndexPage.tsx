@@ -6,6 +6,7 @@ import MoreStories from 'components/MoreStories'
 import Hero from './Hero'
 import IndexPageHead from './IndexPageHead'
 import Mission from './Mission'
+import SolutionSwiper from './SolutionSwiper'
 import TrustedBy from './TrustedBy'
 import WhyUs from './WhyUs'
 
@@ -25,16 +26,11 @@ export const IndexPage = (props: IndexPageProps) => {
     <>
       <IndexPageHead settings={settings} />
 
-      <div>
-        <Hero />
-        <Mission />
-        <WhyUs />
-        <TrustedBy />
-
-        {/* <div className="h-24 block w-full" /> */}
-
-        {/* <Separator className="bg-silver-100" />IndexPage */}
-      </div>
+      <Hero />
+      <Mission />
+      <WhyUs />
+      <TrustedBy />
+      <SolutionSwiper />
     </>
   )
 }

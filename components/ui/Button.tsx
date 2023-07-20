@@ -3,7 +3,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 import clsx from 'clsx'
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
   'inline-flex items-center justify-center gap-3 rounded-full font-display font-bold text-sm uppercase tracking-wider ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border active:translate-y-0.5 hover:border-black',
   {
     variants: {
@@ -13,8 +13,10 @@ const buttonVariants = cva(
         primary:
           'border-silver-600 bg-black text-white hover:bg-black/80 hover:bg-violet-600 hover:border-black',
         secondary: 'bg-violet-500 text-white hover:bg-violet-600',
-        outline: 'border border-black bg-white hover:bg-violet-600 hover:text-white',
-        ghost: 'border-none bg-transparent text-silver-400 hover:text-black hover:bg-silver-500',
+        outline:
+          'border border-black bg-white hover:bg-violet-600 hover:text-white',
+        ghost:
+          'border-none bg-transparent text-silver-400 hover:text-black hover:bg-silver-500',
         link: 'border-none text-black decoration-2 underline-offset-4 hover:underline',
       },
       size: {
@@ -51,4 +53,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = 'Button'
 
-export { Button, buttonVariants }
+export default Button
