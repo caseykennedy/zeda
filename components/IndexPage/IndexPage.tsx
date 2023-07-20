@@ -3,6 +3,7 @@ import type { Post, Settings } from 'lib/sanity.queries'
 
 import MoreStories from 'components/MoreStories'
 
+import AtGlance from './AtGlance'
 import Hero from './Hero'
 import IndexPageHead from './IndexPageHead'
 import Mission from './Mission'
@@ -31,6 +32,7 @@ export const IndexPage = (props: IndexPageProps) => {
       <WhyUs />
       <TrustedBy />
       <SolutionSwiper />
+      <AtGlance />
     </>
   )
 }

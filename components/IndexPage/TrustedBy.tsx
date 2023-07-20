@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Icon from 'components/Icon'
 import Marquee from 'components/Marquee'
 import Section from 'components/Section'
 import SectionTitle from 'components/SectionTitle'
 import Button from 'components/ui/Button'
+import Icon from 'components/ui/Icon'
 
 const TrustedBy = () => {
   return (
@@ -19,7 +19,7 @@ const TrustedBy = () => {
           </h2>
         </div>
 
-        <div className="col-start-9 col-span-4 flex justify-end">
+        <div className="col-span-4 col-start-9 flex justify-end">
           <Button variant="primary" asChild>
             <Link href="/">
               <Icon name="arrow-right" color="white" />

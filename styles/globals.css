@@ -79,7 +79,7 @@
   }
 
   h2 {
-    @apply text-4xl;
+    @apply text-3xl md:text-4xl;
   }
 
   h3 {
@@ -116,4 +116,8 @@ body {
   font-feature-settings: 'pnum';
   font-variant-numeric: proportional-nums;
   font-variant-ligatures: discretionary-ligatures;
+}
+
+.swiper-pagination-bullet {
+  @apply w-10 h-10;
 }

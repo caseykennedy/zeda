@@ -1,34 +1,19 @@
 import clsx from 'clsx'
 import nav from 'config/nav-footer.json'
 import Link from 'next/link'
+import { currentYear, scrollTop } from 'utils'
 
-import Icon from 'components/Icon'
 import LogoSymbol from 'components/LogoSymbol'
-import Separator from 'components/Separator'
 import Button from 'components/ui/Button'
+import Icon from 'components/ui/Icon'
 import LinkArrow from 'components/ui/LinkArrow'
-
-const scrollTop = (e: React.MouseEvent<HTMLButtonElement>) => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  })
-  e.preventDefault()
-}
-
-const year = new Date().getFullYear()
+import Separator from 'components/ui/Separator'
 
 const Footer = () => {
   return (
     <footer className="gutter-y bg-black">
       <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
         <div className="gap grid grid-cols-1 lg:grid-cols-2">
-          <div className="mb-16">
-            <Link href="/" className="">
-              <LogoSymbol />
-            </Link>
-          </div>
-
           <div className="grid grid-cols-2 gap-10">
             {nav.map((item) => {
               console.log(item)
@@ -54,6 +39,12 @@ const Footer = () => {
                 </ul>
               )
             })}
+          </div>
+
+          <div className="mb-16 flex justify-end">
+            <Link href="/" className="">
+              <LogoSymbol />
+            </Link>
           </div>
         </div>
 
@@ -113,7 +104,7 @@ const Footer = () => {
 
       <div className="gutter-x mx-auto max-w-site pb-4 sm:pb-0">
         <div className="flex flex-col items-start justify-between pt-4 text-xs uppercase text-silver-800 sm:flex-row">
-          <div className="flex-1">© {year} Zeda, Inc.</div>
+          <div className="flex-1">© {currentYear} Zeda, Inc.</div>
           <div className="flex-1 sm:text-center">
             Zeda Is An ISO 13485 Facility
           </div>

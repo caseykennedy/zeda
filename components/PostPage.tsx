@@ -10,7 +10,7 @@ import PostBody from 'components/PostBody'
 import PostHeader from 'components/PostHeader'
 import PostPageHead from 'components/PostPageHead'
 import PostTitle from 'components/PostTitle'
-import Separator from 'components/Separator'
+import Separator from 'components/ui/Separator'
 
 export interface PostPageProps {
   preview?: boolean

@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react'
 import clsx from 'clsx'
 
-import Icon from 'components/Icon'
 import Section from 'components/Section'
 import SectionTitle from 'components/SectionTitle'
+import Icon from 'components/ui/Icon'
 import { Progress } from 'components/ui/Progress'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/Tabs'
 
