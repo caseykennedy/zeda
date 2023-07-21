@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
-import clsx from 'clsx'
+import { cn } from 'utils'
 
 const Tabs = TabsPrimitive.Root
 
@@ -8,7 +8,7 @@ const TabsList = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
 >(({ className, ...props }, ref) => (
-  <TabsPrimitive.List ref={ref} className={clsx(className)} {...props} />
+  <TabsPrimitive.List ref={ref} className={cn(className)} {...props} />
 ))
 TabsList.displayName = TabsPrimitive.List.displayName
 
@@ -18,7 +18,7 @@ const TabsTrigger = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Trigger
     ref={ref}
-    className={clsx(
+    className={cn(
       'text-silver-700 ring-offset-background transition-all focus-visible:opacity-50 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-black data-[state=inactive]:text-silver-500',
       className
     )}
@@ -33,7 +33,7 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
-    className={clsx('focus-visible:outline-none', className)}
+    className={cn('focus-visible:outline-none', className)}
     {...props}
   />
 ))

@@ -43,7 +43,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter UI', 'Arial', 'sans-serif'],
+        sans: ['Inter', 'Arial', 'sans-serif'],
         mono: ['SuisseMono', 'JetBrains Mono', 'monospace'],
         display: ['Urbanist', 'Arial', 'sans-serif'],
       },
@@ -58,7 +58,7 @@ module.exports = {
         },
       },
       maxWidth: {
-        'site': '1680px',
+        site: '1680px',
       },
       transitionDuration: {
         DEFAULT: '300ms',

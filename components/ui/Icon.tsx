@@ -1,7 +1,14 @@
-import clsx from 'clsx'
+import { cn } from 'utils'
 
 type IconProps = {
-  name: 'arrow-right' | 'carat-up' | 'instagram' | 'linkedin' | 'twitter'
+  name:
+    | 'arrow-right'
+    | 'arrow-top-right'
+    | 'carat-up'
+    | 'chevron-up'
+    | 'instagram'
+    | 'linkedin'
+    | 'twitter'
   className?: string
   color?: string
   fill?: string
@@ -21,31 +28,43 @@ export default function Icon({
   switch (name) {
     case 'arrow-right':
       return (
-        <span className={clsx('icon', color, className)}>
+        <span className={cn('icon', color, className)}>
           <ArrowRight size={size} />
+        </span>
+      )
+    case 'arrow-top-right':
+      return (
+        <span className={cn('icon', color, className)}>
+          <ArrowTopRight size={size} />
         </span>
       )
     case 'carat-up':
       return (
-        <span className={clsx('icon', color, className)}>
+        <span className={cn('icon', color, className)}>
           <CaratUp size={size} />
+        </span>
+      )
+    case 'chevron-up':
+      return (
+        <span className={cn('icon', color, className)}>
+          <ChevronUp size={size} />
         </span>
       )
     case 'instagram':
       return (
-        <span className={clsx('icon', color, className)}>
+        <span className={cn('icon', color, className)}>
           <Instagram size={size} />
         </span>
       )
     case 'linkedin':
       return (
-        <span className={clsx('icon', color, className)}>
+        <span className={cn('icon', color, className)}>
           <LinkedIn size={size} />
         </span>
       )
     case 'twitter':
       return (
-        <span className={clsx('icon', color, className)}>
+        <span className={cn('icon', color, className)}>
           <Twitter size={size} />
         </span>
       )
@@ -56,7 +75,7 @@ type SVGProps = {
   size: number
 }
 
-function ArrowRight({ size = 18 }: SVGProps) {
+function ArrowRight({ size }: SVGProps) {
   return (
     <svg
       width={size}
@@ -75,7 +94,26 @@ function ArrowRight({ size = 18 }: SVGProps) {
   )
 }
 
-function CaratUp({ size = 18 }: SVGProps) {
+function ArrowTopRight({ size }: SVGProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
+    </svg>
+  )
+}
+
+function CaratUp({ size }: SVGProps) {
   return (
     <svg
       width={size}
@@ -94,7 +132,26 @@ function CaratUp({ size = 18 }: SVGProps) {
   )
 }
 
-function Instagram({ size = 18 }: SVGProps) {
+function ChevronUp({ size }: SVGProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.13523 8.84197C3.3241 9.04343 3.64052 9.05363 3.84197 8.86477L7.5 5.43536L11.158 8.86477C11.3595 9.05363 11.6759 9.04343 11.8648 8.84197C12.0536 8.64051 12.0434 8.32409 11.842 8.13523L7.84197 4.38523C7.64964 4.20492 7.35036 4.20492 7.15803 4.38523L3.15803 8.13523C2.95657 8.32409 2.94637 8.64051 3.13523 8.84197Z"
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
+    </svg>
+  )
+}
+
+function Instagram({ size }: SVGProps) {
   return (
     <svg
       width={size}
@@ -121,7 +178,7 @@ function Instagram({ size = 18 }: SVGProps) {
   )
 }
 
-function LinkedIn({ size = 18 }: SVGProps) {
+function LinkedIn({ size }: SVGProps) {
   return (
     <svg
       width={size}
@@ -148,7 +205,7 @@ function LinkedIn({ size = 18 }: SVGProps) {
   )
 }
 
-function Twitter({ size = 18 }: SVGProps) {
+function Twitter({ size }: SVGProps) {
   return (
     <svg
       width={size}

@@ -1,11 +1,23 @@
+import { forwardRef } from 'react'
+import { cn } from 'utils'
+
 type Props = {
   children: React.ReactNode
 }
 
-const SectionTitle = ({ children }: Props) => (
-  <div className="mb-8 border-b border-black pb-4 uppercase leading-3 font-medium font-sans">
-    {children}
-  </div>
-)
+const SectionTitle = forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      'mb-8 border-b border-black pb-4 font-sans font-medium uppercase leading-3',
+      className
+    )}
+    {...props}
+  />
+))
+SectionTitle.displayName = 'SectionTitle'
 
 export default SectionTitle

@@ -76,19 +76,7 @@ const SolutionSwiper = () => {
           />
         </SwiperSlide>
 
-        <SwiperSlide>
-          <Slide
-            heading="What can we do to better lives and what can we build together?"
-            message="<strong>Zeda technologies</strong><br />We use technology to better humanity<br />—built using
-          trust."
-            image="hero-test.png"
-            alt="Zeda Inc. manufacturing facility"
-            href="/technologies"
-            btnText="Zeda Technologies"
-          />
-        </SwiperSlide>
-
-        <div className="absolute right-0 top-0 z-10 bg-violet-500 pr-10 pt-8">
+        <div className="absolute right-0 top-0 z-10 pr-10 pt-8">
           <div className="swiper-pagination" />
         </div>
       </Swiper>

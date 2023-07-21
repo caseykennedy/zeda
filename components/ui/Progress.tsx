@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ProgressPrimitive from '@radix-ui/react-progress'
-import clsx from 'clsx'
+import { cn } from 'utils'
 
 const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
@@ -8,14 +8,14 @@ const Progress = React.forwardRef<
 >(({ className, value, ...props }, ref) => (
   <ProgressPrimitive.Root
     ref={ref}
-    className={clsx(
-      'bg-silver-200 relative h-[1px] w-full overflow-hidden',
+    className={cn(
+      'relative h-[1px] w-full overflow-hidden bg-silver-200',
       className
     )}
     {...props}
   >
     <ProgressPrimitive.Indicator
-      className="bg-black h-full w-full flex-1"
+      className="h-full w-full flex-1 bg-black"
       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
     />
   </ProgressPrimitive.Root>

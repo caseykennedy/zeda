@@ -1,4 +1,7 @@
-export const scrollTop = (e: React.MouseEvent<HTMLButtonElement>) => {
+import clsx, { ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+export function scrollTop(e: React.MouseEvent<HTMLButtonElement>) {
   window.scrollTo({
     top: 0,
     behavior: 'smooth',
@@ -7,3 +10,7 @@ export const scrollTop = (e: React.MouseEvent<HTMLButtonElement>) => {
 }
 
 export const currentYear = new Date().getFullYear()
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}

@@ -54,6 +54,45 @@
   font-display: swap;
 }
 
+/* Inter Regular */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.eot');
+  src: url('/fonts/Inter-Regular.woff2') format('woff2'),
+    url('/fonts/Inter-Regular.woff') format('woff'),
+    url('/fonts/Inter-Regular.otf') format('opentype'),
+    url('/fonts/Inter-Regular.eot'?#iefix) format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Medium */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.eot');
+  src: url('/fonts/Inter-Medium.woff2') format('woff2'),
+    url('/fonts/Inter-Medium.woff') format('woff'),
+    url('/fonts/Inter-Medium.otf') format('opentype'),
+    url('/fonts/Inter-Medium.eot'?#iefix) format('embedded-opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Bold */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.eot');
+  src: url('/fonts/Inter-Bold.woff2') format('woff2'),
+    url('/fonts/Inter-Bold.woff') format('woff'),
+    url('/fonts/Inter-Bold.otf') format('opentype'),
+    url('/fonts/Inter-Bold.eot'?#iefix) format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

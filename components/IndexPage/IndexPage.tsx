@@ -4,6 +4,7 @@ import type { Post, Settings } from 'lib/sanity.queries'
 import MoreStories from 'components/MoreStories'
 
 import AtGlance from './AtGlance'
+import Careers from './Careers'
 import Hero from './Hero'
 import IndexPageHead from './IndexPageHead'
 import Mission from './Mission'
@@ -30,9 +31,13 @@ export const IndexPage = (props: IndexPageProps) => {
       <Hero />
       <Mission />
       <WhyUs />
-      <TrustedBy />
-      <SolutionSwiper />
       <AtGlance />
+      <SolutionSwiper />
+      <TrustedBy />
+
+      <div className="h-72 bg-black" />
+
+      <Careers />
     </>
   )
 }
