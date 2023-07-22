@@ -21,7 +21,11 @@ const Careers = () => {
         <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
           <Button variant="primary" asChild>
             <Link href="/">
-              <Icon name="arrow-right" color="white" />
+              <Icon
+                name="arrow-right"
+                color="white"
+                className="relative -translate-x-1 transition-all group-hover:translate-x-1"
+              />
               Careers
             </Link>
           </Button>
@@ -57,7 +61,10 @@ const Careers = () => {
 
               <div className="col-span-6 col-start-7 flex items-center justify-end gap-2 md:col-span-3 md:col-start-10">
                 <Button variant="secondary">
-                  <Icon name="arrow-top-right" />
+                  <Icon
+                    name="arrow-top-right"
+                    className="relative transition-all group-hover:rotate-45"
+                  />
                   Apply
                 </Button>
                 <Button variant="secondary" size="icon">
@@ -76,7 +83,7 @@ export default Careers
 
 const data = [
   {
-    jobTitle: 'Senior Software Engineer',
+    jobTitle: 'Additive Manufacturing Engineering Manager',
     description: 'description',
     location: 'San Jose, CA',
     type: 'Full-time',
@@ -84,7 +91,7 @@ const data = [
     applicationLink: 'https://www.indeed.com',
   },
   {
-    jobTitle: 'Senior Software Engineer',
+    jobTitle: 'Medical Device: Senior Validation Engineer',
     description: 'description',
     location: 'Remote',
     type: 'Full-time',

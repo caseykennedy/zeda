@@ -10,7 +10,7 @@ type Props = {
 const ArrowLink = ({ href, title }: Props) => (
   <Link
     href={href}
-    className="group relative flex flex-row items-center font-display text-sm font-medium uppercase tracking-wider text-white"
+    className="group relative flex flex-row items-center font-display font-medium capitalize tracking-wider text-white"
   >
     <Icon
       name="arrow-right"

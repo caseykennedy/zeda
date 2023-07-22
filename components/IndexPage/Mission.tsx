@@ -109,7 +109,7 @@ const Mission = () => {
                           <>
                             <div className="mt-2 grid w-full grid-cols-8">
                               <div className="col-span-6 col-start-2">
-                                <p className="justify-self-start text-left text-silver-700">
+                                <p className="justify-self-start text-left text-silver-800">
                                   {item.details}
                                 </p>
                               </div>

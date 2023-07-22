@@ -22,7 +22,11 @@ const TrustedBy = () => {
         <div className="col-span-4 col-start-9 flex justify-end">
           <Button variant="primary" asChild>
             <Link href="/">
-              <Icon name="arrow-right" color="white" />
+              <Icon
+                name="arrow-right"
+                color="white"
+                className="relative -translate-x-1 transition-all group-hover:translate-x-1"
+              />
               Partner with us
             </Link>
           </Button>

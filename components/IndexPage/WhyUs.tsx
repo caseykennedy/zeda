@@ -13,6 +13,16 @@ const WhyUs = () => {
     >
       <div className="grid h-[600px] grid-cols-1 md:grid-cols-2">
         <div className="relative">
+          <figure className="absolute bottom-0 left-0 z-10 h-full w-full">
+            <Image
+              src="/images/turbine.png"
+              alt="Zeda Inc. manufacturing facility"
+              fill={true}
+              style={{ objectFit: 'cover' }}
+              sizes="100%"
+              quality={100}
+            />
+          </figure>
           <figure className="absolute left-0 top-0 h-full w-full">
             <Image
               src="/images/wormhole.png"

@@ -9,36 +9,45 @@ import Icon from 'components/ui/Icon'
 import LinkArrow from 'components/ui/LinkArrow'
 import Separator from 'components/ui/Separator'
 
+const SocialList = () =>
+  social.map(({ name, icon, href }, idx) => (
+    <Link href={href} className="text-silver-500 hover:text-white" key={idx}>
+      <Icon name={icon} size={20} />
+    </Link>
+  ))
+
+const NavList = () =>
+  nav.map((item) => {
+    console.log(item)
+    return (
+      <ul
+        className="border-l border-silver-900 pl-5 font-display font-medium capitalize tracking-wide"
+        key={item.name}
+      >
+        <li className="mb-4 font-semibold text-white">
+          {item.link ? <Link href={item.link}>{item.name}</Link> : item.name}
+        </li>
+        {item.sub?.map((sub) => (
+          <li className="mb-1" key={sub.name}>
+            <Link
+              href={sub.link}
+              className="text-silver-500 transition-all last:mb-0 hover:pl-1 hover:text-white"
+            >
+              {sub.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    )
+  })
+
 const Footer = () => {
   return (
     <footer className="gutter-y bg-black">
       <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
         <div className="gap grid grid-cols-1 lg:grid-cols-2">
           <div className="grid grid-cols-2 gap-10">
-            {nav.map((item) => {
-              console.log(item)
-              return (
-                <ul className="border-l border-silver-900 pl-5" key={item.name}>
-                  <li className="mb-4 font-display font-semibold capitalize tracking-wide text-white">
-                    {item.link ? (
-                      <Link href={item.link}>{item.name}</Link>
-                    ) : (
-                      item.name
-                    )}
-                  </li>
-                  {item.sub?.map((sub) => (
-                    <li className="mb-1" key={sub.name}>
-                      <Link
-                        href={sub.link}
-                        className="font-display font-medium capitalize tracking-wide text-silver-500 last:mb-0 hover:text-white"
-                      >
-                        {sub.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )
-            })}
+            <NavList />
           </div>
 
           <div className="mb-16 flex justify-end">
@@ -78,23 +87,21 @@ const Footer = () => {
         <div className="mt-24 flex flex-row items-end justify-between pb-4">
           <div className="flex-1">
             <div className="flex flex-row flex-nowrap gap-4">
-              <Link href="/" className="text-silver-500 hover:text-white">
-                <Icon name="linkedin" size={20} />
-              </Link>
-              <Link href="/" className="text-silver-500 hover:text-white">
-                <Icon name="twitter" size={20} />
-              </Link>
-              <Link href="/" className="text-silver-500 hover:text-white">
-                <Icon name="instagram" size={20} />
-              </Link>
+              <SocialList />
             </div>
           </div>
           <div className="flex flex-1 justify-center">
             <Button variant="default" size="icon" onClick={scrollTop}>
-              <Icon name="carat-up" />
+              <Icon name="chevron-up" color="text-white" />
             </Button>
           </div>
           <div className="flex flex-1 justify-end">
+            {/* <Link
+              href="/contact"
+              className="font-display font-medium capitalize tracking-wider text-white"
+            >
+              Contact
+            </Link> */}
             <LinkArrow href="/contact" title="Contact" />
           </div>
         </div>
@@ -116,3 +123,21 @@ const Footer = () => {
 }
 
 export default Footer
+
+const social = [
+  {
+    name: 'LinkedIn',
+    icon: 'linkedin',
+    href: '/',
+  },
+  {
+    name: 'Twitter',
+    icon: 'twitter',
+    href: '/',
+  },
+  {
+    name: 'Instagram',
+    icon: 'instagram',
+    href: '/',
+  },
+]

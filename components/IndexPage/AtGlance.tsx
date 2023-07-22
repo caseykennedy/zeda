@@ -21,7 +21,11 @@ const AtGlance = () => {
         <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
           <Button variant="primary" asChild>
             <Link href="/">
-              <Icon name="arrow-right" color="white" />
+              <Icon
+                name="arrow-right"
+                color="white"
+                className="relative -translate-x-1 transition-all group-hover:translate-x-1"
+              />
               Meet our leadership
             </Link>
           </Button>
