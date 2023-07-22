@@ -23,7 +23,7 @@ const Hero = () => {
         </div> */}
       </div>
 
-      {/* <figure className="absolute left-0 top-0 z-0 h-full w-full">
+      <figure className="absolute left-0 top-0 z-0 h-full w-full">
         <Image
           src="/images/hero-test.png"
           alt="Zeda Inc. manufacturing facility"
@@ -31,7 +31,7 @@ const Hero = () => {
           style={{ objectFit: 'cover' }}
           sizes="100%"
         />
-      </figure> */}
+      </figure>
     </Section>
   )
 }

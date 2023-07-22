@@ -28,10 +28,10 @@ const NavList = () =>
           {item.link ? <Link href={item.link}>{item.name}</Link> : item.name}
         </li>
         {item.sub?.map((sub) => (
-          <li className="mb-1" key={sub.name}>
+          <li key={sub.name}>
             <Link
               href={sub.link}
-              className="text-silver-500 transition-all last:mb-0 hover:pl-1 hover:text-white"
+              className="block py-0.5 text-silver-500 transition-all hover:pl-1 hover:text-white"
             >
               {sub.name}
             </Link>

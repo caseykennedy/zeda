@@ -39,8 +39,9 @@ const Header = () => {
 
   return (
     <header
-      className={`overflow-none fixed top-0 z-40 w-full items-center bg-black transition-all ${clsx(
-        scrollDown ? 'hidden h-[70px]' : 'visible h-[100px]'
+      className={`overflow-none fixed z-40 h-[90px] w-full items-center transition-all ${clsx(
+        scrollDown ? '-translate-y-[100px]' : 'translate-y-0',
+        hasScrolled && 'bg-black backdrop-blur-md'
       )}`}
     >
       <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site lg:grid-cols-6">
