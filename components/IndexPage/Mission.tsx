@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
-import clsx from 'clsx'
+import { id } from 'date-fns/locale'
+import Image from 'next/image'
 
 import Section from 'components/Section'
 import SectionTitle from 'components/SectionTitle'
@@ -80,44 +81,38 @@ const Mission = () => {
 
               <div className="mt-24">
                 <TabsList className="">
-                  {data.map((item, idx) => (
+                  {data.map(({ value, id, title, details }, idx) => (
                     <>
                       <TabsTrigger
-                        value={item.value}
+                        value={value}
                         className="w-full border-b border-silver-200 py-6"
-                        onClick={() => handleTabClick(item.id)}
+                        onClick={() => handleTabClick(id)}
                         key={idx}
-                        data-state={
-                          activeTab === item.id ? 'active' : 'inactive'
-                        }
+                        data-state={activeTab === id ? 'active' : 'inactive'}
                       >
                         <div className="grid w-full grid-cols-8">
                           <div className="col-start-1 self-center justify-self-start">
-                            0{idx + 1}.
+                            0{id + 1}.
                           </div>
                           <div className="col-span-6 col-start-2 self-center justify-self-start">
-                            <h4>{item.title}</h4>
+                            <h4>{title}</h4>
                           </div>
                           <div className="col-start-8 self-center justify-self-end">
-                            {activeTab === item.id && (
-                              <Icon name="arrow-right" />
-                            )}
+                            {activeTab === id && <Icon name="arrow-right" />}
                           </div>
                         </div>
 
-                        {activeTab === item.id && (
-                          <>
-                            <div className="mt-2 grid w-full grid-cols-8">
-                              <div className="col-span-6 col-start-2">
-                                <p className="justify-self-start text-left text-silver-800">
-                                  {item.details}
-                                </p>
-                              </div>
+                        {activeTab === id && (
+                          <div className="mt-2 grid w-full grid-cols-8">
+                            <div className="col-span-6 col-start-2">
+                              <p className="justify-self-start text-left text-silver-800">
+                                {details}
+                              </p>
                             </div>
-                          </>
+                          </div>
                         )}
                       </TabsTrigger>
-                      {activeTab === item.id && (
+                      {activeTab === id && (
                         <Progress value={progress} className="top-[-1px]" />
                       )}
                     </>
@@ -129,7 +124,15 @@ const Mission = () => {
             <div className="flex items-center justify-center">
               {currentTab && (
                 <TabsContent value={currentTab.value} forceMount>
-                  {currentTab.figure}
+                  <figure>
+                    <Image
+                      src={`/images/${currentTab.figure.src}`}
+                      alt={currentTab.figure.alt}
+                      width={900}
+                      height={900}
+                      // style={{ objectFit: 'fill' }}
+                    />
+                  </figure>
                 </TabsContent>
               )}
             </div>
@@ -149,7 +152,10 @@ const data = [
     title: 'Additive manufacturing',
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
-    figure: 'Additive manufacturing',
+    figure: {
+      src: 'hero-test.png',
+      alt: 'Zeda Inc. manufacturing facility',
+    },
   },
   {
     id: 1,
@@ -157,7 +163,10 @@ const data = [
     title: 'Precision manufacturing',
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
-    figure: 'Precision manufacturing',
+    figure: {
+      src: 'solutions-tech.jpg',
+      alt: 'Zeda Inc. manufacturing facility',
+    },
   },
   {
     id: 2,
@@ -165,7 +174,10 @@ const data = [
     title: 'Nanotech',
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
-    figure: 'Nanotech',
+    figure: {
+      src: 'wormhole.png',
+      alt: 'Zeda Inc. manufacturing facility',
+    },
   },
   {
     id: 3,
@@ -173,6 +185,9 @@ const data = [
     title: 'Semiconductor technologies',
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
-    figure: 'Semiconductor',
+    figure: {
+      src: 'hero-test.png',
+      alt: 'Zeda Inc. manufacturing facility',
+    },
   },
 ]

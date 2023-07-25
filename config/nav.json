@@ -1,18 +1,22 @@
 [
   {
-    "name": "company",
-    "link": "/videos"
+    "title": "company",
+    "href": "/videos",
+    "description": "about us"
   },
   {
-    "name": "solutions",
-    "link": "/articles"
+    "title": "solutions",
+    "href": "/articles",
+    "description": "about us"
   },
   {
-    "name": "insights",
-    "link": "/community"
+    "title": "insights",
+    "href": "/community",
+    "description": "about us"
   },
   {
-    "name": "news",
-    "link": "/merch"
+    "title": "news",
+    "href": "/merch",
+    "description": "about us"
   }
 ]

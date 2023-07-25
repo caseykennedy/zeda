@@ -9,7 +9,7 @@ const WhyUs = () => {
       className="border-b border-t border-black bg-black"
       py="py-0"
       px="px-0"
-      maxWidth="w-full"
+      fullWidth={true}
     >
       <div className="grid h-[600px] grid-cols-1 md:grid-cols-2">
         <div className="relative">

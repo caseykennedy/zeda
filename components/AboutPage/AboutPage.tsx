@@ -1,31 +1,19 @@
 import type { Post, Settings } from 'lib/sanity.queries'
 
 import CtaFooter from 'components/CtaFooter'
+import Careers from 'components/IndexPage/Careers'
+import IndexPageHead from 'components/IndexPage/IndexPageHead'
 import Layout from 'components/Layout'
-import MoreStories from 'components/MoreStories'
 
-import AtGlance from './AtGlance'
-import Careers from './Careers'
 import Hero from './Hero'
-import IndexPageHead from './IndexPageHead'
-import Mission from './Mission'
-import SolutionSwiper from './SolutionSwiper'
-import TrustedBy from './TrustedBy'
-import WhyUs from './WhyUs'
 
-export interface IndexPageProps {
+export interface AboutPageProps {
   preview?: boolean
   loading?: boolean
-  posts: Post[]
   settings: Settings
 }
 
-export const IndexPage = ({
-  preview,
-  loading,
-  posts,
-  settings,
-}: IndexPageProps) => {
+export const AboutPage = ({ preview, loading, settings }: AboutPageProps) => {
   // const [heroPost, ...morePosts] = posts || []
   // const { title = demo.title, description = demo.description } = settings || {}
 
@@ -34,13 +22,6 @@ export const IndexPage = ({
       <IndexPageHead settings={settings} />
 
       <Hero />
-      <Mission />
-      <WhyUs />
-      <AtGlance />
-      <SolutionSwiper />
-      <TrustedBy />
-
-      <div className="h-72 bg-black" />
 
       <Careers />
       <CtaFooter
@@ -55,4 +36,4 @@ export const IndexPage = ({
   )
 }
 
-export default IndexPage
+export default AboutPage

@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require("path");
+
 /** @type {import("eslint").Linter.Config} */
 const config = {
   overrides: [
@@ -27,11 +30,23 @@ const config = {
       },
     },
   ],
-  extends: 'next',
-  plugins: ['simple-import-sort'],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: path.join(__dirname, "tsconfig.json"),
+  },
+  plugins: ["@typescript-eslint", 'simple-import-sort'],
+  extends: ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   rules: {
-    'simple-import-sort/imports': 'warn',
-    'simple-import-sort/exports': 'warn',
+    "@typescript-eslint/consistent-type-imports": [
+      "warn",
+      {
+        prefer: "type-imports",
+        fixStyle: "inline-type-imports",
+      },
+    ],
+    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+    'simple-import-sort/imports': 'error', // Import configuration for `eslint-plugin-simple-import-sort`
+    'simple-import-sort/exports': 'error', // Export configuration for `eslint-plugin-simple-import-sort`
     'react-hooks/exhaustive-deps': 'error',
   },
 }

@@ -4,18 +4,18 @@ const useScrollDir = () => {
   const [scrollDir, setScrollDir] = useState(null)
 
   useEffect(() => {
-    const threshold = 0
-    let lastScrollY = window.pageYOffset
+    const threshold = 1
+    let lastScrollY = window.scrollY
     let ticking = false
 
     const updateScrollDir = () => {
-      const scrollY = window.pageYOffset
+      const scrollY = window.scrollY
 
       if (Math.abs(scrollY - lastScrollY) < threshold) {
         ticking = false
         return
       }
-      setScrollDir(scrollY > lastScrollY ? 'down' : 'up')
+      setScrollDir(scrollY > lastScrollY ? 'scroll-down' : 'scroll-up')
       lastScrollY = scrollY > 0 ? scrollY : 0
       ticking = false
     }
@@ -28,7 +28,6 @@ const useScrollDir = () => {
     }
 
     window.addEventListener('scroll', onScroll)
-    console.log(scrollDir)
 
     return () => window.removeEventListener('scroll', onScroll)
   }, [scrollDir])

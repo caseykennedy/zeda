@@ -1,19 +1,26 @@
-import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import Section from 'components/Section'
 import Button from 'components/ui/Button'
 
 import 'swiper/css/effect-fade'
 import 'swiper/css/pagination'
 
 import 'swiper/css'
-import styles from './swiper.module.css'
+// import styles from './swiper.module.css'
 
-const Slide = ({ heading, message, image, alt, href, btnText }) => {
+type SlideProps = {
+  heading: string
+  message: string
+  image: string
+  alt: string
+  href: string
+  btnText: string
+}
+
+const Slide = ({ heading, message, image, alt, href, btnText }: SlideProps) => {
   return (
     <>
       <div className="gutter-y gutter-x relative z-10 mx-auto max-w-site">
@@ -47,7 +54,7 @@ const Slide = ({ heading, message, image, alt, href, btnText }) => {
 }
 
 const SolutionSwiper = () => {
-  const paginationRef = useRef(null)
+  // const paginationRef = useRef(null)
 
   return (
     <section className="relative bg-black">

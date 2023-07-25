@@ -9,6 +9,7 @@ type IconProps = {
     | 'instagram'
     | 'linkedin'
     | 'twitter'
+    | string
   className?: string
   color?: string
   fill?: string

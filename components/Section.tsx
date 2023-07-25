@@ -1,15 +1,12 @@
-import clsx from 'clsx'
+import { forwardRef } from 'react'
+import { cn } from 'utils'
 
 type Props = {
   children: React.ReactNode
-  bg?: string
-  border?: string
-  color?: string
   className?: string
   py?: string
   px?: string
-  maxWidth?: string
-  overflow?: string
+  fullWidth?: boolean
 }
 
 const Section = ({
@@ -17,11 +14,13 @@ const Section = ({
   className = '',
   py = 'gutter-y',
   px = 'gutter-x',
-  maxWidth = 'max-w-site',
+  fullWidth = true,
 }: Props) => {
   return (
-    <section className={clsx(`relative w-full`, className, py)}>
-      <div className={clsx(`mx-auto h-full w-full`, maxWidth, px)}>
+    <section className={cn(`relative w-full overflow-hidden`, className, py)}>
+      <div
+        className={cn(`mx-auto h-full w-full`, !fullWidth && `max-w-site`, px)}
+      >
         {children}
       </div>
     </section>

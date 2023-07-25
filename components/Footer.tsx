@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import nav from 'config/nav-footer.json'
 import Link from 'next/link'
 import { currentYear, scrollTop } from 'utils'
@@ -10,40 +9,37 @@ import LinkArrow from 'components/ui/LinkArrow'
 import Separator from 'components/ui/Separator'
 
 const SocialList = () =>
-  social.map(({ name, icon, href }, idx) => (
+  social.map(({ icon, href }, idx) => (
     <Link href={href} className="text-silver-500 hover:text-white" key={idx}>
       <Icon name={icon} size={20} />
     </Link>
   ))
 
 const NavList = () =>
-  nav.map((item) => {
-    console.log(item)
-    return (
-      <ul
-        className="border-l border-silver-900 pl-5 font-display font-medium capitalize tracking-wide"
-        key={item.name}
-      >
-        <li className="mb-4 font-semibold text-white">
-          {item.link ? <Link href={item.link}>{item.name}</Link> : item.name}
+  nav.map((item) => (
+    <ul
+      className="border-l border-silver-900 pl-5 font-display font-medium capitalize tracking-wide"
+      key={item.name}
+    >
+      <li className="mb-4 font-semibold text-white">
+        {item.link ? <Link href={item.link}>{item.name}</Link> : item.name}
+      </li>
+      {item.sub?.map((sub) => (
+        <li key={sub.name}>
+          <Link
+            href={sub.link}
+            className="inline-block py-0.5 text-silver-400 transition-all hover:pl-1 hover:text-white"
+          >
+            {sub.name}
+          </Link>
         </li>
-        {item.sub?.map((sub) => (
-          <li key={sub.name}>
-            <Link
-              href={sub.link}
-              className="block py-0.5 text-silver-500 transition-all hover:pl-1 hover:text-white"
-            >
-              {sub.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    )
-  })
+      ))}
+    </ul>
+  ))
 
 const Footer = () => {
   return (
-    <footer className="gutter-y bg-black">
+    <footer className="gutter-y border-t border-silver-900 bg-black">
       <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
         <div className="gap grid grid-cols-1 lg:grid-cols-2">
           <div className="grid grid-cols-2 gap-10">

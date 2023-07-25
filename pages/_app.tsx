@@ -18,7 +18,7 @@ export default function App({
 }: AppProps<SharedPageProps>) {
   const { draftMode, token } = pageProps
   return (
-    <Layout>
+    <>
       {draftMode ? (
         <PreviewProvider token={token}>
           <Component {...pageProps} />
@@ -26,6 +26,6 @@ export default function App({
       ) : (
         <Component {...pageProps} />
       )}
-    </Layout>
+    </>
   )
 }
