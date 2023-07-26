@@ -2,10 +2,10 @@ import { useCallback, useEffect, useState } from 'react'
 import { id } from 'date-fns/locale'
 import Image from 'next/image'
 
-import SectionTitle from 'components/SectionTitle'
 import Icon from 'components/ui/Icon'
 import { Progress } from 'components/ui/Progress'
 import Section from 'components/ui/Section'
+import SectionTitle from 'components/ui/SectionTitle'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/Tabs'
 
 const INTERVAL_TIME = 7000

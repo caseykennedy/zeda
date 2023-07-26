@@ -46,6 +46,7 @@ module.exports = {
         sans: ['Inter', 'Arial', 'sans-serif'],
         display: ['Urbanist', 'Arial', 'sans-serif'],
       },
+      fontSize: {},
       keyframes: {
         'accordion-down': {
           from: { height: 0 },

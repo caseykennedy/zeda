@@ -1,3 +1,5 @@
+import { LayersIcon, RulerSquareIcon, TimerIcon } from '@radix-ui/react-icons'
+
 import {
   Accordion,
   AccordionContent,
@@ -7,20 +9,21 @@ import {
 
 const data = [
   {
-    value: '4',
-    description: 'Globally operated advanced manufacturing businesses',
+    icon: <TimerIcon />,
+    title: 'Time',
+    description:
+      'Design, prototype and manufacture locally. Cut down validation & qualification time by prototyping on the same platforms used for production.',
   },
   {
-    value: '5',
-    description: 'Established geographical locations around the world',
+    icon: <RulerSquareIcon />,
+    title: 'Prototype',
+    description:
+      'PLA, ABS, PEEK, 316L, Ti6Al4V-ELI and more. Optional "guaranteed next build plate" priority service.',
   },
   {
-    value: '$68m',
-    description: 'Total equity and financing capital raise as of 2023',
-  },
-  {
-    value: '150k',
-    description: 'Square ft. of advanced manufacturing facilities',
+    icon: <LayersIcon />,
+    title: 'Design',
+    description: `We offer full contract design services or we can augment your engineering capabilities as a technical consultant.`,
   },
 ]
 
@@ -33,9 +36,9 @@ export const Efficiency = () => {
       <Accordion type="single" collapsible>
         <AccordionItem value="efficiency">
           <AccordionTrigger>
-            <div className="flex flex-nowrap items-center gap-12">
+            <div className="flex flex-nowrap items-center gap-4 md:gap-12">
               <div className="text-base">02</div>
-              <div className="font-sans text-3xl font-medium">
+              <div className="font-sans text-xl font-medium md:text-3xl">
                 Time is of the essence
               </div>
             </div>
@@ -45,24 +48,27 @@ export const Efficiency = () => {
               <div className="gap grid grid-cols-6">
                 <div className="col-span-6 mb-8 md:col-span-4">
                   <div className="text-3xl font-normal">
-                    Zeda offers end-to-end solutions which will guide you from
-                    concept to production, getting your team to the finish line
-                    first. Prototype and validate on the same equipment used in
-                    volume production. Our open design and manufacturing
-                    ecosystem reduces wasted engineering considerably.
+                    Zeda&apos;s end-to-end solutions guide you from concept to
+                    production, helping your team finish first. Validate
+                    prototypes using volume production equipment. Our open
+                    design and manufacturing ecosystem minimizes wasted
+                    engineering.
                   </div>
                 </div>
               </div>
-              <div className="mt-48 grid grid-cols-4 gap-8 md:mt-72">
-                {data.map(({ value, description }, idx) => (
+              <div className="mt-32 grid grid-cols-3 gap-10 lg:mt-48">
+                {data.map(({ icon, title, description }, idx) => (
                   <div
-                    className="col-span-4 border-l border-silver-700 pl-5 sm:col-span-2 lg:col-span-1"
+                    className="col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 lg:col-span-1"
                     key={idx}
                   >
-                    <h3 className="mb-8 font-display text-6xl font-semibold">
-                      {value}
-                    </h3>
-                    <p className="text-base">{description}</p>
+                    <div className="mb-12 mt-4 [&>svg]:h-8 [&>svg]:w-8">
+                      {icon}
+                    </div>
+                    <h4 className="mb-8 font-display text-3xl font-semibold">
+                      {title}
+                    </h4>
+                    <p className="text-lg text-silver-300">{description}</p>
                   </div>
                 ))}
               </div>

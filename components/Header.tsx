@@ -100,7 +100,7 @@ const Navigation = () => {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md border border-silver-900 p-6 no-underline outline-none"
+                    className="flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 no-underline outline-none"
                     href="/"
                   >
                     {/* <Icons.logo className="h-6 w-6" /> */}
@@ -116,7 +116,7 @@ const Navigation = () => {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md border border-silver-900 p-6 text-lg no-underline outline-none"
+                    className="flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none"
                     href="/"
                   >
                     <div className="mb-1 mt-8 font-display font-medium capitalize tracking-wider text-white">

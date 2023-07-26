@@ -21,7 +21,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        'w-full border-t border-black transition-all data-[state=open]:border-silver-900 data-[state=open]:bg-black data-[state=open]:text-silver-500 [&[data-state=open]>div>svg]:rotate-180',
+        'w-full border-t border-black transition-all data-[state=open]:border-silver-900 data-[state=open]:bg-black data-[state=open]:text-violet-500 [&[data-state=open]>div>svg]:rotate-180',
         className
       )}
       {...props}
@@ -42,7 +42,7 @@ const AccordionContent = React.forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     className={cn(
-      'overflow-hidden border-t border-silver-900 text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
+      'overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
       className
     )}
     {...props}

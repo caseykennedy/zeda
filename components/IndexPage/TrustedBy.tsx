@@ -2,10 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Marquee from 'components/Marquee'
-import SectionTitle from 'components/SectionTitle'
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
 import Section from 'components/ui/Section'
+import SectionTitle from 'components/ui/SectionTitle'
 
 const TrustedBy = () => {
   return (

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-import SectionTitle from 'components/SectionTitle'
 import Section from 'components/ui/Section'
+import SectionTitle from 'components/ui/SectionTitle'
 
 const WhyUs = () => {
   return (
