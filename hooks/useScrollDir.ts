@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 
 const useScrollDir = () => {
-  const [scrollDir, setScrollDir] = useState(null)
+  const [scrollDir, setScrollDir] = useState<
+    'scroll-down' | 'scroll-up' | null
+  >(null)
 
   useEffect(() => {
     const threshold = 1

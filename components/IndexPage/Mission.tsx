@@ -24,8 +24,8 @@ const Mission = () => {
   }, [])
 
   const animateProgress = useCallback(() => {
-    let startTimestamp
-    const step = (timestamp) => {
+    let startTimestamp: any
+    const step = (timestamp: any) => {
       if (!startTimestamp) startTimestamp = timestamp
       const progressValue = Math.min(
         (timestamp - startTimestamp) / INTERVAL_TIME,

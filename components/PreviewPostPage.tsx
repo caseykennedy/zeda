@@ -19,7 +19,7 @@ export default function PreviewPostPage(props: PostPageProps) {
       slug: props.post.slug,
     }
   )
-  const [settings, loadingSettings] = useLiveQuery<Settings>(
+  const [settings, loadingSettings] = useLiveQuery<Settings | undefined>(
     props.settings,
     settingsQuery
   )
