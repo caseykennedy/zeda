@@ -6,12 +6,12 @@ import Head from 'next/head'
 import BlogMeta from 'components/BlogMeta'
 
 export interface PostPageHeadProps {
-  settings: Settings
+  settings?: Settings
   post: Post
 }
 
 export default function PostPageHead({ settings, post }: PostPageHeadProps) {
-  const title = settings.title ?? demo.title
+  const title = settings?.title ?? demo.title
   return (
     <Head>
       <title>{post.title ? `${post.title} | ${title}` : title}</title>

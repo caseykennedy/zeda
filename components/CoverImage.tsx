@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 interface CoverImageProps {
-  title: string
+  title?: string
   slug?: string
   image: any
   priority?: boolean
@@ -18,7 +18,7 @@ export default function CoverImage(props: CoverImageProps) {
       //   'transition-shadow duration-200 hover:shadow-medium': slug,
       // })}
       className={clsx('shadow-small', {
-        'transition-shadow duration-200 hover:shadow-medium': slug,
+        'hover:shadow-medium transition-shadow duration-200': slug,
       })}
     >
       <Image

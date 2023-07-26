@@ -17,7 +17,7 @@ export interface PostPageProps {
   loading?: boolean
   post: Post
   morePosts: Post[]
-  settings: Settings
+  settings?: Settings
 }
 
 const NO_POSTS: Post[] = []
@@ -36,28 +36,28 @@ export default function PostPage(props: PostPageProps) {
     <>
       <PostPageHead settings={settings} post={post} />
 
-      <Layout preview={preview} loading={loading}>
-        <Container>
-          <BlogHeader title={title} level={2} />
-          {preview && !post ? (
-            <PostTitle>Loading…</PostTitle>
-          ) : (
-            <>
-              <article>
-                <PostHeader
-                  title={post.title}
-                  coverImage={post.coverImage}
-                  date={post.date}
-                  author={post.author}
-                />
-                <PostBody content={post.content} />
-              </article>
-              <Separator />
-              {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
-            </>
-          )}
-        </Container>
-      </Layout>
+      {/* <Layout preview={preview} loading={loading}> */}
+      <Container>
+        <BlogHeader title={title} level={2} />
+        {preview && !post ? (
+          <PostTitle>Loading…</PostTitle>
+        ) : (
+          <>
+            <article>
+              <PostHeader
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                author={post.author}
+              />
+              <PostBody content={post.content} />
+            </article>
+            <Separator />
+            {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
+          </>
+        )}
+      </Container>
+      {/* </Layout> */}
     </>
   )
 }
