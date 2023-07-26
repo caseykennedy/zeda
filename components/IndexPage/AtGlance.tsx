@@ -1,13 +1,13 @@
 import Link from 'next/link'
 
-import Section from 'components/Section'
 import SectionTitle from 'components/SectionTitle'
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
+import Section from 'components/ui/Section'
 
 const AtGlance = () => {
   return (
-    <Section className="">
+    <Section>
       <SectionTitle>At a glance</SectionTitle>
 
       <div className="gap grid grid-cols-6">

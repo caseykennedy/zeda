@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Section from 'components/Section'
 import Button from 'components/ui/Button'
+import Section from 'components/ui/Section'
 
 import Icon from './ui/Icon'
 

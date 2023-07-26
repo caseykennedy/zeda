@@ -1,21 +1,31 @@
 import Image from 'next/image'
 
-import Section from 'components/Section'
+import Section from 'components/ui/Section'
 
 const Hero = () => {
   return (
-    <Section className="dark h-[100vh] max-h-[1080px] overflow-hidden bg-black text-white">
-      <div className="gap grid h-full grid-cols-1 content-end md:grid-cols-2"></div>
+    <Section
+      pt="pt-0"
+      // pr="pr-0"
+      pb="pb-0"
+      pl="pl-0"
+      className="overflow-hidden bg-black text-white"
+    >
+      <div className="gap grid h-full grid-cols-1 content-end md:grid-cols-12">
+        <div className="relative col-span-12 block h-[630px] lg:col-span-9">
+          <Image
+            src="/images/work-suit.jpg"
+            alt="Zeda Inc. manufacturing facility"
+            fill={true}
+            style={{ objectFit: 'cover', objectPosition: 'left top' }}
+            // width={1920}
+            // height={986}
+            quality={100}
+          />
+        </div>
 
-      {/* <figure className="absolute left-0 top-0 z-0 h-full w-full">
-        <Image
-          src="/images/hero-test.png"
-          alt="Zeda Inc. manufacturing facility"
-          fill={true}
-          style={{ objectFit: 'cover' }}
-          sizes="100%"
-        />
-      </figure> */}
+        <div className="hidden lg:flex">menu</div>
+      </div>
     </Section>
   )
 }

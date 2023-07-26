@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
-import Section from 'components/Section'
 import TextFader from 'components/TextFader'
+import Section from 'components/ui/Section'
 
 const Hero = () => {
   return (
-    <Section className="dark h-[100vh] max-h-[1080px] overflow-hidden bg-black text-white">
+    <Section className="dark h-[90vh] max-h-[1080px] overflow-hidden bg-black text-white">
       <div className="gap grid h-full grid-cols-1 content-end md:grid-cols-2">
         <div className="relative z-10">
           <h1 className="dark:text-white">
@@ -23,7 +23,7 @@ const Hero = () => {
         </div> */}
       </div>
 
-      <figure className="absolute left-0 top-0 z-0 h-full w-full">
+      {/* <figure className="absolute left-0 top-0 z-0 h-full w-full">
         <Image
           src="/images/hero-test.png"
           alt="Zeda Inc. manufacturing facility"
@@ -31,7 +31,7 @@ const Hero = () => {
           style={{ objectFit: 'cover' }}
           sizes="100%"
         />
-      </figure>
+      </figure> */}
     </Section>
   )
 }

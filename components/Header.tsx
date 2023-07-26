@@ -1,5 +1,4 @@
 import { forwardRef, useEffect } from 'react'
-import clsx from 'clsx'
 import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
@@ -183,7 +182,7 @@ const Header = () => {
 
   return (
     <header
-      className={`overflow-none fixed z-40 h-[90px] w-full items-center transition-all ${clsx(
+      className={`overflow-none fixed z-40 h-header w-full items-center transition-all hover:bg-black ${cn(
         scrollDown ? '-translate-y-[100px]' : 'translate-y-0',
         hasScrolled && 'bg-black backdrop-blur-md'
       )}`}

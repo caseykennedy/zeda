@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import Section from 'components/Section'
 import SectionTitle from 'components/SectionTitle'
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
+import Section from 'components/ui/Section'
 
 const Careers = () => {
   return (

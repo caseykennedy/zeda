@@ -48,6 +48,7 @@ const config = {
     'simple-import-sort/imports': 'error', // Import configuration for `eslint-plugin-simple-import-sort`
     'simple-import-sort/exports': 'error', // Export configuration for `eslint-plugin-simple-import-sort`
     'react-hooks/exhaustive-deps': 'error',
+    "@typescript-eslint/no-explicit-any": "off",
   },
 }
 

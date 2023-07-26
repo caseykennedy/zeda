@@ -44,7 +44,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'Arial', 'sans-serif'],
-        mono: ['SuisseMono', 'JetBrains Mono', 'monospace'],
         display: ['Urbanist', 'Arial', 'sans-serif'],
       },
       keyframes: {
@@ -59,6 +58,9 @@ module.exports = {
       },
       maxWidth: {
         site: '1680px',
+      },
+      spacing: {
+        header: '90px',
       },
       transitionDuration: {
         DEFAULT: '300ms',

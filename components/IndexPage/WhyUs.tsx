@@ -1,14 +1,16 @@
 import Image from 'next/image'
 
-import Section from 'components/Section'
 import SectionTitle from 'components/SectionTitle'
+import Section from 'components/ui/Section'
 
 const WhyUs = () => {
   return (
     <Section
       className="border-b border-t border-black bg-black"
-      py="py-0"
-      px="px-0"
+      pt="pt-0"
+      pr="pr-0"
+      pb="pb-0"
+      pl="pl-0"
       fullWidth={true}
     >
       <div className="grid h-[600px] grid-cols-1 md:grid-cols-2">
