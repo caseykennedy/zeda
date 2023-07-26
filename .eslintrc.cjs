@@ -27,12 +27,14 @@ const config = {
       },
     },
   ],
-  extends: 'next',
-  plugins: ['simple-import-sort'],
+  plugins: ["@typescript-eslint", 'simple-import-sort'],
+  extends: ["next", "next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   rules: {
+    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     'simple-import-sort/imports': 'warn',
     'simple-import-sort/exports': 'warn',
     'react-hooks/exhaustive-deps': 'error',
+    "@typescript-eslint/no-explicit-any": "off",
   },
 }
 

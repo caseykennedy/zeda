@@ -39,34 +39,34 @@ export default defineType({
       },
       validation: (rule) => rule.required(),
     }),
-    defineField({
-      name: 'content',
-      title: 'Content',
-      type: 'array',
-      of: [
-        { type: 'block' },
-        {
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-          fields: [
-            {
-              name: 'caption',
-              type: 'string',
-              title: 'Image caption',
-              description: 'Caption displayed below the image.',
-            },
-            {
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative text',
-              description: 'Important for SEO and accessiblity.',
-            },
-          ],
-        },
-      ],
-    }),
+    // defineField({
+    //   name: 'content',
+    //   title: 'Content',
+    //   type: 'array',
+    //   of: [
+    //     { type: 'block' },
+    //     {
+    //       type: 'image',
+    //       options: {
+    //         hotspot: true,
+    //       },
+    //       fields: [
+    //         {
+    //           name: 'caption',
+    //           type: 'string',
+    //           title: 'Image caption',
+    //           description: 'Caption displayed below the image.',
+    //         },
+    //         {
+    //           name: 'alt',
+    //           type: 'string',
+    //           title: 'Alternative text',
+    //           description: 'Important for SEO and accessiblity.',
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // }),
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
