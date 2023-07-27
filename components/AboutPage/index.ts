@@ -1,3 +1,3 @@
-import { AboutPage, type AboutPageProps } from './AboutPage'
+import { AboutPage } from './AboutPage'
 
-export { AboutPage, type AboutPageProps }
+export { AboutPage }

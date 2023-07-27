@@ -1,8 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
-import Button from 'components/ui/Button'
-import Icon from 'components/ui/Icon'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 
@@ -23,14 +20,14 @@ const AtGlance = () => {
         </div>
 
         <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
-          <p className="max-w-[40ch] text-lg text-silver-300">
+          <p className="max-w-[40ch] text-lg text-silver-500">
             Zeda&apos;s objective is to better lives by investing in
             cutting-edge tech, innovative companies, and groundbreaking ideas.
           </p>
         </div>
       </div>
 
-      <div className="mt-32 grid grid-cols-4 gap-8 md:mt-72">
+      <div className="mt-32 grid grid-cols-4 gap-8 md:mt-64">
         {[...data].map(({ value, description }, idx) => (
           <div
             className="col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 lg:col-span-1"
@@ -42,31 +39,35 @@ const AtGlance = () => {
         ))}
       </div>
 
-      <div className="gap gutter-t grid grid-cols-3 grid-rows-3">
-        <figure className="relative col-span-2 row-span-3 overflow-hidden rounded bg-silver-900">
+      <div className="gutter-t grid grid-cols-3 grid-rows-3 gap-4">
+        <figure className="relative col-span-2 row-span-3 overflow-hidden rounded">
           <Image
-            src="/images/work-suit.jpg"
+            src="/images/about/work-mask.jpg"
+            alt="Zeda Inc. manufacturing facility"
+            fill={false}
+            width={1920}
+            height={986}
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center top',
+              transform: 'scaleX(-1)',
+            }}
+            quality={100}
+          />
+        </figure>
+        <figure className="relative col-span-1 row-span-1 overflow-hidden rounded">
+          <Image
+            src="/images/about/hand-turbine.jpg"
             alt="Zeda Inc. manufacturing facility"
             fill={true}
             style={{ objectFit: 'cover', objectPosition: 'center top' }}
             quality={100}
-          />
-        </figure>
-        <figure className="col-span-1 row-span-1 overflow-hidden rounded bg-silver-900">
-          <Image
-            src="/images/join-forces-corridor.jpg"
-            alt="Zeda Inc. manufacturing facility"
-            fill={false}
-            style={{ objectFit: 'cover', objectPosition: 'center top' }}
-            width={1200}
-            height={630}
-            quality={100}
             className="mix-blend-screen"
           />
         </figure>
-        <figure className="relative col-span-1 row-span-2 overflow-hidden rounded bg-silver-900">
+        <figure className="relative col-span-1 row-span-2 overflow-hidden rounded">
           <Image
-            src="/images/solutions-tech.jpg"
+            src="/images/about/work-group.jpg"
             alt="Zeda Inc. manufacturing facility"
             fill={true}
             style={{ objectFit: 'cover', objectPosition: 'center top' }}

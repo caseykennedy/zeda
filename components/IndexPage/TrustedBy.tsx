@@ -33,7 +33,7 @@ const TrustedBy = () => {
         </div>
       </div>
 
-      <div className="mt-72">
+      <div className="mt-32 md:mt-64">
         <SectionTitle>Trusted by</SectionTitle>
 
         <div>

@@ -12,12 +12,12 @@ const Hero = () => {
       className="overflow-hidden bg-black text-white"
     >
       <div className="gap grid h-full grid-cols-1 content-end md:grid-cols-12">
-        <div className="relative col-span-12 block h-[630px]">
+        <div className="relative col-span-12 block h-[400px] sm:h-[50vw]">
           <Image
-            src="/images/work-suit.jpg"
+            src="/images/about/work-suit.jpg"
             alt="Zeda Inc. manufacturing facility"
             fill={true}
-            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            style={{ objectFit: 'cover', objectPosition: 'left top' }}
             // width={1920}
             // height={986}
             quality={100}

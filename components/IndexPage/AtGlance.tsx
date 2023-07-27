@@ -32,7 +32,7 @@ const AtGlance = () => {
         </div>
       </div>
 
-      <div className="mt-48 grid grid-cols-4 gap-8 md:mt-72">
+      <div className="mt-32 grid grid-cols-4 gap-8 md:mt-64">
         {[...data].map(({ value, description }, idx) => (
           <div
             className="col-span-4 border-l border-black pl-5 sm:col-span-2 lg:col-span-1"

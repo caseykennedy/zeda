@@ -26,13 +26,13 @@ const Careers = () => {
                 color="white"
                 className="relative -translate-x-1 transition-all group-hover:translate-x-1"
               />
-              Careers
+              Work with us
             </Link>
           </Button>
         </div>
       </div>
 
-      <div className="mt-48 md:mt-72">
+      <div className="mt-32 md:mt-48">
         <SectionTitle className="mb-0">Open positions</SectionTitle>
         {data.map(
           (
