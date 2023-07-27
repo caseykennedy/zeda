@@ -217,7 +217,7 @@
   }
 
   body {
-    @apply bg-background font-normal;
+    @apply bg-background-500 font-normal;
 
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;

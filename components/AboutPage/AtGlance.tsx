@@ -1,7 +1,30 @@
-import Image from 'next/image'
+import * as React from 'react'
+import HandTurbine from 'public/images/about/hand-turbine.jpg'
+import WorkGroup from 'public/images/about/work-group.jpg'
+import WorkMask from 'public/images/about/work-mask.jpg'
 
+import Img from 'components/ui/Img'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
+
+const data = [
+  {
+    value: '4',
+    description: 'Globally operated advanced manufacturing businesses',
+  },
+  {
+    value: '5',
+    description: 'Established geographical locations around the world',
+  },
+  {
+    value: '$68m',
+    description: 'Total equity and financing capital raise as of 2023',
+  },
+  {
+    value: '150k',
+    description: 'Square ft. of advanced manufacturing facilities',
+  },
+]
 
 const AtGlanceGallery = () => {
   return (
@@ -41,12 +64,10 @@ const AtGlanceGallery = () => {
 
       <div className="gutter-t grid grid-cols-3 grid-rows-3 gap-4">
         <figure className="relative col-span-2 row-span-3 overflow-hidden rounded">
-          <Image
-            src="/images/about/work-mask.jpg"
+          <Img
+            src={WorkMask}
             alt="Zeda Inc. manufacturing facility"
             placeholder="blur"
-            blurDataURL="/images/about/work-mask.jpg"
-            quality={100}
             fill={false}
             width={1440}
             height={658}
@@ -58,27 +79,20 @@ const AtGlanceGallery = () => {
           />
         </figure>
         <figure className="relative col-span-1 row-span-1 overflow-hidden rounded">
-          <Image
-            src="/images/about/hand-turbine.jpg"
+          <Img
+            src={HandTurbine}
             alt="Zeda Inc. manufacturing facility"
-            placeholder="blur"
-            blurDataURL="/images/about/hand-turbine.jpg"
-            quality={100}
             fill={true}
             style={{
               objectFit: 'cover',
               objectPosition: 'center top',
             }}
-            className="mix-blend-screen"
           />
         </figure>
         <figure className="relative col-span-1 row-span-2 overflow-hidden rounded">
-          <Image
-            src="/images/about/work-group.jpg"
+          <Img
+            src={WorkGroup}
             alt="Zeda Inc. manufacturing facility"
-            placeholder="blur"
-            blurDataURL="/images/about/work-group.jpg"
-            quality={100}
             fill={true}
             style={{
               objectFit: 'cover',
@@ -92,22 +106,3 @@ const AtGlanceGallery = () => {
 }
 
 export default AtGlanceGallery
-
-const data = [
-  {
-    value: '4',
-    description: 'Globally operated advanced manufacturing businesses',
-  },
-  {
-    value: '5',
-    description: 'Established geographical locations around the world',
-  },
-  {
-    value: '$68m',
-    description: 'Total equity and financing capital raise as of 2023',
-  },
-  {
-    value: '150k',
-    description: 'Square ft. of advanced manufacturing facilities',
-  },
-]

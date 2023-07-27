@@ -15,8 +15,6 @@ import {
 } from 'components/ui/Accordion'
 import Section from 'components/ui/Section'
 
-import AtGlanceGallery from './AtGlance'
-
 type FeatureShape = {
   type: string
   icon: JSX.Element
@@ -147,7 +145,6 @@ export const Zeda = () => (
         features={data.filter(({ type }) => type === 'efficiency')}
       />
     </Accordion>
-    <AtGlanceGallery />
   </>
 )
 

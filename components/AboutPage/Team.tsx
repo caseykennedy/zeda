@@ -10,7 +10,7 @@ const data = [
   {
     imageSrc: 'michelle-thai.jpg',
     name: 'Shri Shetty',
-    position: 'Co-founder & CHIEF Executive OFFICER',
+    position: 'Chief Strategy Officer',
     bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
     linkedin: 'shri-shetty',
   },

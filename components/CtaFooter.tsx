@@ -35,7 +35,7 @@ const CtaFooter = ({
             dangerouslySetInnerHTML={{ __html: message }}
             className="max-w-[38ch] text-base text-white"
           />
-          <Button variant="outline" size="sm" className="relative z-20" asChild>
+          <Button variant="outline" className="relative z-20" asChild>
             <Link href={href}>
               <Icon
                 name="arrow-right"

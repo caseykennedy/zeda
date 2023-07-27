@@ -41,7 +41,7 @@ const TrustedBy = () => {
             {data?.map(({ partner }, idx) => (
               <div className="px-8" key={idx}>
                 <Image
-                  src={`/images/partner-logos/${partner}.png`}
+                  src={`/images/partners/black/${partner}.png`}
                   alt="Zeda Inc. manufacturing facility"
                   height={80}
                   width={160}

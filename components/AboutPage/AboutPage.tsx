@@ -6,8 +6,11 @@ import IndexPageHead from 'components/IndexPage/IndexPageHead'
 import Layout from 'components/Layout'
 import PageTitle from 'components/ui/PageTitle'
 
+import AtGlanceGallery from './AtGlance'
 import Hero from './Hero'
+import PartnersGrid from './PartnersGrid'
 import Team from './Team'
+import TextMarquee from './TextMarquee'
 import AboutZeda from './Zeda'
 
 type Props = {
@@ -21,7 +24,10 @@ export const AboutPage = ({ settings }: Props) => (
       <PageTitle title="We make things better for everyone" />
       <Hero />
       <AboutZeda />
+      <AtGlanceGallery />
       <Team />
+      <TextMarquee />
+      <PartnersGrid />
       {/* <Careers /> */}
       <CtaFooter
         heading="Join forces with us. Let's change the world together"
