@@ -48,7 +48,7 @@ const AtGlanceGallery = () => {
             blurDataURL="/images/about/work-mask.jpg"
             quality={100}
             fill={false}
-            width={1027}
+            width={1440}
             height={658}
             style={{
               objectFit: 'cover',

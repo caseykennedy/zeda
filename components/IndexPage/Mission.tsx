@@ -121,16 +121,24 @@ const Mission = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center">
+            <div className="relative flex items-center justify-center">
               {currentTab && (
-                <TabsContent value={currentTab.value} forceMount>
-                  <figure>
+                <TabsContent
+                  value={currentTab.value}
+                  className="relative"
+                  forceMount
+                >
+                  <figure className="relative h-full w-full overflow-hidden rounded">
                     <Image
                       src={`/images/${currentTab.figure.src}`}
                       alt={currentTab.figure.alt}
                       width={900}
                       height={900}
-                      // style={{ objectFit: 'fill' }}
+                      placeholder="blur"
+                      blurDataURL="/images/wormhole.png"
+                      quality={100}
+                      fill={false}
+                      style={{ objectFit: 'fill' }}
                     />
                   </figure>
                 </TabsContent>
@@ -153,7 +161,7 @@ const data = [
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: {
-      src: 'hero-test.png',
+      src: 'wormhole.png',
       alt: 'Zeda Inc. manufacturing facility',
     },
   },
@@ -164,7 +172,7 @@ const data = [
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: {
-      src: 'solutions-tech.jpg',
+      src: 'wormhole.png',
       alt: 'Zeda Inc. manufacturing facility',
     },
   },
@@ -186,7 +194,7 @@ const data = [
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: {
-      src: 'hero-test.png',
+      src: 'wormhole.png',
       alt: 'Zeda Inc. manufacturing facility',
     },
   },

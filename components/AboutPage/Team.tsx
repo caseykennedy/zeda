@@ -5,7 +5,16 @@ import Link from 'next/link'
 
 import Button from 'components/ui/Button'
 import Section from 'components/ui/Section'
-import SectionTitle from 'components/ui/SectionTitle'
+
+const data = [
+  {
+    imageSrc: 'michelle-thai.jpg',
+    name: 'Shri Shetty',
+    position: 'Co-founder & CHIEF Executive OFFICER',
+    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
+    linkedin: 'shri-shetty',
+  },
+]
 
 const fadeVariants = {
   visible: {
@@ -84,6 +93,7 @@ const Team = () => {
                   </motion.p>
                 </motion.div>
               </motion.figure>
+
               <div className="gap mt-3 flex flex-row flex-nowrap">
                 <div className="flex-1">
                   <div className="font-display text-2xl font-semibold">
@@ -113,62 +123,3 @@ const Team = () => {
 }
 
 export default Team
-
-const data = [
-  {
-    imageSrc: 'michelle-thai.jpg',
-    name: 'Shri Shetty',
-    position: 'Co-founder & CHIEF Executive OFFICER',
-    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
-    linkedin: 'shri-shetty',
-  },
-  {
-    imageSrc: 'michelle-thai.jpg',
-    name: 'Shri Shetty',
-    position: 'Co-founder & CHIEF Executive OFFICER',
-    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
-    linkedin: 'shri-shetty',
-  },
-  {
-    imageSrc: 'michelle-thai.jpg',
-    name: 'Shri Shetty',
-    position: 'Co-founder & CHIEF Executive OFFICER',
-    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
-    linkedin: 'shri-shetty',
-  },
-  {
-    imageSrc: 'michelle-thai.jpg',
-    name: 'Shri Shetty',
-    position: 'Co-founder & CHIEF Executive OFFICER',
-    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
-    linkedin: 'shri-shetty',
-  },
-  {
-    imageSrc: 'michelle-thai.jpg',
-    name: 'Shri Shetty',
-    position: 'Co-founder & CHIEF Executive OFFICER',
-    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
-    linkedin: 'shri-shetty',
-  },
-  {
-    imageSrc: 'michelle-thai.jpg',
-    name: 'Shri Shetty',
-    position: 'Co-founder & CHIEF Executive OFFICER',
-    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
-    linkedin: 'shri-shetty',
-  },
-  {
-    imageSrc: 'michelle-thai.jpg',
-    name: 'Shri Shetty',
-    position: 'Co-founder & CHIEF Executive OFFICER',
-    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
-    linkedin: 'shri-shetty',
-  },
-  {
-    imageSrc: 'michelle-thai.jpg',
-    name: 'Shri Shetty',
-    position: 'Co-founder & CHIEF Executive OFFICER',
-    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
-    linkedin: 'shri-shetty',
-  },
-]
