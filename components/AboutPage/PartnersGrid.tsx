@@ -95,7 +95,7 @@ const PartnersGrid = () => {
       </div>
 
       <div className="md:mt-68 mt-32">
-        <div className="text-lg text-silver-500">Why partner with us?</div>
+        <div className="text-lg text-white">Why partner with us?</div>
         <div className="mt-24 grid grid-cols-4 gap-10">
           {data.map(({ icon, title, description }, idx) => {
             return (
@@ -137,7 +137,7 @@ const PartnersGrid = () => {
         {partnerLogosData.map(({ partner, src }, idx) => (
           <figure
             key={idx}
-            className="gutter-x flex items-center justify-center rounded border border-silver-900 py-14"
+            className="gutter-x flex items-center justify-center rounded border border-silver-900 py-8 md:py-14"
           >
             <Img
               src={src}

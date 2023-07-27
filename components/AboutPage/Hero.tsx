@@ -10,6 +10,7 @@ const Hero = () => {
       pr="pr-0"
       pb="pb-0"
       pl="pl-0"
+      fullWidth={true}
       className="overflow-hidden bg-black text-white"
     >
       <div className="gap grid h-full grid-cols-1 content-end md:grid-cols-12">
