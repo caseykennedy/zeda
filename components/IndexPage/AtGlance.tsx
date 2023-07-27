@@ -38,7 +38,9 @@ const AtGlance = () => {
             className="col-span-4 border-l border-black pl-5 sm:col-span-2 lg:col-span-1"
             key={idx}
           >
-            <h3 className="mb-8 font-display text-6xl font-medium">{value}</h3>
+            <h3 className="mb-8 font-display text-6xl font-semibold">
+              {value}
+            </h3>
             <p className="text-base">{description}</p>
           </div>
         ))}

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 
-const AtGlance = () => {
+const AtGlanceGallery = () => {
   return (
     <Section className="border-t border-silver-900 bg-black text-white">
       <SectionTitle className="border-silver-500 text-silver-500">
@@ -44,24 +44,31 @@ const AtGlance = () => {
           <Image
             src="/images/about/work-mask.jpg"
             alt="Zeda Inc. manufacturing facility"
+            placeholder="blur"
+            blurDataURL="/images/about/work-mask.jpg"
+            quality={100}
             fill={false}
-            width={1920}
-            height={986}
+            width={1027}
+            height={658}
             style={{
               objectFit: 'cover',
               objectPosition: 'center top',
               transform: 'scaleX(-1)',
             }}
-            quality={100}
           />
         </figure>
         <figure className="relative col-span-1 row-span-1 overflow-hidden rounded">
           <Image
             src="/images/about/hand-turbine.jpg"
             alt="Zeda Inc. manufacturing facility"
-            fill={true}
-            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            placeholder="blur"
+            blurDataURL="/images/about/hand-turbine.jpg"
             quality={100}
+            fill={true}
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center top',
+            }}
             className="mix-blend-screen"
           />
         </figure>
@@ -69,9 +76,14 @@ const AtGlance = () => {
           <Image
             src="/images/about/work-group.jpg"
             alt="Zeda Inc. manufacturing facility"
-            fill={true}
-            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            placeholder="blur"
+            blurDataURL="/images/about/work-group.jpg"
             quality={100}
+            fill={true}
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center top',
+            }}
           />
         </figure>
       </div>
@@ -79,7 +91,7 @@ const AtGlance = () => {
   )
 }
 
-export default AtGlance
+export default AtGlanceGallery
 
 const data = [
   {

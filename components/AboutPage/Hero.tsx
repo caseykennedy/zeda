@@ -16,11 +16,16 @@ const Hero = () => {
           <Image
             src="/images/about/work-suit.jpg"
             alt="Zeda Inc. manufacturing facility"
-            fill={true}
-            style={{ objectFit: 'cover', objectPosition: 'left top' }}
-            // width={1920}
-            // height={986}
+            placeholder="blur"
+            blurDataURL="/images/about/work-suit.jpg"
             quality={100}
+            sizes="100vw"
+            fill={true}
+            priority={true}
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'left top',
+            }}
           />
         </div>
 

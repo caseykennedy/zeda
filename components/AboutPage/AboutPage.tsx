@@ -10,7 +10,11 @@ import Hero from './Hero'
 import Team from './Team'
 import AboutZeda from './Zeda'
 
-export const AboutPage = (settings: Settings) => (
+type Props = {
+  settings: Settings
+}
+
+export const AboutPage = ({ settings }: Props) => (
   <>
     <IndexPageHead settings={settings} />
     <Layout>

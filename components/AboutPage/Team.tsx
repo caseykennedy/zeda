@@ -1,10 +1,37 @@
 import { LinkedInLogoIcon } from '@radix-ui/react-icons'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import Button from 'components/ui/Button'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
+
+const fadeVariants = {
+  visible: {
+    opacity: 1,
+  },
+  hidden: {
+    opacity: 0,
+  },
+}
+
+const upVariants = {
+  up: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 400, velocity: -400, duration: 0.25, ease: 'easeInOut' },
+    },
+  },
+  down: {
+    y: 15,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 400, velocity: -400, duration: 0.25, ease: 'easeInOut' },
+    },
+  },
+}
 
 const Team = () => {
   return (
@@ -21,25 +48,43 @@ const Team = () => {
       </div>
 
       <div className="mt-32 md:mt-48">
-        <div className="gap grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {data.map(({ imageSrc, name, position, bio, linkedin }, idx) => (
             <div key={idx}>
-              <figure className="mb-4 overflow-hidden rounded bg-silver-100">
+              <motion.figure
+                initial={['hidden', 'down']}
+                whileHover={['visible', 'up']}
+                animate={['hidden', 'down']}
+                className="group relative overflow-hidden rounded bg-silver-100"
+              >
                 <Image
                   src={`/images/${imageSrc}`}
                   alt="Zeda Inc. manufacturing facility"
+                  placeholder="blur"
+                  blurDataURL={`/images/${imageSrc}`}
+                  quality={100}
                   fill={false}
-                  width={1920}
-                  height={986}
+                  width={493}
+                  height={600}
                   style={{
                     objectFit: 'cover',
                     objectPosition: 'center top',
                     transform: 'scaleX(-1)',
                   }}
-                  quality={100}
                 />
-              </figure>
-              <div className="gap flex flex-row flex-nowrap">
+                <motion.div
+                  variants={fadeVariants}
+                  className="absolute inset-0 bg-violet-500/90 p-6 backdrop-blur"
+                >
+                  <motion.p
+                    variants={upVariants}
+                    className="text-lg font-medium text-white"
+                  >
+                    {bio}
+                  </motion.p>
+                </motion.div>
+              </motion.figure>
+              <div className="gap mt-3 flex flex-row flex-nowrap">
                 <div className="flex-1">
                   <div className="font-display text-2xl font-semibold">
                     {name}
@@ -70,6 +115,20 @@ const Team = () => {
 export default Team
 
 const data = [
+  {
+    imageSrc: 'michelle-thai.jpg',
+    name: 'Shri Shetty',
+    position: 'Co-founder & CHIEF Executive OFFICER',
+    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
+    linkedin: 'shri-shetty',
+  },
+  {
+    imageSrc: 'michelle-thai.jpg',
+    name: 'Shri Shetty',
+    position: 'Co-founder & CHIEF Executive OFFICER',
+    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
+    linkedin: 'shri-shetty',
+  },
   {
     imageSrc: 'michelle-thai.jpg',
     name: 'Shri Shetty',
