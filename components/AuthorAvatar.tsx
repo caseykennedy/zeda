@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 export default function AuthorAvatar(props: Author) {
   const { name, picture } = props
+  const altText = picture?.alt ?? "Author's profile picture"
   return (
     <div className="flex items-center">
       <div className="relative mr-4 h-12 w-12">
@@ -16,7 +17,7 @@ export default function AuthorAvatar(props: Author) {
           className="rounded-full"
           height={96}
           width={96}
-          alt={picture.alt ?? name}
+          alt={altText}
         />
       </div>
       <div className="text-xl font-bold">{name}</div>

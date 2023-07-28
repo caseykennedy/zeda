@@ -95,7 +95,7 @@ export const Collapse = ({
           <div className="col-span-6 mb-8 md:col-span-4">
             <div
               dangerouslySetInnerHTML={{ __html: desc }}
-              className="text-3xl font-normal"
+              className="font-display text-3xl font-medium leading-tight tracking-wide"
             />
           </div>
         </div>

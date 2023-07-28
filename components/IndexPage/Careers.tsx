@@ -51,7 +51,7 @@ const Careers = () => {
               className="gap gutter-y grid grid-cols-12 border-b border-black"
               key={idx}
             >
-              <div className="col-span-12 flex items-center font-display text-2xl font-semibold md:col-span-6">
+              <div className="col-span-12 flex items-center font-display text-2xl font-semibold tracking-wide md:col-span-6">
                 {jobTitle}
               </div>
 

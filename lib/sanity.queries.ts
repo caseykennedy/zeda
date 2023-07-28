@@ -73,7 +73,7 @@ export interface SanityImage {
 
 export interface Author {
   name?: string
-  picture?: SanityImage
+  picture: SanityImage
 }
 
 export interface Partner {
