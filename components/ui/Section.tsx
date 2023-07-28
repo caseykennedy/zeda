@@ -1,6 +1,6 @@
 import { cn } from 'utils'
 
-type Props = {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   className?: string
   fullWidth?: boolean
@@ -18,10 +18,12 @@ const Section = ({
   pr = 'gutter-r',
   pb = 'gutter-b',
   pl = 'gutter-l',
+  ...props
 }: Props) => {
   return (
     <section
       className={cn(`relative w-full overflow-hidden`, pt, pb, className)}
+      {...props}
     >
       <div
         className={cn(

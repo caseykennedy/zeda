@@ -2,21 +2,11 @@ import { LinkedInLogoIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
 import { type Person } from 'lib/sanity.queries'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import Button from 'components/ui/Button'
+import Img from 'components/ui/Img'
 import Section from 'components/ui/Section'
-
-const data = [
-  {
-    imageSrc: 'michelle-thai.jpg',
-    name: 'Shri Shetty',
-    position: 'Chief Strategy Officer',
-    bio: 'Shri Shetty led an advanced technology group at Applied Materials, reporting directly to the Office of the CTO, before starting Zeda. Prior to his time at Applied Materials, he was Vice President at Ultratech. He brings extensive expertise from the semiconductor industry and advanced additive manufacturing.',
-    linkedin: 'shri-shetty',
-  },
-]
 
 const fadeVariants = {
   visible: {
@@ -61,69 +51,64 @@ const Team = ({ people }: { people: Person[] }) => {
 
       <div className="mt-32 md:mt-48">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-          {people.map(({ picture, name, position, bio, linkedinURL }, idx) => {
-            // console.log('picture:::', picture.asset.metadata.lqip)
-            return (
-              <div key={idx}>
-                <motion.figure
-                  initial={['hidden', 'down']}
-                  whileHover={['visible', 'up']}
-                  animate={['hidden', 'down']}
-                  className="group relative overflow-hidden rounded bg-silver-100"
+          {people.map(({ picture, name, position, bio, linkedinURL }, idx) => (
+            <div key={idx}>
+              <motion.figure
+                initial={['hidden', 'down']}
+                whileHover={['visible', 'up']}
+                animate={['hidden', 'down']}
+                className="group relative overflow-hidden rounded bg-silver-100"
+              >
+                <Img
+                  src={urlForImage(picture).height(600).width(493).url()}
+                  alt="Zeda Inc. manufacturing facility"
+                  blurDataURL={picture.metadata.lqip}
+                  fill={false}
+                  width={693}
+                  height={800}
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center top',
+                    transform: 'scaleX(-1)',
+                  }}
+                />
+                <motion.div
+                  variants={fadeVariants}
+                  className="absolute inset-0 bg-violet-500/90 p-6 backdrop-blur"
                 >
-                  <Image
-                    src={urlForImage(picture).height(600).width(493).url()}
-                    alt="Zeda Inc. manufacturing facility"
-                    placeholder="blur"
-                    blurDataURL={picture.metadata.lqip}
-                    quality={100}
-                    fill={false}
-                    width={693}
-                    height={800}
-                    style={{
-                      objectFit: 'cover',
-                      objectPosition: 'center top',
-                      transform: 'scaleX(-1)',
-                    }}
-                  />
-                  <motion.div
-                    variants={fadeVariants}
-                    className="absolute inset-0 bg-violet-500/90 p-6 backdrop-blur"
+                  <motion.p
+                    variants={upVariants}
+                    className="text-lg font-medium text-white"
                   >
-                    <motion.p
-                      variants={upVariants}
-                      className="text-lg font-medium text-white"
-                    >
-                      {bio}
-                    </motion.p>
-                  </motion.div>
-                </motion.figure>
+                    {bio}
+                  </motion.p>
+                </motion.div>
+              </motion.figure>
 
-                <div className="gap mt-3 flex flex-row flex-nowrap">
-                  <div className="flex-1">
-                    <div className="font-display text-2xl font-semibold">
-                      {name}
-                    </div>
-                    <p className="text-sm font-medium uppercase text-silver-700">
-                      {position}
-                    </p>
+              <div className="gap mt-3 flex flex-row flex-nowrap">
+                <div className="flex-1">
+                  <div className="font-display text-2xl font-semibold">
+                    {name}
                   </div>
-                  <div>
-                    {linkedinURL && (
-                      <Link
-                        href={linkedinURL}
-                        target="_blank"
-                        rel="nofollow noreferrer"
-                        className="text-silver-500 transition-colors duration-200 hover:text-black"
-                      >
-                        <LinkedInLogoIcon className="h-5 w-5" />
-                      </Link>
-                    )}
-                  </div>
+                  <p className="text-sm font-medium uppercase text-silver-700">
+                    {position}
+                  </p>
+                </div>
+                <div>
+                  {linkedinURL && (
+                    <Link
+                      href={linkedinURL}
+                      target="_blank"
+                      rel="nofollow noreferrer"
+                      className="text-silver-500 transition-colors duration-200 hover:text-black"
+                    >
+                      <LinkedInLogoIcon className="h-5 w-5" />
+                    </Link>
+                  )}
                 </div>
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </Section>

@@ -62,18 +62,18 @@ const navData: { title: string; href: string; description: string }[] = [
 const ListItem = forwardRef<
   React.ElementRef<'a'>,
   React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, ...props }, ref) => {
   return (
     <NavigationMenuLink asChild>
       <a
         ref={ref}
         className={cn(
-          'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none py-2.5 font-display font-medium capitalize tracking-wider text-white no-underline outline-none transition-colors',
+          'focus:text-accent-foreground group-hover: inline select-none py-2.5 font-display font-medium capitalize tracking-wider text-white no-underline outline-none transition-all hover:pl-1 hover:text-silver-500 focus:text-silver-500 active:text-violet-500',
           className
         )}
         {...props}
       >
-        <div>{title}</div>
+        {title}
       </a>
     </NavigationMenuLink>
   )
@@ -89,13 +89,19 @@ const Navigation = () => {
           <NavigationMenuContent>
             <ul className="gap grid w-full text-white lg:grid-cols-3">
               <li className="flex flex-col">
-                <div className="mb-6 font-display text-sm font-medium uppercase tracking-wider text-silver-500">
-                  Company
+                <div className="gap group grid grid-cols-2 content-center">
+                  <div className="flex flex-col items-start justify-end">
+                    <div className="mb-6 font-display text-sm font-medium uppercase tracking-wider text-silver-500">
+                      Company
+                    </div>
+                    <ListItem href="/about" title="About Zeda" />
+                    <ListItem href="/about/#leadership" title="Leadership" />
+                  </div>
+                  <div className="flex flex-col items-start justify-end">
+                    <ListItem href="/about/#partners" title="Partners" />
+                    <ListItem href="/contact" title="Contact" />
+                  </div>
                 </div>
-                <ListItem href="/docs" title="About Zeda" />
-                <ListItem href="/docs/installation" title="Leadership" />
-                {/* <ListItem href="/docs/primitives/typography" title="Partners" /> */}
-                {/* <ListItem href="/docs/primitives/typography" title="Contact" /> */}
               </li>
               <li className="row-span-3">
                 <NavigationMenuLink asChild>

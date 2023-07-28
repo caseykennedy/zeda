@@ -1,5 +1,4 @@
-import { type Person, type Settings } from 'lib/sanity.queries'
-import type { SharedPageProps } from 'pages/_app'
+import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-corridor.jpg'
 
 import CtaFooter from 'components/CtaFooter'
@@ -16,11 +15,12 @@ import TextMarquee from './TextMarquee'
 import AboutZeda from './Zeda'
 
 interface PageProps {
+  partners: Partner[]
   people: Person[]
   settings: Settings
 }
 
-export const AboutPage = ({ people, settings }: PageProps) => {
+export const AboutPage = ({ partners, people, settings }: PageProps) => {
   return (
     <>
       <IndexPageHead settings={settings} />
@@ -31,7 +31,7 @@ export const AboutPage = ({ people, settings }: PageProps) => {
         <AtGlanceGallery />
         <Team people={people} />
         <TextMarquee />
-        <PartnersGrid />
+        <PartnersGrid partners={partners} />
         {/* <Careers /> */}
         <CtaFooter
           heading="Join forces with us. Let's change the world together"

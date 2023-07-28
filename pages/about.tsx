@@ -28,7 +28,7 @@ export default function Page({ partners, people, settings }: PageProps) {
 
   console.log('partners', partners)
 
-  return <AboutPage people={people} settings={settings} />
+  return <AboutPage partners={partners} people={people} settings={settings} />
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
