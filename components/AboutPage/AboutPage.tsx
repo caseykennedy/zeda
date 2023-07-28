@@ -1,4 +1,6 @@
-import type { Settings } from 'lib/sanity.queries'
+import { type Person, type Settings } from 'lib/sanity.queries'
+import type { SharedPageProps } from 'pages/_app'
+import ctaImgSrc from 'public/images/bg-corridor.jpg'
 
 import CtaFooter from 'components/CtaFooter'
 import Careers from 'components/IndexPage/Careers'
@@ -13,32 +15,35 @@ import Team from './Team'
 import TextMarquee from './TextMarquee'
 import AboutZeda from './Zeda'
 
-type Props = {
+interface PageProps {
+  people: Person[]
   settings: Settings
 }
 
-export const AboutPage = ({ settings }: Props) => (
-  <>
-    <IndexPageHead settings={settings} />
-    <Layout>
-      <PageTitle title="We make things better for everyone" />
-      <Hero />
-      <AboutZeda />
-      <AtGlanceGallery />
-      <Team />
-      <TextMarquee />
-      <PartnersGrid />
-      {/* <Careers /> */}
-      <CtaFooter
-        heading="Join forces with us. Let's change the world together"
-        message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
-        image="join-forces-corridor.jpg"
-        alt="Zeda Inc. - Contact us"
-        href="/contact"
-        btnText="Get in touch"
-      />
-    </Layout>
-  </>
-)
+export const AboutPage = ({ people, settings }: PageProps) => {
+  return (
+    <>
+      <IndexPageHead settings={settings} />
+      <Layout>
+        <PageTitle title="We make things better for everyone" />
+        <Hero />
+        <AboutZeda />
+        <AtGlanceGallery />
+        <Team people={people} />
+        <TextMarquee />
+        <PartnersGrid />
+        {/* <Careers /> */}
+        <CtaFooter
+          heading="Join forces with us. Let's change the world together"
+          message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
+          src={ctaImgSrc}
+          alt="Zeda Inc. - Contact us"
+          href="/contact"
+          btnText="Get in touch"
+        />
+      </Layout>
+    </>
+  )
+}
 
 export default AboutPage

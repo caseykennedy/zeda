@@ -1,4 +1,5 @@
 import type { Post, Settings } from 'lib/sanity.queries'
+import ctaImgSrc from 'public/images/bg-rocket.png'
 
 import CtaFooter from 'components/CtaFooter'
 import Layout from 'components/Layout'
@@ -46,7 +47,7 @@ export const IndexPage = ({
       <CtaFooter
         heading="Join forces with us. Let’s change the world together"
         message="<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing."
-        image="join-forces-corridor.jpg"
+        src={ctaImgSrc}
         alt="Zeda Inc. - Contact us"
         href="/contact"
         btnText="Get in touch"

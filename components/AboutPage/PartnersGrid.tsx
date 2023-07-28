@@ -9,42 +9,33 @@ import Link from 'next/link'
 import IAmGroot from 'public/images/groot.jpg'
 import LogoCarbon from 'public/images/partners/white/carbon.png'
 
+import FeatureGridItem, { type FeatureShape } from 'components/FeatureGridItem'
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
 import Img from 'components/ui/Img'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 
-type FeatureShape = {
-  icon: JSX.Element
-  title: string
-  description: string
-}
-
 const data: FeatureShape[] = [
   {
     icon: <RocketIcon />,
     title: 'Elevate your platform',
-    description:
-      'Expand use cases, drive product stickiness, and build stronger customer relationships.',
+    desc: 'Expand use cases, drive product stickiness, and build stronger customer relationships.',
   },
   {
     icon: <RulerSquareIcon />,
     title: 'Prototype faster',
-    description:
-      'Expand use cases, drive product stickiness, and build stronger customer relationships.',
+    desc: 'Expand use cases, drive product stickiness, and build stronger customer relationships.',
   },
   {
     icon: <FaceIcon />,
     title: 'Build it better',
-    description:
-      'Expand use cases, drive product stickiness, and build stronger customer relationships.',
+    desc: 'Expand use cases, drive product stickiness, and build stronger customer relationships.',
   },
   {
     icon: <PersonIcon />,
     title: 'Collab & co-locate',
-    description:
-      'Expand use cases, drive product stickiness, and build stronger customer relationships.',
+    desc: 'Expand use cases, drive product stickiness, and build stronger customer relationships.',
   },
 ]
 
@@ -97,20 +88,9 @@ const PartnersGrid = () => {
       <div className="md:mt-68 mt-32">
         <div className="text-lg text-white">Why partner with us?</div>
         <div className="mt-24 grid grid-cols-4 gap-10">
-          {data.map(({ icon, title, description }, idx) => {
-            return (
-              <div
-                className="col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 lg:col-span-1"
-                key={idx}
-              >
-                <div className="mb-16 mt-4 [&>svg]:h-8 [&>svg]:w-8">{icon}</div>
-                <h4 className="mb-8 font-display text-3xl font-semibold">
-                  {title}
-                </h4>
-                <p className="text-lg text-white">{description}</p>
-              </div>
-            )
-          })}
+          {data.map(({ icon, title, desc }, idx) => (
+            <FeatureGridItem icon={icon} title={title} desc={desc} key={idx} />
+          ))}
         </div>
       </div>
 

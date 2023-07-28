@@ -62,7 +62,7 @@ const AtGlanceGallery = () => {
         ))}
       </div>
 
-      <div className="gutter-t grid grid-cols-3 grid-rows-3 gap-4">
+      <div className="gutter-t gap grid grid-cols-3 grid-rows-3">
         <figure className="relative col-span-2 row-span-3 overflow-hidden rounded">
           <Img
             src={WorkMask}

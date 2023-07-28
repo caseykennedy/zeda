@@ -7,6 +7,7 @@ import {
   TimerIcon,
 } from '@radix-ui/react-icons'
 
+import FeatureGridItem, { type FeatureShape } from 'components/FeatureGridItem'
 import {
   Accordion,
   AccordionContent,
@@ -15,53 +16,46 @@ import {
 } from 'components/ui/Accordion'
 import Section from 'components/ui/Section'
 
-type FeatureShape = {
+type AccordionFeatureShape = {
   type: string
-  icon: JSX.Element
-  title: string
-  description: string
-}
+} & FeatureShape
 
-const data: FeatureShape[] = [
+const data: AccordionFeatureShape[] = [
   {
     type: 'ideas',
     icon: <FaceIcon />,
     title: 'Learn',
-    description:
-      'Knowledge is power. We offer entry-level courses for clinicians to learn how to generate their own pre-operative surgical models as well as advanced courses for engineers needing training on powder-bed laser and e-beam metal 3D printers.',
+    desc: 'Knowledge is power. We offer entry-level courses for clinicians to learn how to generate their own pre-operative surgical models as well as advanced courses for engineers needing training on powder-bed laser and e-beam metal 3D printers.',
   },
   {
     type: 'ideas',
     icon: <RocketIcon />,
     title: 'Accelerate',
-    description: `Let Zeda take your concepts to prototypes and take your prototypes to volume production. We understand clinical deadlines and can offer "next build plate priority" service, so we'll get it to you as soon as possible.`,
+    desc: `Let Zeda take your concepts to prototypes and take your prototypes to volume production. We understand clinical deadlines and can offer "next build plate priority" service, so we'll get it to you as soon as possible.`,
   },
   {
     type: 'ideas',
     icon: <PersonIcon />,
     title: 'Collaborate',
-    description:
-      'Academic innovators have access to our team and technology, as well as secure, on-site co-location. Zeda has agreements to collaboratively develop and commercialize novel medical devices with universities. Start-ups focused on related technologies can leverage our accelerator program.',
+    desc: 'Academic innovators have access to our team and technology, as well as secure, on-site co-location. Zeda has agreements to collaboratively develop and commercialize novel medical devices with universities. Start-ups focused on related technologies can leverage our accelerator program.',
   },
   {
     type: 'efficiency',
     icon: <RulerSquareIcon />,
     title: 'Prototype',
-    description:
-      'PLA, ABS, PEEK, 316L, Ti6Al4V-ELI and more. Optional "guaranteed next build plate" priority service.',
+    desc: 'PLA, ABS, PEEK, 316L, Ti6Al4V-ELI and more. Optional "guaranteed next build plate" priority service.',
   },
   {
     type: 'efficiency',
     icon: <LayersIcon />,
     title: 'Design',
-    description: `We offer full contract design services or we can augment your engineering capabilities as a technical consultant.`,
+    desc: `We offer full contract design services or we can augment your engineering capabilities as a technical consultant.`,
   },
   {
     type: 'efficiency',
     icon: <TimerIcon />,
     title: 'Time',
-    description:
-      'Design, prototype and manufacture locally. Cut down validation & qualification time by prototyping on the same platforms used for production.',
+    desc: 'Design, prototype and manufacture locally. Cut down validation & qualification time by prototyping on the same platforms used for production.',
   },
 ]
 
@@ -106,20 +100,9 @@ export const Collapse = ({
           </div>
         </div>
         <div className="mt-32 grid grid-cols-3 gap-10 lg:mt-64">
-          {features.map(({ icon, title, description }, idx) => {
-            return (
-              <div
-                className="col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 lg:col-span-1"
-                key={idx}
-              >
-                <div className="mb-16 mt-4 [&>svg]:h-8 [&>svg]:w-8">{icon}</div>
-                <h4 className="mb-8 font-display text-3xl font-semibold">
-                  {title}
-                </h4>
-                <p className="text-lg text-white">{description}</p>
-              </div>
-            )
-          })}
+          {features.map(({ icon, title, desc }, idx) => (
+            <FeatureGridItem icon={icon} title={title} desc={desc} key={idx} />
+          ))}
         </div>
       </div>
     </AccordionContent>

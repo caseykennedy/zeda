@@ -1,7 +1,9 @@
-import Image from 'next/image'
+import { type StaticImageData } from 'next/image'
 import Link from 'next/link'
+import bgImg from 'public/images/about/work-suit.jpg'
 
 import Button from 'components/ui/Button'
+import Img from 'components/ui/Img'
 import Section from 'components/ui/Section'
 
 import Icon from './ui/Icon'
@@ -9,7 +11,7 @@ import Icon from './ui/Icon'
 type Props = {
   heading: string
   message: string
-  image: string
+  src: StaticImageData
   alt: string
   href: string
   btnText: string
@@ -18,7 +20,7 @@ type Props = {
 const CtaFooter = ({
   heading = 'Join forces with us. Let’s change the world together',
   message = '<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing.',
-  image = 'join-forces-corridor.jpg',
+  src = bgImg,
   alt = 'Zeda Inc. - Contact us',
   href = '/contact',
   btnText = 'Get in touch',
@@ -49,12 +51,11 @@ const CtaFooter = ({
       </div>
 
       <figure className="absolute left-0 top-0 z-0 h-full w-full bg-violet-600">
-        <Image
-          src={`/images/${image}`}
+        <Img
+          src={src}
           alt={alt}
           fill={true}
           style={{ objectFit: 'cover' }}
-          sizes="100%"
           className="mix-blend-screen"
         />
       </figure>
