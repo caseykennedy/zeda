@@ -69,7 +69,7 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
       </div>
     </div>
 
-    <div className="md:mt-68 mt-32">
+    <div className="mt-32 md:mt-64">
       <div className="text-lg text-white">Why partner with us?</div>
       <div className="mt-24 grid grid-cols-4 gap-10">
         {data.map(({ icon, title, desc }, idx) => (

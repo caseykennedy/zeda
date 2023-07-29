@@ -45,7 +45,7 @@ const Benefits = () => (
         <h2 className="max-w-[20ch]">
           Work + life—helping you strike a balance
         </h2>
-        <div className="md:mt-68 mt-32">
+        <div className="mt-32 md:mt-64">
           <div className="grid grid-cols-2 gap-10">
             {benefitsData.map(({ title, desc }, idx) => (
               <div
@@ -95,7 +95,7 @@ const Benefits = () => (
 
       <div className="gutter flex flex-col justify-between bg-black">
         <h2 className="max-w-[20ch]">Where we work</h2>
-        <div className="md:mt-68 mt-32">
+        <div className="mt-32 md:mt-64">
           <div className="grid grid-cols-2 gap-10">
             {benefitsData.map(({ title, desc }, idx) => (
               <div

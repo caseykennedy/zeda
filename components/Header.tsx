@@ -146,9 +146,9 @@ const Navigation = () => {
                     href="/news"
                   >
                     <div>
-                      <FileTextIcon className="h-6 w-6 transition-transform group-hover:-translate-y-1" />
+                      <FileTextIcon className="h-7 w-7 transition-transform group-hover:-translate-y-1.5" />
                     </div>
-                    <div className="mt-6 font-display font-medium capitalize tracking-wider text-white">
+                    <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
                       Newsroom
                     </div>
                     <p className="text-silver-200">

@@ -7,7 +7,7 @@ interface Props {
 
 const SectionTitle = forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
+  React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
