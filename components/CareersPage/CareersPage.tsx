@@ -7,7 +7,9 @@ import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
 import PageTitle from 'components/ui/PageTitle'
 
+import Benefits from './Benefits'
 import Hero from './Hero'
+import WhyUs from './WhyUs'
 
 interface PageProps {
   settings: Settings
@@ -37,6 +39,8 @@ export const CareersPage = ({ settings }: PageProps) => {
           </div>
         </PageTitle>
         <Hero />
+        <WhyUs />
+        <Benefits />
         <Careers />
       </Layout>
     </>
