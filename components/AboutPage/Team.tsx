@@ -4,8 +4,8 @@ import { urlForImage } from 'lib/sanity.image'
 import { type Person } from 'lib/sanity.queries'
 import Link from 'next/link'
 
+import Img from 'components/Img'
 import Button from 'components/ui/Button'
-import Img from 'components/ui/Img'
 import Section from 'components/ui/Section'
 
 const fadeVariants = {

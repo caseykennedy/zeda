@@ -1,9 +1,12 @@
 import { forwardRef, useEffect } from 'react'
+import { FileTextIcon } from '@radix-ui/react-icons'
 import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
+import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
 import { cn } from 'utils'
 
+import Img from 'components/Img'
 import Logo from 'components/Logo'
 import LinkArrow from 'components/ui/LinkArrow'
 import {
@@ -36,7 +39,7 @@ import {
 //   )
 // }
 
-const navData: { title: string; href: string; description: string }[] = [
+const navData = [
   {
     title: 'company',
     href: '/videos',
@@ -68,7 +71,7 @@ const ListItem = forwardRef<
       <a
         ref={ref}
         className={cn(
-          'focus:text-accent-foreground group-hover: inline select-none py-2.5 font-display font-medium capitalize tracking-wider text-white no-underline outline-none transition-all hover:pl-1 hover:text-silver-500 focus:text-silver-500 active:text-violet-500',
+          'focus:text-accent-foreground group-hover: inline select-none py-2.5 font-display font-medium capitalize tracking-wider text-white no-underline outline-none transition-all hover:pl-0.5 hover:text-silver-200 focus:text-silver-500 active:text-violet-500',
           className
         )}
         {...props}
@@ -106,29 +109,49 @@ const Navigation = () => {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    className="flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 no-underline outline-none"
-                    href="/"
+                    className="group relative flex h-full w-full select-none flex-col justify-end overflow-hidden rounded border border-silver-900 p-6 no-underline outline-none hover:border-silver-800"
+                    href="/careers"
                   >
                     {/* <Icons.logo className="h-6 w-6" /> */}
-                    <div className="mb-1 mt-8 font-display text-lg font-medium capitalize tracking-wider text-white">
-                      Careers
+                    <div className="relative z-10">
+                      <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
+                        Careers
+                      </div>
+                      <p className="text-silver-200">
+                        Explore open career opportunities.
+                      </p>
                     </div>
-                    <p className="text-base text-silver-500">
-                      Explore open career opportunities.
-                    </p>
+                    <figure className="absolute inset-0 z-0 transition-transform group-hover:scale-105">
+                      <Img
+                        src={careersBgImg}
+                        alt="Careers"
+                        fill={true}
+                        // width={600}
+                        // height={250}
+                        sizes="(max-width: 768px) 300px"
+                        style={{
+                          objectFit: 'cover',
+                          objectPosition: 'center top',
+                        }}
+                      />
+                      <div className="absolute z-[1] h-full w-full bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                    </figure>
                   </Link>
                 </NavigationMenuLink>
               </li>
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    className="flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none"
-                    href="/"
+                    className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none transition-colors hover:border-silver-800 hover:bg-silver-900/30"
+                    href="/news"
                   >
-                    <div className="mb-1 mt-8 font-display font-medium capitalize tracking-wider text-white">
+                    <div>
+                      <FileTextIcon className="h-6 w-6 transition-transform group-hover:-translate-y-1" />
+                    </div>
+                    <div className="mt-6 font-display font-medium capitalize tracking-wider text-white">
                       Newsroom
                     </div>
-                    <p className="text-base text-silver-500">
+                    <p className="text-silver-200">
                       Get the latest scoop on Zeda.
                     </p>
                   </Link>

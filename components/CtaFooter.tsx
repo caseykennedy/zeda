@@ -2,13 +2,13 @@ import { type StaticImageData } from 'next/image'
 import Link from 'next/link'
 import bgImg from 'public/images/about/work-suit.jpg'
 
+import Img from 'components/Img'
 import Button from 'components/ui/Button'
-import Img from 'components/ui/Img'
 import Section from 'components/ui/Section'
 
 import Icon from './ui/Icon'
 
-type Props = {
+interface Props {
   heading: string
   message: string
   src: StaticImageData

@@ -3,7 +3,7 @@ import HandTurbine from 'public/images/about/hand-turbine.jpg'
 import WorkGroup from 'public/images/about/work-group.jpg'
 import WorkMask from 'public/images/about/work-mask.jpg'
 
-import Img from 'components/ui/Img'
+import Img from 'components/Img'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 

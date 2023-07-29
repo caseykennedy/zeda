@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import Icon from 'components/ui/Icon'
 
-type Props = {
+interface Props {
   href: string
   title: string
 }
@@ -16,7 +16,7 @@ const ArrowLink = ({ href, title }: Props) => (
       name="arrow-right"
       color="text-emerald-400"
       size={18}
-      className="absolute right-0 hidden transition-all group-hover:block"
+      className="absolute right-0 opacity-0 transition-all group-hover:opacity-100"
     />
     <span className="transition-all ease-out group-hover:-translate-x-6">
       {title}

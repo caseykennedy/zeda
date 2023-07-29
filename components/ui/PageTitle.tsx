@@ -1,17 +1,19 @@
-import Section from 'components/ui/Section'
+import { cn } from 'utils'
 
-type Props = {
-  title: string
-  description?: string
+interface Props {
+  children: React.ReactNode
+  className?: string
 }
 
-const PageTitle = ({ title, description }: Props) => {
+const PageTitle = ({ children, className }: Props) => {
   return (
-    <div className="gutter-b overflow-hidden bg-black pt-header text-white">
-      <div className="gutter-x mx-auto mt-80 max-w-site">
-        <h1 className="max-w-[18ch]">{title}</h1>
-        <p className="text-silver-500">{description}</p>
-      </div>
+    <div
+      className={cn(
+        `gutter-b overflow-hidden bg-black pt-header text-white`,
+        className
+      )}
+    >
+      <div className="gutter-x mx-auto mt-80 max-w-site">{children}</div>
     </div>
   )
 }

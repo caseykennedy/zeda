@@ -13,7 +13,7 @@ import { getSecret } from 'plugins/productionUrl/utils'
 import { useClient } from 'sanity'
 import { suspend } from 'suspend-react'
 
-type Props = {
+interface Props {
   slug?: string
   previewSecretId: `${string}.${string}`
   apiVersion: string

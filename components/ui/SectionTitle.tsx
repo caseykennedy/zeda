@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 import { cn } from 'utils'
 
-type Props = {
+interface Props {
   children: React.ReactNode
 }
 

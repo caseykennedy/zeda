@@ -28,7 +28,7 @@ const NavList = () =>
         <li key={sub.name}>
           <Link
             href={sub.link}
-            className="inline-block py-0.5 text-silver-400 transition-all hover:pl-1 hover:text-white"
+            className="inline-block py-0.5 text-silver-400 transition-all hover:pl-0.5 hover:text-white"
           >
             {sub.name}
           </Link>

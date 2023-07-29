@@ -16,9 +16,9 @@ import {
 } from 'components/ui/Accordion'
 import Section from 'components/ui/Section'
 
-type AccordionFeatureShape = {
+interface AccordionFeatureShape extends FeatureShape {
   type: string
-} & FeatureShape
+}
 
 const data: AccordionFeatureShape[] = [
   {

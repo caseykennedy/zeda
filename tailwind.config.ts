@@ -77,7 +77,7 @@ module.exports = {
         header: '90px',
       },
       transitionDuration: {
-        DEFAULT: '300ms',
+        DEFAULT: '200ms',
       },
     },
   },

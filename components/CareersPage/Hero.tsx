@@ -1,4 +1,4 @@
-import HeroImg from 'public/images/about/work-suit.jpg'
+import HeroImg from 'public/images/hero-careers.jpg'
 
 import Img from 'components/Img'
 import Section from 'components/ui/Section'
@@ -21,7 +21,7 @@ const Hero = () => {
           priority={true}
           style={{
             objectFit: 'cover',
-            objectPosition: 'left top',
+            objectPosition: 'center top',
           }}
         />
       </div>

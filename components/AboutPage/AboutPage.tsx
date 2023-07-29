@@ -25,7 +25,9 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
     <>
       <IndexPageHead settings={settings} />
       <Layout>
-        <PageTitle title="We make things better for everyone" />
+        <PageTitle>
+          <h1 className="max-w-[18ch]">We make things better for everyone</h1>
+        </PageTitle>
         <Hero />
         <AboutZeda />
         <AtGlanceGallery />

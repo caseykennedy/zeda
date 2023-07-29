@@ -1,6 +1,6 @@
 import FastMarquee from 'react-fast-marquee'
 
-type Props = {
+interface Props {
   children: React.ReactNode
   autoFill?: boolean
   direction?: 'left' | 'right'

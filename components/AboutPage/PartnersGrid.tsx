@@ -11,9 +11,9 @@ import Link from 'next/link'
 import IAmGroot from 'public/images/groot.jpg'
 
 import FeatureGridItem, { type FeatureShape } from 'components/FeatureGridItem'
+import Img from 'components/Img'
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
-import Img from 'components/ui/Img'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 
