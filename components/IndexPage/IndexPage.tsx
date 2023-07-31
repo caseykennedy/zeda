@@ -7,7 +7,6 @@ import Layout from 'components/Layout'
 import MoreStories from 'components/MoreStories'
 
 import AtGlance from './AtGlance'
-import Careers from './Careers'
 import Hero from './Hero'
 import IndexPageHead from './IndexPageHead'
 import Mission from './Mission'

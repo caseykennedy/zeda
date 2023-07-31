@@ -1,5 +1,7 @@
 import {
   indexQuery,
+  type JobPost,
+  jobPostQuery,
   type Post,
   type Settings,
   settingsQuery,
@@ -9,6 +11,10 @@ import { useLiveQuery } from 'next-sanity/preview'
 import { IndexPage, type IndexPageProps } from 'components/IndexPage'
 
 export default function PreviewIndexPage(props: IndexPageProps) {
+  const [jobPosts, loadingJobPosts] = useLiveQuery<JobPost[]>(
+    props.jobPosts,
+    jobPostQuery
+  )
   const [posts, loadingPosts] = useLiveQuery<Post[]>(props.posts, indexQuery)
   const [settings, loadingSettings] = useLiveQuery<Settings>(
     props.settings,
@@ -18,7 +24,8 @@ export default function PreviewIndexPage(props: IndexPageProps) {
   return (
     <IndexPage
       preview
-      loading={loadingPosts || loadingSettings}
+      loading={loadingJobPosts || loadingPosts || loadingSettings}
+      jobPosts={jobPosts || []}
       posts={posts || []}
       settings={settings || {}}
     />
