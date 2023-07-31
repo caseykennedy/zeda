@@ -1,12 +1,10 @@
 import * as React from 'react'
-import Link from 'next/link'
 import { cn } from 'utils'
 
-import Button from 'components/ui/Button'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 
-interface Props extends React.ComponentPropsWithoutRef<'section'> {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   heading?: string
   title: string
   subTitle?: string

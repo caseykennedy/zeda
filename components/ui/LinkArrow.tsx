@@ -2,15 +2,16 @@ import Link from 'next/link'
 
 import Icon from 'components/ui/Icon'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
   href: string
   title: string
 }
 
-const ArrowLink = ({ href, title }: Props) => (
+const ArrowLink = ({ href, title, ...props }: Props) => (
   <Link
     href={href}
     className="group relative flex flex-row items-center font-display font-medium capitalize tracking-wider text-white"
+    {...props}
   >
     <Icon
       name="arrow-right"

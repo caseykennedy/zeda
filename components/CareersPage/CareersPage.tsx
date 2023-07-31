@@ -1,7 +1,7 @@
-import { type Settings } from 'lib/sanity.queries'
+import { type JobPost, type Settings } from 'lib/sanity.queries'
 
-import Careers from 'components/IndexPage/Careers'
 import IndexPageHead from 'components/IndexPage/IndexPageHead'
+import JobPosts from 'components/JobPosts'
 import Layout from 'components/Layout'
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
@@ -12,10 +12,11 @@ import Hero from './Hero'
 import WhyUs from './WhyUs'
 
 interface PageProps {
+  jobPosts: JobPost[]
   settings: Settings
 }
 
-export const CareersPage = ({ settings }: PageProps) => {
+export const CareersPage = ({ jobPosts, settings }: PageProps) => {
   return (
     <>
       <IndexPageHead settings={settings} />
@@ -41,7 +42,10 @@ export const CareersPage = ({ settings }: PageProps) => {
         <Hero />
         <WhyUs />
         <Benefits />
-        <Careers />
+        <JobPosts
+          title="Join us on our journey as we drive technological advancements, transform industries, and make a positive impact on the world."
+          posts={jobPosts}
+        />
       </Layout>
     </>
   )

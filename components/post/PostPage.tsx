@@ -6,11 +6,12 @@ import Container from 'components/BlogContainer'
 import BlogHeader from 'components/BlogHeader'
 import Layout from 'components/BlogLayout'
 import MoreStories from 'components/MoreStories'
-import PostBody from 'components/PostBody'
-import PostHeader from 'components/PostHeader'
-import PostPageHead from 'components/PostPageHead'
-import PostTitle from 'components/PostTitle'
 import Separator from 'components/ui/Separator'
+
+import PostBody from './PostBody'
+import PostHeader from './PostHeader'
+import PostPageHead from './PostPageHead'
+import PostTitle from './PostTitle'
 
 export interface PostPageProps {
   preview?: boolean
@@ -36,28 +37,28 @@ export default function PostPage(props: PostPageProps) {
     <>
       <PostPageHead settings={settings} post={post} />
 
-      {/* <Layout preview={preview} loading={loading}> */}
-      <Container>
-        <BlogHeader title={title} level={2} />
-        {preview && !post ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
-            </article>
-            <Separator />
-            {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
-          </>
-        )}
-      </Container>
-      {/* </Layout> */}
+      <Layout preview={preview!} loading={loading}>
+        <Container>
+          <BlogHeader title={title} level={2} />
+          {preview && !post ? (
+            <PostTitle>Loading…</PostTitle>
+          ) : (
+            <>
+              <article>
+                <PostHeader
+                  title={post.title}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                  author={post.author}
+                />
+                <PostBody content={post.content} />
+              </article>
+              <Separator />
+              {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
+            </>
+          )}
+        </Container>
+      </Layout>
     </>
   )
 }

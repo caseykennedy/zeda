@@ -1,6 +1,8 @@
 import { apiVersion, dataset, projectId, useCdn } from 'lib/sanity.api'
 import {
   indexQuery,
+  type JobPost,
+  jobPostQuery,
   type Partner,
   partnerQuery,
   type Person,
@@ -40,6 +42,10 @@ export const getSanityImageConfig = () => getClient()
 
 export async function getSettings(client: SanityClient): Promise<Settings> {
   return (await client.fetch(settingsQuery)) || {}
+}
+
+export async function getAllJobPosts(client: SanityClient): Promise<JobPost[]> {
+  return (await client.fetch(jobPostQuery)) || []
 }
 
 export async function getAllPartners(client: SanityClient): Promise<Partner[]> {

@@ -37,7 +37,6 @@ const Benefits = () => (
     pr="pr-0"
     pb="pb-0"
     pl="pl-0"
-    // fullWidth={true}
     className="bg-black text-white"
   >
     <div className="relative grid grid-cols-1 lg:grid-cols-2">

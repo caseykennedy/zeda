@@ -5,13 +5,9 @@ import {
   RocketIcon,
   RulerSquareIcon,
 } from '@radix-ui/react-icons'
-import Link from 'next/link'
 
 import FeatureGridItem, { type FeatureShape } from 'components/FeatureGridItem'
-import Button from 'components/ui/Button'
-import Section from 'components/ui/Section'
 import SectionPanel from 'components/ui/SectionPanel'
-import SectionTitle from 'components/ui/SectionTitle'
 
 const data: FeatureShape[] = [
   {

@@ -8,7 +8,7 @@ const Hero = () => {
       pr="pr-0"
       pb="pb-12"
       pl="pl-0"
-      fullWidth={true}
+      maxWidth="w-full"
       className="overflow-hidden bg-background-600 text-background-500"
     >
       <Marquee pauseOnHover={false} speed={175}>

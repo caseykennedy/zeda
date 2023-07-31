@@ -10,7 +10,7 @@ const Hero = () => {
       pr="pr-0"
       pb="pb-0"
       pl="pl-0"
-      fullWidth={true}
+      maxWidth="w-full"
       className="overflow-hidden bg-black text-white"
     >
       <div className="relative h-[400px] max-h-[800px] sm:h-[50vw]">

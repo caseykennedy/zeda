@@ -1,17 +1,18 @@
 import { cn } from 'utils'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   className?: string
 }
 
-const PageTitle = ({ children, className }: Props) => {
+const PageTitle = ({ children, className, ...props }: Props) => {
   return (
     <div
       className={cn(
         `gutter-b overflow-hidden bg-black pt-header text-white`,
         className
       )}
+      {...props}
     >
       <div className="gutter-x mx-auto mt-80 max-w-site">{children}</div>
     </div>

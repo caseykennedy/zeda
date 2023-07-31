@@ -9,8 +9,8 @@ import { type Post, type Settings } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
-import PostPage from 'components/PostPage'
-import PreviewPostPage from 'components/PreviewPostPage'
+import { PostPage } from 'components/post'
+import { PreviewPostPage } from 'components/post'
 
 interface PageProps extends SharedPageProps {
   post: Post

@@ -1,7 +1,8 @@
-import type { Post, Settings } from 'lib/sanity.queries'
+import type { JobPost, Post, Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
 import CtaFooter from 'components/CtaFooter'
+import JobPosts from 'components/JobPosts'
 import Layout from 'components/Layout'
 import MoreStories from 'components/MoreStories'
 
@@ -17,6 +18,7 @@ import WhyUs from './WhyUs'
 export interface IndexPageProps {
   preview?: boolean
   loading?: boolean
+  jobPosts: JobPost[]
   posts: Post[]
   settings: Settings
 }
@@ -24,6 +26,7 @@ export interface IndexPageProps {
 export const IndexPage = ({
   preview,
   loading,
+  jobPosts,
   posts,
   settings,
 }: IndexPageProps) => {
@@ -43,7 +46,11 @@ export const IndexPage = ({
 
       <div className="h-72 bg-black" />
 
-      <Careers />
+      <JobPosts
+        title="Zeda is a workplace where people from different aspects of life come together to create an unstoppable team. With strong values, connections, and progressive attitudes, we make sure everyone feels their best."
+        hasBtn={true}
+        posts={jobPosts}
+      />
       <CtaFooter
         heading="Join forces with us. Let’s change the world together"
         message="<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing."

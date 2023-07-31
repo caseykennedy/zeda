@@ -3,7 +3,7 @@ import { cn } from 'utils'
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   className?: string
-  fullWidth?: boolean
+  maxWidth?: string
   pt?: string
   pr?: string
   pb?: string
@@ -13,7 +13,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const Section = ({
   children,
   className,
-  fullWidth = false,
+  maxWidth = 'max-w-site',
   pt = 'gutter-t',
   pr = 'gutter-r',
   pb = 'gutter-b',
@@ -25,14 +25,7 @@ const Section = ({
       className={cn(`relative w-full overflow-hidden`, pt, pb, className)}
       {...props}
     >
-      <div
-        className={cn(
-          `mx-auto h-full w-full`,
-          !fullWidth && `max-w-site`,
-          pl,
-          pr
-        )}
-      >
+      <div className={cn(`mx-auto h-full w-full`, maxWidth, pl, pr)}>
         {children}
       </div>
     </section>

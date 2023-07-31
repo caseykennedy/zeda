@@ -10,27 +10,6 @@ const postFields = groq`
   "author": author->{name, picture},
 `
 
-export const indexQuery = groq`
-*[_type == "post"] | order(date desc, _updatedAt desc) {
-  ${postFields}
-}`
-
-export const partnerQuery = groq`*[_type == "partner"]{
-  ...,
-  logo{
-    ...,
-    "metadata": asset->metadata
-  }
-} | order(name asc)`
-
-export const personQuery = groq`*[_type == "person"]{
-  ...,
-  picture{
-    ...,
-    "metadata": asset->metadata
-  }
-} | order(name asc)`
-
 export const postAndMoreStoriesQuery = groq`
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
@@ -52,6 +31,32 @@ export const postBySlugQuery = groq`
   ${postFields}
 }
 `
+
+export const indexQuery = groq`
+*[_type == "post"] | order(date desc, _updatedAt desc) {
+  ${postFields}
+}`
+
+export const jobPostQuery = groq`
+*[_type == "jobPost"] | order(date desc, _updatedAt desc)
+`
+
+export const partnerQuery = groq`*[_type == "partner"]{
+  ...,
+  logo{
+    ...,
+    "metadata": asset->metadata
+  }
+} | order(name asc)`
+
+export const personQuery = groq`*[_type == "person"]{
+  ...,
+  picture{
+    ...,
+    "metadata": asset->metadata
+  }
+} | order(name asc)`
+
 export const settingsQuery = groq`*[_type == "settings"][0]`
 
 export interface SanityImage {
@@ -71,9 +76,28 @@ export interface SanityImage {
   }
 }
 
+export interface Slug {
+  current: string
+}
+
 export interface Author {
   name?: string
   picture: SanityImage
+}
+
+export interface JobPost {
+  _createdAt: string
+  _id: string
+  _updatedAt: string
+  applicationURL?: string
+  date?: string
+  description?: any
+  excerpt?: string
+  jobType?: string[]
+  location?: string
+  slug: Slug
+  title: string
+  travel?: string
 }
 
 export interface Partner {

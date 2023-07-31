@@ -8,11 +8,11 @@
       },
       {
         "name": "leadership",
-        "link": "/leadership"
+        "link": "/about/#leadership"
       },
       {
         "name": "partners",
-        "link": "/partners"
+        "link": "/about/#partners"
       },
       {
         "name": "careers",
@@ -43,15 +43,15 @@
     "sub": [
       {
         "name": "articles",
-        "link": "/about"
+        "link": "/insights/articles"
       },
       {
         "name": "videos",
-        "link": "/leadership"
+        "link": "/insights/videos"
       },
       {
         "name": "white papers",
-        "link": "/partners"
+        "link": "/insights/white-papers"
       }
     ]
   },
@@ -61,7 +61,7 @@
     "sub": [
       {
         "name": "press releases",
-        "link": "/partners"
+        "link": "/news/#press-releases"
       },
       {
         "name": "news",

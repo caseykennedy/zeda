@@ -11,7 +11,7 @@ const WhyUs = () => {
       pr="pr-0"
       pb="pb-0"
       pl="pl-0"
-      fullWidth={true}
+      maxWidth="w-full"
     >
       <div className="grid h-[600px] grid-cols-1 md:grid-cols-2">
         <div className="relative">

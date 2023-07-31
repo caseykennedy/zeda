@@ -12,7 +12,7 @@ import {
   type PortableTextReactComponents,
 } from '@portabletext/react'
 
-import { SanityImage } from './SanityImage'
+import { SanityImage } from 'components/SanityImage'
 
 import styles from './PostBody.module.css'
 

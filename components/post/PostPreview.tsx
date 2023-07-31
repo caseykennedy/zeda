@@ -3,7 +3,8 @@ import Link from 'next/link'
 
 import Avatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
-import Date from 'components/PostDate'
+
+import PostDate from './PostDate'
 
 export default function PostPreview({
   title,
@@ -29,7 +30,7 @@ export default function PostPreview({
         </Link>
       </h3>
       <div className="mb-4 text-lg">
-        <Date dateString={date} />
+        <PostDate dateString={date} />
       </div>
       {excerpt && <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>}
       {author && <Avatar name={author.name} picture={author.picture} />}

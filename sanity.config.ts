@@ -11,6 +11,7 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import authorType from 'schemas/author'
+import jobPostType from 'schemas/job-post'
 import partnerType from 'schemas/partner'
 import personType from 'schemas/person'
 import postType from 'schemas/post'
@@ -26,7 +27,14 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [authorType, partnerType, personType, postType, settingsType],
+    types: [
+      authorType,
+      jobPostType,
+      partnerType,
+      personType,
+      postType,
+      settingsType,
+    ],
   },
   plugins: [
     deskTool({
