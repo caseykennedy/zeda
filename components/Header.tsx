@@ -62,6 +62,37 @@ const navData = [
   },
 ]
 
+const solutionsNav = [
+  {
+    title: 'technologies',
+    desc: 'tech',
+    icon: <FileTextIcon />,
+  },
+  {
+    title: 'health',
+    desc: 'medical',
+    icon: <FileTextIcon />,
+  },
+]
+
+const insightsNav = [
+  {
+    title: 'articles',
+    desc: 'Industry experience &amp; knowledge',
+    icon: <FileTextIcon />,
+  },
+  {
+    title: 'videos',
+    desc: 'Industry experience &amp; knowledge',
+    icon: <FileTextIcon />,
+  },
+  {
+    title: 'white papers',
+    desc: 'Industry experience &amp; knowledge',
+    icon: <FileTextIcon />,
+  },
+]
+
 const ListItem = forwardRef<
   React.ElementRef<'a'>,
   React.ComponentPropsWithoutRef<'a'>
@@ -146,7 +177,7 @@ const Navigation = () => {
                     href="/news"
                   >
                     <div>
-                      <FileTextIcon className="h-7 w-7 transition-transform group-hover:-translate-y-1.5" />
+                      <FileTextIcon className="h-6 w-6 transition-transform group-hover:-translate-y-1.5" />
                     </div>
                     <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
                       Newsroom
@@ -164,11 +195,27 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 text-white md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {navData.map(({ title, href, description }) => (
-                <ListItem key={title} title={title} href={href}>
-                  {description}
-                </ListItem>
+            <ul className="gap grid w-full max-w-[1024px] text-white lg:grid-cols-2">
+              {solutionsNav.map(({ title, desc, icon }, idx) => (
+                <li key={idx}>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none transition-colors hover:border-silver-800 hover:bg-silver-900/30"
+                      href="/news"
+                    >
+                      <div className="transition-transform group-hover:-translate-y-1.5 [&>svg]:h-6 [&>svg]:w-6">
+                        {icon}
+                      </div>
+                      <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
+                        {title}
+                      </div>
+                      <p
+                        dangerouslySetInnerHTML={{ __html: desc }}
+                        className="text-silver-200"
+                      />
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
               ))}
             </ul>
           </NavigationMenuContent>
@@ -177,11 +224,27 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Insights</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 text-white md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {navData.map(({ title, href, description }) => (
-                <ListItem key={title} title={title} href={href}>
-                  {description}
-                </ListItem>
+            <ul className="gap grid w-full text-white lg:grid-cols-3">
+              {insightsNav.map(({ title, desc, icon }, idx) => (
+                <li key={idx}>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none transition-colors hover:border-silver-800 hover:bg-silver-900/30"
+                      href="/news"
+                    >
+                      <div className="transition-transform group-hover:-translate-y-1.5 [&>svg]:h-6 [&>svg]:w-6">
+                        {icon}
+                      </div>
+                      <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
+                        {title}
+                      </div>
+                      <p
+                        dangerouslySetInnerHTML={{ __html: desc }}
+                        className="text-silver-200"
+                      />
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
               ))}
             </ul>
           </NavigationMenuContent>

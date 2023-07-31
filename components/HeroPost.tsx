@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import AuthorAvatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
-import Date from 'components/PostDate'
+import Date from 'components/post/PostDate'
 
 export default function HeroPost(
   props: Pick<
@@ -25,7 +25,7 @@ export default function HeroPost(
             </Link>
           </h3>
           <div className="mb-4 text-lg md:mb-0">
-            {/* <Date dateString={date} /> */}
+            <Date dateString={date} />
           </div>
         </div>
         <div>

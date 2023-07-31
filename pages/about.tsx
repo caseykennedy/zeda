@@ -21,12 +21,10 @@ interface Query {
   [key: string]: string
 }
 
-export default function Page({ partners, people, settings }: PageProps) {
+const About = ({ partners, people, settings }: PageProps) => {
   // if (draftMode) {
   //   return <PreviewIndexPage posts={posts} settings={settings} />
   // }
-
-  console.log('partners', partners)
 
   return <AboutPage partners={partners} people={people} settings={settings} />
 }
@@ -51,3 +49,5 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
     },
   }
 }
+
+export default About

@@ -31,7 +31,11 @@ const SectionPanel = ({
       </div>
 
       <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
-        {subTitle && <p className="max-w-[40ch] text-lg">{subTitle}</p>}
+        {subTitle && (
+          <div>
+            <p className="max-w-[40ch] text-lg">{subTitle}</p>
+          </div>
+        )}
         {btn && btn}
       </div>
     </div>

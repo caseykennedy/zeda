@@ -9,7 +9,7 @@ export interface IndexPageHeadProps {
   settings: Settings
 }
 
-export default function IndexPageHead({ settings }: IndexPageHeadProps) {
+const IndexPageHead = ({ settings }: IndexPageHeadProps) => {
   const {
     title = demo.title,
     description = demo.description,
@@ -39,3 +39,5 @@ export default function IndexPageHead({ settings }: IndexPageHeadProps) {
     </Head>
   )
 }
+
+export default IndexPageHead

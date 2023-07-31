@@ -15,7 +15,7 @@ interface Query {
   [key: string]: string
 }
 
-export default function Page({ jobPosts, settings }: PageProps) {
+const Careers = ({ jobPosts, settings }: PageProps) => {
   return <CareersPage jobPosts={jobPosts} settings={settings} />
 }
 
@@ -37,3 +37,5 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
     },
   }
 }
+
+export default Careers
