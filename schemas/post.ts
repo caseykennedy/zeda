@@ -50,7 +50,6 @@ export default defineType({
       title: 'Vimeo URL',
       type: 'url',
       description: 'dg: https://vimeo.com/640152736',
-      validation: (rule) => rule.required(),
       hidden: ({ document }) => !document?.video,
     },
     defineField({
