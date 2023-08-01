@@ -1,5 +1,9 @@
 .portableText {
-  @apply text-lg leading-relaxed;
+  @apply text-xl leading-relaxed;
+}
+
+.portableText p {
+  @apply text-lg leading-relaxed font-medium first:mt-0 first:text-2xl first:leading-relaxed;
 }
 
 .portableText p,

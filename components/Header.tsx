@@ -148,9 +148,9 @@ const Navigation = () => {
                       <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
                         Careers
                       </div>
-                      <p className="text-silver-200">
+                      <div className="text-silver-200">
                         Explore open career opportunities.
-                      </p>
+                      </div>
                     </div>
                     <figure className="absolute inset-0 z-0 transition-transform group-hover:scale-105">
                       <Img

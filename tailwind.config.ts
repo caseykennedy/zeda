@@ -72,6 +72,7 @@ module.exports = {
       },
       maxWidth: {
         site: '1680px',
+        reading: '54ch',
       },
       spacing: {
         header: '90px',

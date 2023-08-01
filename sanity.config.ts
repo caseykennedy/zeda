@@ -15,6 +15,7 @@ import jobPostType from 'schemas/job-post'
 import partnerType from 'schemas/partner'
 import personType from 'schemas/person'
 import postType from 'schemas/post'
+import postCategoryType from 'schemas/post-category'
 import settingsType from 'schemas/settings'
 
 const title =
@@ -32,6 +33,7 @@ export default defineConfig({
       jobPostType,
       partnerType,
       personType,
+      postCategoryType,
       postType,
       settingsType,
     ],

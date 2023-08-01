@@ -1,15 +1,11 @@
-import type { PropsWithChildren } from 'react'
-
 import Footer from 'components/Footer'
 import Header from 'components/Header'
 
-const Layout = (props: PropsWithChildren) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="align-center relative flex min-h-screen w-full flex-col justify-between">
       <Header />
-      <main className="nowrap flex w-full flex-auto flex-col">
-        {props.children}
-      </main>
+      <main className="nowrap flex w-full flex-auto flex-col">{children}</main>
       <Footer />
     </div>
   )
