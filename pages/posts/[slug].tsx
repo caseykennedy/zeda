@@ -25,6 +25,8 @@ interface Query {
 export default function ProjectSlugRoute(props: PageProps) {
   const { settings, post, morePosts, draftMode } = props
 
+  console.log('morePosts', morePosts)
+
   if (draftMode) {
     return (
       <PreviewPostPage post={post} morePosts={morePosts} settings={settings} />

@@ -5,7 +5,10 @@ const postFields = groq`
   title,
   date,
   excerpt,
-  coverImage,
+  coverImage{
+    ...,
+    "metadata": asset->metadata
+  },
   "slug": slug.current,
   "author": author->{name, picture},
 `
@@ -41,7 +44,7 @@ export const jobPostQuery = groq`
 *[_type == "jobPost"] | order(date desc, _updatedAt desc)
 `
 
-export const partnerQuery = groq`*[_type == "partner"]{
+export const partnerQuery = groq`*[_type == "partner"] {
   ...,
   logo{
     ...,
@@ -49,7 +52,7 @@ export const partnerQuery = groq`*[_type == "partner"]{
   }
 } | order(name asc)`
 
-export const personQuery = groq`*[_type == "person"]{
+export const personQuery = groq`*[_type == "person"] {
   ...,
   picture{
     ...,

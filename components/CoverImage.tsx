@@ -3,6 +3,8 @@ import { urlForImage } from 'lib/sanity.image'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import Img from 'components/Img'
+
 interface CoverImageProps {
   title?: string
   slug?: string
@@ -21,14 +23,15 @@ export default function CoverImage(props: CoverImageProps) {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
     >
-      <Image
-        className="h-auto w-full"
-        width={2000}
-        height={1000}
+      <Img
+        src={urlForImage(source).width(1920).height(1080).url()}
         alt={`Cover Image for ${title}`}
-        src={urlForImage(source).height(1000).width(2000).url()}
+        blurDataURL={source.metadata.lqip}
+        width={1920}
+        height={1080}
         sizes="100vw"
         priority={priority}
+        className="h-auto w-full"
       />
     </div>
   ) : (
