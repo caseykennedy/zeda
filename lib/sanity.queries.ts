@@ -13,14 +13,22 @@ const postFields = groq`
   "author": author->{name, picture},
 `
 
+const readingTimeFields = groq`
+"numberOfCharacters": length(pt::text(content)),
+"estimatedWordCount": round(length(pt::text(content)) / 5),
+"estimatedReadingTime": round(length(pt::text(content)) / 5 / 180 )
+`
+
 export const postAndMoreStoriesQuery = groq`
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
     content,
+    ${readingTimeFields},
     ${postFields}
   },
   "morePosts": *[_type == "post" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
     content,
+    ${readingTimeFields},
     ${postFields}
   }
 }`
@@ -79,10 +87,6 @@ export interface SanityImage {
   }
 }
 
-export interface Slug {
-  current: string
-}
-
 export interface Author {
   name?: string
   picture: SanityImage
@@ -98,7 +102,7 @@ export interface JobPost {
   excerpt?: string
   jobType?: string[]
   location?: string
-  slug: Slug
+  slug: string
   title: string
   travel?: string
 }
@@ -125,6 +129,9 @@ export interface Post {
   author?: Author
   slug?: string
   content?: any
+  numberOfCharacters?: number
+  estimatedWordCount?: number
+  estimatedReadingTime?: number
 }
 
 export interface Settings {

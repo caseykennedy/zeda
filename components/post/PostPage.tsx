@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import Container from 'components/BlogContainer'
 import BlogHeader from 'components/BlogHeader'
 import MoreStories from 'components/MoreStories'
+import ScrollProgress from 'components/ScrollProgress'
 import Separator from 'components/ui/Separator'
 
 import Layout from './Layout'
@@ -37,6 +38,8 @@ export default function PostPage(props: PostPageProps) {
     <>
       <PostPageHead settings={settings} post={post} />
 
+      <ScrollProgress />
+
       <Layout preview={preview!} loading={loading}>
         {/* <BlogHeader title={title} level={2} /> */}
         {preview && !post ? (
@@ -50,6 +53,7 @@ export default function PostPage(props: PostPageProps) {
                 date={post.date}
                 author={post.author}
                 excerpt={post.excerpt}
+                estimatedReadingTime={post.estimatedReadingTime}
               />
               <PostBody content={post.content} />
             </article>
