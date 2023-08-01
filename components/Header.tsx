@@ -274,12 +274,12 @@ const Header = () => {
 
   return (
     <header
-      className={`overflow-none fixed z-40 h-header w-full items-center transition-all hover:bg-black ${cn(
+      className={`gutter-x overflow-none fixed z-40 h-header w-full items-center transition-all hover:bg-black ${cn(
         scrollDown ? '-translate-y-[100px]' : 'translate-y-0',
         hasScrolled && 'bg-black backdrop-blur-md'
       )}`}
     >
-      <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site md:grid-cols-6">
+      <div className="gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site md:grid-cols-6">
         <div className="col-span-1 md:col-span-2">
           <Link href="/" className="">
             <Logo />

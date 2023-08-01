@@ -39,8 +39,8 @@ const NavList = () =>
 
 const Footer = () => {
   return (
-    <footer className="gutter-y border-t border-silver-900 bg-black">
-      <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
+    <footer className="gutter-x gutter-y border-t border-silver-900 bg-black">
+      <div className="mx-auto flex w-full flex-col md:max-w-site">
         <div className="gap grid grid-cols-1 lg:grid-cols-2">
           <div className="grid grid-cols-2 gap-10 xl:grid-cols-4">
             <NavList />

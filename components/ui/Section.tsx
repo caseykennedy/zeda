@@ -22,12 +22,17 @@ const Section = ({
 }: Props) => {
   return (
     <section
-      className={cn(`relative w-full overflow-hidden`, pt, pb, className)}
+      className={cn(
+        `relative w-full overflow-hidden`,
+        pt,
+        pr,
+        pb,
+        pl,
+        className
+      )}
       {...props}
     >
-      <div className={cn(`mx-auto h-full w-full`, maxWidth, pl, pr)}>
-        {children}
-      </div>
+      <div className={cn(`mx-auto h-full w-full`, maxWidth)}>{children}</div>
     </section>
   )
 }
