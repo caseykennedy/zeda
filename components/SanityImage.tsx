@@ -16,7 +16,7 @@ export const SanityImage = (props: Props) => {
   if (!imageProps) return null
 
   return (
-    <figure>
+    <figure className="my-16">
       <Image
         {...imageProps}
         alt={alt}

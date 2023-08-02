@@ -2,9 +2,15 @@ import { groq } from 'next-sanity'
 
 const postFields = groq`
   _id,
-  title,
+  content,
   date,
   excerpt,
+  notes,
+  tags,
+  title,
+  video,
+  vimeoURL,
+  "categories": postCategory[]->name,
   coverImage{
     ...,
     "metadata": asset->metadata
@@ -70,8 +76,15 @@ export const personQuery = groq`*[_type == "person"] {
 
 export const settingsQuery = groq`*[_type == "settings"][0]`
 
+interface ReadingTime {
+  numberOfCharacters?: number
+  estimatedWordCount?: number
+  estimatedReadingTime?: number
+}
+
 export interface SanityImage {
-  alt: string
+  alt?: string
+  caption?: string
   asset: {
     _ref: string
     _type: string
@@ -93,9 +106,7 @@ export interface Author {
 }
 
 export interface JobPost {
-  _createdAt: string
   _id: string
-  _updatedAt: string
   applicationURL?: string
   date?: string
   description?: any
@@ -120,18 +131,20 @@ export interface Person {
   picture: SanityImage
 }
 
-export interface Post {
+export interface Post extends ReadingTime {
   _id: string
-  title?: string
-  coverImage?: any
+  author?: Author
+  categories: string[]
+  content?: any
+  coverImage?: SanityImage
   date?: string
   excerpt?: string
-  author?: Author
+  notes?: string
   slug?: string
-  content?: any
-  numberOfCharacters?: number
-  estimatedWordCount?: number
-  estimatedReadingTime?: number
+  tags: string[]
+  title?: string
+  video?: boolean
+  vimeoURL?: string
 }
 
 export interface Settings {

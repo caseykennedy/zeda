@@ -3,14 +3,14 @@
 }
 
 .portableText p {
-  @apply text-lg leading-relaxed font-medium first:mt-0 first:text-2xl first:leading-relaxed;
+  @apply text-lg leading-loose font-medium first:mt-0 last:mb-0;
 }
 
 .portableText p,
 .portableText ul,
 .portableText ol,
 .portableText blockquote {
-  @apply my-6;
+  @apply my-8;
 }
 
 .portableText h2 {

@@ -24,7 +24,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   },
 }
 
-export default function PostBody({ content }: any) {
+const PostBody = ({ content }: any) => {
   return (
     <div className={`gutter-x gutter-y w-full ${styles.portableText}`}>
       <div className="mx-auto max-w-2xl">
@@ -33,3 +33,5 @@ export default function PostBody({ content }: any) {
     </div>
   )
 }
+
+export default PostBody

@@ -45,13 +45,13 @@ export default defineType({
       title: 'Video post',
       type: 'boolean',
     }),
-    {
+    defineField({
       name: 'vimeoURL',
       title: 'Vimeo URL',
       type: 'url',
       description: 'dg: https://vimeo.com/640152736',
       hidden: ({ document }) => !document?.video,
-    },
+    }),
     defineField({
       name: 'content',
       title: 'Content',
@@ -103,6 +103,7 @@ export default defineType({
           type: 'string',
           title: 'Alternative text',
           description: 'Important for SEO and accessiblity.',
+          validation: (rule) => rule.required(),
         },
       ],
       options: {

@@ -2,17 +2,15 @@ import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
 
-import Container from 'components/BlogContainer'
-import BlogHeader from 'components/BlogHeader'
-import MoreStories from 'components/MoreStories'
+import Layout from 'components/Layout'
 import ScrollProgress from 'components/ScrollProgress'
 import Separator from 'components/ui/Separator'
 
-import Layout from './Layout'
 import PostBody from './PostBody'
 import PostHeader from './PostHeader'
+import PostMeta from './PostMeta'
 import PostPageHead from './PostPageHead'
-import PostTitle from './PostTitle'
+import RelatedPosts from './RelatedPosts'
 
 export interface PostPageProps {
   preview?: boolean
@@ -24,10 +22,13 @@ export interface PostPageProps {
 
 const NO_POSTS: Post[] = []
 
-export default function PostPage(props: PostPageProps) {
-  const { preview, loading, morePosts = NO_POSTS, post, settings } = props
-  const { title = demo.title } = settings || {}
-
+export default function PostPage({
+  preview,
+  loading,
+  morePosts = NO_POSTS,
+  post,
+  settings,
+}: PostPageProps) {
   const slug = post?.slug
 
   if (!slug && !preview) {
@@ -40,10 +41,9 @@ export default function PostPage(props: PostPageProps) {
 
       <ScrollProgress />
 
-      <Layout preview={preview!} loading={loading}>
-        {/* <BlogHeader title={title} level={2} /> */}
+      <Layout preview={preview!} loading={loading} theme="light">
         {preview && !post ? (
-          <PostTitle>Loading…</PostTitle>
+          <div>Loading…</div>
         ) : (
           <>
             <article>
@@ -54,11 +54,18 @@ export default function PostPage(props: PostPageProps) {
                 author={post.author}
                 excerpt={post.excerpt}
                 estimatedReadingTime={post.estimatedReadingTime}
+                tags={post.tags}
+                categories={post.categories}
               />
               <PostBody content={post.content} />
+              <PostMeta
+                notes={post.notes || ''}
+                slug={slug}
+                tags={post.tags || []}
+              />
             </article>
-            <Separator />
-            {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
+            <Separator className="bg-silver-100" />
+            {morePosts?.length > 0 && <RelatedPosts posts={morePosts} />}
           </>
         )}
       </Layout>

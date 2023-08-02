@@ -39,8 +39,8 @@ const NavList = () =>
 
 const Footer = () => {
   return (
-    <footer className="gutter-x gutter-y border-t border-silver-900 bg-black">
-      <div className="mx-auto flex w-full flex-col md:max-w-site">
+    <footer className="gutter-y border-t border-silver-900 bg-black">
+      <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
         <div className="gap grid grid-cols-1 lg:grid-cols-2">
           <div className="grid grid-cols-2 gap-10 xl:grid-cols-4">
             <NavList />
@@ -91,7 +91,7 @@ const Footer = () => {
               <Icon name="chevron-up" color="text-white" />
             </Button>
           </div>
-          <div className="flex flex-1 justify-end">
+          <div className="flex flex-1 justify-end text-white">
             {/* <Link
               href="/contact"
               className="font-display font-medium capitalize tracking-wider text-white"

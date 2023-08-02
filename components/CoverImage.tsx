@@ -31,7 +31,7 @@ export default function CoverImage(props: CoverImageProps) {
         height={1080}
         sizes="100vw"
         priority={priority}
-        className="h-auto w-full"
+        className="aspect-video h-auto w-full"
       />
     </div>
   ) : (

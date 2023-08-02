@@ -10,7 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
 const ArrowLink = ({ href, title, ...props }: Props) => (
   <Link
     href={href}
-    className="group relative flex flex-row items-center font-display font-medium capitalize tracking-wider text-white"
+    className="group relative flex flex-row items-center font-display font-semibold capitalize tracking-wide"
     {...props}
   >
     <Icon

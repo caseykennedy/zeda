@@ -9,7 +9,7 @@ const PageTitle = ({ children, className, ...props }: Props) => {
   return (
     <div
       className={cn(
-        `gutter-b gutter-x overflow-hidden bg-black pt-header text-white`,
+        `gutter-b gutter-x overflow-hidden pt-header dark:bg-black dark:text-white`,
         className
       )}
       {...props}

@@ -20,7 +20,7 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
   return (
     <>
       <IndexPageHead settings={settings} />
-      <Layout>
+      <Layout theme="light">
         <PageTitle>
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
             <div className="flex-[2]">
@@ -29,7 +29,7 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
               </h1>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
-              <Button variant="accent">
+              <Button variant="primary">
                 <Icon
                   name="arrow-right"
                   className="relative -translate-x-1 transition-all group-hover:translate-x-1"
