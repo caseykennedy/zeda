@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
-import Section from 'components/ui/Section'
 import SectionPanel from 'components/ui/SectionPanel'
 import SectionTitle from 'components/ui/SectionTitle'
 
@@ -38,7 +37,6 @@ const Careers = ({
       {posts.map(
         ({
           _id,
-          _updatedAt,
           applicationURL,
           date,
           description,

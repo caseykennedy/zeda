@@ -6,7 +6,6 @@ import BlogHeader from 'components/BlogHeader'
 import Layout from 'components/BlogLayout'
 import HeroPost from 'components/HeroPost'
 import { IndexPageHead } from 'components/IndexPage'
-import MoreStories from 'components/MoreStories'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -36,7 +35,7 @@ export default function IndexPage(props: IndexPageProps) {
             excerpt={heroPost.excerpt}
           />
         )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
       </Container>
     </>
   )

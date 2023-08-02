@@ -4,7 +4,6 @@ import ctaImgSrc from 'public/images/bg-rocket.png'
 import CtaFooter from 'components/CtaFooter'
 import JobPosts from 'components/JobPosts'
 import Layout from 'components/Layout'
-import MoreStories from 'components/MoreStories'
 
 import AtGlance from './AtGlance'
 import Hero from './Hero'
