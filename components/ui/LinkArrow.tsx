@@ -1,16 +1,21 @@
 import Link from 'next/link'
+import { cn } from 'utils'
 
 import Icon from 'components/ui/Icon'
 
 interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
+  children: React.ReactNode
   href: string
-  title: string
+  className?: string
 }
 
-const ArrowLink = ({ href, title, ...props }: Props) => (
+const ArrowLink = ({ children, href, className, ...props }: Props) => (
   <Link
     href={href}
-    className="group relative flex flex-row items-center font-display font-semibold capitalize tracking-wide"
+    className={cn(
+      `group relative flex flex-row items-center font-display font-semibold capitalize tracking-wide`,
+      className
+    )}
     {...props}
   >
     <Icon
@@ -20,7 +25,7 @@ const ArrowLink = ({ href, title, ...props }: Props) => (
       className="absolute right-0 opacity-0 transition-all group-hover:opacity-100"
     />
     <span className="transition-all ease-out group-hover:-translate-x-6">
-      {title}
+      {children}
     </span>
   </Link>
 )

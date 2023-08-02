@@ -98,7 +98,7 @@ const Footer = () => {
             >
               Contact
             </Link> */}
-            <LinkArrow href="/contact" title="Contact" />
+            <LinkArrow href="/contact">Contact</LinkArrow>
           </div>
         </div>
       </div>

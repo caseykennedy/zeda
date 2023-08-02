@@ -3,7 +3,7 @@
 }
 
 .portableText p {
-  @apply text-lg leading-loose font-medium first:mt-0 last:mb-0;
+  @apply text-lg leading-relaxed md:leading-loose font-medium first:mt-0 last:mb-0;
 }
 
 .portableText p,
