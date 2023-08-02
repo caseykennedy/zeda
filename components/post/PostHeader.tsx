@@ -41,7 +41,7 @@ const PostHeader = ({
             </span>
           </div>
 
-          <h1 className="mb-24 max-w-[33ch] text-5xl font-semibold leading-tight tracking-normal md:text-6xl md:leading-tight md:tracking-normal">
+          <h1 className="mb-16 max-w-[33ch] text-4xl font-semibold leading-tight tracking-normal md:mb-24 md:text-6xl md:leading-tight md:tracking-normal">
             {title}
           </h1>
 
