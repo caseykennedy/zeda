@@ -4,24 +4,10 @@ import Link from 'next/link'
 import { PostCardFeatured } from 'components/post'
 import Button from 'components/ui/Button'
 
-const RelatedPosts = ({ posts }: { posts: Post[] }) => {
+const FeaturedPosts = ({ posts }: { posts: Post[] }) => {
   console.log('posts:', posts)
   return (
-    <section className="relative w-full bg-white">
-      <div className="border-b border-silver-100">
-        <div className="gutter-x mx-auto flex max-w-site items-center justify-between py-6">
-          <div>
-            <h2 className="font-sans text-base font-medium uppercase leading-3">
-              Related
-            </h2>
-          </div>
-          <div>
-            <Button variant="primary" asChild>
-              <Link href="/news">All news</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
+    <section className="relative w-full border-b border-t border-silver-100 bg-white">
       <div className="gutter-x gutter-y gap mx-auto grid w-full max-w-site grid-cols-1">
         {posts.map((post) => (
           <div
@@ -46,4 +32,4 @@ const RelatedPosts = ({ posts }: { posts: Post[] }) => {
   )
 }
 
-export default RelatedPosts
+export default FeaturedPosts

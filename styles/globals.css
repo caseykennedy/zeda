@@ -44,7 +44,7 @@
   }
 
   .gap {
-    @apply gap-4 sm:gap-6 md:gap-8;
+    @apply gap-6 sm:gap-6 md:gap-8 lg:gap-10;
   }
 
   .translate-x-gutter {

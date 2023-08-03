@@ -22,62 +22,71 @@ const PostCard = ({
   title,
 }: Omit<Post, '_id'>) => {
   return (
-    <div className="gap gutter-t grid w-full border-t border-silver-200 first:border-none first:pt-0 md:grid-cols-3">
-      <div>
-        <CoverImage
-          slug={slug}
-          title={title}
-          image={coverImage}
-          priority={false}
-        />
-      </div>
-      <div className="flex flex-col justify-between">
-        <div>
-          <h3 className="mb-3 text-3xl leading-snug">
-            <Link href={`/posts/${slug}`} className="hover:underline">
+    <div className="group relative flex flex-col shadow">
+      <CoverImage
+        slug={slug}
+        title={title}
+        image={coverImage}
+        priority={false}
+        className="overflow-hidden rounded-tl rounded-tr"
+      />
+      <Link
+        href={`/posts/${slug}`}
+        className="line-clamp-0 gap flex h-full flex-col justify-between rounded-bl rounded-br border-silver-100 bg-white p-6 pt-4 transition-all"
+        aria-label={`Read "${title}"`}
+      >
+        <div className="flex flex-col-reverse justify-between">
+          <div>
+            <div className="mb-3 flex flex-wrap gap-1.5">
+              {categories.map((tag, idx) => (
+                <Pill variant="primary" key={idx}>
+                  {tag}
+                </Pill>
+              ))}
+              {/* {tags.slice(0, 1).map((tag, idx) => (
+                <Pill variant="outline" key={idx}>
+                  {tag}
+                </Pill>
+              ))} */}
+            </div>
+
+            <h3
+              className="gutter-r text-2xl decoration-2 group-hover:underline"
+              title={title}
+            >
               {title}
-            </Link>
-          </h3>
-          <div className="flex flex-wrap gap-1.5">
-            {categories.map((tag, idx) => (
-              <Pill variant="primary" key={idx}>
-                {tag}
-              </Pill>
-            ))}
-            {tags.map((tag, idx) => (
-              <Pill variant="outline" key={idx}>
-                {tag}
-              </Pill>
-            ))}
+            </h3>
           </div>
         </div>
-        <div className="gutter-t text-sm font-medium uppercase tracking-wide">
-          <PostDate dateString={date} />{' '}
-          <span className="text-silver-500">
-            {estimatedReadingTime && `| ${estimatedReadingTime} min read`}
-          </span>
+
+        <div className="mt-8">
+          {/* <p className="mb-6 line-clamp-2 leading-relaxed">{excerpt}</p> */}
+          <div className="text-sm font-medium uppercase tracking-wide">
+            <PostDate dateString={date} />{' '}
+            <span className="text-silver-500">
+              {estimatedReadingTime && `| ${estimatedReadingTime} min read`}
+            </span>
+          </div>
+          {/* <div>
+            <Link
+              href={`/posts/${slug}`}
+              className={cn(
+                `group relative inline-flex flex-row items-center text-sm font-medium uppercase tracking-wide`
+              )}
+            >
+              <Icon
+                name="arrow-right"
+                color="text-emerald-400"
+                size={18}
+                className="absolute left-0 opacity-0 transition-all group-hover:opacity-100"
+              />
+              <span className="transition-all ease-out group-hover:translate-x-6">
+                Read more
+              </span>
+            </Link>
+          </div> */}
         </div>
-      </div>
-      <div className="flex flex-col justify-between">
-        <p className="mb-4 line-clamp-3 text-lg leading-relaxed">{excerpt}</p>
-        <Link
-          href={`/posts/${slug}`}
-          className={cn(
-            `group relative flex flex-row items-center text-sm font-medium uppercase tracking-wide`
-          )}
-        >
-          <Icon
-            name="arrow-right"
-            color="text-emerald-400"
-            size={18}
-            className="absolute left-0 opacity-0 transition-all group-hover:opacity-100"
-          />
-          <span className="transition-all ease-out group-hover:translate-x-6">
-            Read more
-          </span>
-        </Link>
-      </div>
-      {/* {author && <Avatar name={author.name} picture={author.picture} />} */}
+      </Link>
     </div>
   )
 }

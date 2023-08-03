@@ -61,7 +61,7 @@ const Careers = ({
               </div>
 
               <div className="col-span-6 col-start-7 flex items-center justify-end gap-2 md:col-span-3 md:col-start-10">
-                <Button variant="secondary" asChild>
+                <Button variant="outline" asChild>
                   <Link
                     href={applicationURL ?? '#'}
                     target="__blank"
@@ -74,7 +74,7 @@ const Careers = ({
                     Apply
                   </Link>
                 </Button>
-                <Button variant="secondary" size="icon">
+                <Button variant="outline" size="icon">
                   <Icon name="chevron-up" />
                 </Button>
               </div>

@@ -85,7 +85,7 @@ const Mission = () => {
                     <>
                       <TabsTrigger
                         value={value}
-                        className="w-full border-b border-silver-200 py-6"
+                        className="w-full border-b border-silver-100 py-6"
                         onClick={() => handleTabClick(id)}
                         key={idx}
                         data-state={activeTab === id ? 'active' : 'inactive'}

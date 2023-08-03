@@ -9,12 +9,12 @@ const PageTitle = ({ children, className, ...props }: Props) => {
   return (
     <div
       className={cn(
-        `gutter-b gutter-x overflow-hidden pt-header dark:bg-black dark:text-white`,
+        `gutter-b overflow-hidden bg-white pt-header dark:bg-black dark:text-white`,
         className
       )}
       {...props}
     >
-      <div className="mx-auto mt-80 max-w-site">{children}</div>
+      <div className="gutter-x mx-auto mt-80 max-w-site">{children}</div>
     </div>
   )
 }

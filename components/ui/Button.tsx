@@ -13,7 +13,7 @@ export const buttonVariants = cva(
         primary:
           'border-silver-600 bg-black text-white hover:bg-black/80 hover:bg-violet-600 hover:border-black',
         secondary:
-          'border border-black bg-white hover:bg-violet-600 hover:text-white',
+          'border border-transparent bg-silver-500 hover:bg-violet-600 text-white',
         accent: 'bg-violet-500 text-black hover:bg-violet-600 border-black',
         outline:
           'border border-black bg-white hover:bg-violet-600 hover:text-white',
@@ -22,7 +22,7 @@ export const buttonVariants = cva(
         link: 'border-none text-black decoration-2 underline-offset-4 hover:underline',
       },
       size: {
-        default: 'h-10 px-5 py-2',
+        default: 'h-10 px-6 py-2',
         sm: 'h-9 px-5',
         lg: 'h-11 px-8',
         icon: 'h-10 w-10',

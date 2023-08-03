@@ -1,7 +1,6 @@
-import clsx from 'clsx'
 import { urlForImage } from 'lib/sanity.image'
-import Image from 'next/image'
 import Link from 'next/link'
+import { cn } from 'utils'
 
 import Img from 'components/Img'
 
@@ -10,18 +9,20 @@ interface CoverImageProps {
   slug?: string
   image: any
   priority?: boolean
+  className?: string
 }
 
 export default function CoverImage(props: CoverImageProps) {
-  const { title, slug, image: source, priority } = props
+  const { title, slug, image: source, priority, className } = props
   const image = source?.asset?._ref ? (
     <div
-      // className={cn('shadow-small', {
-      //   'transition-shadow duration-200 hover:shadow-medium': slug,
-      // })}
-      className={clsx('shadow-small', {
-        'hover:shadow-medium transition-shadow duration-200': slug,
-      })}
+      className={cn(
+        'shadow-small',
+        {
+          'hover:shadow-medium transition-shadow duration-200': slug,
+        },
+        className
+      )}
     >
       <Img
         src={urlForImage(source).width(1920).height(1080).url()}
@@ -31,7 +32,7 @@ export default function CoverImage(props: CoverImageProps) {
         height={1080}
         sizes="100vw"
         priority={priority}
-        className="aspect-video h-auto w-full"
+        className="aspect-video h-auto w-full transition-all duration-500 ease-out group-hover:scale-105"
       />
     </div>
   ) : (
@@ -39,7 +40,7 @@ export default function CoverImage(props: CoverImageProps) {
   )
 
   return (
-    <div className="sm:mx-0">
+    <figure className="sm:mx-0">
       {slug ? (
         <Link href={`/posts/${slug}`} aria-label={title}>
           {image}
@@ -47,6 +48,6 @@ export default function CoverImage(props: CoverImageProps) {
       ) : (
         image
       )}
-    </div>
+    </figure>
   )
 }

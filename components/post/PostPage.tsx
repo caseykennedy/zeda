@@ -22,13 +22,13 @@ export interface PostPageProps {
 
 const NO_POSTS: Post[] = []
 
-export default function PostPage({
+const PostPage = ({
   preview,
   loading,
   morePosts = NO_POSTS,
   post,
   settings,
-}: PostPageProps) {
+}: PostPageProps) => {
   const slug = post?.slug
 
   if (!slug && !preview) {
@@ -72,3 +72,5 @@ export default function PostPage({
     </>
   )
 }
+
+export default PostPage

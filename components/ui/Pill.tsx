@@ -7,14 +7,13 @@ export const pillVariants = cva(
   {
     variants: {
       variant: {
-        default: 'text-white hover:text-black bg-silver-500',
+        default: 'text-white bg-silver-500',
         primary: 'bg-violet-500 text-white ',
-        secondary:
-          'border-silver-600 bg-black text-white hover:bg-black/80 hover:bg-violet-600 hover:border-black',
+        secondary: 'border-silver-600 bg-black text-white',
         outline: 'border border-silver-500 bg-white text-silver-600',
       },
       size: {
-        default: 'h-7 px-5',
+        default: 'h-6 px-4',
       },
     },
     defaultVariants: {

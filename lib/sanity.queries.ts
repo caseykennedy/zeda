@@ -2,7 +2,6 @@ import { groq } from 'next-sanity'
 
 const postFields = groq`
   _id,
-  content,
   date,
   excerpt,
   notes,
@@ -37,7 +36,8 @@ export const postAndMoreStoriesQuery = groq`
     ${readingTimeFields},
     ${postFields}
   }
-}`
+}
+`
 
 export const postSlugsQuery = groq`
 *[_type == "post" && defined(slug.current)][].slug.current
@@ -51,8 +51,10 @@ export const postBySlugQuery = groq`
 
 export const indexQuery = groq`
 *[_type == "post"] | order(date desc, _updatedAt desc) {
+  ${readingTimeFields},
   ${postFields}
-}`
+}
+`
 
 export const jobPostQuery = groq`
 *[_type == "jobPost"] | order(date desc, _updatedAt desc)
@@ -64,7 +66,8 @@ export const partnerQuery = groq`*[_type == "partner"] {
     ...,
     "metadata": asset->metadata
   }
-} | order(name asc)`
+} | order(name asc)
+`
 
 export const personQuery = groq`*[_type == "person"] {
   ...,
@@ -72,7 +75,8 @@ export const personQuery = groq`*[_type == "person"] {
     ...,
     "metadata": asset->metadata
   }
-} | order(name asc)`
+} | order(name asc)
+`
 
 export const settingsQuery = groq`*[_type == "settings"][0]`
 

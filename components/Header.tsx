@@ -173,7 +173,7 @@ const Navigation = () => {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none transition-colors hover:border-silver-800 hover:bg-silver-900/30"
+                    className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 no-underline outline-none transition-colors hover:border-silver-800 hover:bg-silver-900/30"
                     href="/news"
                   >
                     <div>
@@ -251,9 +251,9 @@ const Navigation = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="/news" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Newsroom
+              News
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -274,7 +274,7 @@ const Header = () => {
 
   return (
     <header
-      className={`overflow-none fixed z-40 h-header w-full items-center border-b border-silver-500/20 text-black transition-all dark:border-silver-300/20 dark:text-white dark:hover:bg-black ${cn(
+      className={`overflow-none fixed z-40 h-header w-full items-center border-b border-silver-500/20  text-black transition-all dark:border-silver-300/20 dark:text-white dark:hover:bg-black ${cn(
         scrollDown ? '-translate-y-[100px]' : 'translate-y-0',
         hasScrolled && 'bg-white backdrop-blur-md dark:bg-black'
       )}`}
@@ -297,7 +297,9 @@ const Header = () => {
           >
             Contact
           </Link> */}
-          <LinkArrow href="/contact">Contact</LinkArrow>
+          <LinkArrow href="/contact" className="text-lg">
+            Contact
+          </LinkArrow>
         </div>
       </div>
     </header>
