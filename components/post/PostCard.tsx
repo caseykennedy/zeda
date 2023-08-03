@@ -22,7 +22,7 @@ const PostCard = ({
   title,
 }: Omit<Post, '_id'>) => {
   return (
-    <div className="group relative flex flex-col shadow">
+    <div className="group relative flex flex-col">
       <CoverImage
         slug={slug}
         title={title}
@@ -32,7 +32,7 @@ const PostCard = ({
       />
       <Link
         href={`/posts/${slug}`}
-        className="line-clamp-0 gap flex h-full flex-col justify-between rounded-bl rounded-br border-silver-100 bg-white p-6 pt-4 transition-all"
+        className="line-clamp-0 gap flex h-full flex-col justify-between border-l border-silver-100 p-6 pt-4 transition-all group-hover:border-silver-500"
         aria-label={`Read "${title}"`}
       >
         <div className="flex flex-col-reverse justify-between">
