@@ -11,8 +11,8 @@ const PostGrid = ({ posts }: { posts: Post[] }) => {
     <Section>
       <div className="gutter-b flex gap-1.5">
         <Button variant="primary">All</Button>
-        <Button variant="accent">News</Button>
-        <Button variant="accent">Press release</Button>
+        <Button variant="secondary">News</Button>
+        <Button variant="secondary">Press release</Button>
       </div>
       <div className="gap grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         {posts.map((post) => (

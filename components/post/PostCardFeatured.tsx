@@ -4,6 +4,7 @@ import { cn } from 'utils'
 
 import Avatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
+import LogoSymbol from 'components/LogoSymbol'
 import Icon from 'components/ui/Icon'
 import LinkArrow from 'components/ui/LinkArrow'
 import Pill from 'components/ui/Pill'
@@ -40,9 +41,9 @@ const PostCard = ({
         ) : (
           <div
             aria-label={title}
-            className="flex aspect-video w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black font-display text-2xl font-semibold text-white"
+            className="flex aspect-video w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black"
           >
-            Zeda, Inc.
+            <LogoSymbol width={44} />
           </div>
         )}
       </div>

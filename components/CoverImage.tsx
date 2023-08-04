@@ -36,7 +36,7 @@ export default function CoverImage(props: CoverImageProps) {
       />
     </div>
   ) : (
-    <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
+    <div style={{ paddingTop: '50%', backgroundColor: '#fff' }} />
   )
 
   return (

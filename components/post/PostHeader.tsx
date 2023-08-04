@@ -2,6 +2,7 @@ import type { Post } from 'lib/sanity.queries'
 
 import Avatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
+import LogoSymbol from 'components/LogoSymbol'
 import ScrollProgress from 'components/ScrollProgress'
 import Pill from 'components/ui/Pill'
 
@@ -79,9 +80,10 @@ const PostHeader = ({
         ) : (
           <div
             aria-label={title}
-            className="flex w-full items-center justify-center bg-violet-500 py-44 font-display text-2xl font-semibold text-white md:py-64"
+            className="flex w-full items-center justify-center bg-black py-44 font-display text-3xl font-semibold text-silver-800 md:py-64"
           >
-            Zeda, Inc.
+            <LogoSymbol width={64} />
+            {/* Press Release */}
           </div>
         )}
       </section>
