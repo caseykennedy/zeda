@@ -11,24 +11,10 @@ const PostGrid = ({ posts }: { posts: Post[] }) => {
     <Section>
       <div className="gutter-b flex gap-1.5">
         <Button variant="primary">All</Button>
-        <Button variant="secondary">News</Button>
-        <Button variant="secondary">Press release</Button>
+        <Button variant="accent">News</Button>
+        <Button variant="accent">Press release</Button>
       </div>
       <div className="gap grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        {posts.map((post) => (
-          <PostCard
-            key={post._id}
-            author={post.author}
-            coverImage={post.coverImage}
-            date={post.date}
-            estimatedReadingTime={post.estimatedReadingTime}
-            excerpt={post.excerpt}
-            slug={post.slug}
-            title={post.title}
-            categories={post.categories}
-            tags={post.tags}
-          />
-        ))}
         {posts.map((post) => (
           <PostCard
             key={post._id}

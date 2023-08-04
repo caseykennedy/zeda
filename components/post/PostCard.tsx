@@ -23,26 +23,39 @@ const PostCard = ({
 }: Omit<Post, '_id'>) => {
   return (
     <div className="group relative flex flex-col">
-      <CoverImage
-        slug={slug}
-        title={title}
-        image={coverImage}
-        priority={false}
-        className="overflow-hidden rounded-tl rounded-tr"
-      />
+      {coverImage ? (
+        <CoverImage
+          slug={slug}
+          title={title}
+          image={coverImage}
+          priority={false}
+          className="overflow-hidden rounded-br rounded-tl rounded-tr"
+        />
+      ) : (
+        <Link
+          href={`/posts/${slug}`}
+          aria-label={title}
+          className="flex aspect-video w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black font-display text-2xl font-semibold text-white"
+        >
+          Zeda, Inc.
+        </Link>
+      )}
       <Link
         href={`/posts/${slug}`}
-        className="line-clamp-0 gap flex h-full flex-col justify-between border-l border-silver-100 p-6 pt-4 transition-all group-hover:border-silver-500"
+        className="line-clamp-0 gap flex h-full flex-col justify-between border-l border-silver-100 p-4 pt-4 transition-all group-hover:border-silver-700 md:p-6"
         aria-label={`Read "${title}"`}
       >
         <div className="flex flex-col-reverse justify-between">
           <div>
             <div className="mb-3 flex flex-wrap gap-1.5">
-              {categories.map((tag, idx) => (
-                <Pill variant="primary" key={idx}>
-                  {tag}
-                </Pill>
-              ))}
+              {categories.map((tag, idx) => {
+                const isPR = categories.includes('Press Release')
+                return (
+                  <Pill variant={isPR ? 'default' : 'primary'} key={idx}>
+                    {tag}
+                  </Pill>
+                )
+              })}
               {/* {tags.slice(0, 1).map((tag, idx) => (
                 <Pill variant="outline" key={idx}>
                   {tag}
@@ -51,7 +64,7 @@ const PostCard = ({
             </div>
 
             <h3
-              className="gutter-r text-2xl decoration-2 group-hover:underline"
+              className="text-2xl decoration-2 group-hover:underline"
               title={title}
             >
               {title}

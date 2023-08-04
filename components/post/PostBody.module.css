@@ -13,6 +13,10 @@
   @apply my-8;
 }
 
+.portableText blockquote {
+  @apply my-14 border-l-4 border-violet-500 pl-6 font-semibold font-display text-2xl tracking-wide;
+}
+
 .portableText h2 {
   @apply mb-4 mt-12 text-3xl leading-snug;
 }
@@ -22,8 +26,8 @@
 }
 
 .portableText a {
-  @apply text-blue-500 underline;
+  @apply text-violet-800 underline;
 }
 .portableText a:hover {
-  @apply text-blue-800;
+  @apply text-violet-500;
 }

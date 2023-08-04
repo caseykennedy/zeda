@@ -29,33 +29,46 @@ const PostCard = ({
       title={title}
     >
       <div className="w-full">
-        <CoverImage
-          slug={slug}
-          title={title}
-          image={coverImage}
-          priority={false}
-          className="overflow-hidden rounded"
-        />
+        {coverImage ? (
+          <CoverImage
+            // slug={slug}
+            title={title}
+            image={coverImage}
+            priority={false}
+            className="overflow-hidden rounded-br rounded-tl rounded-tr"
+          />
+        ) : (
+          <div
+            aria-label={title}
+            className="flex aspect-video w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black font-display text-2xl font-semibold text-white"
+          >
+            Zeda, Inc.
+          </div>
+        )}
       </div>
 
       <div className="gap grid lg:col-span-2 lg:grid-cols-2">
         <div className="col-span-2 flex flex-col-reverse justify-between sm:flex-col lg:col-span-1">
           <div>
-            <h3 className="mb-4 text-2xl leading-snug decoration-2 group-hover:underline lg:text-3xl">
+            <h3 className="mb-4 leading-snug decoration-2 group-hover:underline md:text-2xl lg:text-3xl">
               {title}
             </h3>
           </div>
           <div className="mb-4 flex flex-wrap gap-1.5 md:mb-0">
-            {categories.map((tag, idx) => (
-              <Pill variant="primary" key={idx}>
-                {tag}
-              </Pill>
-            ))}
-            {tags.slice(0, 1).map((tag, idx) => (
-              <Pill variant="outline" key={idx}>
-                {tag}
-              </Pill>
-            ))}
+            {categories.map((tag, idx) => {
+              const isPR = categories.includes('Press Release')
+              return (
+                <Pill variant={isPR ? 'default' : 'primary'} key={idx}>
+                  {tag}
+                </Pill>
+              )
+            })}
+            {tags &&
+              tags.slice(0, 1).map((tag, idx) => (
+                <Pill variant="outline" key={idx}>
+                  {tag}
+                </Pill>
+              ))}
           </div>
         </div>
         <div className="hidden flex-col justify-between lg:flex">

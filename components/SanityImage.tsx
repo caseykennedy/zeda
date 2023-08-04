@@ -16,11 +16,12 @@ export const SanityImage = (props: Props) => {
   if (!imageProps) return null
 
   return (
-    <figure className="my-16">
+    <figure className="my-14 flex flex-col items-center justify-center">
       <Image
         {...imageProps}
         alt={alt}
         sizes="(max-width: 800px) 100vw, 800px"
+        className="overflow-hidden rounded"
       />
       {caption && (
         <figcaption className="mt-2 text-center text-sm italic text-gray-500 dark:text-gray-400">

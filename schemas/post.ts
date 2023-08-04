@@ -53,6 +53,12 @@ export default defineType({
       hidden: ({ document }) => !document?.video,
     }),
     defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
@@ -82,10 +88,10 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'text',
-      validation: (rule) => rule.required(),
+      name: 'articleURL',
+      title: 'Article URL',
+      type: 'url',
+      description: 'Optional link to full article on external site.',
     }),
     defineField({
       name: 'coverImage',
@@ -109,20 +115,12 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'date',
       title: 'Date',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: [{ type: authorType.name }],
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -138,7 +136,6 @@ export default defineType({
       type: 'array',
       of: [{ type: 'string' }],
       description: 'Tags the topics in the post.',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'notes',

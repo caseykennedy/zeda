@@ -30,6 +30,7 @@ const PostPage = ({
   settings,
 }: PostPageProps) => {
   const slug = post?.slug
+  const isPR = post.categories.includes('Press Release')
 
   if (!slug && !preview) {
     notFound()
@@ -58,6 +59,26 @@ const PostPage = ({
                 categories={post.categories}
               />
               <PostBody content={post.content} />
+
+              {isPR && (
+                <section className="gutter-x gutter-y w-full">
+                  <div className="mx-auto max-w-2xl">
+                    <h4>About Zeda, Inc.</h4>
+                    <p>
+                      Zeda is a leading technology solutions company. Our
+                      objective is to better lives by investing in cutting-edge
+                      technologies, innovative companies, and groundbreaking
+                      ideas. Our foundation combines expertise from diverse
+                      industries, including AM, nanotech, precision
+                      manufacturing, and incubating new ideas. Servicing highly
+                      regulated industries such as medical, space, defense, and
+                      aerospace, Zeda&apos;s mission is to build it all better
+                      together.
+                    </p>
+                  </div>
+                </section>
+              )}
+
               <PostMeta
                 notes={post.notes || ''}
                 slug={slug}
