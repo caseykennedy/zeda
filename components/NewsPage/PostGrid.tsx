@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import type { Post, PostCategory } from 'lib/sanity.queries'
+import { polyVariant } from 'utils/variants'
 
 import { PostCard } from 'components/post'
 import Button from 'components/ui/Button'
@@ -51,20 +53,30 @@ const PostGrid = ({
           </Button>
         ))}
       </div>
-      <div className="gap grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        {filteredPosts.map((post) => (
-          <PostCard
-            key={post._id}
-            coverImage={post.coverImage}
-            date={post.date}
-            estimatedReadingTime={post.estimatedReadingTime}
-            slug={post.slug}
-            title={post.title}
-            categories={post.categories}
-            tags={post.tags}
-          />
-        ))}
-      </div>
+      <AnimatePresence>
+        <div className="gap grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+          {filteredPosts.map((post) => (
+            <motion.div
+              key={post._id}
+              variants={polyVariant}
+              layout
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            >
+              <PostCard
+                coverImage={post.coverImage}
+                date={post.date}
+                estimatedReadingTime={post.estimatedReadingTime}
+                slug={post.slug}
+                title={post.title}
+                categories={post.categories}
+                tags={post.tags}
+              />
+            </motion.div>
+          ))}
+        </div>
+      </AnimatePresence>
     </Section>
   )
 }
