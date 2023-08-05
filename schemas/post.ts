@@ -41,16 +41,11 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'video',
-      title: 'Video post',
-      type: 'boolean',
-    }),
-    defineField({
-      name: 'vimeoURL',
-      title: 'Vimeo URL',
-      type: 'url',
-      description: 'dg: https://vimeo.com/640152736',
-      hidden: ({ document }) => !document?.video,
+      name: 'date',
+      title: 'Date',
+      type: 'datetime',
+      initialValue: () => new Date().toISOString(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'excerpt',
@@ -88,10 +83,28 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'hasExternalURL',
+      title: 'Has external URL?',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'articleURL',
       title: 'Article URL',
       type: 'url',
       description: 'Optional link to full article on external site.',
+      hidden: ({ document }) => !document?.hasExternalURL,
+    }),
+    defineField({
+      name: 'hasVideo',
+      title: 'Video?',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'videoURL',
+      title: 'Video URL',
+      type: 'url',
+      description: 'eg: https://vimeo.com/640152736',
+      hidden: ({ document }) => !document?.hasVideo,
     }),
     defineField({
       name: 'coverImage',
@@ -115,13 +128,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
-    }),
-    defineField({
-      name: 'date',
-      title: 'Date',
-      type: 'datetime',
-      initialValue: () => new Date().toISOString(),
-      validation: (rule) => rule.required(),
+      hidden: ({ document }) => !!document?.hasVideo,
     }),
     defineField({
       name: 'postCategory',
@@ -135,7 +142,7 @@ export default defineType({
       title: 'Tags',
       type: 'array',
       of: [{ type: 'string' }],
-      description: 'Tags the topics in the post.',
+      description: 'Tag the topics in the post.',
     }),
     defineField({
       name: 'notes',

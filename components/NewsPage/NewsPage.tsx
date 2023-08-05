@@ -1,4 +1,4 @@
-import type { Post, Settings } from 'lib/sanity.queries'
+import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
 
 import IndexPageHead from 'components/IndexPage/IndexPageHead'
 import Layout from 'components/Layout'
@@ -9,10 +9,12 @@ import PostGrid from './PostGrid'
 
 interface PageProps {
   posts: Post[]
+  postCategories: PostCategory[]
   settings: Settings
 }
 
-const NewsPage = ({ posts, settings }: PageProps) => {
+const NewsPage = ({ posts, postCategories, settings }: PageProps) => {
+  console.log('postCategories:', postCategories)
   return (
     <>
       <IndexPageHead settings={settings} />
@@ -24,7 +26,7 @@ const NewsPage = ({ posts, settings }: PageProps) => {
           </p>
         </PageTitle>
         <FeaturedPosts posts={posts.slice(0, 2) || []} />
-        <PostGrid posts={posts} />
+        <PostGrid posts={posts} postCategories={postCategories} />
       </Layout>
     </>
   )

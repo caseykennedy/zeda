@@ -15,7 +15,6 @@ const FeaturedPosts = ({ posts }: { posts: Post[] }) => {
             className="gutter-t border-t border-silver-100 first:border-none first:pt-0"
           >
             <PostCardFeatured
-              author={post.author}
               coverImage={post.coverImage}
               date={post.date}
               estimatedReadingTime={post.estimatedReadingTime}

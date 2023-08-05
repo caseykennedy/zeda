@@ -10,6 +10,8 @@ import {
   type Post,
   postAndMoreStoriesQuery,
   postBySlugQuery,
+  type PostCategory,
+  postCategoryQuery,
   postSlugsQuery,
   type Settings,
   settingsQuery,
@@ -58,6 +60,11 @@ export async function getAllPeople(client: SanityClient): Promise<Person[]> {
 
 export async function getAllPosts(client: SanityClient): Promise<Post[]> {
   return (await client.fetch(indexQuery)) || []
+}
+export async function getAllPostCategories(
+  client: SanityClient
+): Promise<PostCategory[]> {
+  return (await client.fetch(postCategoryQuery)) || []
 }
 
 export async function getAllPostsSlugs(): Promise<Pick<Post, 'slug'>[]> {

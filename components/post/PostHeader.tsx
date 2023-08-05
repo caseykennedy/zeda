@@ -6,14 +6,13 @@ import LogoSymbol from 'components/LogoSymbol'
 import ScrollProgress from 'components/ScrollProgress'
 import Pill from 'components/ui/Pill'
 
+import CategoryTag from './CategoryTag'
 import PostDate from './PostDate'
 
 const PostHeader = ({
   title,
   coverImage,
   date,
-  author,
-  slug,
   excerpt,
   estimatedReadingTime,
   tags,
@@ -23,8 +22,6 @@ const PostHeader = ({
   | 'title'
   | 'coverImage'
   | 'date'
-  | 'author'
-  | 'slug'
   | 'excerpt'
   | 'estimatedReadingTime'
   | 'tags'
@@ -49,13 +46,9 @@ const PostHeader = ({
           <div className="gap grid grid-cols-4">
             <div className="col-span-4 flex items-end lg:col-span-1">
               <div className="flex flex-wrap items-end gap-1.5">
-                {categories.map((tag, idx) => (
-                  <Pill variant="primary" key={idx}>
-                    {tag}
-                  </Pill>
-                ))}
+                <CategoryTag categories={categories} />
                 {tags &&
-                  tags.slice(0, 1).map((tag, idx) => (
+                  tags.slice(0, 2).map((tag, idx) => (
                     <Pill variant="outline" key={idx}>
                       {tag}
                     </Pill>

@@ -1,27 +1,31 @@
 import type { Post } from 'lib/sanity.queries'
 import Link from 'next/link'
-import { cn } from 'utils'
 
-import Avatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
-import Icon from 'components/ui/Icon'
-import LinkArrow from 'components/ui/LinkArrow'
 import Pill from 'components/ui/Pill'
 
+import CategoryTag from './CategoryTag'
 import PostDate from './PostDate'
 
 const PostCard = ({
-  author,
+  title,
   coverImage,
   date,
   estimatedReadingTime,
-  excerpt,
+  tags,
   categories,
   slug,
-  tags,
-  title,
-}: Omit<Post, '_id'>) => {
+}: Pick<
+  Post,
+  | 'title'
+  | 'coverImage'
+  | 'date'
+  | 'estimatedReadingTime'
+  | 'tags'
+  | 'categories'
+  | 'slug'
+>) => {
   return (
     <div className="group relative flex flex-col">
       {coverImage ? (
@@ -49,19 +53,13 @@ const PostCard = ({
         <div className="flex flex-col-reverse justify-between">
           <div>
             <div className="mb-3 flex flex-wrap gap-1.5">
-              {categories.map((tag, idx) => {
-                const isPR = categories.includes('Press Release')
-                return (
-                  <Pill variant={isPR ? 'default' : 'primary'} key={idx}>
+              <CategoryTag categories={categories} />
+              {tags &&
+                tags.slice(0, 1).map((tag, idx) => (
+                  <Pill variant="outline" key={idx}>
                     {tag}
                   </Pill>
-                )
-              })}
-              {/* {tags.slice(0, 1).map((tag, idx) => (
-                <Pill variant="outline" key={idx}>
-                  {tag}
-                </Pill>
-              ))} */}
+                ))}
             </div>
 
             <h3

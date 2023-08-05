@@ -49,6 +49,18 @@ export const postBySlugQuery = groq`
 }
 `
 
+export const postCategoryQuery = groq`
+*[_type == "postCategory"] | order(date desc, _updatedAt asc) {
+  _id,
+  name,
+  description,
+  coverImage{
+    ...,
+    "metadata": asset->metadata
+  },
+}
+`
+
 export const indexQuery = groq`
 *[_type == "post"] | order(date desc, _updatedAt desc) {
   ${readingTimeFields},
@@ -149,6 +161,13 @@ export interface Post extends ReadingTime {
   title?: string
   video?: boolean
   vimeoURL?: string
+}
+
+export interface PostCategory {
+  _id: string
+  name: string
+  description: string
+  coverImage: SanityImage
 }
 
 export interface Settings {
