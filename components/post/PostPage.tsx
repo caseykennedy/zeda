@@ -52,7 +52,6 @@ const PostPage = ({
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
-                author={post.author}
                 excerpt={post.excerpt}
                 estimatedReadingTime={post.estimatedReadingTime}
                 tags={post.tags}
