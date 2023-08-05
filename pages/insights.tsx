@@ -9,10 +9,9 @@ import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
-import { NewsPage } from 'components/NewsPage'
+import { InsightsPage } from 'components/InsightsPage'
 
-export const CATEGORY_NEWS = 'News'
-export const CATEGORY_PRESS = 'Press Release'
+export const CATEGORY_INSIGHTS = 'Insights'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]
@@ -25,18 +24,14 @@ interface Query {
 }
 
 const Page = ({ posts, postCategories, settings }: PageProps) => {
-  const filteredPosts = posts.filter(
-    (post) =>
-      post.categories.includes(CATEGORY_NEWS) ||
-      post.categories.includes(CATEGORY_PRESS)
+  const filteredPosts = posts.filter((post) =>
+    post.categories.includes(CATEGORY_INSIGHTS)
   )
-  const filteredPostCategories = postCategories.filter(
-    (category) =>
-      category.name.includes(CATEGORY_NEWS) ||
-      category.name.includes(CATEGORY_PRESS)
+  const filteredPostCategories = postCategories.filter((category) =>
+    category.name.includes(CATEGORY_INSIGHTS)
   )
   return (
-    <NewsPage
+    <InsightsPage
       posts={filteredPosts}
       postCategories={filteredPostCategories}
       settings={settings}

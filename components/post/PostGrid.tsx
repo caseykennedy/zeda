@@ -35,7 +35,7 @@ const PostGrid = ({
   )
 
   return (
-    <Section>
+    <Section className="border-t border-silver-100">
       <div className="gutter-b flex gap-1.5">
         <Button
           variant={activeBtn === CATEGORY_ALL ? 'primary' : 'secondary'}

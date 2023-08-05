@@ -9,11 +9,12 @@ interface CoverImageProps {
   slug?: string
   image: any
   priority?: boolean
+  aspectRatio?: string
   className?: string
 }
 
 export default function CoverImage(props: CoverImageProps) {
-  const { title, slug, image: source, priority, className } = props
+  const { title, slug, image: source, priority, aspectRatio, className } = props
   const image = source?.asset?._ref ? (
     <div
       className={cn(
@@ -30,9 +31,9 @@ export default function CoverImage(props: CoverImageProps) {
         blurDataURL={source.metadata.lqip}
         width={1920}
         height={1080}
-        sizes="100vw"
+        // sizes="100vw"
         priority={priority}
-        className="aspect-video h-auto w-full transition-all duration-500 ease-out group-hover:scale-105"
+        className="h-auto w-full transition-all duration-500 ease-out group-hover:scale-105"
       />
     </div>
   ) : (

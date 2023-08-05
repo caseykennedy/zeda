@@ -22,12 +22,10 @@ interface Query {
   [key: string]: string
 }
 
-const Index = ({ jobPosts, posts, settings, draftMode }: PageProps) => {
+const Page = ({ jobPosts, posts, settings, draftMode }: PageProps) => {
   // if (draftMode) {
   //   return <PreviewIndexPage posts={posts} settings={settings} />
   // }
-  console.log('posts: ', posts)
-
   return <IndexPage jobPosts={jobPosts} posts={posts} settings={settings} />
 }
 
@@ -52,4 +50,4 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   }
 }
 
-export default Index
+export default Page

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
 import { type Person } from 'lib/sanity.queries'
 import Link from 'next/link'
+import { polyVariant, staggerItems, viewport } from 'utils/variants'
 
 import Img from 'components/Img'
 import Button from 'components/ui/Button'
@@ -50,9 +51,15 @@ const Team = ({ people }: { people: Person[] }) => {
       </div>
 
       <div className="mt-32 md:mt-48">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        <motion.div
+          variants={staggerItems}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+        >
           {people.map(({ picture, name, position, bio, linkedinURL }, idx) => (
-            <div key={idx}>
+            <motion.div variants={polyVariant} key={idx}>
               <motion.figure
                 initial={['hidden', 'down']}
                 whileHover={['visible', 'up']}
@@ -107,9 +114,9 @@ const Team = ({ people }: { people: Person[] }) => {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </Section>
   )

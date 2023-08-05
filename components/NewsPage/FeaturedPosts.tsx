@@ -7,7 +7,7 @@ import Button from 'components/ui/Button'
 const FeaturedPosts = ({ posts }: { posts: Post[] }) => {
   console.log('posts:', posts)
   return (
-    <section className="relative w-full border-b border-t border-silver-100 bg-white">
+    <section className="relative w-full border-t border-silver-100 bg-white">
       <div className="gutter-x gutter-y gap mx-auto grid w-full max-w-site grid-cols-1">
         {posts.map((post) => (
           <div

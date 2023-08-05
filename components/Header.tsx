@@ -230,7 +230,7 @@ const Navigation = () => {
                   <NavigationMenuLink asChild>
                     <Link
                       className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none transition-colors hover:border-silver-800 hover:bg-silver-900/30"
-                      href="/news"
+                      href="/insights"
                     >
                       <div className="transition-transform group-hover:-translate-y-1.5 [&>svg]:h-6 [&>svg]:w-6">
                         {icon}

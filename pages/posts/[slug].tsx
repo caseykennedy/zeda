@@ -22,7 +22,7 @@ interface Query {
   [key: string]: string
 }
 
-export default function ProjectSlugRoute(props: PageProps) {
+export default function PostSlugRoute(props: PageProps) {
   const { settings, post, morePosts, draftMode } = props
 
   if (draftMode) {

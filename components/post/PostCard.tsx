@@ -27,7 +27,7 @@ const PostCard = ({
   | 'slug'
 >) => {
   return (
-    <div className="group relative flex flex-col">
+    <div className="group relative flex h-full flex-col">
       {coverImage ? (
         <CoverImage
           slug={slug}
@@ -71,7 +71,7 @@ const PostCard = ({
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-3">
           {/* <p className="mb-6 line-clamp-2 leading-relaxed">{excerpt}</p> */}
           <div className="text-sm font-medium uppercase tracking-wide">
             <PostDate dateString={date} />{' '}
