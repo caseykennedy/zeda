@@ -1,5 +1,6 @@
 import { apiVersion, dataset, projectId, useCdn } from 'lib/sanity.api'
 import {
+  allPostsAndFeaturedQuery,
   indexQuery,
   type JobPost,
   jobPostQuery,
@@ -85,4 +86,11 @@ export async function getPostAndMoreStories(
   slug: string | undefined
 ): Promise<{ post: Post; morePosts: Post[] }> {
   return await client.fetch(postAndMoreStoriesQuery, { slug })
+}
+
+export async function getAllPostsAndFeatured(
+  client: SanityClient,
+  category: string
+): Promise<{ posts: Post[]; featuredPosts: Post[] }> {
+  return await client.fetch(allPostsAndFeaturedQuery, { category })
 }

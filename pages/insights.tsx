@@ -2,6 +2,7 @@ import { readToken } from 'lib/sanity.api'
 import {
   getAllPostCategories,
   getAllPosts,
+  getAllPostsAndFeatured,
   getClient,
   getSettings,
 } from 'lib/sanity.client'
@@ -15,6 +16,7 @@ export const CATEGORY_INSIGHTS = 'Insights'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]
+  featuredPosts: Post[]
   postCategories: PostCategory[]
   settings: Settings
 }
@@ -23,7 +25,12 @@ interface Query {
   [key: string]: string
 }
 
-const Page = ({ posts, postCategories, settings }: PageProps) => {
+const Page = ({
+  posts,
+  featuredPosts,
+  postCategories,
+  settings,
+}: PageProps) => {
   const filteredPosts = posts.filter((post) =>
     post.categories.includes(CATEGORY_INSIGHTS)
   )
@@ -33,6 +40,7 @@ const Page = ({ posts, postCategories, settings }: PageProps) => {
   return (
     <InsightsPage
       posts={filteredPosts}
+      featuredPosts={featuredPosts}
       postCategories={filteredPostCategories}
       settings={settings}
     />
@@ -43,15 +51,17 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx
   const client = getClient(draftMode ? { token: readToken } : undefined)
 
-  const [posts, postCategories, settings] = await Promise.all([
-    getAllPosts(client),
-    getAllPostCategories(client),
-    getSettings(client),
-  ])
+  const [{ posts, featuredPosts }, postCategories, settings] =
+    await Promise.all([
+      getAllPostsAndFeatured(client, 'Insights'),
+      getAllPostCategories(client),
+      getSettings(client),
+    ])
 
   return {
     props: {
       posts,
+      featuredPosts,
       postCategories,
       settings,
       draftMode,

@@ -16,15 +16,7 @@ interface CoverImageProps {
 export default function CoverImage(props: CoverImageProps) {
   const { title, slug, image: source, priority, aspectRatio, className } = props
   const image = source?.asset?._ref ? (
-    <div
-      className={cn(
-        'shadow-small',
-        {
-          'hover:shadow-medium transition-shadow duration-200': slug,
-        },
-        className
-      )}
-    >
+    <div className={cn(className)}>
       <Img
         src={urlForImage(source).width(1920).height(1080).url()}
         alt={`Cover Image for ${title}`}
@@ -41,7 +33,7 @@ export default function CoverImage(props: CoverImageProps) {
   )
 
   return (
-    <figure className="sm:mx-0">
+    <figure>
       {slug ? (
         <Link href={`/posts/${slug}`} aria-label={title}>
           {image}

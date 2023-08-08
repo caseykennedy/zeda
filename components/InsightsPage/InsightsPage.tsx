@@ -9,12 +9,18 @@ import FeaturedInsights from './FeaturedInsights'
 
 interface PageProps {
   posts: Post[]
+  featuredPosts: Post[]
   postCategories: PostCategory[]
   settings: Settings
 }
 
-const InsightsPage = ({ posts, postCategories, settings }: PageProps) => {
-  console.log('postCategories:', postCategories)
+const InsightsPage = ({
+  posts,
+  featuredPosts,
+  postCategories,
+  settings,
+}: PageProps) => {
+  console.log('featuredPosts:', featuredPosts)
   return (
     <>
       <IndexPageHead settings={settings} />
@@ -25,7 +31,7 @@ const InsightsPage = ({ posts, postCategories, settings }: PageProps) => {
             Data-rich industry insights from our experts and engineers.
           </p>
         </PageTitle>
-        <FeaturedInsights posts={posts.slice(0, 2) || []} />
+        <FeaturedInsights posts={featuredPosts || []} />
         <PostGrid posts={posts || []} postCategories={postCategories || []} />
       </Layout>
     </>

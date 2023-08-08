@@ -40,13 +40,13 @@ const PostCardSplit = ({
           <CoverImage
             title={title}
             image={coverImage}
-            priority={false}
+            priority={true}
             className="overflow-hidden"
           />
         ) : (
           <div
             aria-label={title}
-            className="flex aspect-video w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black"
+            className="flex w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black"
           >
             <LogoSymbol width={44} />
           </div>

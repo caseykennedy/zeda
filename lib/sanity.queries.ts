@@ -24,6 +24,19 @@ const readingTimeFields = groq`
 "estimatedReadingTime": round(length(pt::text(content)) / 5 / 180 )
 `
 
+export const allPostsAndFeaturedQuery = groq`
+{
+  "posts": *[_type == "post"] | order(_updatedAt desc) [0...999] {
+    ${readingTimeFields},
+    ${postFields}
+  },
+  "featuredPosts": *[_type == "post" && $category in postCategory[]->name] | order(date desc, _updatedAt desc) [0...2] {
+    ${readingTimeFields},
+    ${postFields}
+  }
+}
+`
+
 export const postAndMoreStoriesQuery = groq`
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
@@ -32,10 +45,16 @@ export const postAndMoreStoriesQuery = groq`
     ${postFields}
   },
   "morePosts": *[_type == "post" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
-    content,
     ${readingTimeFields},
     ${postFields}
   }
+}
+`
+
+export const indexQuery = groq`
+*[_type == "post"] | order(date desc, _updatedAt desc) {
+  ${readingTimeFields},
+  ${postFields}
 }
 `
 
@@ -58,13 +77,6 @@ export const postCategoryQuery = groq`
     ...,
     "metadata": asset->metadata
   },
-}
-`
-
-export const indexQuery = groq`
-*[_type == "post"] | order(date desc, _updatedAt desc) {
-  ${readingTimeFields},
-  ${postFields}
 }
 `
 
