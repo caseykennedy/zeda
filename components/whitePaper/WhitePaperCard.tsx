@@ -1,22 +1,18 @@
 import type { Post } from 'lib/sanity.queries'
 import Link from 'next/link'
-import { cn } from 'utils'
 
-import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
+import { CategoryTag, PostDate } from 'components/post'
 import Pill from 'components/ui/Pill'
 
-import CategoryTag from './CategoryTag'
-import PostDate from './PostDate'
+const slugPath = 'white-papers'
 
-const PostCard = ({
+const WhitePaperCard = ({
   title,
   excerpt,
-  coverImage,
   date,
   estimatedReadingTime,
   tags,
-  categories,
   slug,
 }: Pick<
   Post,
@@ -26,39 +22,26 @@ const PostCard = ({
   | 'date'
   | 'estimatedReadingTime'
   | 'tags'
-  | 'categories'
   | 'slug'
 >) => {
   return (
     <div className="group relative flex h-full flex-col">
-      {coverImage ? (
-        <CoverImage
-          slug={slug}
-          title={title}
-          image={coverImage}
-          priority={false}
-          className="overflow-hidden rounded-br rounded-tl rounded-tr"
-        />
-      ) : (
-        <Link
-          href={`/posts/${slug}`}
-          aria-label={title}
-          className={cn(
-            `flex aspect-video w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black`
-          )}
-        >
-          <LogoSymbol width={44} />
-        </Link>
-      )}
       <Link
-        href={`/posts/${slug}`}
-        className="line-clamp-0 gap flex h-full flex-col justify-between border-l border-silver-100 p-4 transition-all group-hover:border-silver-700 md:p-6"
+        href={`/${slugPath}/${slug}`}
+        aria-label={title}
+        className="flex aspect-video w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black"
+      >
+        <LogoSymbol width={44} />
+      </Link>
+      <Link
+        href={`/${slugPath}/${slug}`}
+        className="line-clamp-0 gap flex h-full flex-col justify-between border-l border-silver-100 p-4 pt-4 transition-all group-hover:border-silver-700 md:p-6"
         aria-label={`Read "${title}"`}
       >
         <div className="flex flex-col-reverse justify-between">
           <div>
             <div className="mb-4 flex flex-wrap gap-1.5">
-              {categories && <CategoryTag categories={categories} />}
+              <CategoryTag categories={['White paper']} />
               {tags &&
                 tags.slice(0, 1).map((tag, idx) => (
                   <Pill variant="outline" key={idx}>
@@ -77,9 +60,9 @@ const PostCard = ({
         </div>
 
         <div className="mt-3">
-          {excerpt && (
+          {/* {excerpt && (
             <p className="mb-6 line-clamp-2 leading-relaxed">{excerpt}</p>
-          )}
+          )} */}
           <div className="text-sm font-medium uppercase tracking-wide">
             <PostDate dateString={date} />{' '}
             <span className="text-silver-500">
@@ -110,4 +93,4 @@ const PostCard = ({
   )
 }
 
-export default PostCard
+export default WhitePaperCard

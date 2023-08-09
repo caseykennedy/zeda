@@ -1,4 +1,3 @@
-import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
 
@@ -30,7 +29,7 @@ const PostPage = ({
   settings,
 }: PostPageProps) => {
   const slug = post?.slug
-  const isPR = post.categories.includes('Press Release')
+  const isPR = post.categories?.includes('Press Release')
 
   if (!slug && !preview) {
     notFound()

@@ -1,12 +1,11 @@
 import { readToken } from 'lib/sanity.api'
 import {
-  getAllPostCategories,
-  getAllPosts,
-  getAllPostsAndFeatured,
+  getAllPostsByCategoryAndFeatured,
+  getAllWhitePapers,
   getClient,
   getSettings,
 } from 'lib/sanity.client'
-import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
+import type { Post, Settings, WhitePaper } from 'lib/sanity.queries'
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
@@ -17,32 +16,21 @@ export const CATEGORY_INSIGHTS = 'Insights'
 interface PageProps extends SharedPageProps {
   posts: Post[]
   featuredPosts: Post[]
-  postCategories: PostCategory[]
   settings: Settings
+  whitePapers: WhitePaper[]
 }
 
 interface Query {
   [key: string]: string
 }
 
-const Page = ({
-  posts,
-  featuredPosts,
-  postCategories,
-  settings,
-}: PageProps) => {
-  const filteredPosts = posts.filter((post) =>
-    post.categories.includes(CATEGORY_INSIGHTS)
-  )
-  const filteredPostCategories = postCategories.filter((category) =>
-    category.name.includes(CATEGORY_INSIGHTS)
-  )
+const Page = ({ posts, featuredPosts, settings, whitePapers }: PageProps) => {
   return (
     <InsightsPage
-      posts={filteredPosts}
+      posts={posts}
       featuredPosts={featuredPosts}
-      postCategories={filteredPostCategories}
       settings={settings}
+      whitePapers={whitePapers}
     />
   )
 }
@@ -51,19 +39,19 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx
   const client = getClient(draftMode ? { token: readToken } : undefined)
 
-  const [{ posts, featuredPosts }, postCategories, settings] =
+  const [{ posts = [], featuredPosts = [] }, settings, whitePapers = []] =
     await Promise.all([
-      getAllPostsAndFeatured(client, 'Insights'),
-      getAllPostCategories(client),
+      getAllPostsByCategoryAndFeatured(client, CATEGORY_INSIGHTS),
       getSettings(client),
+      getAllWhitePapers(client),
     ])
 
   return {
     props: {
       posts,
       featuredPosts,
-      postCategories,
       settings,
+      whitePapers,
       draftMode,
       token: readToken,
     },

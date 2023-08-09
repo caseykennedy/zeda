@@ -8,6 +8,53 @@ import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/Tabs'
 
+const data = [
+  {
+    id: 0,
+    value: 'additive',
+    title: 'Additive manufacturing',
+    details:
+      'Including processes such as rapid prototyping, rapid tooling and mass customization',
+    figure: {
+      src: 'wormhole.png',
+      alt: 'Zeda Inc. manufacturing facility',
+    },
+  },
+  {
+    id: 1,
+    value: 'precision',
+    title: 'Precision manufacturing',
+    details:
+      'Including processes such as rapid prototyping, rapid tooling and mass customization',
+    figure: {
+      src: 'wormhole.png',
+      alt: 'Zeda Inc. manufacturing facility',
+    },
+  },
+  {
+    id: 2,
+    value: 'nanotech',
+    title: 'Nanotech',
+    details:
+      'Including processes such as rapid prototyping, rapid tooling and mass customization',
+    figure: {
+      src: 'wormhole.png',
+      alt: 'Zeda Inc. manufacturing facility',
+    },
+  },
+  {
+    id: 3,
+    value: 'semiconductor',
+    title: 'Semiconductor technologies',
+    details:
+      'Including processes such as rapid prototyping, rapid tooling and mass customization',
+    figure: {
+      src: 'wormhole.png',
+      alt: 'Zeda Inc. manufacturing facility',
+    },
+  },
+]
+
 const INTERVAL_TIME = 7000
 
 const Mission = () => {
@@ -152,50 +199,3 @@ const Mission = () => {
 }
 
 export default Mission
-
-const data = [
-  {
-    id: 0,
-    value: 'additive',
-    title: 'Additive manufacturing',
-    details:
-      'Including processes such as rapid prototyping, rapid tooling and mass customization',
-    figure: {
-      src: 'wormhole.png',
-      alt: 'Zeda Inc. manufacturing facility',
-    },
-  },
-  {
-    id: 1,
-    value: 'precision',
-    title: 'Precision manufacturing',
-    details:
-      'Including processes such as rapid prototyping, rapid tooling and mass customization',
-    figure: {
-      src: 'wormhole.png',
-      alt: 'Zeda Inc. manufacturing facility',
-    },
-  },
-  {
-    id: 2,
-    value: 'nanotech',
-    title: 'Nanotech',
-    details:
-      'Including processes such as rapid prototyping, rapid tooling and mass customization',
-    figure: {
-      src: 'wormhole.png',
-      alt: 'Zeda Inc. manufacturing facility',
-    },
-  },
-  {
-    id: 3,
-    value: 'semiconductor',
-    title: 'Semiconductor technologies',
-    details:
-      'Including processes such as rapid prototyping, rapid tooling and mass customization',
-    figure: {
-      src: 'wormhole.png',
-      alt: 'Zeda Inc. manufacturing facility',
-    },
-  },
-]

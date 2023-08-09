@@ -1,6 +1,9 @@
 import { apiVersion, dataset, projectId, useCdn } from 'lib/sanity.api'
 import {
   allPostsAndFeaturedQuery,
+  allPostsByCategoryAndFeaturedQuery,
+  allPostsByCategoryQuery,
+  allWhitePapersQuery,
   indexQuery,
   type JobPost,
   jobPostQuery,
@@ -16,6 +19,9 @@ import {
   postSlugsQuery,
   type Settings,
   settingsQuery,
+  type WhitePaper,
+  whitePaperBySlugQuery,
+  whitePaperSlugsQuery,
 } from 'lib/sanity.queries'
 import { createClient, type SanityClient } from 'next-sanity'
 
@@ -93,4 +99,39 @@ export async function getAllPostsAndFeatured(
   category: string
 ): Promise<{ posts: Post[]; featuredPosts: Post[] }> {
   return await client.fetch(allPostsAndFeaturedQuery, { category })
+}
+
+export async function getAllPostsByCategory(
+  client: SanityClient,
+  category: string
+): Promise<{ posts: Post[]; featuredPosts: Post[] }> {
+  return await client.fetch(allPostsByCategoryQuery, { category })
+}
+
+export async function getAllPostsByCategoryAndFeatured(
+  client: SanityClient,
+  category: string
+): Promise<{ posts: Post[]; featuredPosts: Post[] }> {
+  return await client.fetch(allPostsByCategoryAndFeaturedQuery, { category })
+}
+
+export async function getAllWhitePapers(
+  client: SanityClient
+): Promise<WhitePaper[]> {
+  return (await client.fetch(allWhitePapersQuery)) || []
+}
+
+export async function getAllWhitePapersSlugs(): Promise<
+  Pick<WhitePaper, 'slug'>[]
+> {
+  const client = getClient()
+  const slugs = (await client.fetch<string[]>(whitePaperSlugsQuery)) || []
+  return slugs.map((slug) => ({ slug }))
+}
+
+export async function getWhitePaperBySlug(
+  client: SanityClient,
+  slug: string | undefined
+): Promise<WhitePaper> {
+  return (await client.fetch(whitePaperBySlugQuery, { slug })) || ({} as any)
 }

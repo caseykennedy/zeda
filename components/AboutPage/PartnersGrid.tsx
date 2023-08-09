@@ -42,12 +42,10 @@ const data: FeatureShape[] = [
 
 const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
   <Section
-    className="border-t border-silver-900 bg-black text-white"
+    className="dark border-t border-silver-900 bg-black text-white"
     id="partners"
   >
-    <SectionTitle className="border-silver-500 text-silver-500">
-      Partners
-    </SectionTitle>
+    <SectionTitle dark>Partners</SectionTitle>
 
     <div className="grid grid-cols-6">
       <div className="col-span-6 mb-8 md:col-span-4">
@@ -90,6 +88,7 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
           objectFit: 'cover',
           objectPosition: 'center top',
         }}
+        className="rounded"
       />
     </div>
 

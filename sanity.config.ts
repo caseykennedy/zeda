@@ -17,6 +17,7 @@ import personType from 'schemas/person'
 import postType from 'schemas/post'
 import postCategoryType from 'schemas/post-category'
 import settingsType from 'schemas/settings'
+import whitePaperType from 'schemas/white-paper'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Next.js Blog with Sanity.io'
@@ -36,6 +37,7 @@ export default defineConfig({
       postCategoryType,
       postType,
       settingsType,
+      whitePaperType,
     ],
   },
   plugins: [

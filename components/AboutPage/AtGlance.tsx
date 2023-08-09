@@ -28,10 +28,8 @@ const data = [
 
 const AtGlanceGallery = () => {
   return (
-    <Section className="border-t border-silver-900 bg-black text-white">
-      <SectionTitle className="border-silver-500 text-silver-500">
-        At a glance
-      </SectionTitle>
+    <Section className="dark border-t border-silver-900 bg-black text-white">
+      <SectionTitle dark>At a glance</SectionTitle>
 
       <div className="grid grid-cols-6">
         <div className="col-span-6 mb-8 md:col-span-4">

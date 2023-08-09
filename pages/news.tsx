@@ -27,8 +27,8 @@ interface Query {
 const Page = ({ posts, postCategories, settings }: PageProps) => {
   const filteredPosts = posts.filter(
     (post) =>
-      post.categories.includes(CATEGORY_NEWS) ||
-      post.categories.includes(CATEGORY_PRESS)
+      post.categories?.includes(CATEGORY_NEWS) ||
+      post.categories?.includes(CATEGORY_PRESS)
   )
   const filteredPostCategories = postCategories.filter(
     (category) =>

@@ -3,11 +3,10 @@ import type { Post } from 'lib/sanity.queries'
 import Avatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
+import CategoryTag from 'components/post/CategoryTag'
+import PostDate from 'components/post/PostDate'
 import ScrollProgress from 'components/ScrollProgress'
 import Pill from 'components/ui/Pill'
-
-import CategoryTag from './CategoryTag'
-import PostDate from './PostDate'
 
 const PostHeader = ({
   title,
@@ -27,7 +26,6 @@ const PostHeader = ({
   | 'tags'
   | 'categories'
 >) => {
-  console.log('categories:', categories)
   return (
     <>
       <section className="overflow-hidden bg-white pt-header">
@@ -39,14 +37,14 @@ const PostHeader = ({
             </span>
           </div>
 
-          <h1 className="mb-16 max-w-[33ch] text-4xl font-semibold leading-tight tracking-normal md:mb-24 md:text-6xl md:leading-tight md:tracking-normal">
+          <h1 className="mb-0 max-w-[33ch] text-4xl font-semibold leading-tight tracking-normal md:mb-0 md:text-6xl md:leading-tight md:tracking-normal">
             {title}
           </h1>
 
           <div className="gap grid grid-cols-4">
-            <div className="col-span-4 flex items-end lg:col-span-1">
+            {/* <div className="col-span-4 flex items-end lg:col-span-1">
               <div className="flex flex-wrap items-end gap-1.5">
-                <CategoryTag categories={(categories = [])} />
+                <CategoryTag categories={categories || []} />
                 {tags &&
                   tags.slice(0, 2).map((tag, idx) => (
                     <Pill variant="outline" key={idx}>
@@ -54,12 +52,14 @@ const PostHeader = ({
                     </Pill>
                   ))}
               </div>
-            </div>
-            <div className="col-span-4 flex items-end lg:col-span-2 lg:col-start-2 ">
-              <div className="w-full max-w-2xl lg:mx-auto">
-                <p className="text-lg font-medium leading-loose">{excerpt}</p>
+            </div> */}
+            {excerpt && (
+              <div className="col-span-4 flex items-end lg:col-span-2 lg:col-start-2 ">
+                <div className="w-full max-w-2xl lg:mx-auto">
+                  <p className="text-lg font-medium leading-loose">{excerpt}</p>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* <div className="md:mb-12">

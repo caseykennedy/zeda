@@ -18,15 +18,53 @@ const postFields = groq`
   "author": author->{name, picture},
 `
 
+const whitePaperFields = groq`
+  _id,
+  date,
+  excerpt,
+  notes,
+  "slug": slug.current,
+  tags,
+  title,
+`
+
 const readingTimeFields = groq`
-"numberOfCharacters": length(pt::text(content)),
-"estimatedWordCount": round(length(pt::text(content)) / 5),
-"estimatedReadingTime": round(length(pt::text(content)) / 5 / 180 )
+  "numberOfCharacters": length(pt::text(content)),
+  "estimatedWordCount": round(length(pt::text(content)) / 5),
+  "estimatedReadingTime": round(length(pt::text(content)) / 5 / 180 )
+`
+
+export const indexQuery = groq`
+*[_type == "post"] | order(date desc, _updatedAt desc) {
+  ${readingTimeFields},
+  ${postFields}
+}
+`
+
+export const allPostsByCategoryQuery = groq`
+*[_type == "post" && $category in postCategory[]->name] | order(date desc, _updatedAt desc) {
+  content,
+  ${readingTimeFields},
+  ${postFields}
+}
 `
 
 export const allPostsAndFeaturedQuery = groq`
 {
   "posts": *[_type == "post"] | order(_updatedAt desc) [0...999] {
+    ${readingTimeFields},
+    ${postFields}
+  },
+  "featuredPosts": *[_type == "post" && $category in postCategory[]->name] | order(date desc, _updatedAt desc) [0...2] {
+    ${readingTimeFields},
+    ${postFields}
+  }
+}
+`
+
+export const allPostsByCategoryAndFeaturedQuery = groq`
+{
+  "posts": *[_type == "post" && $category in postCategory[]->name] | order(_updatedAt desc) [0...999] {
     ${readingTimeFields},
     ${postFields}
   },
@@ -48,13 +86,6 @@ export const postAndMoreStoriesQuery = groq`
     ${readingTimeFields},
     ${postFields}
   }
-}
-`
-
-export const indexQuery = groq`
-*[_type == "post"] | order(date desc, _updatedAt desc) {
-  ${readingTimeFields},
-  ${postFields}
 }
 `
 
@@ -103,6 +134,24 @@ export const personQuery = groq`*[_type == "person"] {
 `
 
 export const settingsQuery = groq`*[_type == "settings"][0]`
+
+export const allWhitePapersQuery = groq`
+*[_type == "whitePaper"] | order(date desc, _updatedAt desc) {
+  ${readingTimeFields},
+  ${whitePaperFields}
+}
+`
+
+export const whitePaperSlugsQuery = groq`
+*[_type == "whitePaper" && defined(slug.current)][].slug.current
+`
+
+export const whitePaperBySlugQuery = groq`
+*[_type == "whitePaper" && slug.current == $slug][0] {
+  content,
+  ${whitePaperFields}
+}
+`
 
 interface ReadingTime {
   numberOfCharacters?: number
@@ -162,7 +211,7 @@ export interface Person {
 export interface Post extends ReadingTime {
   _id: string
   author?: Author
-  categories: string[]
+  categories?: string[]
   content?: any
   coverImage?: SanityImage
   date?: string
@@ -188,4 +237,15 @@ export interface Settings {
   ogImage?: {
     title?: string
   }
+}
+
+export interface WhitePaper extends ReadingTime {
+  _id: string
+  content?: any
+  date?: string
+  excerpt?: string
+  notes?: any
+  slug?: string
+  tags: string[]
+  title?: string
 }

@@ -15,7 +15,7 @@ const PostCardSplit = ({
   excerpt,
   estimatedReadingTime,
   tags,
-  categories,
+  categories = [],
   slug,
 }: Pick<
   Post,
@@ -33,20 +33,19 @@ const PostCardSplit = ({
       href={`/posts/${slug}`}
       className="group flex w-full even:flex-row-reverse"
       aria-label={`Read "${title}"`}
-      title={title}
     >
       <div className="flex-[1]">
         {coverImage ? (
           <CoverImage
-            title={title}
             image={coverImage}
+            title={title}
             priority={true}
             className="overflow-hidden"
           />
         ) : (
           <div
             aria-label={title}
-            className="flex w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black"
+            className="flex w-full items-center justify-center bg-black"
           >
             <LogoSymbol width={44} />
           </div>

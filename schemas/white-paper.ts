@@ -2,11 +2,9 @@ import { BookIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
-import postCategoryType from './post-category'
-
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'whitePaper',
+  title: 'White Paper',
   icon: BookIcon,
   type: 'document',
   fields: [
@@ -70,59 +68,10 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'hasExternalURL',
-      title: 'Has external URL?',
-      type: 'boolean',
-    }),
-    defineField({
-      name: 'articleURL',
-      title: 'Article URL',
-      type: 'url',
-      description: 'Optional link to full article on external site.',
-      hidden: ({ document }) => !document?.hasExternalURL,
-    }),
-    defineField({
-      name: 'hasVideo',
-      title: 'Video?',
-      type: 'boolean',
-    }),
-    defineField({
-      name: 'videoURL',
-      title: 'Video URL',
-      type: 'url',
-      description: 'eg: https://vimeo.com/640152736',
-      hidden: ({ document }) => !document?.hasVideo,
-    }),
-    defineField({
-      name: 'coverImage',
-      title: 'Cover Image',
-      type: 'image',
-      fields: [
-        {
-          name: 'caption',
-          type: 'string',
-          title: 'Image caption',
-          description: 'Caption displayed below the image.',
-        },
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-          description: 'Important for SEO and accessiblity.',
-          validation: (rule) => rule.required(),
-        },
-      ],
-      options: {
-        hotspot: true,
-      },
-      hidden: ({ document }) => !!document?.hasVideo,
-    }),
-    defineField({
-      name: 'postCategory',
-      title: 'Post Category',
+      name: 'notes',
+      title: 'Notes / References',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: postCategoryType.name }] }],
-      validation: (rule) => rule.required(),
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'tags',
@@ -131,25 +80,18 @@ export default defineType({
       of: [{ type: 'string' }],
       description: 'Tag the topics in the post.',
     }),
-    defineField({
-      name: 'notes',
-      title: 'Notes',
-      type: 'text',
-      description: 'Notes or credits for the reader.',
-    }),
   ],
   preview: {
     select: {
       title: 'title',
       date: 'date',
-      media: 'coverImage',
     },
-    prepare({ title, media, date }) {
-      const subtitles = [
-        date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
-      ].filter(Boolean)
+    prepare({ title, date }) {
+      const subTitles = [date && format(parseISO(date), 'LLL d, yyyy')].filter(
+        Boolean
+      )
 
-      return { title, media, subtitle: subtitles.join(' ') }
+      return { title, subtitle: subTitles.join(' ') }
     },
   },
 })

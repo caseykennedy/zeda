@@ -1,26 +1,45 @@
-import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
+import type { Post, Settings, WhitePaper } from 'lib/sanity.queries'
 
 import IndexPageHead from 'components/IndexPage/IndexPageHead'
 import Layout from 'components/Layout'
-import { PostGrid } from 'components/post'
 import PageTitle from 'components/ui/PageTitle'
+import Section from 'components/ui/Section'
 
 import FeaturedInsights from './FeaturedInsights'
+import PostGrid from './PostGrid'
 
 interface PageProps {
   posts: Post[]
   featuredPosts: Post[]
-  postCategories: PostCategory[]
   settings: Settings
+  whitePapers: WhitePaper[]
 }
+
+const GridSection = ({
+  title,
+  subTitle,
+  posts,
+  whitePapers,
+}: {
+  title: string
+  subTitle: string
+  posts?: Post[]
+  whitePapers?: WhitePaper[]
+}) => (
+  <Section>
+    <h2 className="mb-4 text-3xl">{title}</h2>
+    <p className="gutter-b max-w-[24ch] text-lg text-silver-500">{subTitle}</p>
+    <PostGrid posts={posts} whitePapers={whitePapers} />
+  </Section>
+)
 
 const InsightsPage = ({
   posts,
   featuredPosts,
-  postCategories,
   settings,
+  whitePapers,
 }: PageProps) => {
-  console.log('featuredPosts:', featuredPosts)
+  console.log('whitePapers:', whitePapers)
   return (
     <>
       <IndexPageHead settings={settings} />
@@ -31,8 +50,18 @@ const InsightsPage = ({
             Data-rich industry insights from our experts and engineers.
           </p>
         </PageTitle>
-        <FeaturedInsights posts={featuredPosts || []} />
-        <PostGrid posts={posts || []} postCategories={postCategories || []} />
+        <FeaturedInsights posts={featuredPosts} />
+        <GridSection
+          title="Articles"
+          subTitle="Data-rich industry insights from our experts and engineers."
+          posts={posts}
+        />
+        <Section className="bg-black text-white">Videos</Section>
+        <GridSection
+          title="White papers"
+          subTitle="Data-rich industry insights from our experts and engineers."
+          whitePapers={whitePapers}
+        />
       </Layout>
     </>
   )
