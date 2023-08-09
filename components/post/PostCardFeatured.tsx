@@ -62,7 +62,7 @@ const PostCard = ({
             </h3>
           </div>
           <div className="mb-4 flex flex-wrap gap-1.5 md:mb-0">
-            <CategoryTag categories={categories} />
+            <CategoryTag categories={categories || []} />
             {tags &&
               tags.slice(0, 1).map((tag, idx) => (
                 <Pill variant="outline" key={idx}>

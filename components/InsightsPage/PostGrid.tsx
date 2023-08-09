@@ -3,7 +3,7 @@ import type { Post, WhitePaper } from 'lib/sanity.queries'
 import { polyVariant, staggerItems, viewport } from 'utils/variants'
 
 import { PostCard } from 'components/post'
-import { WhitePaperCard } from 'components/WhitePaper'
+import { WhitePaperCard } from 'components/whitePaper'
 
 const PostGrid = ({
   posts,

@@ -46,7 +46,7 @@ const PostHeader = ({
           <div className="gap grid grid-cols-4">
             <div className="col-span-4 flex items-end lg:col-span-1">
               <div className="flex flex-wrap items-end gap-1.5">
-                <CategoryTag categories={(categories = [])} />
+                <CategoryTag categories={categories || []} />
                 {tags &&
                   tags.slice(0, 2).map((tag, idx) => (
                     <Pill variant="outline" key={idx}>

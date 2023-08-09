@@ -26,7 +26,7 @@ const PostGrid = ({
         setActiveBtn(CATEGORY_ALL)
       } else {
         setFilteredPosts(
-          posts.filter((post) => post.categories.includes(category))
+          posts.filter((post) => post.categories?.includes(category))
         )
         setActiveBtn(category)
       }
