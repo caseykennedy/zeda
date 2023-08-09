@@ -20,6 +20,10 @@ const postFields = groq`
 
 const whitePaperFields = groq`
   _id,
+  coverImage{
+    ...,
+    "metadata": asset->metadata
+  },
   date,
   excerpt,
   notes,
@@ -149,6 +153,7 @@ export const whitePaperSlugsQuery = groq`
 export const whitePaperBySlugQuery = groq`
 *[_type == "whitePaper" && slug.current == $slug][0] {
   content,
+  ${readingTimeFields},
   ${whitePaperFields}
 }
 `
@@ -216,7 +221,7 @@ export interface Post extends ReadingTime {
   coverImage?: SanityImage
   date?: string
   excerpt?: string
-  notes?: string
+  notes?: any
   slug?: string
   tags: string[]
   title?: string
@@ -242,6 +247,7 @@ export interface Settings {
 export interface WhitePaper extends ReadingTime {
   _id: string
   content?: any
+  coverImage?: SanityImage
   date?: string
   excerpt?: string
   notes?: any

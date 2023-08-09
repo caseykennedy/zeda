@@ -55,7 +55,7 @@ const AtGlanceGallery = () => {
             key={idx}
           >
             <h3 className="mb-8 font-display text-6xl font-medium">{value}</h3>
-            <p className="text-base">{description}</p>
+            <p className="text-lg">{description}</p>
           </div>
         ))}
       </div>

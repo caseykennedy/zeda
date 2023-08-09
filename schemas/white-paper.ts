@@ -68,6 +68,30 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'coverImage',
+      title: 'Cover Image',
+      type: 'image',
+      fields: [
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Image caption',
+          description: 'Caption displayed below the image.',
+        },
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for SEO and accessiblity.',
+          validation: (rule) => rule.required(),
+        },
+      ],
+      options: {
+        hotspot: true,
+      },
+      hidden: ({ document }) => !!document?.hasVideo,
+    }),
+    defineField({
       name: 'notes',
       title: 'Notes / References',
       type: 'array',

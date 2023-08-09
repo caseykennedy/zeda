@@ -16,17 +16,19 @@ interface PageProps {
 }
 
 const GridSection = ({
+  id,
   title,
   subTitle,
   posts,
   whitePapers,
 }: {
+  id: string
   title: string
   subTitle: string
   posts?: Post[]
   whitePapers?: WhitePaper[]
 }) => (
-  <Section>
+  <Section id={id}>
     <h2 className="mb-4 text-3xl">{title}</h2>
     <p className="gutter-b max-w-[24ch] text-lg text-silver-500">{subTitle}</p>
     <PostGrid posts={posts} whitePapers={whitePapers} />
@@ -52,14 +54,18 @@ const InsightsPage = ({
         </PageTitle>
         <FeaturedInsights posts={featuredPosts} />
         <GridSection
+          id="articles"
           title="Articles"
           subTitle="Data-rich industry insights from our experts and engineers."
           posts={posts}
         />
-        <Section className="bg-black text-white">Videos</Section>
+        <Section id="videos" className="bg-black text-white">
+          Videos
+        </Section>
         <GridSection
+          id="white-papers"
           title="White papers"
-          subTitle="Data-rich industry insights from our experts and engineers."
+          subTitle="Industry experience and knowledge."
           whitePapers={whitePapers}
         />
       </Layout>

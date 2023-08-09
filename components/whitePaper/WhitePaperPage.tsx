@@ -2,13 +2,9 @@ import type { Post, Settings, WhitePaper } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
 
 import Layout from 'components/Layout'
-import { PostBody } from 'components/post'
+import { PostBody, PostHeader, PostMeta, PostPageHead } from 'components/post'
 import ScrollProgress from 'components/ScrollProgress'
 import Separator from 'components/ui/Separator'
-
-import PostHeader from './PostHeader'
-import PostMeta from './PostMeta'
-import PostPageHead from './PostPageHead'
 
 interface Props {
   preview?: boolean
@@ -49,17 +45,15 @@ const WhitePaperPage = ({
             <article>
               <PostHeader
                 title={post.title}
+                coverImage={post.coverImage}
                 date={post.date}
+                excerpt={post.excerpt}
                 estimatedReadingTime={post.estimatedReadingTime}
                 tags={post.tags}
-                categories={['White Paper']}
+                categories={['White paper']}
               />
               <PostBody content={post.content} />
-              {/* <PostMeta
-                notes={post.notes || ''}
-                slug={slug}
-                tags={post.tags || []}
-              /> */}
+              <PostMeta notes={post.notes} slug={slug} tags={post.tags} />
             </article>
             {/* <Separator className="bg-silver-100" /> */}
             {/* {morePosts?.length > 0 && <RelatedPosts posts={morePosts} />} */}

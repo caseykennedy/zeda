@@ -14,3 +14,7 @@ export const currentYear = new Date().getFullYear()
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+export function stringToURL(str: string) {
+  return str.replace(/\s+/g, '-').toLowerCase()
+}

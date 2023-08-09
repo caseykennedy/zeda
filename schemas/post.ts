@@ -6,7 +6,7 @@ import postCategoryType from './post-category'
 
 export default defineType({
   name: 'post',
-  title: 'Post',
+  title: 'Article',
   icon: BookIcon,
   type: 'document',
   fields: [
@@ -82,18 +82,6 @@ export default defineType({
       hidden: ({ document }) => !document?.hasExternalURL,
     }),
     defineField({
-      name: 'hasVideo',
-      title: 'Video?',
-      type: 'boolean',
-    }),
-    defineField({
-      name: 'videoURL',
-      title: 'Video URL',
-      type: 'url',
-      description: 'eg: https://vimeo.com/640152736',
-      hidden: ({ document }) => !document?.hasVideo,
-    }),
-    defineField({
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',
@@ -134,8 +122,9 @@ export default defineType({
     defineField({
       name: 'notes',
       title: 'Notes',
-      type: 'text',
-      description: 'Notes or credits for the reader.',
+      type: 'array',
+      of: [{ type: 'block' }],
+      description: 'Notes, references or credits.',
     }),
   ],
   preview: {

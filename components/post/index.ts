@@ -6,6 +6,7 @@ import PostCardSplit from './PostCardSplit'
 import PostDate from './PostDate'
 import PostGrid from './PostGrid'
 import PostHeader from './PostHeader'
+import PostMeta from './PostMeta'
 import PostPage, { type PostPageProps } from './PostPage'
 import PostPageHead from './PostPageHead'
 import PreviewPostPage from './PreviewPostPage'
@@ -19,6 +20,7 @@ export {
   PostDate,
   PostGrid,
   PostHeader,
+  PostMeta,
   PostPage,
   PostPageHead,
   type PostPageProps,

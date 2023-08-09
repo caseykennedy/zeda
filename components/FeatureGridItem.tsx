@@ -11,7 +11,7 @@ const FeatureGridItem = ({ icon, title, desc }: FeatureShape) => {
         {icon}
       </div>
       <h4 className="mb-8 font-display text-3xl font-semibold">{title}</h4>
-      <p className="text-base">{desc}</p>
+      <p className="text-lg">{desc}</p>
     </div>
   )
 }

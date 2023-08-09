@@ -29,7 +29,7 @@ const PostPage = ({
   settings,
 }: PostPageProps) => {
   const slug = post?.slug
-  const isPR = post.categories?.includes('Press Release')
+  const isPR = post?.categories?.includes('Press Release')
 
   if (!slug && !preview) {
     notFound()
@@ -77,11 +77,7 @@ const PostPage = ({
                 </section>
               )}
 
-              <PostMeta
-                notes={post.notes || ''}
-                slug={slug}
-                tags={post.tags || []}
-              />
+              <PostMeta notes={post.notes} slug={slug} tags={post.tags} />
             </article>
             <Separator className="bg-silver-100" />
             {morePosts?.length > 0 && <RelatedPosts posts={morePosts} />}

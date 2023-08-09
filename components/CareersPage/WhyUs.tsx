@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {
   FaceIcon,
+  LightningBoltIcon,
   PersonIcon,
   RocketIcon,
   RulerSquareIcon,
@@ -26,7 +27,7 @@ const data: FeatureShape[] = [
     desc: 'Move quickly and simplify.',
   },
   {
-    icon: <PersonIcon />,
+    icon: <LightningBoltIcon />,
     title: 'Growth',
     desc: 'Dream big and be open to taking risks.',
   },
