@@ -1,5 +1,6 @@
 import type { Post } from 'lib/sanity.queries'
 
+import SocialShare from 'components/SocialShare'
 import Pill from 'components/ui/Pill'
 import Separator from 'components/ui/Separator'
 
@@ -19,9 +20,13 @@ const PostMeta = ({
           <Separator className="bg-silver-100" />
         </>
       )}
-      <p className="mt-6 text-sm text-silver-500">
-        https://www.z8a.com/posts/{slug}
-      </p>
+      <div className="my-6">
+        <div className="flex flex-nowrap gap-2">
+          <SocialShare name="linkedin" slug={slug} />
+          <SocialShare name="twitter" slug={slug} />
+          <SocialShare name="share" slug={slug} />
+        </div>
+      </div>
       <Separator className="bg-silver-100" />
       {tags && (
         <>
