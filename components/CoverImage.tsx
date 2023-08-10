@@ -16,7 +16,7 @@ interface CoverImageProps {
 export default function CoverImage(props: CoverImageProps) {
   const { title, slug, image: source, priority, aspectRatio, className } = props
   const image = source?.asset?._ref ? (
-    <div className={cn(className)}>
+    <div className={cn(`overflow-hidden`, className)}>
       <Img
         src={urlForImage(source).width(1920).height(1080).url()}
         alt={`Cover Image for ${title}`}

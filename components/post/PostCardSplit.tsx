@@ -31,16 +31,16 @@ const PostCardSplit = ({
   return (
     <Link
       href={`/posts/${slug}`}
-      className="group flex w-full even:flex-row-reverse"
+      className="group flex w-full flex-col even:flex-col md:flex-row even:md:flex-row-reverse"
       aria-label={`Read "${title}"`}
     >
-      <div className="flex-[1]">
+      <div className="flex-1">
         {coverImage ? (
           <CoverImage
             image={coverImage}
             title={title}
             priority={true}
-            className="overflow-hidden"
+            className="aspect-auto overflow-hidden"
           />
         ) : (
           <div
@@ -52,7 +52,7 @@ const PostCardSplit = ({
         )}
       </div>
 
-      <div className="flex flex-[1] flex-col justify-between bg-black text-white">
+      <div className="flex flex-1 flex-col justify-between bg-black text-white">
         <div className="gutter col-span-2 flex flex-col-reverse justify-between sm:flex-col lg:col-span-1">
           <div>
             <h2 className="mb-4 max-w-[24ch] leading-snug decoration-2 group-hover:underline">

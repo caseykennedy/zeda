@@ -3,7 +3,6 @@ import type { Post } from 'lib/sanity.queries'
 import { PostCardSplit } from 'components/post'
 
 const FeaturedPosts = ({ posts }: { posts: Post[] }) => {
-  console.log('posts:', posts)
   return (
     <section className="relative w-full border-t border-silver-900 bg-white">
       {posts.map((post) => (

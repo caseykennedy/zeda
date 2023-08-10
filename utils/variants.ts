@@ -1,13 +1,14 @@
 export const polyVariant = {
-  visible: {
+  visible: (i: number) => ({
     y: 0,
     opacity: 1,
     transition: {
+      delay: i * 0.1,
       duration: 0.5,
       stiffness: 100,
       velocity: -100,
     },
-  },
+  }),
   hidden: {
     y: 25,
     opacity: 0,

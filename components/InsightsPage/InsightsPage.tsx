@@ -1,7 +1,10 @@
+import { CardStackPlusIcon, ChevronDownIcon } from '@radix-ui/react-icons'
+import useLoadMore from 'hooks/useLoadMore'
 import type { Post, Settings, WhitePaper } from 'lib/sanity.queries'
 
 import IndexPageHead from 'components/IndexPage/IndexPageHead'
 import Layout from 'components/Layout'
+import { Button, Icon } from 'components/ui'
 import PageTitle from 'components/ui/PageTitle'
 import Section from 'components/ui/Section'
 
@@ -20,20 +23,40 @@ const GridSection = ({
   title,
   subTitle,
   posts,
-  whitePapers,
+  whitePaper = false,
 }: {
   id: string
   title: string
   subTitle: string
-  posts?: Post[]
-  whitePapers?: WhitePaper[]
-}) => (
-  <Section id={id}>
-    <h2 className="mb-4 text-3xl">{title}</h2>
-    <p className="gutter-b max-w-[24ch] text-lg text-silver-500">{subTitle}</p>
-    <PostGrid posts={posts} whitePapers={whitePapers} />
-  </Section>
-)
+  posts: Post[]
+  whitePaper?: boolean
+}) => {
+  const { list, handleLoadMore, hasMore } = useLoadMore(posts, 3)
+
+  return (
+    <Section id={id}>
+      <h2 className="mb-2 text-3xl">{title}</h2>
+      <p className="gutter-b max-w-[24ch] text-lg text-silver-500">
+        {subTitle}
+      </p>
+
+      <PostGrid posts={list} whitePaper={whitePaper} />
+
+      <div className="gutter-t flex justify-center">
+        {hasMore && (
+          <Button
+            variant="outline"
+            onClick={handleLoadMore}
+            className="load-more"
+          >
+            <CardStackPlusIcon className="h-5 w-5 shrink-0 transition-transform duration-200" />
+            Load More
+          </Button>
+        )}
+      </div>
+    </Section>
+  )
+}
 
 const InsightsPage = ({
   posts,
@@ -66,7 +89,8 @@ const InsightsPage = ({
           id="white-papers"
           title="White papers"
           subTitle="Industry experience and knowledge."
-          whitePapers={whitePapers}
+          posts={whitePapers}
+          whitePaper={true}
         />
       </Layout>
     </>

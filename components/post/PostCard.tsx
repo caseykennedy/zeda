@@ -37,7 +37,7 @@ const PostCard = ({
           title={title}
           image={coverImage}
           priority={false}
-          className="overflow-hidden rounded-br rounded-tl rounded-tr"
+          className="rounded-br rounded-tl rounded-tr"
         />
       ) : (
         <Link
