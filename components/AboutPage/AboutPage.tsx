@@ -1,7 +1,7 @@
 import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-corridor.jpg'
 
-import CtaFooter from 'components/CtaFooter'
+import FooterCTA from 'components/FooterCTA'
 import IndexPageHead from 'components/IndexPage/IndexPageHead'
 import Layout from 'components/Layout'
 import PageTitle from 'components/ui/PageTitle'
@@ -34,7 +34,7 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
         <TextMarquee />
         <PartnersGrid partners={partners} />
         {/* <Careers /> */}
-        <CtaFooter
+        <FooterCTA
           heading="Join forces with us. Let's change the world together"
           message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
           src={ctaImgSrc}

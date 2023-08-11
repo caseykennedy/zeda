@@ -20,8 +20,9 @@ const PostMeta = ({
           <Separator className="bg-silver-100" />
         </>
       )}
-      <div className="my-6">
-        <div className="flex flex-nowrap gap-2">
+      <div className="my-6 flex flex-row flex-nowrap items-center">
+        <div className="mr-8 text-sm uppercase text-silver-500">Share</div>
+        <div className="flex flex-1 flex-nowrap gap-2">
           <SocialShare name="linkedin" slug={slug} />
           <SocialShare name="twitter" slug={slug} />
           <SocialShare name="share" slug={slug} />

@@ -1,4 +1,5 @@
 import { type JobPost, type Settings } from 'lib/sanity.queries'
+import Link from 'next/link'
 
 import IndexPageHead from 'components/IndexPage/IndexPageHead'
 import JobPosts from 'components/JobPosts'
@@ -29,12 +30,14 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
               </h1>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
-              <Button variant="primary">
-                <Icon
-                  name="arrow-right"
-                  className="relative -translate-x-1 transition-all group-hover:translate-x-1"
-                />
-                Open positions
+              <Button variant="primary" asChild>
+                <a href="#open-positions">
+                  <Icon
+                    name="arrow-right"
+                    className="relative -translate-x-1 transition-all group-hover:translate-x-1"
+                  />
+                  Open positions
+                </a>
               </Button>
             </div>
           </div>

@@ -21,14 +21,14 @@ const NavList = () =>
       className="border-l border-silver-900 pl-5 font-display font-medium capitalize tracking-wide"
       key={item.name}
     >
-      <li className="mb-4 font-semibold text-white">
+      <li className="mb-4 text-sm font-medium uppercase tracking-wider text-silver-500">
         {item.link ? <Link href={item.link}>{item.name}</Link> : item.name}
       </li>
       {item.sub?.map((sub) => (
         <li key={sub.name}>
           <Link
             href={sub.link}
-            className="inline-block py-0.5 text-silver-400 transition-all hover:pl-0.5 hover:text-white"
+            className="inline-block py-0.5 text-white transition-all hover:pl-0.5 hover:text-violet-500"
           >
             {sub.name}
           </Link>

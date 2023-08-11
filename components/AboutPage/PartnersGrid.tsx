@@ -49,7 +49,7 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
 
     <div className="grid grid-cols-6">
       <div className="col-span-6 mb-8 md:col-span-4">
-        <h2>
+        <h2 className="max-w-[32ch]">
           Partner with us and help shape the future of advanced manufacturing
         </h2>
       </div>
@@ -68,7 +68,7 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
     </div>
 
     <div className="mt-32 md:mt-64">
-      <div className="text-lg text-white">Why partner with us?</div>
+      <div className="text-lg">Why partner with us?</div>
       <div className="mt-24 grid grid-cols-4 gap-10">
         {data.map(({ icon, title, desc }, idx) => (
           <FeatureGridItem icon={icon} title={title} desc={desc} key={idx} />

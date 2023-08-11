@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from '@radix-ui/react-icons'
 import { type JobPost } from 'lib/sanity.queries'
 import Link from 'next/link'
 
@@ -17,6 +18,7 @@ const Careers = ({
 }) => {
   return (
     <SectionPanel
+      id="open-positions"
       title={title}
       btn={
         hasBtn ? (
@@ -75,7 +77,7 @@ const Careers = ({
                   </Link>
                 </Button>
                 <Button variant="outline" size="icon">
-                  <Icon name="chevron-up" />
+                  <ChevronDownIcon className="h-5 w-5" />
                 </Button>
               </div>
             </div>

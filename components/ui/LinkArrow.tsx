@@ -13,7 +13,7 @@ const ArrowLink = ({ children, href, className, ...props }: Props) => (
   <Link
     href={href}
     className={cn(
-      `group relative flex flex-row items-center font-display font-semibold capitalize tracking-wide`,
+      `group relative flex flex-row items-center font-display text-sm font-semibold uppercase tracking-wider`,
       className
     )}
     {...props}
@@ -24,7 +24,7 @@ const ArrowLink = ({ children, href, className, ...props }: Props) => (
       size={18}
       className="absolute right-0 opacity-0 transition-all group-hover:opacity-100"
     />
-    <span className="transition-all ease-out group-hover:-translate-x-6">
+    <span className="transition-all ease-out group-hover:-translate-x-5">
       {children}
     </span>
   </Link>

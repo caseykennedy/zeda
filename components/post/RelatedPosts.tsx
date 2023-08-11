@@ -11,7 +11,7 @@ const RelatedPosts = ({ posts }: { posts: Post[] }) => {
       <div className="border-b border-silver-100">
         <div className="gutter-x mx-auto flex max-w-site items-center justify-between py-6">
           <div>
-            <h2 className="font-sans text-base font-medium uppercase leading-3">
+            <h2 className="font-sans text-base font-medium uppercase tracking-wide">
               Related
             </h2>
           </div>

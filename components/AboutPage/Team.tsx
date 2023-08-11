@@ -38,7 +38,7 @@ const upVariants = {
 const Team = ({ people }: { people: Person[] }) => {
   console.log('people:::', people[0].picture.metadata)
   return (
-    <Section>
+    <Section id="leadership">
       <div className="gap grid grid-cols-6">
         <div className="col-span-6 mb-8 md:col-span-4">
           <h2>

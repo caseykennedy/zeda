@@ -1,7 +1,7 @@
 import type { JobPost, Post, Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
-import CtaFooter from 'components/CtaFooter'
+import FooterCTA from 'components/FooterCTA'
 import JobPosts from 'components/JobPosts'
 import Layout from 'components/Layout'
 
@@ -49,7 +49,7 @@ export const IndexPage = ({
         hasBtn={true}
         posts={jobPosts}
       />
-      <CtaFooter
+      <FooterCTA
         heading="Join forces with us. Let’s change the world together"
         message="<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing."
         src={ctaImgSrc}

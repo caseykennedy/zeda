@@ -14,6 +14,8 @@ import { stringToURL } from 'utils'
 
 import Img from 'components/Img'
 import Logo from 'components/Logo'
+import LogoSymbolHealth from 'components/LogoSymbolHealth'
+import LogoSymbolTech from 'components/LogoSymbolTech'
 import LinkArrow from 'components/ui/LinkArrow'
 import {
   NavigationMenu,
@@ -29,14 +31,18 @@ const INSIGHTS_SLUG = 'insights'
 
 const solutionsNav = [
   {
-    title: 'technologies',
-    desc: 'tech',
-    icon: <ReaderIcon />,
+    title: 'zeda technologies',
+    href: '/technologies',
+    desc: 'Space, defense &amp; aerospace',
+    icon: <LogoSymbolTech />,
+    className: 'hover:border-blue-500',
   },
   {
-    title: 'health',
-    desc: 'medical',
-    icon: <ReaderIcon />,
+    title: 'zeda health',
+    href: '//orthoimplantcompany.com',
+    desc: 'Orthopaedic implants &amp; nanotech',
+    icon: <LogoSymbolHealth />,
+    className: 'hover:border-yellow-500',
   },
 ]
 
@@ -158,27 +164,32 @@ const Navigation = () => {
           <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="gap grid w-full max-w-[1024px] text-white lg:grid-cols-2">
-              {solutionsNav.map(({ title, desc, icon }, idx) => (
-                <li key={idx}>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none transition-colors hover:border-violet-500 hover:bg-silver-900/30"
-                      href="/news"
-                    >
-                      <div className="transition-transform group-hover:-translate-y-1.5 [&>svg]:h-6 [&>svg]:w-6">
-                        {icon}
-                      </div>
-                      <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
-                        {title}
-                      </div>
-                      <p
-                        dangerouslySetInnerHTML={{ __html: desc }}
-                        className="text-silver-200"
-                      />
-                    </Link>
-                  </NavigationMenuLink>
-                </li>
-              ))}
+              {solutionsNav.map(
+                ({ title, href, desc, icon, className }, idx) => (
+                  <li key={idx}>
+                    <NavigationMenuLink asChild>
+                      <Link
+                        className={cn(
+                          `group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none transition-colors hover:border-violet-500 hover:bg-silver-900/30`,
+                          className
+                        )}
+                        href={href}
+                      >
+                        <div className="transition-transform group-hover:-translate-y-1.5">
+                          {icon}
+                        </div>
+                        <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
+                          {title}
+                        </div>
+                        <p
+                          dangerouslySetInnerHTML={{ __html: desc }}
+                          className="text-silver-200"
+                        />
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                )
+              )}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -253,7 +264,10 @@ const Header = () => {
         </div>
 
         <div className="col-span-1 col-start-6 flex items-center justify-end lg:col-start-6">
-          <LinkArrow href="/contact" className="text-lg">
+          <LinkArrow
+            href="/contact"
+            className="text-lg capitalize tracking-wide"
+          >
             Contact
           </LinkArrow>
         </div>

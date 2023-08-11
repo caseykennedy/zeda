@@ -31,6 +31,21 @@ const benefitsData = [
   },
 ]
 
+const locationsData = [
+  {
+    city: 'Bay Area, CA',
+  },
+  {
+    city: 'Cincinnati, OH',
+  },
+  {
+    city: 'Reno, NV',
+  },
+  {
+    city: 'Singapore',
+  },
+]
+
 const Benefits = () => (
   <Section
     pt="pt-0"
@@ -95,14 +110,14 @@ const Benefits = () => (
       <div className="gutter flex flex-col justify-between bg-black">
         <h2 className="max-w-[20ch]">Where we work</h2>
         <div className="mt-32 md:mt-64">
-          <div className="grid grid-cols-2 gap-10">
-            {benefitsData.map(({ title, desc }, idx) => (
+          <div className="flex flex-col">
+            {locationsData.map(({ city }, idx) => (
               <div
-                className="group col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 md:col-span-1"
+                className="border-t border-silver-800 py-6 last:pb-0"
                 key={idx}
               >
-                <h3 className="mb-8 font-display text-xl font-semibold md:text-2xl">
-                  {title}
+                <h3 className="font-display text-xl font-semibold md:text-2xl">
+                  {city}
                 </h3>
                 {/* <p>{desc}</p> */}
               </div>
