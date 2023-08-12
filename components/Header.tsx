@@ -254,7 +254,7 @@ const Header = () => {
     >
       <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site md:grid-cols-6">
         <div className="col-span-1 md:col-span-2">
-          <Link href="/" className="">
+          <Link href="/" className="inline-block">
             <Logo />
           </Link>
         </div>

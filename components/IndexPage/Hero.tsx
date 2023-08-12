@@ -1,6 +1,6 @@
 import { useRef } from 'react'
-import { useEventListener } from 'usehooks-ts'
 
+// import { useEventListener } from 'usehooks-ts'
 import TextFader from 'components/TextFader'
 import Section from 'components/ui/Section'
 
@@ -43,7 +43,7 @@ const Hero = () => {
           muted
           preload="auto"
           tabIndex={-1}
-          src="/video/b-roll.mp4"
+          src="/video/b-roll-cmprsd.mp4"
           className="h-full w-full object-cover brightness-50"
         ></video>
       </div>
