@@ -8,6 +8,8 @@ import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/Tabs'
 
+const INTERVAL_TIME = 7000
+
 const data = [
   {
     id: 0,
@@ -16,7 +18,7 @@ const data = [
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: {
-      src: 'wormhole.png',
+      src: 'additive-manufacturing.jpg',
       alt: 'Zeda Inc. manufacturing facility',
     },
   },
@@ -27,7 +29,7 @@ const data = [
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: {
-      src: 'wormhole.png',
+      src: 'precision-manufacturing.jpg',
       alt: 'Zeda Inc. manufacturing facility',
     },
   },
@@ -38,7 +40,7 @@ const data = [
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: {
-      src: 'wormhole.png',
+      src: 'nanotech.jpg',
       alt: 'Zeda Inc. manufacturing facility',
     },
   },
@@ -49,13 +51,11 @@ const data = [
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: {
-      src: 'wormhole.png',
+      src: 'nanotech.jpg',
       alt: 'Zeda Inc. manufacturing facility',
     },
   },
 ]
-
-const INTERVAL_TIME = 7000
 
 const Mission = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -103,9 +103,9 @@ const Mission = () => {
     }
   }, [activeTab, animateProgress, currentTab])
 
-  useEffect(() => {
-    console.log('currentTab', currentTab)
-  }, [currentTab])
+  // useEffect(() => {
+  //   console.log('currentTab', currentTab)
+  // }, [currentTab])
 
   return (
     <Section className="">
@@ -168,19 +168,19 @@ const Mission = () => {
               </div>
             </div>
 
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-end justify-end">
               {currentTab && (
                 <TabsContent
                   value={currentTab.value}
                   className="relative"
                   forceMount
                 >
-                  <figure className="relative h-full w-full overflow-hidden rounded">
+                  <figure className="relative h-full max-h-[450px] w-full  overflow-hidden rounded md:max-h-[640px]">
                     <Image
                       src={`/images/${currentTab.figure.src}`}
                       alt={currentTab.figure.alt}
-                      width={900}
-                      height={900}
+                      width={700}
+                      height={800}
                       placeholder="blur"
                       blurDataURL="/images/wormhole.png"
                       quality={100}

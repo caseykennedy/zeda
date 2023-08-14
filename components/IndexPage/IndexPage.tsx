@@ -1,6 +1,7 @@
 import type { JobPost, Post, Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
+import TextMarquee from 'components/AboutPage/TextMarquee'
 import FooterCTA from 'components/FooterCTA'
 import JobPosts from 'components/JobPosts'
 import Layout from 'components/Layout'
@@ -36,6 +37,7 @@ export const IndexPage = ({
       <IndexPageHead settings={settings} />
 
       <Hero />
+      {/* <div className="gutter h-64 bg-black" /> */}
       <Mission />
       <WhyUs />
       <AtGlance />

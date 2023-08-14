@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
 import Section from 'components/ui/Section'
+import SectionPanel from 'components/ui/SectionPanel'
 import SectionTitle from 'components/ui/SectionTitle'
 
 const data = [
@@ -25,31 +26,22 @@ const data = [
 ]
 
 const AtGlance = () => (
-  <Section>
-    <SectionTitle>At a glance</SectionTitle>
-
-    <div className="gap grid grid-cols-6">
-      <div className="col-span-6 mb-8 md:col-span-4">
-        <h2>
-          Our objective is to better lives through investing in cutting-edge
-          tech, innovative companies, and groundbreaking ideas.
-        </h2>
-      </div>
-
-      <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
-        <Button variant="primary" asChild>
-          <Link href="/">
-            <Icon
-              name="arrow-right"
-              color="white"
-              className="relative -translate-x-1 transition-all group-hover:translate-x-1"
-            />
-            Meet our leadership
-          </Link>
-        </Button>
-      </div>
-    </div>
-
+  <SectionPanel
+    heading="At a glance"
+    title="Our objective is to better lives through investing in cutting-edge tech, innovative companies, and groundbreaking ideas."
+    btn={
+      <Button variant="primary" asChild>
+        <Link href="/">
+          <Icon
+            name="arrow-right"
+            color="white"
+            className="relative -translate-x-1 transition-all group-hover:translate-x-1"
+          />
+          Meet our leadership
+        </Link>
+      </Button>
+    }
+  >
     <div className="mt-32 grid grid-cols-4 gap-8 md:mt-64">
       {[...data].map(({ value, description }, idx) => (
         <div
@@ -61,7 +53,7 @@ const AtGlance = () => (
         </div>
       ))}
     </div>
-  </Section>
+  </SectionPanel>
 )
 
 export default AtGlance

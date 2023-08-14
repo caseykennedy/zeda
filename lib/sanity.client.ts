@@ -104,7 +104,7 @@ export async function getAllPostsAndFeatured(
 export async function getAllPostsByCategory(
   client: SanityClient,
   category: string
-): Promise<{ posts: Post[]; featuredPosts: Post[] }> {
+): Promise<{ posts: Post[] }> {
   return await client.fetch(allPostsByCategoryQuery, { category })
 }
 

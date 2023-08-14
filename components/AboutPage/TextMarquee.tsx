@@ -1,7 +1,7 @@
 import Marquee from 'components/Marquee'
 import Section from 'components/ui/Section'
 
-const Hero = () => {
+const TextMarquee = () => {
   return (
     <Section
       pt="pt-12"
@@ -20,4 +20,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default TextMarquee

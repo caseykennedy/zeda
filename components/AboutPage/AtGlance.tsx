@@ -26,7 +26,7 @@ const data = [
   },
 ]
 
-const AtGlanceGallery = () => {
+const AtGlance = () => {
   return (
     <Section className="dark border-t border-silver-900 bg-black text-white">
       <SectionTitle dark>At a glance</SectionTitle>
@@ -103,4 +103,4 @@ const AtGlanceGallery = () => {
   )
 }
 
-export default AtGlanceGallery
+export default AtGlance

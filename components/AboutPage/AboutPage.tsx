@@ -6,7 +6,7 @@ import IndexPageHead from 'components/IndexPage/IndexPageHead'
 import Layout from 'components/Layout'
 import PageTitle from 'components/ui/PageTitle'
 
-import AtGlanceGallery from './AtGlance'
+import AtGlance from './AtGlance'
 import Hero from './Hero'
 import PartnersGrid from './PartnersGrid'
 import Team from './Team'
@@ -29,7 +29,7 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
         </PageTitle>
         <Hero />
         <AboutZeda />
-        <AtGlanceGallery />
+        <AtGlance />
         <Team people={people} />
         <TextMarquee />
         <PartnersGrid partners={partners} />

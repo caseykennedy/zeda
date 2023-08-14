@@ -1,5 +1,3 @@
-import { useRef } from 'react'
-
 // import { useEventListener } from 'usehooks-ts'
 import TextFader from 'components/TextFader'
 import Section from 'components/ui/Section'
@@ -17,10 +15,10 @@ const Hero = () => {
   // example with document based event
   // useEventListener('visibilitychange', onVisibilityChange, documentRef)
   return (
-    <Section className="dark h-[100vh] max-h-[1080px] min-h-[600px] overflow-hidden bg-black text-white">
+    <Section className="dark h-[100svh] max-h-[1080px] min-h-[600px] overflow-hidden bg-black text-white">
       <div className="gap grid h-full grid-cols-1 content-end md:grid-cols-2">
         <div className="relative z-10 flex flex-col justify-end">
-          <p className=" max-w-[29ch] border-l border-white pl-6">
+          <p className=" max-w-[29ch] border-l border-white pl-4">
             <strong>Building together</strong>
             <br />
             We use technology to better lives—built using trust.
