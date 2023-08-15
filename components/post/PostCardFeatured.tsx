@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
-import Pill from 'components/ui/Pill'
+import { Pill } from 'components/ui'
 
 import CategoryTag from './CategoryTag'
-import PostDate from './PostDate'
+import PostDateReadingTime from './PostDateReadingTime'
 
 const PostCard = ({
   title,
@@ -73,12 +73,11 @@ const PostCard = ({
         </div>
         <div className="hidden flex-col justify-between lg:flex">
           <p className="mb-4 line-clamp-4 leading-relaxed">{excerpt}</p>
-          <div className="pb-2 text-sm font-medium uppercase tracking-wide sm:pt-4 md:pb-0">
-            <PostDate dateString={date} />{' '}
-            <span className="text-silver-500">
-              {estimatedReadingTime && `| ${estimatedReadingTime} min read`}
-            </span>
-          </div>
+          <PostDateReadingTime
+            dateString={date}
+            estimatedReadingTime={estimatedReadingTime}
+            className="pb-2 sm:pt-4 md:pb-0"
+          />
         </div>
       </div>
       {/* {author && <Avatar name={author.name} picture={author.picture} />} */}

@@ -17,6 +17,7 @@ import personType from 'schemas/person'
 import postType from 'schemas/post'
 import postCategoryType from 'schemas/post-category'
 import settingsType from 'schemas/settings'
+import videoType from 'schemas/video'
 import whitePaperType from 'schemas/white-paper'
 
 const title =
@@ -37,6 +38,7 @@ export default defineConfig({
       postCategoryType,
       postType,
       settingsType,
+      videoType,
       whitePaperType,
     ],
   },

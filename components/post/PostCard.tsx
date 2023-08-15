@@ -4,10 +4,11 @@ import { cn } from 'utils'
 
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
-import Pill from 'components/ui/Pill'
+import { Pill } from 'components/ui'
 
 import CategoryTag from './CategoryTag'
 import PostDate from './PostDate'
+import PostDateReadingTime from './PostDateReadingTime'
 
 const PostCard = ({
   title,
@@ -80,12 +81,10 @@ const PostCard = ({
           {excerpt && (
             <p className="mb-6 line-clamp-2 leading-relaxed">{excerpt}</p>
           )}
-          <div className="text-sm font-medium uppercase tracking-wide">
-            <PostDate dateString={date} />{' '}
-            <span className="text-silver-500">
-              {estimatedReadingTime && `| ${estimatedReadingTime} min read`}
-            </span>
-          </div>
+          <PostDateReadingTime
+            dateString={date}
+            estimatedReadingTime={estimatedReadingTime}
+          />
           {/* <div>
             <Link
               href={`/posts/${slug}`}

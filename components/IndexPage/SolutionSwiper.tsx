@@ -11,7 +11,7 @@ import 'swiper/css/pagination'
 import 'swiper/css'
 // import styles from './swiper.module.css'
 
-type SlideProps = {
+interface SlideProps {
   heading: string
   message: string
   image: string

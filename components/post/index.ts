@@ -4,6 +4,7 @@ import PostCard from './PostCard'
 import PostCardFeatured from './PostCardFeatured'
 import PostCardSplit from './PostCardSplit'
 import PostDate from './PostDate'
+import PostDateReadingTime from './PostDateReadingTime'
 import PostGrid from './PostGrid'
 import PostHeader from './PostHeader'
 import PostMeta from './PostMeta'
@@ -18,6 +19,7 @@ export {
   PostCardFeatured,
   PostCardSplit,
   PostDate,
+  PostDateReadingTime,
   PostGrid,
   PostHeader,
   PostMeta,

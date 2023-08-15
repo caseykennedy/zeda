@@ -4,10 +4,10 @@ import Avatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
 import ScrollProgress from 'components/ScrollProgress'
-import Pill from 'components/ui/Pill'
+import { Pill } from 'components/ui'
 
 import CategoryTag from './CategoryTag'
-import PostDate from './PostDate'
+import PostDateReadingTime from './PostDateReadingTime'
 
 const PostHeader = ({
   title,
@@ -32,12 +32,11 @@ const PostHeader = ({
     <>
       <section className="overflow-hidden bg-white pt-header">
         <div className="gutter-x gutter-y mx-auto max-w-site">
-          <div className="mb-6 text-sm font-medium uppercase tracking-wide">
-            <PostDate dateString={date} />{' '}
-            <span className="text-silver-500">
-              {estimatedReadingTime && `| ${estimatedReadingTime} min read`}
-            </span>
-          </div>
+          <PostDateReadingTime
+            dateString={date}
+            estimatedReadingTime={estimatedReadingTime}
+            className="mb-6"
+          />
 
           <h1 className="mb-16 max-w-[30ch] text-4xl font-semibold leading-tight tracking-normal md:mb-24 md:text-6xl md:leading-tight md:tracking-normal">
             {title}

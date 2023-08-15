@@ -1,6 +1,6 @@
-import { CardStackPlusIcon, ChevronDownIcon } from '@radix-ui/react-icons'
+import { CardStackPlusIcon } from '@radix-ui/react-icons'
 import useLoadMore from 'hooks/useLoadMore'
-import type { Post, Settings, WhitePaper } from 'lib/sanity.queries'
+import type { Post, Settings, VideoPost, WhitePaper } from 'lib/sanity.queries'
 
 import IndexPageHead from 'components/IndexPage/IndexPageHead'
 import Layout from 'components/Layout'
@@ -9,6 +9,7 @@ import PageTitle from 'components/ui/PageTitle'
 import Section from 'components/ui/Section'
 
 import FeaturedInsights from './FeaturedInsights'
+import FeaturedVideos from './FeaturedVideos'
 import PostGrid from './PostGrid'
 
 interface PageProps {
@@ -16,6 +17,7 @@ interface PageProps {
   featuredPosts: Post[]
   settings: Settings
   whitePapers: WhitePaper[]
+  videoPosts: VideoPost[]
 }
 
 const GridSection = ({
@@ -63,8 +65,9 @@ const InsightsPage = ({
   featuredPosts,
   settings,
   whitePapers,
+  videoPosts,
 }: PageProps) => {
-  console.log('whitePapers:', whitePapers)
+  console.log('videoPosts:', videoPosts)
   return (
     <>
       <IndexPageHead settings={settings} />
@@ -82,9 +85,7 @@ const InsightsPage = ({
           subTitle="Data-rich industry insights from our experts and engineers."
           posts={posts}
         />
-        <Section id="videos" className="bg-black text-white">
-          Videos
-        </Section>
+        <FeaturedVideos videos={videoPosts} />
         <GridSection
           id="white-papers"
           title="White papers"

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import LogoSymbol from 'components/LogoSymbol'
 import { CategoryTag, PostDate } from 'components/post'
-import Pill from 'components/ui/Pill'
+import { Pill } from 'components/ui'
 
 const slugPath = 'white-papers'
 

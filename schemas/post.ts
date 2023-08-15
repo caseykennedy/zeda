@@ -103,7 +103,6 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      hidden: ({ document }) => !!document?.hasVideo,
     }),
     defineField({
       name: 'postCategory',

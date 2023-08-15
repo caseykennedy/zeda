@@ -3,7 +3,10 @@ import {
   allPostsAndFeaturedQuery,
   allPostsByCategoryAndFeaturedQuery,
   allPostsByCategoryQuery,
+  allVideoPostsAndFeaturedQuery,
+  allVideoPostsQuery,
   allWhitePapersQuery,
+  featuredVideoPostsQuery,
   indexQuery,
   type JobPost,
   jobPostQuery,
@@ -19,6 +22,10 @@ import {
   postSlugsQuery,
   type Settings,
   settingsQuery,
+  type VideoPost,
+  videoPostAndMoreVideosQuery,
+  videoPostBySlugQuery,
+  videoPostSlugsQuery,
   type WhitePaper,
   whitePaperBySlugQuery,
   whitePaperSlugsQuery,
@@ -134,4 +141,45 @@ export async function getWhitePaperBySlug(
   slug: string | undefined
 ): Promise<WhitePaper> {
   return (await client.fetch(whitePaperBySlugQuery, { slug })) || ({} as any)
+}
+
+export async function getAllVideoPosts(
+  client: SanityClient
+): Promise<VideoPost[]> {
+  return (await client.fetch(allVideoPostsQuery)) || []
+}
+
+export async function getFeaturedVideoPosts(
+  client: SanityClient
+): Promise<VideoPost[]> {
+  return (await client.fetch(featuredVideoPostsQuery)) || []
+}
+
+export async function getAllVideoPostsAndFeatured(
+  client: SanityClient,
+  category: string
+): Promise<{ videoPosts: VideoPost[]; featuredVideos: VideoPost[] }> {
+  return await client.fetch(allVideoPostsAndFeaturedQuery, { category })
+}
+
+export async function getVideoPostAndMoreVideos(
+  client: SanityClient,
+  slug: string | undefined
+): Promise<{ post: VideoPost; morePosts: VideoPost[] }> {
+  return await client.fetch(videoPostAndMoreVideosQuery, { slug })
+}
+
+export async function getAllVideoPostsSlugs(): Promise<
+  Pick<VideoPost, 'slug'>[]
+> {
+  const client = getClient()
+  const slugs = (await client.fetch<string[]>(videoPostSlugsQuery)) || []
+  return slugs.map((slug) => ({ slug }))
+}
+
+export async function getVideoPostBySlug(
+  client: SanityClient,
+  slug: string | undefined
+): Promise<VideoPost> {
+  return (await client.fetch(videoPostBySlugQuery, { slug })) || ({} as any)
 }

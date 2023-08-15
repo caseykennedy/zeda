@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
-import Pill from 'components/ui/Pill'
+import { Pill } from 'components/ui'
 
 import CategoryTag from './CategoryTag'
-import PostDate from './PostDate'
+import PostDateReadingTime from './PostDateReadingTime'
 
 const PostCardSplit = ({
   title,
@@ -70,12 +70,11 @@ const PostCardSplit = ({
           </div>
         </div>
         <div className="gutter flex flex-col justify-between">
-          <div className="pb-2 text-sm font-medium uppercase tracking-wide sm:pt-4 md:pb-0">
-            <PostDate dateString={date} />{' '}
-            <span className="text-silver-500">
-              {estimatedReadingTime && `| ${estimatedReadingTime} min read`}
-            </span>
-          </div>
+          <PostDateReadingTime
+            dateString={date}
+            estimatedReadingTime={estimatedReadingTime}
+            className="pb-2 sm:pt-4 md:pb-0"
+          />
         </div>
       </div>
       {/* {author && <Avatar name={author.name} picture={author.picture} />} */}

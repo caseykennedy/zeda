@@ -1,7 +1,7 @@
 import type { Post } from 'lib/sanity.queries'
 
 import SocialShare from 'components/SocialShare'
-import Pill from 'components/ui/Pill'
+import { Pill } from 'components/ui'
 import Separator from 'components/ui/Separator'
 
 import PostNotes from './PostNotes'

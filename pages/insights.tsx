@@ -3,9 +3,10 @@ import {
   getAllPostsByCategoryAndFeatured,
   getAllWhitePapers,
   getClient,
+  getFeaturedVideoPosts,
   getSettings,
 } from 'lib/sanity.client'
-import type { Post, Settings, WhitePaper } from 'lib/sanity.queries'
+import type { Post, Settings, VideoPost, WhitePaper } from 'lib/sanity.queries'
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
@@ -16,21 +17,29 @@ export const CATEGORY_INSIGHTS = 'Insights'
 interface PageProps extends SharedPageProps {
   posts: Post[]
   featuredPosts: Post[]
-  settings: Settings
+  videoPosts: VideoPost[]
   whitePapers: WhitePaper[]
+  settings: Settings
 }
 
 interface Query {
   [key: string]: string
 }
 
-const Page = ({ posts, featuredPosts, settings, whitePapers }: PageProps) => {
+const Page = ({
+  posts,
+  featuredPosts,
+  videoPosts,
+  whitePapers,
+  settings,
+}: PageProps) => {
   return (
     <InsightsPage
       posts={posts}
       featuredPosts={featuredPosts}
-      settings={settings}
+      videoPosts={videoPosts}
       whitePapers={whitePapers}
+      settings={settings}
     />
   )
 }
@@ -39,19 +48,25 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx
   const client = getClient(draftMode ? { token: readToken } : undefined)
 
-  const [{ posts = [], featuredPosts = [] }, settings, whitePapers = []] =
-    await Promise.all([
-      getAllPostsByCategoryAndFeatured(client, CATEGORY_INSIGHTS),
-      getSettings(client),
-      getAllWhitePapers(client),
-    ])
+  const [
+    { posts = [], featuredPosts = [] },
+    videoPosts = [],
+    whitePapers = [],
+    settings,
+  ] = await Promise.all([
+    getAllPostsByCategoryAndFeatured(client, CATEGORY_INSIGHTS),
+    getFeaturedVideoPosts(client),
+    getAllWhitePapers(client),
+    getSettings(client),
+  ])
 
   return {
     props: {
       posts,
       featuredPosts,
-      settings,
+      videoPosts,
       whitePapers,
+      settings,
       draftMode,
       token: readToken,
     },

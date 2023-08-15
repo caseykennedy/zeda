@@ -7,8 +7,6 @@ const postFields = groq`
   notes,
   tags,
   title,
-  video,
-  vimeoURL,
   "categories": postCategory[]->name,
   coverImage{
     ...,
@@ -30,6 +28,15 @@ const whitePaperFields = groq`
   "slug": slug.current,
   tags,
   title,
+`
+
+const videoPostFields = groq`
+  _id,
+  date,
+  tags,
+  title,
+  videoURL,
+  "slug": slug.current,
 `
 
 const readingTimeFields = groq`
@@ -158,6 +165,56 @@ export const whitePaperBySlugQuery = groq`
 }
 `
 
+export const allVideoPostsQuery = groq`
+*[_type == "video"] | order(date desc, _updatedAt desc) {
+  content,
+  ${videoPostFields}
+}
+`
+
+export const featuredVideoPostsQuery = groq`
+*[_type == "video"] | order(date desc, _updatedAt desc) [0...3] {
+  content,
+  ${videoPostFields}
+}
+`
+
+export const allVideoPostsAndFeaturedQuery = groq`
+{
+  "posts": *[_type == "video"] | order(_updatedAt desc) [0...999] {
+    content,
+    ${postFields}
+  },
+  "featuredVideos": *[_type == "video"] | order(date desc, _updatedAt desc) [0...2] {
+    ${videoPostFields}
+  }
+}
+`
+
+export const videoPostAndMoreVideosQuery = groq`
+{
+  "post": *[_type == "video" && slug.current == $slug] | order(_updatedAt desc) [0] {
+    content,
+    ${videoPostFields}
+  },
+  "moreVideos": *[_type == "video" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
+    content,
+    ${videoPostFields}
+  }
+}
+`
+
+export const videoPostSlugsQuery = groq`
+*[_type == "video" && defined(slug.current)][].slug.current
+`
+
+export const videoPostBySlugQuery = groq`
+*[_type == "video" && slug.current == $slug][0] {
+  content,
+  ${videoPostFields}
+}
+`
+
 interface ReadingTime {
   numberOfCharacters?: number
   estimatedWordCount?: number
@@ -225,8 +282,6 @@ export interface Post extends ReadingTime {
   slug?: string
   tags: string[]
   title?: string
-  video?: boolean
-  vimeoURL?: string
 }
 
 export interface PostCategory {
@@ -254,4 +309,14 @@ export interface WhitePaper extends ReadingTime {
   slug?: string
   tags: string[]
   title?: string
+}
+
+export interface VideoPost {
+  _id: string
+  content?: any
+  date: string
+  slug: string
+  tags: string[]
+  title: string
+  videoURL: string
 }
