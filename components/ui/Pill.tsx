@@ -10,7 +10,7 @@ export const pillVariants = cva(
         default: 'text-white bg-silver-500',
         primary: 'bg-violet-500 text-white ',
         secondary: 'border-silver-600 bg-black text-white',
-        tertiary: 'bg-moss-500 text-white',
+        tertiary: 'bg-moss-500 text-black',
         outline: 'border border-silver-500 bg-white text-silver-600',
         ghost: 'bg-transparent text-silver-500 border-silver-500 border',
       },

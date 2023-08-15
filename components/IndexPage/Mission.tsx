@@ -51,7 +51,7 @@ const data = [
     details:
       'Including processes such as rapid prototyping, rapid tooling and mass customization',
     figure: {
-      src: 'nanotech.jpg',
+      src: 'semiconductors.jpg',
       alt: 'Zeda Inc. manufacturing facility',
     },
   },
