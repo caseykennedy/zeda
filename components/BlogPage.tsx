@@ -5,7 +5,7 @@ import Container from 'components/BlogContainer'
 import BlogHeader from 'components/BlogHeader'
 import Layout from 'components/BlogLayout'
 import HeroPost from 'components/HeroPost'
-import { IndexPageHead } from 'components/IndexPage'
+import { IndexPageHead } from 'components/index-page'
 
 export interface IndexPageProps {
   preview?: boolean

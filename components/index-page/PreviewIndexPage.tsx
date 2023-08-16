@@ -8,7 +8,7 @@ import {
 } from 'lib/sanity.queries'
 import { useLiveQuery } from 'next-sanity/preview'
 
-import { IndexPage, type IndexPageProps } from 'components/IndexPage'
+import { IndexPage, type IndexPageProps } from 'components/index-page'
 
 export default function PreviewIndexPage(props: IndexPageProps) {
   const [jobPosts, loadingJobPosts] = useLiveQuery<JobPost[]>(
