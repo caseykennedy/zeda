@@ -4,7 +4,7 @@ import { type JobPost, type Settings } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import { type SharedPageProps } from 'pages/_app'
 
-import { CareersPage } from 'components/CareersPage'
+import { CareersPage } from 'components/careers-page'
 
 interface PageProps extends SharedPageProps {
   jobPosts: JobPost[]

@@ -5,16 +5,16 @@ import {
   getSettings,
   getWhitePaperBySlug,
 } from 'lib/sanity.client'
-import type { Settings, WhitePaper } from 'lib/sanity.queries'
+import type { Settings, WhitePaperPost } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 import post from 'schemas/post'
 
 import { PreviewPostPage } from 'components/post'
-import { WhitePaperPage } from 'components/whitePaper'
+import { WhitePaperPostPage } from 'components/white-paper'
 
 interface PageProps extends SharedPageProps {
-  post: WhitePaper
+  post: WhitePaperPost
   settings?: Settings
 }
 
@@ -29,7 +29,7 @@ const WhitePapersSlugRoute = (props: PageProps) => {
   //   return <PreviewPostPage post={post} morePosts={[]} settings={settings} />
   // }
 
-  return <WhitePaperPage post={post} morePosts={[]} settings={settings} />
+  return <WhitePaperPostPage post={post} morePosts={[]} settings={settings} />
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {

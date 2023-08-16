@@ -299,7 +299,7 @@ export interface Settings {
   }
 }
 
-export interface WhitePaper extends ReadingTime {
+export interface WhitePaperPost extends ReadingTime {
   _id: string
   content?: any
   coverImage?: SanityImage

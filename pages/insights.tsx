@@ -1,16 +1,21 @@
 import { readToken } from 'lib/sanity.api'
 import {
   getAllPostsByCategoryAndFeatured,
+  getAllVideoPosts,
   getAllWhitePapers,
   getClient,
-  getFeaturedVideoPosts,
   getSettings,
 } from 'lib/sanity.client'
-import type { Post, Settings, VideoPost, WhitePaper } from 'lib/sanity.queries'
+import type {
+  Post,
+  Settings,
+  VideoPost,
+  WhitePaperPost,
+} from 'lib/sanity.queries'
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
-import { InsightsPage } from 'components/InsightsPage'
+import { InsightsPage } from 'components/insights-page'
 
 export const CATEGORY_INSIGHTS = 'Insights'
 
@@ -18,7 +23,7 @@ interface PageProps extends SharedPageProps {
   posts: Post[]
   featuredPosts: Post[]
   videoPosts: VideoPost[]
-  whitePapers: WhitePaper[]
+  whitePapers: WhitePaperPost[]
   settings: Settings
 }
 
@@ -55,7 +60,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
     settings,
   ] = await Promise.all([
     getAllPostsByCategoryAndFeatured(client, CATEGORY_INSIGHTS),
-    getFeaturedVideoPosts(client),
+    getAllVideoPosts(client),
     getAllWhitePapers(client),
     getSettings(client),
   ])

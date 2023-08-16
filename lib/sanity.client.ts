@@ -26,8 +26,8 @@ import {
   videoPostAndMoreVideosQuery,
   videoPostBySlugQuery,
   videoPostSlugsQuery,
-  type WhitePaper,
   whitePaperBySlugQuery,
+  type WhitePaperPost,
   whitePaperSlugsQuery,
 } from 'lib/sanity.queries'
 import { createClient, type SanityClient } from 'next-sanity'
@@ -124,12 +124,12 @@ export async function getAllPostsByCategoryAndFeatured(
 
 export async function getAllWhitePapers(
   client: SanityClient
-): Promise<WhitePaper[]> {
+): Promise<WhitePaperPost[]> {
   return (await client.fetch(allWhitePapersQuery)) || []
 }
 
 export async function getAllWhitePapersSlugs(): Promise<
-  Pick<WhitePaper, 'slug'>[]
+  Pick<WhitePaperPost, 'slug'>[]
 > {
   const client = getClient()
   const slugs = (await client.fetch<string[]>(whitePaperSlugsQuery)) || []
@@ -139,7 +139,7 @@ export async function getAllWhitePapersSlugs(): Promise<
 export async function getWhitePaperBySlug(
   client: SanityClient,
   slug: string | undefined
-): Promise<WhitePaper> {
+): Promise<WhitePaperPost> {
   return (await client.fetch(whitePaperBySlugQuery, { slug })) || ({} as any)
 }
 

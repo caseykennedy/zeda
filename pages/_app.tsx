@@ -28,6 +28,10 @@ export default function App({
   pageProps,
 }: AppProps<SharedPageProps>) {
   const { draftMode, token } = pageProps
+  console.log(
+    `%c Zeda, Inc. — crafted with care [ www.caseykennedy.me ] `,
+    `background: hsla(252, 100%, 72%, 1); color: #000`
+  )
   return (
     <>
       {draftMode ? (

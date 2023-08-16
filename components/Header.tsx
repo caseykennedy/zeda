@@ -34,14 +34,14 @@ const solutionsNav = [
     title: 'zeda technologies',
     href: '/technologies',
     desc: 'Space, defense &amp; aerospace',
-    icon: <LogoSymbolTech />,
+    icon: <LogoSymbolTech width={32} />,
     className: 'hover:border-blue-500',
   },
   {
     title: 'zeda health',
     href: '//orthoimplantcompany.com',
     desc: 'Orthopaedic implants &amp; nanotech',
-    icon: <LogoSymbolHealth />,
+    icon: <LogoSymbolHealth width={32} />,
     className: 'hover:border-yellow-500',
   },
 ]
