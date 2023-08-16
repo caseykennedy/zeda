@@ -9,7 +9,7 @@ import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
-import { NewsPage } from 'components/news-page'
+import { NewsPage } from 'components/news'
 
 export const CATEGORY_NEWS = 'News'
 export const CATEGORY_PRESS = 'Press Release'

@@ -2,7 +2,7 @@ import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-corridor.jpg'
 
 import FooterCTA from 'components/FooterCTA'
-import IndexPageHead from 'components/index-page/IndexPageHead'
+import IndexPageHead from 'components/index/IndexPageHead'
 import Layout from 'components/Layout'
 import PageTitle from 'components/ui/PageTitle'
 

@@ -3,7 +3,7 @@ import { urlForImage } from 'lib/sanity.image'
 import { type Post, type Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 
-import BlogMeta from 'components/BlogMeta'
+import PageMeta from 'components/PageMeta'
 
 export interface PostPageHeadProps {
   settings?: Settings
@@ -15,7 +15,7 @@ export default function PostPageHead({ settings, post }: PostPageHeadProps) {
   return (
     <Head>
       <title>{post.title ? `${post.title} | ${title}` : title}</title>
-      <BlogMeta />
+      <PageMeta />
       {post.coverImage?.asset?._ref && (
         <meta
           property="og:image"

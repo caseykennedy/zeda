@@ -1,13 +1,12 @@
 import type { VideoPost } from 'lib/sanity.queries'
-import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import { cn } from 'utils'
 
 import { CategoryTag, PostDate } from 'components/post'
-import { Pill } from 'components/ui'
+import { Button, Pill } from 'components/ui'
+import { VideoPlayer } from 'components/videos'
 
-const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
-
-const FeatureCard = ({
+const FeaturedCard = ({
   title,
   date,
   tags,
@@ -37,25 +36,17 @@ const FeatureCard = ({
             optimism, positivity, rigorous thinking, and hard work.
           </p>
 
-          <div>
+          {/* <div>
             <PostDate
               dateString={date}
               className="text-sm font-medium uppercase tracking-wide"
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
       <div className="order-1 col-span-9 flex aspect-video items-center justify-center md:order-2 md:col-span-5 md:col-start-5 lg:col-span-6 lg:col-start-4">
-        <ReactPlayer
-          width="100%"
-          height="100%"
-          controls
-          playing
-          light
-          // playIcon={}
-          url={videoURL}
-        />
+        <VideoPlayer videoURL={videoURL} />
       </div>
     </div>
   )
@@ -79,14 +70,7 @@ const HighlightCard = ({
   return (
     <div className={cn(`gap flex flex-col flex-nowrap sm:flex-row`, className)}>
       <div className="aspect-video w-full flex-1">
-        <ReactPlayer
-          width="100%"
-          height="100%"
-          controls
-          playing
-          light
-          url={videoURL}
-        />
+        <VideoPlayer videoURL={videoURL} />
       </div>
 
       <div className="flex flex-1 flex-col justify-between">
@@ -103,12 +87,12 @@ const HighlightCard = ({
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <PostDate
             dateString={date}
             className="text-sm font-medium uppercase tracking-wide"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   )
@@ -125,18 +109,18 @@ const FeaturedVideos = ({ videos }: { videos: VideoPost[] }) => {
               Videos
             </h2>
           </div>
-          {/* <div>
+          <div>
             <Button variant="primary" asChild>
-              <Link href="/news">All videos</Link>
+              <Link href="/videos">All videos</Link>
             </Button>
-          </div> */}
+          </div>
         </div>
       </div>
       <div className="gutter mx-auto grid w-full max-w-site grid-cols-1">
         {videos
           .slice(0, 1)
           .map(({ videoURL, _id, title, date, tags, slug }) => (
-            <FeatureCard
+            <FeaturedCard
               key={_id}
               date={date}
               slug={slug}

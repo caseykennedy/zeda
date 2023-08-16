@@ -42,12 +42,12 @@ const WhitePaperCard = ({
           <div>
             <div className="mb-4 flex flex-wrap gap-1.5">
               <CategoryTag categories={['White paper']} />
-              {tags &&
+              {/* {tags &&
                 tags.slice(0, 1).map((tag, idx) => (
                   <Pill variant="outline" key={idx}>
                     {tag}
                   </Pill>
-                ))}
+                ))} */}
             </div>
 
             <h3

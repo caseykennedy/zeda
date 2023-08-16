@@ -156,10 +156,9 @@ export async function getFeaturedVideoPosts(
 }
 
 export async function getAllVideoPostsAndFeatured(
-  client: SanityClient,
-  category: string
-): Promise<{ videoPosts: VideoPost[]; featuredVideos: VideoPost[] }> {
-  return await client.fetch(allVideoPostsAndFeaturedQuery, { category })
+  client: SanityClient
+): Promise<{ posts: VideoPost[]; featuredPosts: VideoPost[] }> {
+  return await client.fetch(allVideoPostsAndFeaturedQuery)
 }
 
 export async function getVideoPostAndMoreVideos(

@@ -181,11 +181,11 @@ export const featuredVideoPostsQuery = groq`
 
 export const allVideoPostsAndFeaturedQuery = groq`
 {
-  "posts": *[_type == "video"] | order(_updatedAt desc) [0...999] {
+  "posts": *[_type == "video"] | order(date desc, _updatedAt desc) [1...999] {
     content,
-    ${postFields}
+    ${videoPostFields}
   },
-  "featuredVideos": *[_type == "video"] | order(date desc, _updatedAt desc) [0...2] {
+  "featuredPosts": *[_type == "video"] | order(date desc, _updatedAt desc) [0...1] {
     ${videoPostFields}
   }
 }
@@ -197,7 +197,7 @@ export const videoPostAndMoreVideosQuery = groq`
     content,
     ${videoPostFields}
   },
-  "moreVideos": *[_type == "video" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
+  "morePosts": *[_type == "video" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
     content,
     ${videoPostFields}
   }

@@ -1,7 +1,7 @@
 import { type JobPost, type Settings } from 'lib/sanity.queries'
 import Link from 'next/link'
 
-import IndexPageHead from 'components/index-page/IndexPageHead'
+import IndexPageHead from 'components/index/IndexPageHead'
 import JobPosts from 'components/JobPosts'
 import Layout from 'components/Layout'
 import Button from 'components/ui/Button'

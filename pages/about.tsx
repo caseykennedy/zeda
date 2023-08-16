@@ -9,7 +9,7 @@ import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import { type SharedPageProps } from 'pages/_app'
 
-import { AboutPage } from 'components/about-page'
+import { AboutPage } from 'components/about'
 
 interface PageProps extends SharedPageProps {
   partners: Partner[]

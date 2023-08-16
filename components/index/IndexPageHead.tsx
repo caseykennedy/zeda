@@ -3,7 +3,7 @@ import * as demo from 'lib/demo.data'
 import { type Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 
-import BlogMeta from 'components/BlogMeta'
+import PageMeta from 'components/PageMeta'
 
 export interface IndexPageHeadProps {
   settings: Settings
@@ -20,7 +20,7 @@ const IndexPageHead = ({ settings }: IndexPageHeadProps) => {
   return (
     <Head>
       <title>{title}</title>
-      <BlogMeta />
+      <PageMeta />
       <meta
         key="description"
         name="description"

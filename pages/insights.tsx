@@ -15,9 +15,9 @@ import type {
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
-import { InsightsPage } from 'components/insights-page'
+import { InsightsPage } from 'components/insights'
 
-export const CATEGORY_INSIGHTS = 'Insights'
+export const CATEGORY_INSIGHTS = 'Insight'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]

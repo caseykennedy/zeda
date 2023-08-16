@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import { cn } from 'utils'
 
-import Container from 'components/BlogContainer'
-
 export default function Alert({
   preview,
   loading,
@@ -19,7 +17,7 @@ export default function Alert({
         'z-50 w-full border-t border-violet-500 bg-violet-500 text-white'
       )}
     >
-      <Container>
+      <div>
         <div className="py-10 text-center text-sm">
           {'Previewing draft content. '}
           <a
@@ -29,7 +27,7 @@ export default function Alert({
             Disable draft mode
           </a>
         </div>
-      </Container>
+      </div>
     </div>
   )
 }

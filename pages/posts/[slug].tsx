@@ -12,6 +12,8 @@ import type { SharedPageProps } from 'pages/_app'
 import { PostPage } from 'components/post'
 import { PreviewPostPage } from 'components/post'
 
+export const POST_SLUG = 'posts'
+
 interface PageProps extends SharedPageProps {
   post: Post
   morePosts: Post[]
@@ -64,7 +66,7 @@ export const getStaticPaths = async () => {
   const slugs = await getAllPostsSlugs()
 
   return {
-    paths: slugs?.map(({ slug }) => `/posts/${slug}`) || [],
+    paths: slugs?.map(({ slug }) => `/${POST_SLUG}/${slug}`) || [],
     fallback: 'blocking',
   }
 }
