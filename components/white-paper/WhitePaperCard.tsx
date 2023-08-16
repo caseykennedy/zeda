@@ -29,7 +29,7 @@ const WhitePaperCard = ({
       <Link
         href={`/${slugPath}/${slug}`}
         aria-label={title}
-        className="flex aspect-video w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-silver-100"
+        className="flex aspect-video h-full w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-silver-100"
       >
         <LogoSymbol width={44} />
       </Link>

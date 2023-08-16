@@ -23,11 +23,11 @@ const VideoCard = ({
   console.log('videoURL', videoURL)
   return (
     <div className={cn(`flex flex-col gap-6`, className)}>
-      <div className="aspect-video w-full flex-1">
+      <div className="aspect-video w-full">
         <VideoPlayer videoURL={videoURL} />
       </div>
 
-      <div className="flex flex-1 flex-col">
+      <div className="flex flex-col">
         <div>
           <div className="mb-4 flex flex-wrap gap-2">
             {tags &&
