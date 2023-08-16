@@ -16,7 +16,7 @@ const data = [
     value: 'additive',
     title: 'Additive manufacturing',
     details:
-      'Including processes such as rapid prototyping, rapid tooling and mass customization',
+      'Including processes such as rapid prototyping, rapid tooling and mass customization.',
     figure: {
       src: 'additive-manufacturing.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -27,7 +27,7 @@ const data = [
     value: 'precision',
     title: 'Precision manufacturing',
     details:
-      'Including processes such as rapid prototyping, rapid tooling and mass customization',
+      'Employing meticulous techniques like CNC machining and microfabrication to create intricate and accurate components.',
     figure: {
       src: 'precision-manufacturing.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -38,7 +38,7 @@ const data = [
     value: 'nanotech',
     title: 'Nanotech',
     details:
-      'Including processes such as rapid prototyping, rapid tooling and mass customization',
+      'Manipulating matter at the nanoscale, harnessing techniques such as self-assembly and nanolithography to design and fabricate novel materials.',
     figure: {
       src: 'nanotech.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -49,7 +49,7 @@ const data = [
     value: 'semiconductor',
     title: 'Semiconductor technologies',
     details:
-      'Including processes such as rapid prototyping, rapid tooling and mass customization',
+      'Utilizing processes like photolithography and doping to manufacture electronic components from semiconductor materials.',
     figure: {
       src: 'semiconductors.jpg',
       alt: 'Zeda Inc. manufacturing facility',
