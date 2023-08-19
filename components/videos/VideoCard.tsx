@@ -14,13 +14,13 @@ const VideoCard = ({
   title,
   date,
   tags,
+  content,
   videoURL,
   className,
 }: Pick<
   FeaturedProps,
-  'title' | 'date' | 'tags' | 'videoURL' | 'className'
+  'title' | 'date' | 'tags' | 'content' | 'videoURL' | 'className'
 >) => {
-  console.log('videoURL', videoURL)
   return (
     <div className={cn(`flex flex-col gap-6`, className)}>
       <div className="aspect-video w-full">

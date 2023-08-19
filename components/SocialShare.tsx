@@ -1,5 +1,4 @@
 import { Link2Icon } from '@radix-ui/react-icons'
-import Link from 'next/link'
 import { cn } from 'utils'
 
 import { Button, Icon } from 'components/ui'
@@ -13,7 +12,7 @@ const ButtonLink = ({
   children: React.ReactNode
   className?: string
 }) => (
-  <Button variant="outline" size="icon" asChild>
+  <Button variant="ghost" size="icon" asChild>
     <a
       href={href}
       target="_blank noreferrer noopener"
@@ -31,7 +30,7 @@ const SocialShare = ({
   name: 'facebook' | 'linkedin' | 'twitter' | 'share'
   slug?: string
 }) => {
-  const shareSlug = `https://zeda.vercel.app/${slug}`
+  const shareSlug = `https://z8a.com/${slug}`
 
   switch (name) {
     case 'facebook':

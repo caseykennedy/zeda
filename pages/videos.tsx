@@ -23,7 +23,6 @@ interface Query {
 }
 
 const Page = ({ posts, featuredPosts, settings }: PageProps) => {
-  console.log('posts', posts)
   return (
     <VideosPage
       posts={posts}

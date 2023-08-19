@@ -75,7 +75,7 @@ const Benefits = () => (
           </div>
         </div>
       </div>
-      <div className="relative aspect-square min-h-[400px] bg-violet-500 sm:aspect-video lg:aspect-square">
+      <div className="relative h-full min-h-[600px] bg-violet-500">
         <Img
           src={workBalanceImg}
           alt="Zeda Inc. manufacturing facility"
@@ -87,12 +87,13 @@ const Benefits = () => (
             objectFit: 'cover',
             objectPosition: 'top right',
           }}
+          className="aspect-square sm:aspect-video lg:aspect-square"
         />
       </div>
     </div>
 
     <div className="relative grid grid-cols-1 lg:grid-cols-2">
-      <div className="relative order-last aspect-square bg-violet-500 sm:aspect-video lg:order-first lg:aspect-square">
+      <div className="relative order-last h-full min-h-[600px] bg-violet-500 lg:order-first">
         <Img
           src={goldenGateBridgeImg}
           alt="San Francisco Golden Gate Bridge"
@@ -104,6 +105,7 @@ const Benefits = () => (
             objectFit: 'cover',
             objectPosition: 'top right',
           }}
+          className="aspect-square sm:aspect-video lg:aspect-square"
         />
       </div>
 

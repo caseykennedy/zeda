@@ -23,12 +23,13 @@ const GridSection = ({ posts }: { posts: VideoPost[] }) => {
   return (
     <Section className="dark border-t border-silver-900 bg-black text-white">
       <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-        {list.map(({ _id, title, date, tags, videoURL }) => (
+        {list.map(({ _id, title, date, tags, content, videoURL }) => (
           <VideoCard
             key={_id}
             title={title}
             date={date}
             tags={tags}
+            content={content}
             videoURL={videoURL}
           />
         ))}
@@ -52,6 +53,7 @@ const GridSection = ({ posts }: { posts: VideoPost[] }) => {
 
 const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
   const featuredPost = featuredPosts[0]
+  console.log('featuredPost', featuredPost.content)
   return (
     <>
       <IndexPageHead settings={settings} />
@@ -59,13 +61,14 @@ const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
         <PageTitle className="[&>div]:mt-48">
           <h1 className="mb-2">Videos</h1>
           <p className="max-w-[26ch] text-lg font-medium text-silver-500">
-            Data-rich industry insights from our experts and engineers.
+            Get to know our team, our culture, and our manufacturing processes.
           </p>
         </PageTitle>
         <FeaturedVideoCard
           title={featuredPost.title}
           date={featuredPost.date}
           tags={featuredPost.tags}
+          content={featuredPost.content}
           videoURL={featuredPost.videoURL}
         />
         <GridSection posts={posts} />

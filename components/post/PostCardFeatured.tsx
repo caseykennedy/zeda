@@ -72,7 +72,9 @@ const PostCard = ({
           </div>
         </div>
         <div className="hidden flex-col justify-between lg:flex">
-          <p className="mb-4 line-clamp-4 leading-relaxed">{excerpt}</p>
+          <p className="mb-4 line-clamp-4 leading-relaxed text-silver-600">
+            {excerpt}
+          </p>
           <PostDateReadingTime
             dateString={date}
             estimatedReadingTime={estimatedReadingTime}

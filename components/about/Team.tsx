@@ -1,5 +1,6 @@
+import { useCallback, useEffect, useState } from 'react'
 import { LinkedInLogoIcon } from '@radix-ui/react-icons'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
 import { type Person } from 'lib/sanity.queries'
 import Link from 'next/link'
@@ -8,6 +9,22 @@ import { polyVariant, staggerItems, viewport } from 'utils/variants'
 import Img from 'components/Img'
 import Button from 'components/ui/Button'
 import Section from 'components/ui/Section'
+
+import TeamBio from './TeamBio'
+
+const CATEGORY_ALL = 'all'
+const CATEGORY_LEADERSHIP = 'leadership'
+const CATEGORY_BOARD_MEMBER = 'board member'
+const CATEGORY_BOARD_ADVISOR = 'board advisor'
+const CATEGORY_ADVISOR = 'advisor'
+
+const teamCategories = [
+  CATEGORY_ALL,
+  CATEGORY_LEADERSHIP,
+  CATEGORY_BOARD_MEMBER,
+  CATEGORY_BOARD_ADVISOR,
+  CATEGORY_ADVISOR,
+]
 
 const fadeVariants = {
   visible: {
@@ -35,8 +52,36 @@ const upVariants = {
   },
 }
 
-const Team = ({ people }: { people: Person[] }) => {
-  console.log('people:::', people[0].picture.metadata)
+const Team = ({
+  people,
+}: {
+  people: Pick<
+    Person,
+    '_id' | 'bio' | 'linkedinURL' | 'name' | 'picture' | 'position' | 'seats'
+  >[]
+}) => {
+  const [filteredPosts, setFilteredPosts] = useState(people)
+  const [activeBtn, setActiveBtn] = useState(CATEGORY_ALL)
+
+  const handleClick = useCallback(
+    (category: string) => {
+      if (category === CATEGORY_ALL) {
+        setFilteredPosts(people)
+        setActiveBtn(CATEGORY_ALL)
+      } else {
+        setFilteredPosts(
+          people.filter((person) => person.seats?.includes(category))
+        )
+        setActiveBtn(category)
+      }
+    },
+    [people]
+  )
+
+  useEffect(() => {
+    console.log(filteredPosts)
+  }, [filteredPosts])
+
   return (
     <Section id="leadership">
       <div className="gap grid grid-cols-6">
@@ -51,72 +96,76 @@ const Team = ({ people }: { people: Person[] }) => {
       </div>
 
       <div className="mt-32 md:mt-48">
-        <motion.div
-          variants={staggerItems}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3"
-        >
-          {people.map(({ picture, name, position, bio, linkedinURL }, idx) => (
-            <motion.div variants={polyVariant} key={idx}>
-              <motion.figure
-                initial={['hidden', 'down']}
-                whileHover={['visible', 'up']}
-                animate={['hidden', 'down']}
-                className="group relative overflow-hidden rounded bg-silver-100"
-              >
-                <Img
-                  src={urlForImage(picture).height(600).width(493).url()}
-                  alt="Zeda Inc. manufacturing facility"
-                  blurDataURL={picture.metadata.lqip}
-                  fill={false}
-                  width={693}
-                  height={800}
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center top',
-                    transform: 'scaleX(-1)',
-                  }}
-                />
-                <motion.div
-                  variants={fadeVariants}
-                  className="absolute inset-0 bg-violet-500/90 p-6 backdrop-blur"
-                >
-                  <motion.p
-                    variants={upVariants}
-                    className="text-lg font-medium text-white"
-                  >
-                    {bio}
-                  </motion.p>
-                </motion.div>
-              </motion.figure>
-
-              <div className="gap mt-3 flex flex-row flex-nowrap">
-                <div className="flex-1">
-                  <div className="font-display text-2xl font-semibold">
-                    {name}
-                  </div>
-                  <p className="text-sm font-medium uppercase text-silver-700">
-                    {position}
-                  </p>
-                </div>
-                <div>
-                  {linkedinURL && (
-                    <Link
-                      href={linkedinURL}
-                      target="_blank"
-                      rel="nofollow noreferrer"
-                      className="text-silver-500 transition-colors duration-200 hover:text-black"
-                    >
-                      <LinkedInLogoIcon className="h-5 w-5" />
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </motion.div>
+        <div className="gutter-b flex gap-1.5">
+          {teamCategories.map((category, idx) => (
+            <Button
+              key={idx}
+              variant={activeBtn === category ? 'primary' : 'secondary'}
+              onClick={() => handleClick(category)}
+            >
+              {category}
+            </Button>
           ))}
-        </motion.div>
+        </div>
+        <AnimatePresence>
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+            {filteredPosts.map(
+              ({ _id, bio, linkedinURL, name, picture, position, seats }) => (
+                <motion.div
+                  key={_id}
+                  variants={polyVariant}
+                  layout
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                >
+                  <TeamBio
+                    bio={bio}
+                    linkedinURL={linkedinURL}
+                    name={name}
+                    picture={picture}
+                    position={position}
+                    seats={seats}
+                  >
+                    <figure className="relative overflow-hidden rounded bg-silver-100">
+                      <Img
+                        src={urlForImage(picture).height(600).width(493).url()}
+                        alt="Zeda Inc. manufacturing facility"
+                        blurDataURL={picture.metadata.lqip}
+                        fill={false}
+                        width={693}
+                        height={800}
+                      />
+                    </figure>
+                  </TeamBio>
+
+                  <div className="gap mt-3 flex flex-row flex-nowrap">
+                    <div className="flex-1">
+                      <div className="font-display text-2xl font-semibold">
+                        {name}
+                      </div>
+                      <p className="text-sm font-medium uppercase text-silver-700">
+                        {position}
+                      </p>
+                    </div>
+                    <div>
+                      {linkedinURL && (
+                        <Link
+                          href={linkedinURL}
+                          target="_blank"
+                          rel="nofollow noreferrer"
+                          className="text-silver-500 transition-colors duration-200 hover:text-black"
+                        >
+                          <LinkedInLogoIcon className="h-5 w-5" />
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              )
+            )}
+          </div>
+        </AnimatePresence>
       </div>
     </Section>
   )

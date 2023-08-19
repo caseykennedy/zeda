@@ -56,9 +56,14 @@ const PostPage = ({
                 tags={post.tags}
                 categories={post.categories}
               />
-              <PostBody content={post.content} />
 
-              {isPR && (
+              <section className="gutter-x gutter-y w-full">
+                <div className="mx-auto max-w-2xl">
+                  <PostBody content={post.content} />
+                </div>
+              </section>
+
+              {/* {isPR && (
                 <section className="gutter-x gutter-y w-full">
                   <div className="mx-auto max-w-2xl">
                     <h4>About Zeda, Inc.</h4>
@@ -75,7 +80,7 @@ const PostPage = ({
                     </p>
                   </div>
                 </section>
-              )}
+              )} */}
 
               <PostMeta notes={post.notes} slug={slug} tags={post.tags} />
             </article>

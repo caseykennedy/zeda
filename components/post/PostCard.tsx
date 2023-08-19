@@ -45,7 +45,7 @@ const PostCard = ({
           href={`/posts/${slug}`}
           aria-label={title}
           className={cn(
-            `flex aspect-video w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black`
+            `flex aspect-video h-full w-full items-center justify-center rounded-br rounded-tl rounded-tr bg-black`
           )}
         >
           <LogoSymbol width={44} />

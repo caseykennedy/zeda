@@ -18,7 +18,7 @@ export const buttonVariants = cva(
         outline:
           'border border-black bg-white hover:bg-violet-600 hover:text-white',
         ghost:
-          'border-none bg-transparent text-silver-400 hover:text-black hover:bg-silver-500',
+          'border-none bg-white text-silver-400 hover:text-black hover:bg-silver-500',
         link: 'border-none text-black decoration-2 underline-offset-4 hover:underline',
       },
       size: {

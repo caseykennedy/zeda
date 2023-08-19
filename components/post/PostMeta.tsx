@@ -32,6 +32,7 @@ const PostMeta = ({
       {tags && (
         <>
           <div className="my-6 flex flex-wrap gap-1.5 ">
+            <div className="mr-8 text-sm uppercase text-silver-500">Topics</div>
             {tags.map((tag, idx) => (
               <Pill key={idx}>{tag}</Pill>
             ))}

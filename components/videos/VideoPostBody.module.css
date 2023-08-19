@@ -1,0 +1,44 @@
+.portableText {
+  @apply text-xl leading-relaxed;
+}
+
+.portableText p {
+  @apply first:mt-0 last:mb-0;
+}
+
+.portableText p,
+.portableText ul,
+.portableText ol,
+.portableText blockquote {
+  @apply my-4;
+}
+
+.portableText h2,
+.portableText h3,
+.portableText h4 {
+  @apply mt-12 first:mt-0;
+}
+
+.portableText h2 {
+  @apply text-3xl leading-snug;
+}
+
+.portableText h3 {
+  @apply text-2xl leading-snug tracking-wide;
+}
+
+.portableText a {
+  @apply text-violet-800 underline;
+}
+
+.portableText a:hover {
+  @apply text-violet-500;
+}
+
+.portableText blockquote {
+  @apply my-14 border-l-4 border-violet-500 pl-6 font-semibold font-display text-2xl tracking-wide;
+}
+
+.portableText ul {
+  @apply list-disc list-outside pl-6 -mt-6;
+}

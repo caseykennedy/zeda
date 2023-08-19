@@ -5,6 +5,7 @@ import { Pill } from 'components/ui'
 import { Section } from 'components/ui'
 
 import VideoPlayer from './VideoPlayer'
+import VideoPostBody from './VideoPostBody'
 
 const FeaturedVideoCard = ({
   title,
@@ -13,6 +14,7 @@ const FeaturedVideoCard = ({
   content,
   videoURL,
 }: Pick<VideoPost, 'title' | 'date' | 'tags' | 'content' | 'videoURL'>) => {
+  console.log(content)
   return (
     <Section className="dark border-t border-silver-900 bg-black text-white">
       <div className="gap grid grid-cols-9">
@@ -32,14 +34,16 @@ const FeaturedVideoCard = ({
           </div>
 
           <div>
-            <p className="line-clamp-3 text-silver-500">content</p>
+            <div className="mb-6 line-clamp-3 text-silver-500">
+              <VideoPostBody content={content} />
+            </div>
 
-            {/* <div>
+            <div>
               <PostDate
                 dateString={date}
                 className="text-sm font-medium uppercase tracking-wide"
               />
-            </div> */}
+            </div>
           </div>
         </div>
 

@@ -26,10 +26,8 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
 
 const PostBody = ({ content }: any) => {
   return (
-    <div className={`gutter-x gutter-y w-full ${styles.portableText}`}>
-      <div className="mx-auto max-w-2xl">
-        <PortableText value={content} components={myPortableTextComponents} />
-      </div>
+    <div className={styles.portableText}>
+      <PortableText value={content} components={myPortableTextComponents} />
     </div>
   )
 }

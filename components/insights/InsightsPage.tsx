@@ -15,7 +15,7 @@ import { Button } from 'components/ui'
 import PageTitle from 'components/ui/PageTitle'
 import Section from 'components/ui/Section'
 
-import FeaturedInsights from './FeaturedInsights'
+import FeaturedPosts from './FeaturedPosts'
 import FeaturedVideos from './FeaturedVideos'
 import PostGrid from './PostGrid'
 
@@ -85,7 +85,7 @@ const InsightsPage = ({
             Data-rich industry insights from our experts and engineers.
           </p>
         </PageTitle>
-        <FeaturedInsights posts={featuredPosts} />
+        <FeaturedPosts posts={featuredPosts} />
         <GridSection
           id="articles"
           title="Articles"

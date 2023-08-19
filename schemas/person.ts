@@ -27,8 +27,8 @@ export default defineType({
       options: {
         list: [
           { title: 'Leadership', value: 'leadership' },
-          { title: 'Board Member', value: 'board-member' },
-          { title: 'Board Advisor', value: 'board-advisor' },
+          { title: 'Board Member', value: 'board member' },
+          { title: 'Board Advisor', value: 'board advisor' },
           { title: 'Advisor', value: 'advisor' },
         ],
       },

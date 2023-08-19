@@ -186,6 +186,7 @@ export const allVideoPostsAndFeaturedQuery = groq`
     ${videoPostFields}
   },
   "featuredPosts": *[_type == "video"] | order(date desc, _updatedAt desc) [0...1] {
+    content,
     ${videoPostFields}
   }
 }
@@ -263,11 +264,13 @@ export interface Partner {
 }
 
 export interface Person {
+  _id: string
   name: string
   position: string
   bio: string
   linkedinURL?: string
   picture: SanityImage
+  seats?: string[]
 }
 
 export interface Post extends ReadingTime {

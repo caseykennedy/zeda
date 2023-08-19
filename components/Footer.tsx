@@ -8,11 +8,34 @@ import Icon from 'components/ui/Icon'
 import LinkArrow from 'components/ui/LinkArrow'
 import Separator from 'components/ui/Separator'
 
+const social = [
+  {
+    name: 'LinkedIn',
+    icon: 'linkedin',
+    href: 'https://linkedin.com/company/zedainc',
+  },
+  {
+    name: 'Twitter',
+    icon: 'twitter',
+    href: 'https://twitter.com/PrinterPrezz',
+  },
+  {
+    name: 'Instagram',
+    icon: 'instagram',
+    href: 'https://instagram.com/printerprezz/',
+  },
+]
+
 const SocialList = () =>
   social.map(({ icon, href }, idx) => (
-    <Link href={href} className="text-silver-500 hover:text-white" key={idx}>
+    <a
+      key={idx}
+      href={href}
+      className="text-silver-500 hover:text-white"
+      rel="nofollow noreferrer"
+    >
       <Icon name={icon} size={20} />
-    </Link>
+    </a>
   ))
 
 const NavList = () =>
@@ -41,43 +64,16 @@ const Footer = () => {
   return (
     <footer className="gutter-y border-t border-silver-900 bg-black">
       <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
-        <div className="gap grid grid-cols-1 lg:grid-cols-2">
+        <div className="gap grid grid-cols-1 lg:mb-32 lg:grid-cols-2">
           <div className="grid grid-cols-2 gap-10 xl:grid-cols-4">
             <NavList />
           </div>
 
-          <div className="mb-16 flex justify-end">
+          <div className="mt-24 flex justify-center lg:mb-16 lg:mt-0 lg:justify-end">
             <Link href="/" className="">
               <LogoSymbol />
             </Link>
           </div>
-        </div>
-
-        <div className="gap gutter-y grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
-          {/* {nav.map((item) => {
-            console.log(item)
-            return (
-              <ul className="" key={item.name}>
-                <li className="mb-4 font-display font-semibold capitalize tracking-wide text-white">
-                  {item.link ? (
-                    <Link href={item.link}>{item.name}</Link>
-                  ) : (
-                    item.name
-                  )}
-                </li>
-                {item.sub?.map((sub) => (
-                  <li className="py-0.5" key={sub.name}>
-                    <Link
-                      href={sub.link}
-                      className="font-display font-medium capitalize tracking-wide text-silver-500 hover:text-white"
-                    >
-                      {sub.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )
-          })} */}
         </div>
 
         <div className="mt-24 flex flex-row items-end justify-between pb-4">
@@ -119,21 +115,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-const social = [
-  {
-    name: 'LinkedIn',
-    icon: 'linkedin',
-    href: '/',
-  },
-  {
-    name: 'Twitter',
-    icon: 'twitter',
-    href: '/',
-  },
-  {
-    name: 'Instagram',
-    icon: 'instagram',
-    href: '/',
-  },
-]

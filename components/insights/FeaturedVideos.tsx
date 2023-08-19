@@ -4,15 +4,19 @@ import { cn } from 'utils'
 
 import { CategoryTag, PostDate } from 'components/post'
 import { Button, Pill } from 'components/ui'
-import { VideoPlayer } from 'components/videos'
+import { VideoPlayer, VideoPostBody } from 'components/videos'
 
 const FeaturedCard = ({
   title,
   date,
   tags,
   slug,
+  content,
   videoURL,
-}: Pick<VideoPost, 'title' | 'date' | 'tags' | 'slug' | 'videoURL'>) => {
+}: Pick<
+  VideoPost,
+  'title' | 'date' | 'tags' | 'slug' | 'content' | 'videoURL'
+>) => {
   return (
     <div className="gap grid grid-cols-9">
       <div className="gap order-2 col-span-9 flex h-full flex-col justify-between md:order-1 md:col-span-4 lg:col-span-3">
@@ -31,17 +35,16 @@ const FeaturedCard = ({
         </div>
 
         <div>
-          <p className="line-clamp-3 text-silver-500">
-            Dream big and be open to taking risks. Innovation happens through
-            optimism, positivity, rigorous thinking, and hard work.
-          </p>
+          <div className="mb-6 line-clamp-3 text-silver-500">
+            <VideoPostBody content={content} />
+          </div>
 
-          {/* <div>
+          <div>
             <PostDate
               dateString={date}
               className="text-sm font-medium uppercase tracking-wide"
             />
-          </div> */}
+          </div>
         </div>
       </div>
 
@@ -119,13 +122,14 @@ const FeaturedVideos = ({ videos }: { videos: VideoPost[] }) => {
       <div className="gutter mx-auto grid w-full max-w-site grid-cols-1">
         {videos
           .slice(0, 1)
-          .map(({ videoURL, _id, title, date, tags, slug }) => (
+          .map(({ videoURL, _id, title, date, tags, slug, content }) => (
             <FeaturedCard
               key={_id}
               date={date}
               slug={slug}
               tags={tags}
               title={title}
+              content={content}
               videoURL={videoURL}
             />
           ))}

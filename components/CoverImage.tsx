@@ -16,7 +16,7 @@ interface CoverImageProps {
 export default function CoverImage(props: CoverImageProps) {
   const { title, slug, image: source, priority, aspectRatio, className } = props
   const image = source?.asset?._ref ? (
-    <div className={cn(`overflow-hidden`, className)}>
+    <div className={cn(`h-full overflow-hidden`, className)}>
       <Img
         src={urlForImage(source).width(1920).height(1080).url()}
         alt={`Cover Image for ${title}`}
@@ -25,7 +25,7 @@ export default function CoverImage(props: CoverImageProps) {
         height={1080}
         // sizes="100vw"
         priority={priority}
-        className="h-auto w-full transition-all duration-500 ease-out group-hover:scale-105"
+        className="h-full w-full transition-all duration-500 ease-out group-hover:scale-105"
       />
     </div>
   ) : (
@@ -33,7 +33,7 @@ export default function CoverImage(props: CoverImageProps) {
   )
 
   return (
-    <figure>
+    <figure className="h-full">
       {slug ? (
         <Link href={`/posts/${slug}`} aria-label={title}>
           {image}
