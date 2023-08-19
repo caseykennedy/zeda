@@ -53,16 +53,14 @@ const TeamBio = ({
               <p className="text-sm font-medium uppercase">{position}</p>
             </div>
             {linkedinURL && (
-              <div>
-                <Link
-                  href={linkedinURL}
-                  target="_blank"
-                  rel="nofollow noreferrer"
-                  className="inline-block text-white transition-colors duration-200 hover:text-black"
-                >
-                  <LinkedInLogoIcon className="h-6 w-6" />
-                </Link>
-              </div>
+              <Link
+                href={linkedinURL}
+                target="_blank"
+                rel="nofollow noreferrer"
+                className="inline-block text-white transition-colors duration-200 hover:text-black"
+              >
+                <LinkedInLogoIcon className="h-6 w-6" />
+              </Link>
             )}
           </div>
         </div>
