@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { LinkedInLogoIcon } from '@radix-ui/react-icons'
+import { LinkedInLogoIcon, PlusIcon } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
 import { type Person } from 'lib/sanity.queries'
@@ -111,23 +111,56 @@ const Team = ({
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {filteredPosts.map(
               ({ _id, bio, linkedinURL, name, picture, position, seats }) => (
-                <motion.div
-                  key={_id}
-                  variants={polyVariant}
-                  layout
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                >
-                  <TeamBio
-                    bio={bio}
-                    linkedinURL={linkedinURL}
-                    name={name}
-                    picture={picture}
-                    position={position}
-                    seats={seats}
+                <motion.div variants={polyVariant} key={_id}>
+                  <motion.div
+                    initial={['hidden', 'down']}
+                    whileHover={['visible', 'up']}
+                    animate={['hidden', 'down']}
                   >
                     <figure className="relative overflow-hidden rounded bg-silver-100">
+                      <motion.div
+                        variants={upVariants}
+                        className="absolute bottom-4 right-4 hidden md:block"
+                      >
+                        <TeamBio
+                          bio={bio}
+                          linkedinURL={linkedinURL}
+                          name={name}
+                          picture={picture}
+                          position={position}
+                          seats={seats}
+                        >
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="border border-black text-black"
+                          >
+                            <PlusIcon className="h-5 w-5" />
+                          </Button>
+                          {/* <PlusIcon className="h-4 w-4" /> */}
+                        </TeamBio>
+                      </motion.div>
+
+                      <div className="absolute bottom-4 right-4 md:hidden">
+                        <TeamBio
+                          bio={bio}
+                          linkedinURL={linkedinURL}
+                          name={name}
+                          picture={picture}
+                          position={position}
+                          seats={seats}
+                        >
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="border border-black text-black"
+                          >
+                            <PlusIcon className="h-5 w-5" />
+                          </Button>
+                          {/* <PlusIcon className="h-4 w-4" /> */}
+                        </TeamBio>
+                      </div>
+
                       <Img
                         src={urlForImage(picture).height(600).width(493).url()}
                         alt="Zeda Inc. manufacturing facility"
@@ -137,30 +170,30 @@ const Team = ({
                         height={800}
                       />
                     </figure>
-                  </TeamBio>
 
-                  <div className="gap mt-3 flex flex-row flex-nowrap">
-                    <div className="flex-1">
-                      <div className="font-display text-2xl font-semibold">
-                        {name}
+                    <div className="gap mt-3 flex flex-row flex-nowrap">
+                      <div className="flex-1">
+                        <div className="font-display text-2xl font-semibold">
+                          {name}
+                        </div>
+                        <p className="text-sm font-medium uppercase text-silver-700">
+                          {position}
+                        </p>
                       </div>
-                      <p className="text-sm font-medium uppercase text-silver-700">
-                        {position}
-                      </p>
+                      <div>
+                        {linkedinURL && (
+                          <Link
+                            href={linkedinURL}
+                            target="_blank"
+                            rel="nofollow noreferrer"
+                            className="text-silver-500 transition-colors duration-200 hover:text-black"
+                          >
+                            <LinkedInLogoIcon className="h-5 w-5" />
+                          </Link>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      {linkedinURL && (
-                        <Link
-                          href={linkedinURL}
-                          target="_blank"
-                          rel="nofollow noreferrer"
-                          className="text-silver-500 transition-colors duration-200 hover:text-black"
-                        >
-                          <LinkedInLogoIcon className="h-5 w-5" />
-                        </Link>
-                      )}
-                    </div>
-                  </div>
+                  </motion.div>
                 </motion.div>
               )
             )}
