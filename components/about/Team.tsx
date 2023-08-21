@@ -114,8 +114,10 @@ const Team = ({
                 <motion.div
                   key={_id}
                   variants={polyVariant}
-                  initial={['hidden', 'down']}
-                  animate={['hidden', 'down']}
+                  layout
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
                 >
                   <motion.div
                     initial={['hidden', 'down']}
