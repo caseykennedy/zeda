@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { polyVariant, staggerItems, viewport } from 'utils/variants'
 
 import Img from 'components/Img'
-import Button from 'components/ui/Button'
+import Button, { buttonVariants } from 'components/ui/Button'
 import Section from 'components/ui/Section'
 
 import TeamBio from './TeamBio'
@@ -78,10 +78,6 @@ const Team = ({
     [people]
   )
 
-  useEffect(() => {
-    console.log(filteredPosts)
-  }, [filteredPosts])
-
   return (
     <Section id="leadership">
       <div className="gap grid grid-cols-6">
@@ -96,7 +92,7 @@ const Team = ({
       </div>
 
       <div className="mt-32 md:mt-48">
-        <div className="gutter-b flex gap-1.5">
+        <div className="gutter-b flex flex-wrap gap-1.5">
           {teamCategories.map((category, idx) => (
             <Button
               key={idx}
@@ -137,14 +133,14 @@ const Team = ({
                           position={position}
                           seats={seats}
                         >
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            className="border border-black text-black"
+                          <div
+                            className={buttonVariants({
+                              variant: 'ghost',
+                              size: 'icon',
+                            })}
                           >
-                            <PlusIcon className="h-5 w-5" />
-                          </Button>
-                          {/* <PlusIcon className="h-4 w-4" /> */}
+                            <PlusIcon className="h-5 w-5 text-black" />
+                          </div>
                         </TeamBio>
                       </motion.div>
 
@@ -157,14 +153,14 @@ const Team = ({
                           position={position}
                           seats={seats}
                         >
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            className="border border-black text-black"
+                          <div
+                            className={buttonVariants({
+                              variant: 'ghost',
+                              size: 'icon',
+                            })}
                           >
-                            <PlusIcon className="h-5 w-5" />
-                          </Button>
-                          {/* <PlusIcon className="h-4 w-4" /> */}
+                            <PlusIcon className="h-5 w-5 text-black" />
+                          </div>
                         </TeamBio>
                       </div>
 

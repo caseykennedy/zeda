@@ -51,7 +51,13 @@ const WhitePaperPostPage = ({
                 tags={post.tags}
                 categories={['White paper']}
               />
-              <PostBody content={post.content} />
+
+              <section className="gutter-x gutter-y w-full">
+                <div className="mx-auto max-w-2xl">
+                  <PostBody content={post.content} />
+                </div>
+              </section>
+
               <PostMeta notes={post.notes} slug={slug} tags={post.tags} />
             </article>
             {/* <Separator className="bg-silver-100" /> */}

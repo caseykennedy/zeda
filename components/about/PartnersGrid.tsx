@@ -103,11 +103,11 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
           className="gutter-x flex items-center justify-center rounded border border-silver-900 py-8 md:py-14"
         >
           <Img
-            src={urlForImage(logo).width(160).height(80).url()}
+            src={urlForImage(logo).width(180).height(80).url()}
             alt={`Proudly partnered with ${name}`}
             blurDataURL={logo.metadata.lqip}
             fill={false}
-            width={160}
+            width={180}
             height={80}
           />
         </figure>

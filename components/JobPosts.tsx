@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from 'components/ui/Accordion'
-import Button from 'components/ui/Button'
+import Button, { buttonVariants } from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
 import SectionPanel from 'components/ui/SectionPanel'
 import SectionTitle from 'components/ui/SectionTitle'
@@ -23,7 +23,7 @@ const Collapse = ({
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
-        <AccordionTrigger className="px-0 [&[data-state=open]>div>div>button>svg]:rotate-180">
+        <AccordionTrigger className="px-0 [&[data-state=open]>div>div>div>svg]:rotate-180">
           <div className="col-span-12 flex items-center font-display text-2xl font-semibold tracking-wide md:col-span-6">
             {title}
           </div>
@@ -46,9 +46,14 @@ const Collapse = ({
                 Apply
               </a>
             </Button>
-            {/* <Button variant="outline" size="icon">
+            <div
+              className={buttonVariants({
+                variant: 'outline',
+                size: 'icon',
+              })}
+            >
               <ChevronDownIcon className="h-5 w-5" id="chevron" />
-            </Button> */}
+            </div>
           </div>
         </AccordionTrigger>
         <AccordionContent>

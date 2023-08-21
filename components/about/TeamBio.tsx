@@ -30,7 +30,7 @@ const TeamBio = ({
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
-      <DialogContent className="max-h-screen max-w-[900px] overflow-hidden overflow-y-scroll rounded border-black bg-black text-white">
+      <DialogContent className="max-h-screen max-w-[900px] overflow-hidden overflow-y-auto rounded border-black bg-black text-white">
         {/* <DialogHeader>
           <DialogTitle className="mb-6 text-4xl tracking-wide">
             {name}
