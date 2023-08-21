@@ -5,10 +5,12 @@ import {
   RocketIcon,
   RulerSquareIcon,
 } from '@radix-ui/react-icons'
+import { motion } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
 import { type Partner } from 'lib/sanity.queries'
 import Link from 'next/link'
 import IAmGroot from 'public/images/groot.jpg'
+import { polyVariant, staggerItems, viewport } from 'utils/variants'
 
 import FeatureGridItem, { type FeatureShape } from 'components/FeatureGridItem'
 import Img from 'components/Img'
@@ -96,10 +98,17 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
       <h2 className="text-center">Meet our partners</h2>
     </div>
 
-    <div className="gap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <motion.div
+      variants={staggerItems}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+      className="gap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+    >
       {partners.map(({ name, logo }, idx) => (
-        <figure
+        <motion.figure
           key={idx}
+          variants={polyVariant}
           className="gutter-x flex items-center justify-center rounded border border-silver-900 py-8 md:py-14"
         >
           <Img
@@ -110,9 +119,9 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
             width={180}
             height={80}
           />
-        </figure>
+        </motion.figure>
       ))}
-    </div>
+    </motion.div>
   </Section>
 )
 
