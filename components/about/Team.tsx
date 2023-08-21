@@ -111,7 +111,12 @@ const Team = ({
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {filteredPosts.map(
               ({ _id, bio, linkedinURL, name, picture, position, seats }) => (
-                <motion.div variants={polyVariant} key={_id}>
+                <motion.div
+                  key={_id}
+                  variants={polyVariant}
+                  initial={['hidden', 'down']}
+                  animate={['hidden', 'down']}
+                >
                   <motion.div
                     initial={['hidden', 'down']}
                     whileHover={['visible', 'up']}
@@ -163,7 +168,7 @@ const Team = ({
 
                       <Img
                         src={urlForImage(picture).height(600).width(493).url()}
-                        alt="Zeda Inc. manufacturing facility"
+                        alt={name}
                         blurDataURL={picture.metadata.lqip}
                         fill={false}
                         width={693}
