@@ -17,42 +17,47 @@ import SectionTitle from 'components/ui/SectionTitle'
 const Collapse = ({
   applicationURL,
   description,
+  jobType,
   location,
   title,
-}: Pick<JobPost, 'applicationURL' | 'location' | 'description' | 'title'>) => {
+  travel,
+}: Pick<
+  JobPost,
+  'applicationURL' | 'description' | 'jobType' | 'location' | 'title' | 'travel'
+>) => {
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
-        <AccordionTrigger className="px-0 [&[data-state=open]>div>div>div>svg]:rotate-180">
-          <div className="col-span-12 flex items-center font-display text-2xl font-semibold tracking-wide md:col-span-6">
+        <AccordionTrigger className="[&>div]:gap px-0 [&>div]:flex-col [&>div]:items-start [&>div]:md:flex-row [&[data-state=open]>div>div>div>div>svg]:rotate-180">
+          <div className="mb-6 flex-1 font-display text-2xl font-semibold tracking-wide md:mb-0">
             {title}
           </div>
 
-          <div className="col-span-6 flex items-center uppercase md:col-span-3 md:col-start-7">
-            {location}
-          </div>
-
-          <div className="col-span-6 col-start-7 flex items-center justify-end gap-2 md:col-span-3 md:col-start-10">
-            <Button variant="outline" asChild>
-              <a
-                href={applicationURL ?? '#'}
-                target="__blank"
-                rel="nofollow noreferrer"
+          <div className="flex w-full flex-1 items-center justify-between gap-2">
+            <div className="text-base uppercase">{location}</div>
+            <div className="text-base uppercase">{jobType}</div>
+            <div className="flex gap-2">
+              <Button variant="outline" asChild>
+                <a
+                  href={applicationURL ?? '#'}
+                  target="__blank"
+                  rel="nofollow noreferrer"
+                >
+                  <Icon
+                    name="arrow-top-right"
+                    className="relative transition-all group-hover:rotate-45"
+                  />
+                  Apply
+                </a>
+              </Button>
+              <div
+                className={buttonVariants({
+                  variant: 'outline',
+                  size: 'icon',
+                })}
               >
-                <Icon
-                  name="arrow-top-right"
-                  className="relative transition-all group-hover:rotate-45"
-                />
-                Apply
-              </a>
-            </Button>
-            <div
-              className={buttonVariants({
-                variant: 'outline',
-                size: 'icon',
-              })}
-            >
-              <ChevronDownIcon className="h-5 w-5" id="chevron" />
+                <ChevronDownIcon className="h-5 w-5" id="chevron" />
+              </div>
             </div>
           </div>
         </AccordionTrigger>
@@ -105,7 +110,17 @@ const JobPosts = ({
           title,
           travel,
         }) => {
-          return <Collapse key={_id} description={description} title={title} />
+          return (
+            <Collapse
+              key={_id}
+              applicationURL={applicationURL}
+              description={description}
+              jobType={jobType}
+              location={location}
+              title={title}
+              travel={travel}
+            />
+          )
         }
       )}
     </SectionPanel>

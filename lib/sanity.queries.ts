@@ -123,7 +123,9 @@ export const postCategoryQuery = groq`
 `
 
 export const jobPostQuery = groq`
-*[_type == "jobPost"] | order(date desc, _updatedAt desc)
+*[_type == "jobPost"] | order(date desc, _updatedAt desc) {
+  ...,
+}
 `
 
 export const partnerQuery = groq`*[_type == "partner"] {
@@ -248,11 +250,10 @@ export interface Author {
 export interface JobPost {
   _id: string
   applicationURL?: string
-  date?: string
+  date: string
   description?: any
-  excerpt?: string
   jobType?: string[]
-  location?: string
+  location: string
   slug: string
   title: string
   travel?: string

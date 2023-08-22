@@ -20,8 +20,8 @@ const data = [
     description: 'Total equity and financing capital raise as of 2023',
   },
   {
-    value: '150k',
-    description: 'Square ft. of advanced manufacturing facilities',
+    value: '46x',
+    description: 'Projected growth between 2022 — 2027',
   },
 ]
 
