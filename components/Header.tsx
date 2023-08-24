@@ -32,7 +32,7 @@ import MobileNavigation from './MobileNavigation'
 
 const INSIGHTS_SLUG = 'insights'
 
-const solutionsNav = [
+export const solutionsNav = [
   {
     title: 'zeda technologies',
     href: '/technologies',
@@ -49,7 +49,7 @@ const solutionsNav = [
   },
 ]
 
-const insightsNav = [
+export const insightsNav = [
   {
     title: 'insights',
     desc: 'Data-rich industry insights',
