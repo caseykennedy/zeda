@@ -36,6 +36,7 @@ const Hero = () => {
       <div className="absolute left-0 top-0 z-0 h-full w-full">
         <video
           autoPlay
+          playsInline
           disablePictureInPicture
           loop
           muted

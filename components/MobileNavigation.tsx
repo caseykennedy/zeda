@@ -169,15 +169,11 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
 
             <Collapse title="Insights">
               <ul className="gap grid w-full text-white lg:grid-cols-3">
-                {insightsNav.map(({ title, desc, icon }, idx) => (
+                {insightsNav.map(({ title, href, desc, icon }, idx) => (
                   <li key={idx}>
                     <Link
                       className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-4 text-lg no-underline outline-none transition-colors hover:border-violet-500 hover:bg-silver-900/30"
-                      href={
-                        title !== INSIGHTS_SLUG
-                          ? `/${INSIGHTS_SLUG}/#${stringToURL(title)}`
-                          : `/${INSIGHTS_SLUG}`
-                      }
+                      href={href}
                     >
                       <div className="transition-transform group-hover:-translate-y-1.5 group-hover:text-violet-500 [&>svg]:h-6 [&>svg]:w-6">
                         {icon}

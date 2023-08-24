@@ -14,7 +14,9 @@ const PageTitle = ({ children, className, ...props }: Props) => {
       )}
       {...props}
     >
-      <div className="gutter-x mx-auto mt-80 max-w-site">{children}</div>
+      <div className="gutter-x mx-auto mt-60 max-w-site md:mt-80">
+        {children}
+      </div>
     </div>
   )
 }
