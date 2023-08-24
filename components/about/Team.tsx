@@ -26,15 +26,6 @@ const teamCategories = [
   CATEGORY_ADVISOR,
 ]
 
-const fadeVariants = {
-  visible: {
-    opacity: 1,
-  },
-  hidden: {
-    opacity: 0,
-  },
-}
-
 const upVariants = {
   up: {
     y: 0,
@@ -83,10 +74,10 @@ const Team = ({
       <div className="gap grid grid-cols-6">
         <div className="col-span-6 mb-8 md:col-span-4">
           <h2>
-            From life-changing medical devices that save lives to pioneering
-            advancements in space exploration, we leverage technology to push
-            the boundaries of innovation — our team is driven by a shared
-            mission to improve lives and make a lasting impact on society.
+            Our team is driven by a shared mission to improve lives and make a
+            lasting impact on society — from life-changing medical devices that
+            save lives, to pioneering advancements in space exploration, we
+            leverage technology to push the boundaries of innovation.
           </h2>
         </div>
       </div>

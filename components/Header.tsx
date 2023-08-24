@@ -1,5 +1,6 @@
 import { forwardRef } from 'react'
 import {
+  HamburgerMenuIcon,
   LightningBoltIcon,
   PaperPlaneIcon,
   ReaderIcon,
@@ -26,6 +27,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from 'components/ui/NavigationMenu'
+
+import MobileNavigation from './MobileNavigation'
 
 const INSIGHTS_SLUG = 'insights'
 
@@ -253,9 +256,9 @@ const Header = () => {
       )}`}
     >
       <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site md:grid-cols-6">
-        <div className="col-span-1 md:col-span-2">
+        <div className="col-span-1 flex items-center md:col-span-2">
           <Link href="/" className="inline-block">
-            <Logo />
+            <Logo className="w-[116px] sm:w-[138px]" />
           </Link>
         </div>
 
@@ -271,6 +274,12 @@ const Header = () => {
             >
               Contact
             </LinkArrow>
+          </div>
+
+          <div className="md:hidden">
+            <MobileNavigation>
+              <HamburgerMenuIcon className="h-6 w-6" />
+            </MobileNavigation>
           </div>
         </div>
       </div>

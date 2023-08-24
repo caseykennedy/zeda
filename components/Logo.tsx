@@ -1,9 +1,11 @@
-const Logo = (props: { width?: number }) => (
+import { cn } from 'utils'
+
+const Logo = ({ className }: { className?: string }) => (
   <svg
-    width={props.width ?? 138}
     viewBox="0 0 142 41"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className={cn(`w-[138px]`, className)}
   >
     <title>Zeda Inc.</title>
     <path

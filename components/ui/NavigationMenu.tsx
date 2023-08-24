@@ -25,7 +25,10 @@ const NavigationMenuList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
     ref={ref}
-    className={cn('grid auto-cols-max grid-flow-col gap-6', className)}
+    className={cn(
+      'grid grid-flow-row auto-rows-max gap-6 md:auto-cols-max md:grid-flow-col',
+      className
+    )}
     {...props}
   />
 ))
