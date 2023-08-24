@@ -1,4 +1,5 @@
 import { ChevronDownIcon, ReaderIcon } from '@radix-ui/react-icons'
+import { cva } from 'class-variance-authority'
 import Link from 'next/link'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
 import { cn, stringToURL } from 'utils'
@@ -21,6 +22,10 @@ import {
   SheetTrigger,
 } from 'components/ui/Sheet'
 
+const mobileNavStyle = cva(
+  'flex-1 font-display text-lg font-semibold capitalize tracking-wide'
+)
+
 const Collapse = ({
   children,
   title,
@@ -32,9 +37,7 @@ const Collapse = ({
     <Accordion type="single" collapsible>
       <AccordionItem value={title}>
         <AccordionTrigger className="border-silver-900 px-0 [&>div]:py-4 [&[data-state=open]>div>div>div>div>svg]:rotate-180">
-          <div className="flex-1 font-display text-lg font-semibold capitalize tracking-wide">
-            {title}
-          </div>
+          <div className={mobileNavStyle()}>{title}</div>
 
           <div className="">
             <ChevronDownIcon className="text-muted-foreground h-5 w-5 shrink-0 transition-transform duration-200" />
@@ -66,7 +69,9 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
       <SheetContent>
         <SheetHeader>
           <SheetTitle className="mb-6">
-            <LogoSymbol />
+            <Link href="/">
+              <LogoSymbol width={32} />
+            </Link>
           </SheetTitle>
           {/* <SheetDescription>
             This action cannot be undone. This will permanently delete your
@@ -190,6 +195,15 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
                 ))}
               </ul>
             </Collapse>
+            <Link
+              href="/news"
+              className={cn(
+                mobileNavStyle(),
+                `flex w-full border-t border-silver-900 py-4`
+              )}
+            >
+              News
+            </Link>
           </div>
         </SheetHeader>
       </SheetContent>

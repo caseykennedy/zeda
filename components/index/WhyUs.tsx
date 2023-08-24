@@ -13,9 +13,9 @@ const WhyUs = () => {
       pl="pl-0"
       maxWidth="w-full"
     >
-      <div className="grid h-[600px] grid-cols-1 md:grid-cols-2">
-        <div className="relative">
-          <figure className="absolute bottom-0 left-0 z-10 h-full w-full">
+      <div className="relative grid min-h-[600px] grid-cols-1 md:grid-cols-2">
+        <div className="relative min-h-[333px]">
+          <figure className="absolute inset-0 z-30 h-full w-full lg:scale-110">
             <Image
               src="/images/turbine.png"
               alt="Zeda Inc. manufacturing facility"
@@ -25,7 +25,7 @@ const WhyUs = () => {
               quality={100}
             />
           </figure>
-          <figure className="absolute left-0 top-0 h-full w-full">
+          <figure className="absolute left-0 top-0 z-10 h-full w-full">
             <Image
               src="/images/wormhole.png"
               alt="Zeda Inc. manufacturing facility"
@@ -39,7 +39,7 @@ const WhyUs = () => {
         <div className="gutter-x gutter-y relative flex flex-col items-end justify-between border-l border-black bg-violet-500 text-black">
           <div>
             <SectionTitle>Why us?</SectionTitle>
-            <h2>
+            <h2 className="mb-16">
               We accelerate innovative ideas of every level at light speed.
             </h2>
           </div>

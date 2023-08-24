@@ -248,7 +248,7 @@ const Header = () => {
 
   return (
     <header
-      className={`overflow-none fixed z-40 h-header w-full items-center border-b border-silver-500/20  text-black transition-all dark:border-silver-300/20 dark:text-white md:dark:hover:bg-black ${cn(
+      className={`overflow-none fixed z-40 h-18 w-full items-center border-b border-silver-500/20 text-black  transition-all dark:border-silver-300/20 dark:text-white md:h-header md:dark:hover:bg-black ${cn(
         scrollDown ? '-translate-y-[100px]' : 'translate-y-0',
         hasScrolled && 'bg-white backdrop-blur-md dark:bg-black'
       )}`}

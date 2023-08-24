@@ -43,15 +43,15 @@
     "sub": [
       {
         "name": "articles",
-        "link": "/insights/articles"
+        "link": "/insights"
       },
       {
         "name": "videos",
-        "link": "/insights/videos"
+        "link": "/videos"
       },
       {
         "name": "white papers",
-        "link": "/insights/white-papers"
+        "link": "/insights/#white-papers"
       }
     ]
   },

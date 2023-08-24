@@ -71,7 +71,7 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
 
     <div className="mt-32">
       <div className="text-lg">Why partner with us?</div>
-      <div className="mt-24 grid grid-cols-4 gap-10">
+      <div className="mt-24 grid grid-cols-4 gap-16 md:gap-10">
         {data.map(({ icon, title, desc }, idx) => (
           <FeatureGridItem icon={icon} title={title} desc={desc} key={idx} />
         ))}

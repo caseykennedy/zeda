@@ -82,6 +82,7 @@ module.exports = {
       },
       spacing: {
         header: '90px',
+        '18': '74px',
       },
       transitionDuration: {
         DEFAULT: '200ms',
