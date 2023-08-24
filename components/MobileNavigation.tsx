@@ -32,7 +32,7 @@ const Collapse = ({
     <Accordion type="single" collapsible>
       <AccordionItem value={title}>
         <AccordionTrigger className="border-silver-900 px-0 [&>div]:py-4 [&[data-state=open]>div>div>div>div>svg]:rotate-180">
-          <div className="flex-1 font-display text-xl font-semibold capitalize tracking-wide">
+          <div className="flex-1 font-display text-lg font-semibold capitalize tracking-wide">
             {title}
           </div>
 
@@ -41,7 +41,7 @@ const Collapse = ({
           </div>
         </AccordionTrigger>
         <AccordionContent>
-          <div className="py-8">{children}</div>
+          <div className="pb-6 pt-2">{children}</div>
         </AccordionContent>
       </AccordionItem>
     </Accordion>
@@ -52,7 +52,7 @@ const ListItem = ({ title, href }: { title: string; href: string }) => {
   return (
     <Link
       href={href}
-      className="focus:text-accent-foreground group-hover: inline select-none py-2.5 font-display font-medium capitalize tracking-wider text-white no-underline outline-none transition-all hover:pl-0.5 hover:text-violet-500 focus:text-violet-500 active:text-violet-400"
+      className="focus:text-accent-foreground group-hover: inline select-none py-2.5 font-display text-base font-medium capitalize tracking-wider text-white no-underline outline-none transition-all hover:pl-0.5 hover:text-violet-500 focus:text-violet-500 active:text-violet-400"
     >
       {title}
     </Link>
@@ -65,7 +65,7 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
       <SheetTrigger>{children}</SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className="mb-8">
+          <SheetTitle className="mb-6">
             <LogoSymbol />
           </SheetTitle>
           {/* <SheetDescription>
@@ -79,9 +79,9 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
                 <li className="flex flex-col">
                   <div className="gap group grid grid-cols-2 content-center">
                     <div className="flex flex-col items-start justify-end">
-                      <div className="mb-6 font-display text-sm font-medium uppercase tracking-wider text-silver-500">
+                      {/* <div className="mb-6 font-display text-sm font-medium uppercase tracking-wider text-silver-500">
                         Company
-                      </div>
+                      </div> */}
                       <ListItem href="/about" title="About Zeda" />
                       <ListItem href="/about/#leadership" title="Leadership" />
                     </div>
@@ -93,7 +93,7 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
                 </li>
                 <li className="row-span-3">
                   <Link
-                    className="group relative flex h-full w-full select-none flex-col justify-end overflow-hidden rounded border border-silver-900 p-6 no-underline outline-none hover:border-violet-500"
+                    className="group relative flex h-full w-full select-none flex-col justify-end overflow-hidden rounded border border-silver-900 p-4 no-underline outline-none hover:border-violet-500"
                     href="/careers"
                   >
                     <div className="relative z-10">
@@ -121,7 +121,7 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
                 </li>
                 <li className="row-span-3">
                   <Link
-                    className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 no-underline outline-none transition-colors hover:border-violet-500 hover:bg-silver-900/30"
+                    className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-4 no-underline outline-none transition-colors hover:border-violet-500 hover:bg-silver-900/30"
                     href="/news"
                   >
                     <div>
@@ -145,7 +145,7 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
                     <li key={idx}>
                       <Link
                         className={cn(
-                          `group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none transition-colors hover:border-violet-500 hover:bg-silver-900/30`,
+                          `group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-4 text-lg no-underline outline-none transition-colors hover:border-violet-500 hover:bg-silver-900/30`,
                           className
                         )}
                         href={href}
@@ -172,7 +172,7 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
                 {insightsNav.map(({ title, desc, icon }, idx) => (
                   <li key={idx}>
                     <Link
-                      className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-6 text-lg no-underline outline-none transition-colors hover:border-violet-500 hover:bg-silver-900/30"
+                      className="group flex h-full w-full select-none flex-col justify-end rounded border border-silver-900 p-4 text-lg no-underline outline-none transition-colors hover:border-violet-500 hover:bg-silver-900/30"
                       href={
                         title !== INSIGHTS_SLUG
                           ? `/${INSIGHTS_SLUG}/#${stringToURL(title)}`

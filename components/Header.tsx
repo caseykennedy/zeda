@@ -10,8 +10,7 @@ import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
-import { cn } from 'utils'
-import { stringToURL } from 'utils'
+import { cn, stringToURL } from 'utils'
 
 import Img from 'components/Img'
 import Logo from 'components/Logo'
@@ -30,7 +29,7 @@ import {
 
 import MobileNavigation from './MobileNavigation'
 
-const INSIGHTS_SLUG = 'insights'
+export const INSIGHTS_SLUG = 'insights'
 
 export const solutionsNav = [
   {
@@ -276,7 +275,7 @@ const Header = () => {
             </LinkArrow>
           </div>
 
-          <div className="md:hidden">
+          <div className="flex items-center md:hidden">
             <MobileNavigation>
               <HamburgerMenuIcon className="h-6 w-6" />
             </MobileNavigation>
