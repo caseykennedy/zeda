@@ -15,7 +15,12 @@ export default function PreviewIndexPage(props: IndexPageProps) {
     props.jobPosts,
     jobPostQuery
   )
-  const [posts, loadingPosts] = useLiveQuery<Post[]>(props.posts, indexQuery)
+  const [insights, loadingInsights] = useLiveQuery<Post[]>(
+    props.insights,
+    indexQuery
+  )
+  const [news, loadingNews] = useLiveQuery<Post[]>(props.news, indexQuery)
+  const [press, loadingPress] = useLiveQuery<Post[]>(props.press, indexQuery)
   const [settings, loadingSettings] = useLiveQuery<Settings>(
     props.settings,
     settingsQuery
@@ -24,9 +29,17 @@ export default function PreviewIndexPage(props: IndexPageProps) {
   return (
     <IndexPage
       preview
-      loading={loadingJobPosts || loadingPosts || loadingSettings}
+      loading={
+        loadingJobPosts ||
+        loadingInsights ||
+        loadingNews ||
+        loadingPress ||
+        loadingSettings
+      }
       jobPosts={jobPosts || []}
-      posts={posts || []}
+      insights={insights || []}
+      news={news || []}
+      press={press || []}
       settings={settings || {}}
     />
   )

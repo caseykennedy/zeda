@@ -1,7 +1,6 @@
 import { readToken } from 'lib/sanity.api'
 import {
   getAllJobPosts,
-  getAllPosts,
   getClient,
   getFeaturedPostsByCategoryQuery,
   getSettings,
@@ -16,7 +15,6 @@ import {
 } from 'utils/constants'
 
 import { IndexPage } from 'components/index'
-// import PreviewIndexPage from 'components/PreviewIndexPage'
 
 interface PageProps extends SharedPageProps {
   jobPosts: JobPost[]
@@ -38,11 +36,6 @@ const Page = ({
   settings,
   draftMode,
 }: PageProps) => {
-  // if (draftMode) {
-  //   return <PreviewIndexPage posts={posts} settings={settings} />
-  // }
-
-  console.log('insights: ', insights)
   return (
     <IndexPage
       jobPosts={jobPosts}
