@@ -102,7 +102,6 @@ const HighlightCard = ({
 }
 
 const FeaturedVideos = ({ videos }: { videos: VideoPost[] }) => {
-  console.log('videos:', videos)
   return (
     <section id="videos" className="dark relative w-full bg-black text-white">
       <div className="border-b border-silver-900">

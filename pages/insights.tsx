@@ -14,10 +14,9 @@ import type {
 } from 'lib/sanity.queries'
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
+import { CATEGORY_INSIGHTS } from 'utils/constants'
 
 import { InsightsPage } from 'components/insights'
-
-export const CATEGORY_INSIGHTS = 'Insight'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]
@@ -38,6 +37,7 @@ const Page = ({
   whitePapers,
   settings,
 }: PageProps) => {
+  console.log('posts', featuredPosts)
   return (
     <InsightsPage
       posts={posts}

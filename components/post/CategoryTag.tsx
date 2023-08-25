@@ -1,6 +1,8 @@
-import { CATEGORY_INSIGHTS } from 'pages/insights'
-import { CATEGORY_NEWS } from 'pages/news'
-import { CATEGORY_VIDEO } from 'pages/videos'
+import {
+  CATEGORY_INSIGHTS,
+  CATEGORY_NEWS,
+  CATEGORY_VIDEO,
+} from 'utils/constants'
 
 import { Pill } from 'components/ui'
 

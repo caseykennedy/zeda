@@ -6,6 +6,7 @@ import JobPosts from 'components/JobPosts'
 import Layout from 'components/Layout'
 
 import AtGlance from './AtGlance'
+import FeaturedPosts from './FeaturedPosts'
 import Hero from './Hero'
 import IndexPageHead from './IndexPageHead'
 import Mission from './Mission'
@@ -17,7 +18,9 @@ export interface IndexPageProps {
   preview?: boolean
   loading?: boolean
   jobPosts: JobPost[]
-  posts: Post[]
+  insights: Post[]
+  news: Post[]
+  press: Post[]
   settings: Settings
 }
 
@@ -25,7 +28,9 @@ export const IndexPage = ({
   preview,
   loading,
   jobPosts,
-  posts,
+  insights,
+  news,
+  press,
   settings,
 }: IndexPageProps) => {
   // const [heroPost, ...morePosts] = posts || []
@@ -43,7 +48,7 @@ export const IndexPage = ({
       <SolutionSwiper />
       <TrustedBy />
 
-      <div className="h-72 bg-black" />
+      <FeaturedPosts insights={insights} news={news} press={press} />
 
       <JobPosts
         title="Zeda is a workplace where people from different aspects of life come together to create an unstoppable team. With strong values, connections, and progressive attitudes, we make sure everyone feels their best."

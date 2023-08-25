@@ -2,11 +2,17 @@ import type { Post } from 'lib/sanity.queries'
 
 import { PostCardSplit } from 'components/post'
 
-const FeaturedInsights = ({ posts }: { posts: Post[] }) => {
+interface Props {
+  insights: Post[]
+  news: Post[]
+  press: Post[]
+}
+
+const FeaturedPosts = ({ insights, news, press }: Props) => {
   return (
     <section className="relative w-full border-t border-silver-900 bg-black">
       <div className="mx-auto max-w-site">
-        {posts.map((post) => (
+        {insights.map((post) => (
           <PostCardSplit
             key={post._id}
             coverImage={post.coverImage}
@@ -23,4 +29,4 @@ const FeaturedInsights = ({ posts }: { posts: Post[] }) => {
   )
 }
 
-export default FeaturedInsights
+export default FeaturedPosts

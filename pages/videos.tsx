@@ -10,8 +10,6 @@ import type { SharedPageProps } from 'pages/_app'
 
 import { VideosPage } from 'components/videos'
 
-export const CATEGORY_VIDEO = 'Video'
-
 interface PageProps extends SharedPageProps {
   posts: VideoPost[]
   featuredPosts: VideoPost[]

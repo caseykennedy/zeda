@@ -8,11 +8,9 @@ import {
 import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
+import { CATEGORY_NEWS, CATEGORY_PRESS } from 'utils/constants'
 
 import { NewsPage } from 'components/news'
-
-export const CATEGORY_NEWS = 'News'
-export const CATEGORY_PRESS = 'Press Release'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]

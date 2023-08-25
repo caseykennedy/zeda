@@ -2,9 +2,9 @@ import { ChevronDownIcon, ReaderIcon } from '@radix-ui/react-icons'
 import { cva } from 'class-variance-authority'
 import Link from 'next/link'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
-import { cn, stringToURL } from 'utils'
+import { cn } from 'utils'
 
-import { INSIGHTS_SLUG, insightsNav, solutionsNav } from 'components/Header'
+import { insightsNav, solutionsNav } from 'components/Header'
 import Img from 'components/Img'
 import LogoSymbol from 'components/LogoSymbol'
 import {

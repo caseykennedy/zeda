@@ -15,7 +15,7 @@ import { Button } from 'components/ui'
 import PageTitle from 'components/ui/PageTitle'
 import Section from 'components/ui/Section'
 
-import FeaturedPosts from './FeaturedPosts'
+import FeaturedInsights from './FeaturedInsights'
 import FeaturedVideos from './FeaturedVideos'
 import PostGrid from './PostGrid'
 
@@ -74,7 +74,7 @@ const InsightsPage = ({
   whitePapers,
   videoPosts,
 }: PageProps) => {
-  console.log('videoPosts:', videoPosts)
+  // console.log('posts', featuredPosts)
   return (
     <>
       <IndexPageHead settings={settings} />
@@ -85,7 +85,7 @@ const InsightsPage = ({
             Data-rich industry insights from our experts and engineers.
           </p>
         </PageTitle>
-        <FeaturedPosts posts={featuredPosts} />
+        <FeaturedInsights posts={featuredPosts} />
         <GridSection
           id="articles"
           title="Articles"

@@ -6,6 +6,7 @@ import {
   allVideoPostsAndFeaturedQuery,
   allVideoPostsQuery,
   allWhitePapersQuery,
+  featuredPostsByCategoryQuery,
   featuredVideoPostsQuery,
   indexQuery,
   type JobPost,
@@ -120,6 +121,13 @@ export async function getAllPostsByCategoryAndFeatured(
   category: string
 ): Promise<{ posts: Post[]; featuredPosts: Post[] }> {
   return await client.fetch(allPostsByCategoryAndFeaturedQuery, { category })
+}
+
+export async function getFeaturedPostsByCategoryQuery(
+  client: SanityClient,
+  category: string
+): Promise<Post[]> {
+  return await client.fetch(featuredPostsByCategoryQuery, { category })
 }
 
 export async function getAllWhitePapers(

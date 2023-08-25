@@ -12,7 +12,6 @@ const PostCardSplit = ({
   title,
   coverImage,
   date,
-  excerpt,
   estimatedReadingTime,
   tags,
   categories = [],
@@ -22,7 +21,6 @@ const PostCardSplit = ({
   | 'title'
   | 'coverImage'
   | 'date'
-  | 'excerpt'
   | 'estimatedReadingTime'
   | 'tags'
   | 'categories'
@@ -40,12 +38,12 @@ const PostCardSplit = ({
             image={coverImage}
             title={title}
             priority={true}
-            className="aspect-auto overflow-hidden"
+            className="aspect-video overflow-hidden"
           />
         ) : (
           <div
             aria-label={title}
-            className="flex w-full items-center justify-center bg-black"
+            className="flex h-full w-full items-center justify-center bg-black"
           >
             <LogoSymbol width={44} />
           </div>

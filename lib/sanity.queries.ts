@@ -86,6 +86,13 @@ export const allPostsByCategoryAndFeaturedQuery = groq`
 }
 `
 
+export const featuredPostsByCategoryQuery = groq`
+*[_type == "post" && $category in postCategory[]->name] | order(date desc, _updatedAt desc) [0...2] {
+  ${readingTimeFields},
+  ${postFields}
+}
+`
+
 export const postAndMoreStoriesQuery = groq`
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
