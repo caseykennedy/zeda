@@ -15,14 +15,15 @@ const WhyUs = () => {
     >
       <div className="relative grid min-h-[600px] grid-cols-1 md:grid-cols-2">
         <div className="relative min-h-[333px]">
-          <figure className="absolute inset-0 z-30 h-full w-full lg:scale-110">
+          <figure className="absolute bottom-0 left-0 z-30 flex h-full w-full items-end overflow-hidden md:overflow-visible">
             <Image
-              src="/images/turbine.png"
+              src="/images/turbine-tilt.png"
               alt="Zeda Inc. manufacturing facility"
-              fill={true}
-              style={{ objectFit: 'cover' }}
-              sizes="100%"
+              // fill={true}
+              height={980}
+              width={1149}
               quality={100}
+              className="object-fit-contain xl:scale-115 sm:translate-y-10 md:translate-x-12 md:scale-125 xl:translate-y-32 2xl:translate-y-48"
             />
           </figure>
           <figure className="absolute left-0 top-0 z-10 h-full w-full">
@@ -37,9 +38,9 @@ const WhyUs = () => {
         </div>
 
         <div className="gutter-x gutter-y relative flex flex-col items-end justify-between border-l border-black bg-violet-500 text-black">
-          <div>
+          <div className="w-full">
             <SectionTitle>Why us?</SectionTitle>
-            <h2 className="mb-16">
+            <h2 className="mb-16 max-w-[24ch]">
               We accelerate innovative ideas of every level at light speed.
             </h2>
           </div>

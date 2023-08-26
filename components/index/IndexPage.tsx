@@ -15,8 +15,6 @@ import TrustedBy from './TrustedBy'
 import WhyUs from './WhyUs'
 
 export interface IndexPageProps {
-  preview?: boolean
-  loading?: boolean
   jobPosts: JobPost[]
   insights: Post[]
   news: Post[]
@@ -25,31 +23,22 @@ export interface IndexPageProps {
 }
 
 export const IndexPage = ({
-  preview,
-  loading,
   jobPosts,
   insights,
   news,
   press,
   settings,
 }: IndexPageProps) => {
-  // const [heroPost, ...morePosts] = posts || []
-  // const { title = demo.title, description = demo.description } = settings || {}
-
   return (
     <Layout>
       <IndexPageHead settings={settings} />
-
       <Hero />
-      {/* <div className="gutter h-24 bg-black" /> */}
       <Mission />
       <WhyUs />
       <AtGlance />
       <SolutionSwiper />
       <TrustedBy />
-
       <FeaturedPosts insights={insights} news={news} press={press} />
-
       <JobPosts
         title="Zeda is a workplace where people from different aspects of life come together to create an unstoppable team. With strong values, connections, and progressive attitudes, we make sure everyone feels their best."
         hasBtn={true}

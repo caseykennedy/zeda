@@ -34,8 +34,8 @@ const Collapse = ({
           </div>
 
           <div className="flex w-full flex-1 items-center justify-between gap-2">
-            <div className="text-base uppercase">{location}</div>
-            <div className="text-base uppercase">{jobType}</div>
+            <div className="text-sm uppercase">{location}</div>
+            <div className="text-sm uppercase">{jobType}</div>
             <div className="flex gap-2">
               <Button variant="outline" asChild>
                 <a
@@ -45,7 +45,7 @@ const Collapse = ({
                 >
                   <Icon
                     name="arrow-top-right"
-                    className="relative transition-all group-hover:rotate-45"
+                    className="relative hidden transition-all group-hover:rotate-45 sm:block"
                   />
                   Apply
                 </a>
