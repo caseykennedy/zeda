@@ -1,12 +1,7 @@
-// import { useEffect } from 'react'
 import useScrollTop from 'hooks/useScrollTop'
 
 const ScrollProgress = () => {
   const { scrollTop } = useScrollTop()
-
-  // useEffect(() => {
-  //   console.log('ScrollTop:', scrollTop)
-  // }, [scrollTop])
 
   return (
     <div className="sticky left-0 top-0 z-50 mb-[-5px] h-[5px] w-full bg-background-500">

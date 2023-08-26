@@ -1,17 +1,20 @@
+import React from 'react'
 import { Link2Icon } from '@radix-ui/react-icons'
-import { cn } from 'utils'
+import cn from 'classnames'
 
 import { Button, Icon } from 'components/ui'
+
+interface ButtonLinkProps {
+  href: string
+  children: React.ReactNode
+  className?: string
+}
 
 const ButtonLink = ({
   href,
   children,
   className,
-}: {
-  href: string
-  children: React.ReactNode
-  className?: string
-}) => (
+}: ButtonLinkProps): JSX.Element => (
   <Button variant="ghost" size="icon" asChild>
     <a
       href={href}
@@ -23,13 +26,12 @@ const ButtonLink = ({
   </Button>
 )
 
-const SocialShare = ({
-  name,
-  slug,
-}: {
+interface SocialShareProps {
   name: 'facebook' | 'linkedin' | 'twitter' | 'share'
   slug?: string
-}) => {
+}
+
+const SocialShare = ({ name, slug }: SocialShareProps): JSX.Element | null => {
   const shareSlug = `https://z8a.com/${slug}`
 
   switch (name) {

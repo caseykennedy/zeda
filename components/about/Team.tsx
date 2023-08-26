@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { LinkedInLogoIcon, PlusIcon } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
 import { type Person } from 'lib/sanity.queries'
 import Link from 'next/link'
-import { polyVariant, staggerItems, viewport } from 'utils/variants'
+import { polyVariant } from 'utils/variants'
 
 import Img from 'components/Img'
 import Button, { buttonVariants } from 'components/ui/Button'

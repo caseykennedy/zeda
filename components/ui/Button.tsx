@@ -15,15 +15,14 @@ export const buttonVariants = cva(
         secondary:
           'border border-transparent bg-silver-500 hover:bg-violet-600 text-white',
         accent: 'bg-violet-500 text-black hover:bg-violet-600 border-black',
-        outline:
-          'border border-black bg-white hover:bg-violet-600 hover:text-white',
+        outline: 'border border-black bg-white hover:bg-black hover:text-white',
         ghost:
           'border-none bg-white text-silver-400 hover:text-black hover:bg-silver-500',
         link: 'border-none text-black decoration-2 underline-offset-4 hover:underline',
       },
       size: {
         default: 'h-10 px-5 py-2',
-        sm: 'h-9 px-6 text-xs',
+        sm: 'h-9 px-5 text-xs',
         lg: 'h-11 px-8',
         icon: 'h-10 w-10',
       },

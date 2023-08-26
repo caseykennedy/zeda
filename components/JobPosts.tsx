@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@radix-ui/react-icons'
+import { ChevronDownIcon, PlusIcon } from '@radix-ui/react-icons'
 import { type JobPost } from 'lib/sanity.queries'
 import Link from 'next/link'
 
@@ -14,6 +14,8 @@ import Icon from 'components/ui/Icon'
 import SectionPanel from 'components/ui/SectionPanel'
 import SectionTitle from 'components/ui/SectionTitle'
 
+import JobDialog from './JobDialog'
+
 const Collapse = ({
   applicationURL,
   description,
@@ -26,46 +28,48 @@ const Collapse = ({
   'applicationURL' | 'description' | 'jobType' | 'location' | 'title' | 'travel'
 >) => {
   return (
-    <Accordion type="single" collapsible>
-      <AccordionItem value="item-1">
-        <AccordionTrigger className="[&>div]:gap px-0 [&>div]:flex-col [&>div]:items-start [&>div]:md:flex-row [&[data-state=open]>div>div>div>div>svg]:rotate-180">
-          <div className="mb-6 flex-1 font-display text-2xl font-semibold tracking-wide md:mb-0">
-            {title}
-          </div>
+    <div className="gap justiy-between flex flex-col border-t border-black py-10 md:flex-row">
+      <div className="mb-6 flex-1 font-display text-2xl font-semibold tracking-wide md:mb-0">
+        {title}
+      </div>
 
-          <div className="flex w-full flex-1 items-center justify-between gap-2">
-            <div className="text-sm uppercase">{location}</div>
-            <div className="text-sm uppercase">{jobType}</div>
-            <div className="flex gap-2">
-              <Button variant="outline" asChild>
-                <a
-                  href={applicationURL ?? '#'}
-                  target="__blank"
-                  rel="nofollow noreferrer"
-                >
-                  <Icon
-                    name="arrow-top-right"
-                    className="relative hidden transition-all group-hover:rotate-45 sm:block"
-                  />
-                  Apply
-                </a>
-              </Button>
-              <div
-                className={buttonVariants({
-                  variant: 'outline',
-                  size: 'icon',
-                })}
-              >
-                <ChevronDownIcon className="h-5 w-5" id="chevron" />
-              </div>
+      <div className="flex w-full flex-1 items-center justify-between gap-2">
+        <div className="text-sm uppercase">{location}</div>
+        <div className="text-sm uppercase">{jobType}</div>
+        <div className="flex gap-2">
+          <Button variant="outline" asChild>
+            <a
+              href={applicationURL ?? '#'}
+              target="__blank"
+              rel="nofollow noreferrer"
+            >
+              <Icon
+                name="arrow-top-right"
+                className="relative hidden transition-all group-hover:rotate-45 sm:block"
+              />
+              Apply
+            </a>
+          </Button>
+          <JobDialog
+            applicationURL={applicationURL}
+            description={description}
+            jobType={jobType}
+            location={location}
+            title={title}
+            travel={travel}
+          >
+            <div
+              className={buttonVariants({
+                variant: 'outline',
+                size: 'icon',
+              })}
+            >
+              <PlusIcon className="h-5 w-5" />
             </div>
-          </div>
-        </AccordionTrigger>
-        <AccordionContent>
-          <PostBody content={description} />
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+          </JobDialog>
+        </div>
+      </div>
+    </div>
   )
 }
 

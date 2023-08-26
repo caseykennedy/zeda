@@ -28,7 +28,7 @@ const FooterCTA = ({
   return (
     <Section className="dark overflow-hidden bg-black">
       <div className="relative z-10">
-        <div className="max-w-[48ch] text-white">
+        <div className="max-w-[52ch] text-white">
           <h2>{heading}</h2>
         </div>
 

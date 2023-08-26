@@ -1,7 +1,9 @@
-import * as React from 'react'
+import React, { forwardRef } from 'react'
 import Image, { type ImageProps } from 'next/image'
 
-const Img = React.forwardRef<HTMLImageElement, ImageProps>(
+type ImgProps = ImageProps
+
+const Img = forwardRef<HTMLImageElement, ImgProps>(
   ({ src, alt, ...props }, ref) => {
     return (
       <Image
@@ -15,6 +17,7 @@ const Img = React.forwardRef<HTMLImageElement, ImageProps>(
     )
   }
 )
+
 Img.displayName = 'Img'
 
 export default Img

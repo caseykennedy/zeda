@@ -292,7 +292,7 @@ export interface JobPost {
   applicationURL?: string
   date: string
   description?: any
-  jobType?: string[]
+  jobType: string[]
   location: string
   slug: string
   title: string
