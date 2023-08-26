@@ -53,7 +53,7 @@ const JobDialog = ({
         <div className="gap sticky bottom-0 flex items-center justify-between bg-violet-500 px-6 py-4 md:py-6">
           <div>
             <p className="text-lg font-medium leading-normal md:text-xl">
-              Join us and let&apos;s change the world, literally.
+              Join us and let&apos;s change the world together.
             </p>
           </div>
 
