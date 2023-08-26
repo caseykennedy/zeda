@@ -1,9 +1,7 @@
 import type { Post } from 'lib/sanity.queries'
 
-import Avatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
-import ScrollProgress from 'components/ScrollProgress'
 import { Pill } from 'components/ui'
 
 import CategoryTag from './CategoryTag'
@@ -60,10 +58,6 @@ const PostHeader = ({
               </div>
             </div>
           </div>
-
-          {/* <div className="md:mb-12">
-            {author && <Avatar name={author.name} picture={author.picture} />}
-          </div> */}
         </div>
       </section>
       <section className="max-h-[860px] overflow-hidden">
