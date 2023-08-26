@@ -1,14 +1,7 @@
-import { ChevronDownIcon, PlusIcon } from '@radix-ui/react-icons'
+import { PlusIcon } from '@radix-ui/react-icons'
 import { type JobPost } from 'lib/sanity.queries'
 import Link from 'next/link'
 
-import { PostBody } from 'components/post'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from 'components/ui/Accordion'
 import Button, { buttonVariants } from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
 import SectionPanel from 'components/ui/SectionPanel'
@@ -73,7 +66,7 @@ const Collapse = ({
   )
 }
 
-const JobPosts = ({
+const JobList = ({
   title,
   hasBtn = false,
   posts,
@@ -81,7 +74,7 @@ const JobPosts = ({
   title: string
   hasBtn?: boolean
   posts: JobPost[]
-}) => {
+}): JSX.Element => {
   return (
     <SectionPanel
       id="open-positions"
@@ -106,11 +99,9 @@ const JobPosts = ({
         ({
           _id,
           applicationURL,
-          date,
           description,
           jobType,
           location,
-          slug,
           title,
           travel,
         }) => {
@@ -131,4 +122,4 @@ const JobPosts = ({
   )
 }
 
-export default JobPosts
+export default JobList

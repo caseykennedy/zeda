@@ -2,7 +2,7 @@ import type { JobPost, Post, Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
 import FooterCTA from 'components/FooterCTA'
-import JobPosts from 'components/JobPosts'
+import JobList from 'components/JobList'
 import Layout from 'components/Layout'
 
 import AtGlance from './AtGlance'
@@ -39,14 +39,14 @@ export const IndexPage = ({
       <SolutionSwiper />
       <TrustedBy />
       <FeaturedPosts insights={insights} news={news} press={press} />
-      <JobPosts
+      <JobList
         title="Zeda is a workplace where people from different aspects of life come together to create an unstoppable team. With strong values, connections, and progressive attitudes, we make sure everyone feels their best."
         hasBtn={true}
         posts={jobPosts}
       />
       <FooterCTA
-        heading="Join forces with us. Let’s change the world together"
-        message="<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing."
+        heading="Join forces with us. Let's change the world together"
+        message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
         src={ctaImgSrc}
         alt="Zeda Inc. - Contact us"
         href="/contact"

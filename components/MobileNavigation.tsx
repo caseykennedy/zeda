@@ -16,7 +16,6 @@ import {
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -73,12 +72,7 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
               <LogoSymbol width={32} />
             </Link>
           </SheetTitle>
-          {/* <SheetDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </SheetDescription> */}
-
-          <div className="">
+          <div>
             <Collapse title="Company">
               <ul className="gap grid w-full text-white lg:grid-cols-3">
                 <li className="flex flex-col">

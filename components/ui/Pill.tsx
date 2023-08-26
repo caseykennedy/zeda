@@ -16,6 +16,7 @@ export const pillVariants = cva(
       },
       size: {
         default: 'h-6 px-4',
+        lg: 'h-7 px-5',
       },
     },
     defaultVariants: {

@@ -2,7 +2,7 @@ import { type JobPost, type Settings } from 'lib/sanity.queries'
 import Link from 'next/link'
 
 import IndexPageHead from 'components/index/IndexPageHead'
-import JobPosts from 'components/JobPosts'
+import JobList from 'components/JobList'
 import Layout from 'components/Layout'
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
@@ -45,7 +45,7 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
         <Hero />
         <WhyUs />
         <Benefits />
-        <JobPosts
+        <JobList
           title="Join us on our journey as we drive technological advancements, transform industries, and make a positive impact on the world."
           posts={jobPosts}
         />
