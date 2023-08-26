@@ -20,19 +20,19 @@ const WORDS_TO_ANIMATE = [
   'machines',
 ]
 
-export const AnimatedText = () => {
-  const [fadeProp, setFadeProp] = useState({ fade: 'fade-in' })
+const AnimatedText = () => {
+  const [fadeProp, setFadeProp] = useState('fade-in')
   const [wordOrder, setWordOrder] = useState(0)
 
   useEffect(() => {
     const fadeTimeout = setInterval(() => {
-      fadeProp.fade === 'fade-in'
-        ? setFadeProp({ fade: 'fade-out' })
-        : setFadeProp({ fade: 'fade-in' })
+      setFadeProp((prevFadeProp) =>
+        prevFadeProp === 'fade-in' ? 'fade-out' : 'fade-in'
+      )
     }, FADE_INTERVAL_MS)
 
     return () => clearInterval(fadeTimeout)
-  }, [fadeProp])
+  }, [])
 
   useEffect(() => {
     const wordTimeout = setInterval(() => {
@@ -44,7 +44,7 @@ export const AnimatedText = () => {
     return () => clearInterval(wordTimeout)
   }, [])
 
-  return <span className={fadeProp.fade}>{WORDS_TO_ANIMATE[wordOrder]}</span>
+  return <span className={fadeProp}>{WORDS_TO_ANIMATE[wordOrder]}</span>
 }
 
 export default AnimatedText

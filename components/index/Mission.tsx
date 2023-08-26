@@ -173,6 +173,7 @@ const Mission = () => {
                   value={currentTab.value}
                   className="relative"
                   forceMount
+                  asChild
                 >
                   <figure className="relative h-full max-h-[450px] w-full  overflow-hidden rounded md:max-h-[640px]">
                     <Image
@@ -182,7 +183,7 @@ const Mission = () => {
                       height={800}
                       placeholder="blur"
                       blurDataURL="/images/wormhole.png"
-                      quality={100}
+                      quality={80}
                       fill={false}
                       style={{ objectFit: 'fill' }}
                     />

@@ -1,5 +1,7 @@
 import { groq } from 'next-sanity'
 
+// Query Definitions
+
 const postFields = groq`
   _id,
   date,
@@ -44,6 +46,8 @@ const readingTimeFields = groq`
   "estimatedWordCount": round(length(pt::text(content)) / 5),
   "estimatedReadingTime": round(length(pt::text(content)) / 5 / 180 )
 `
+
+// Post Queries
 
 export const indexQuery = groq`
 *[_type == "post"] | order(date desc, _updatedAt desc) {
@@ -129,11 +133,15 @@ export const postCategoryQuery = groq`
 }
 `
 
+// Job Post Queries
+
 export const jobPostQuery = groq`
 *[_type == "jobPost"] | order(date desc, _updatedAt desc) {
   ...,
 }
 `
+
+// Partner Queries
 
 export const partnerQuery = groq`*[_type == "partner"] {
   ...,
@@ -144,6 +152,8 @@ export const partnerQuery = groq`*[_type == "partner"] {
 } | order(name asc)
 `
 
+// Person Queries
+
 export const personQuery = groq`*[_type == "person"] {
   ...,
   picture{
@@ -153,7 +163,11 @@ export const personQuery = groq`*[_type == "person"] {
 } | order(name asc)
 `
 
+// Settings Queries
+
 export const settingsQuery = groq`*[_type == "settings"][0]`
+
+// White Paper Queries
 
 export const allWhitePapersQuery = groq`
 *[_type == "whitePaper"] | order(date desc, _updatedAt desc) {
@@ -173,6 +187,8 @@ export const whitePaperBySlugQuery = groq`
   ${whitePaperFields}
 }
 `
+
+// Video Post Queries
 
 export const allVideoPostsQuery = groq`
 *[_type == "video"] | order(date desc, _updatedAt desc) {
@@ -225,6 +241,8 @@ export const videoPostBySlugQuery = groq`
 }
 `
 
+// Type Definitions
+
 interface ReadingTime {
   numberOfCharacters?: number
   estimatedWordCount?: number
@@ -249,9 +267,24 @@ export interface SanityImage {
   }
 }
 
-export interface Author {
-  name?: string
-  picture: SanityImage
+export interface Post extends ReadingTime {
+  _id: string
+  categories?: string[]
+  content?: any
+  coverImage?: SanityImage
+  date?: string
+  excerpt?: string
+  notes?: any
+  slug?: string
+  tags: string[]
+  title?: string
+}
+
+export interface PostCategory {
+  _id: string
+  name: string
+  description: string
+  coverImage: SanityImage
 }
 
 export interface JobPost {
@@ -279,27 +312,6 @@ export interface Person {
   linkedinURL?: string
   picture: SanityImage
   seats?: string[]
-}
-
-export interface Post extends ReadingTime {
-  _id: string
-  author?: Author
-  categories?: string[]
-  content?: any
-  coverImage?: SanityImage
-  date?: string
-  excerpt?: string
-  notes?: any
-  slug?: string
-  tags: string[]
-  title?: string
-}
-
-export interface PostCategory {
-  _id: string
-  name: string
-  description: string
-  coverImage: SanityImage
 }
 
 export interface Settings {

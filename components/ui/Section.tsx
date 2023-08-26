@@ -19,15 +19,18 @@ const Section = ({
   pb = 'gutter-b',
   pl = 'gutter-l',
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
+  const sectionClasses = cn(
+    'relative w-full overflow-hidden',
+    pt,
+    pb,
+    className
+  )
+  const contentClasses = cn('mx-auto h-full w-full', maxWidth, pl, pr)
+
   return (
-    <section
-      className={cn(`relative w-full overflow-hidden`, pt, pb, className)}
-      {...props}
-    >
-      <div className={cn(`mx-auto h-full w-full`, maxWidth, pl, pr)}>
-        {children}
-      </div>
+    <section className={sectionClasses} {...props}>
+      <div className={contentClasses}>{children}</div>
     </section>
   )
 }

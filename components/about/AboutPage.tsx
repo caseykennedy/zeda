@@ -33,7 +33,6 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
         <Team people={people} />
         <TextMarquee />
         <PartnersGrid partners={partners} />
-        {/* <Careers /> */}
         <FooterCTA
           heading="Join forces with us. Let's change the world together"
           message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."

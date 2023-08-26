@@ -22,7 +22,7 @@ const WhyUs = () => {
               // fill={true}
               height={980}
               width={1149}
-              quality={100}
+              quality={50}
               className="object-fit-contain xl:scale-115 sm:translate-y-10 md:translate-x-12 md:scale-125 xl:translate-y-32 2xl:translate-y-48"
             />
           </figure>
@@ -32,7 +32,7 @@ const WhyUs = () => {
               alt="Zeda Inc. manufacturing facility"
               fill={true}
               style={{ objectFit: 'cover' }}
-              sizes="100%"
+              quality={50}
             />
           </figure>
         </div>
