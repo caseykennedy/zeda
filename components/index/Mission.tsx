@@ -8,7 +8,7 @@ import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/Tabs'
 
-const INTERVAL_TIME = 7000
+const INTERVAL_TIME = 9000
 
 const data = [
   {
@@ -38,7 +38,7 @@ const data = [
     value: 'nanotech',
     title: 'Nanotech',
     details:
-      'Manipulating matter at the nanoscale, harnessing techniques such as self-assembly and nanolithography to design and fabricate novel materials.',
+      'Manipulating matter at the nanoscale, harnessing techniques like self-assembly and nanolithography to design and fabricate novel materials.',
     figure: {
       src: 'nanotech.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -179,8 +179,8 @@ const Mission = () => {
                     <Image
                       src={`/images/${currentTab.figure.src}`}
                       alt={currentTab.figure.alt}
-                      width={700}
-                      height={800}
+                      width={791}
+                      height={891}
                       placeholder="blur"
                       blurDataURL="/images/wormhole.png"
                       quality={80}

@@ -2,8 +2,8 @@ import { PlusIcon } from '@radix-ui/react-icons'
 import { type JobPost } from 'lib/sanity.queries'
 import Link from 'next/link'
 
+import { Icon, Pill } from 'components/ui'
 import Button, { buttonVariants } from 'components/ui/Button'
-import Icon from 'components/ui/Icon'
 import SectionPanel from 'components/ui/SectionPanel'
 import SectionTitle from 'components/ui/SectionTitle'
 
@@ -21,14 +21,22 @@ const Collapse = ({
   'applicationURL' | 'description' | 'jobType' | 'location' | 'title' | 'travel'
 >) => {
   return (
-    <div className="gap justiy-between flex flex-col border-t border-black py-10 md:flex-row">
+    <div className="gap justiy-between gutter-y flex flex-col border-t border-black last:pb-0 md:flex-row">
       <div className="mb-6 flex-1 font-display text-2xl font-semibold tracking-wide md:mb-0">
         {title}
       </div>
 
       <div className="flex w-full flex-1 items-center justify-between gap-2">
-        <div className="text-sm uppercase">{location}</div>
-        <div className="text-sm uppercase">{jobType}</div>
+        <Pill variant="primary" size="lg">
+          {location}
+        </Pill>
+        <Pill
+          variant="ghost"
+          size="lg"
+          className="hidden border-black text-black sm:flex"
+        >
+          {jobType}
+        </Pill>
         <div className="flex gap-2">
           <Button variant="outline" asChild>
             <a

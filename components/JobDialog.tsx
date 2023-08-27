@@ -28,14 +28,14 @@ const JobDialog = ({
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
-      <DialogContent className="max-h-screen max-w-[780px] overflow-hidden overflow-y-auto rounded border-black bg-black text-white md:max-h-[90svh]">
+      <DialogContent className="max-h-[100svh] max-w-[780px] overflow-hidden overflow-y-auto rounded border-black bg-black text-white md:max-h-[90svh]">
         <DialogHeader className="">
           <div className="border-b border-silver-900 p-6">
             <DialogTitle className="max-w-[26ch] text-4xl leading-snug tracking-wide">
               {title}
             </DialogTitle>
           </div>
-          <div className="flex w-full flex-wrap gap-2 border-b border-silver-900 bg-silver-950 px-6 py-5 text-sm uppercase">
+          <div className="flex w-full flex-wrap gap-2 border-b border-silver-900 bg-silver-950 p-6 text-sm uppercase">
             {metaData.map((value, i) => {
               return (
                 value?.length && (
@@ -52,7 +52,7 @@ const JobDialog = ({
         </DialogDescription>
         <div className="gap sticky bottom-0 flex items-center justify-between bg-violet-500 px-6 py-4 md:py-6">
           <div>
-            <p className="text-lg font-medium leading-normal md:text-xl">
+            <p className="text-lg font-medium leading-snug md:text-xl">
               Join us and let&apos;s change the world together.
             </p>
           </div>

@@ -4,6 +4,11 @@ import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 
 const WhyUs = () => {
+  const certBadges = [
+    { image: 'badge-as.png', alt: 'as9100d certification' },
+    { image: 'badge-itar.png', alt: 'International Traffic in Arms Compliant' },
+    { image: 'badge-iso.png', alt: 'Medical Devices Quality Management' },
+  ]
   return (
     <Section
       className="border-b border-t border-black bg-black"
@@ -23,7 +28,7 @@ const WhyUs = () => {
               height={980}
               width={1149}
               quality={50}
-              className="object-fit-contain xl:scale-115 sm:translate-y-10 md:translate-x-12 md:scale-125 xl:translate-y-32 2xl:translate-y-48"
+              className="object-fit-contain xl:scale-115 sm:translate-y-10 md:translate-x-16 md:scale-125 xl:translate-y-32 2xl:translate-y-48"
             />
           </figure>
           <figure className="absolute left-0 top-0 z-10 h-full w-full">
@@ -45,34 +50,21 @@ const WhyUs = () => {
             </h2>
           </div>
 
-          <div className="translate-x-gutter relative flex flex-row flex-nowrap rounded-bl-full rounded-tl-full bg-black p-4 pr-16 sm:pr-24">
-            <div className="inline-block">
-              <Image
-                src="/images/ISO13485.png"
-                alt="Zeda Inc. manufacturing facility"
-                height={120}
-                width={120}
-                quality={100}
-              />
-            </div>
-            <div className="inline-block">
-              <Image
-                src="/images/ISO13485.png"
-                alt="Zeda Inc. manufacturing facility"
-                height={120}
-                width={120}
-                quality={100}
-              />
-            </div>
-            <div className="inline-block">
-              <Image
-                src="/images/ISO13485.png"
-                alt="Zeda Inc. manufacturing facility"
-                height={120}
-                width={120}
-                quality={100}
-              />
-            </div>
+          <div className="translate-x-gutter relative flex flex-row flex-nowrap gap-2 rounded-bl-full rounded-tl-full bg-black p-4 pr-16 sm:pr-24">
+            {certBadges.map(({ image, alt }, i) => (
+              <figure
+                key={i}
+                className="inline-block rounded-full border border-silver-800 bg-silver-900"
+              >
+                <Image
+                  src={`/images/${image}`}
+                  alt={alt}
+                  height={120}
+                  width={120}
+                  quality={100}
+                />
+              </figure>
+            ))}
           </div>
         </div>
       </div>
