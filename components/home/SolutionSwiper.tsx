@@ -46,7 +46,7 @@ const Slide = ({ heading, message, image, alt, href, btnText }: SlideProps) => {
           fill={true}
           style={{ objectFit: 'cover' }}
           sizes="100%"
-          className="brightness-75"
+          className="brightness-50"
         />
       </figure>
     </>
@@ -61,7 +61,7 @@ const SolutionSwiper = () => {
       <Swiper
         modules={[Autoplay, EffectFade, Pagination]}
         autoplay={{
-          delay: 5000,
+          delay: 9000,
           disableOnInteraction: false,
         }}
         effect="fade"
@@ -74,7 +74,7 @@ const SolutionSwiper = () => {
         <SwiperSlide>
           <Slide
             heading="What can we do to better lives and what can we build together?"
-            message="<strong>Zeda technologies</strong><br />We use technology to better humanity<br />—built using
+            message="<strong>Zeda technologies</strong><br />We use technology to better humanity<br />—built with
           trust."
             image="solutions-tech.jpg"
             alt="Zeda Inc. manufacturing facility"
@@ -83,7 +83,18 @@ const SolutionSwiper = () => {
           />
         </SwiperSlide>
 
-        <div className="absolute right-0 top-0 z-10 pr-10 pt-8">
+        <SwiperSlide>
+          <Slide
+            heading="We offer better value for the devices you know and use everyday."
+            message="<strong>Zeda health</strong><br />Devices that are good for all<br />—made better."
+            image="solutions-health.jpg"
+            alt="Zeda Inc. manufacturing facility"
+            href="/technologies"
+            btnText="Zeda Health"
+          />
+        </SwiperSlide>
+
+        <div className="absolute right-10 top-6 z-10 pr-10 pt-8">
           <div className="swiper-pagination" />
         </div>
       </Swiper>

@@ -75,7 +75,7 @@ const PostHeader = ({
             {/* Press Release */}
           </div>
         )}
-        <div className="absolute right-4 top-4 flex flex-row gap-1 md:right-8 md:top-8 md:flex-col lg:right-10 lg:top-10">
+        <div className="absolute right-4 top-4 flex flex-row gap-2 md:right-8 md:top-8 md:flex-col lg:right-10 lg:top-10">
           <SocialShare name="linkedin" slug={slug} />
           <SocialShare name="twitter" slug={slug} />
           <SocialShare name="share" slug={slug} />

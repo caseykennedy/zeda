@@ -16,7 +16,7 @@ const data = [
     value: 'additive',
     title: 'Additive manufacturing',
     details:
-      'Including processes such as rapid prototyping, rapid tooling and mass customization.',
+      'Including processes such as rapid prototyping and mass customization, enabling the production of complex shapes and structures.',
     figure: {
       src: 'additive-manufacturing.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -38,7 +38,7 @@ const data = [
     value: 'nanotech',
     title: 'Nanotech',
     details:
-      'Manipulating matter at the nanoscale, harnessing techniques like self-assembly and nanolithography to design and fabricate novel materials.',
+      'Manipulating matter at the nanoscale, utilizing methods like self-assembly and nanolithography to create new materials.',
     figure: {
       src: 'nanotech.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -143,14 +143,14 @@ const Mission = () => {
                           <div className="col-span-6 col-start-2 self-center justify-self-start text-left">
                             <h4>{title}</h4>
                           </div>
-                          <div className="col-start-8 self-center justify-self-end">
+                          <div className="col-start-8 hidden self-center justify-self-end sm:block">
                             {activeTab === id && <Icon name="arrow-right" />}
                           </div>
                         </div>
 
                         {activeTab === id && (
                           <div className="mt-2 grid w-full grid-cols-8">
-                            <div className="col-span-6 col-start-2">
+                            <div className="col-span-8 col-start-2">
                               <p className="justify-self-start text-left text-base text-silver-800">
                                 {details}
                               </p>
@@ -167,7 +167,7 @@ const Mission = () => {
               </div>
             </div>
 
-            <div className="relative flex items-end justify-end">
+            <div className="relative hidden sm:block">
               {currentTab && (
                 <TabsContent
                   value={currentTab.value}
@@ -175,17 +175,17 @@ const Mission = () => {
                   forceMount
                   asChild
                 >
-                  <figure className="relative h-full max-h-[450px] w-full  overflow-hidden rounded md:max-h-[640px]">
+                  <figure className="relative h-full w-full overflow-hidden rounded">
                     <Image
                       src={`/images/${currentTab.figure.src}`}
                       alt={currentTab.figure.alt}
-                      width={791}
-                      height={891}
+                      // width={791}
+                      // height={891}
                       placeholder="blur"
                       blurDataURL="/images/wormhole.png"
                       quality={80}
-                      fill={false}
-                      style={{ objectFit: 'fill' }}
+                      fill={true}
+                      style={{ objectFit: 'cover' }}
                     />
                   </figure>
                 </TabsContent>

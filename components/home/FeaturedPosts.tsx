@@ -9,8 +9,7 @@ import {
   PostCardSplit,
   PostDateReadingTime,
 } from 'components/post'
-import { Pill } from 'components/ui'
-import ArrowLink from 'components/ui/LinkArrow'
+import { Button } from 'components/ui'
 
 interface PostTileProps extends Partial<Post> {
   theme?: 'light' | 'dark'
@@ -27,35 +26,30 @@ const PostTile = ({
   theme = 'light',
 }: PostTileProps) => {
   return (
-    <div
+    <Link
+      href={`/posts/${slug}`}
+      aria-label={`Read "${title}"`}
       className={cn(
         'flex flex-col justify-between p-4 md:p-6 lg:h-full lg:p-8',
         theme === 'light' ? 'bg-white text-black' : 'bg-violet-500 text-white'
       )}
     >
       <div>
-        <Link href={`/posts/${slug}`} aria-label={`Read "${title}"`}>
-          <h2 className="mb-4 line-clamp-3 text-2xl decoration-2 hover:underline">
-            {title}
-          </h2>
-        </Link>
-        <div className="mb-4 flex flex-wrap gap-1.5 md:mb-0">
-          <CategoryTag categories={categories} />
-          {tags &&
-            tags.slice(0, 1).map((tag, idx) => (
-              <Pill variant="outline" key={idx}>
-                {tag}
-              </Pill>
-            ))}
+        <h2 className="mb-4 line-clamp-4 text-2xl decoration-2 hover:underline">
+          {title}
+        </h2>
+        <div>
+          <CategoryTag categories={categories} variant="outline" />
         </div>
       </div>
       <div className="mt-16 md:mt-24">
         <PostDateReadingTime
           dateString={date}
           estimatedReadingTime={estimatedReadingTime}
+          className={cn(theme === 'light' ? '' : 'text-white')}
         />
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -68,6 +62,21 @@ interface Props {
 const FeaturedPosts = ({ insights, news, press }: Props) => {
   return (
     <section className="relative w-full border-b border-t border-b-black border-t-silver-900 bg-black">
+      {/* <div className="border-b border-silver-900">
+        <div className="gutter-x mx-auto flex max-w-site items-center justify-between py-6">
+          <div>
+            <h2 className="font-sans text-base font-medium uppercase tracking-wide text-silver-500">
+              Articles
+            </h2>
+          </div>
+          <div>
+            <Button variant="primary" asChild>
+              <Link href="/insights">All articles</Link>
+            </Button>
+          </div>
+        </div>
+      </div> */}
+
       <div className="mx-auto max-w-site">
         <div>
           {insights.map((post) => (
@@ -83,8 +92,8 @@ const FeaturedPosts = ({ insights, news, press }: Props) => {
             />
           ))}
         </div>
-        <div className="grid h-auto grid-flow-row auto-rows-fr md:max-h-fit lg:auto-cols-fr lg:grid-flow-col">
-          <div className="relative bg-moss-500">
+        <div className="flex flex-col border-t border-black md:flex-row">
+          <div className="relative min-h-[250px] flex-1 bg-moss-500">
             <Img
               src={careersBgImg}
               alt="Abstract wallpaper art"
@@ -95,7 +104,7 @@ const FeaturedPosts = ({ insights, news, press }: Props) => {
               }}
             />
           </div>
-          <div className="grid grid-flow-row auto-rows-fr md:auto-cols-fr md:grid-flow-col xl:auto-cols-fr xl:grid-flow-col">
+          <div className="flex flex-1 flex-col lg:flex-col xl:flex-row">
             {news.slice(0, 1).map((post) => (
               <PostTile
                 key={post._id}
@@ -106,7 +115,6 @@ const FeaturedPosts = ({ insights, news, press }: Props) => {
                 title={post.title}
                 categories={post.categories}
                 tags={post.tags}
-                theme="dark"
               />
             ))}
             {press.slice(0, 1).map((post) => (
@@ -119,6 +127,7 @@ const FeaturedPosts = ({ insights, news, press }: Props) => {
                 title={post.title}
                 categories={post.categories}
                 tags={post.tags}
+                theme="dark"
               />
             ))}
           </div>

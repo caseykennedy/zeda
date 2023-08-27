@@ -51,17 +51,17 @@ const PostCardSplit = ({
         )}
       </Link>
 
-      <div className="flex flex-1 flex-col justify-between bg-black text-white">
+      <Link
+        href={`/posts/${slug}`}
+        aria-label={`Read "${title}"`}
+        className="flex flex-1 flex-col justify-between bg-black text-white"
+      >
         <div className="gutter col-span-2 flex flex-col justify-between sm:flex-col lg:col-span-1">
-          <Link
-            href={`/posts/${slug}`}
-            className="group flex w-full flex-col even:flex-col md:flex-row even:md:flex-row-reverse"
-            aria-label={`Read "${title}"`}
-          >
-            <h2 className="mb-4 max-w-[24ch] leading-snug decoration-2 group-hover:underline">
+          <div className="flex w-full flex-col even:flex-col md:flex-row even:md:flex-row-reverse">
+            <h2 className="mb-4 max-w-[24ch] leading-snug decoration-2 hover:underline">
               {title}
             </h2>
-          </Link>
+          </div>
           <div className="mb-10 flex flex-wrap gap-1.5 md:mb-0">
             <CategoryTag categories={categories} />
             {tags &&
@@ -77,11 +77,11 @@ const PostCardSplit = ({
             dateString={date}
             estimatedReadingTime={estimatedReadingTime}
           />
-          <ArrowLink href={`/posts/${slug}`} className="text-white">
+          {/* <ArrowLink href={`/posts/${slug}`} className="text-white">
             Read more
-          </ArrowLink>
+          </ArrowLink> */}
         </div>
-      </div>
+      </Link>
       {/* {author && <Avatar name={author.name} picture={author.picture} />} */}
     </div>
   )
