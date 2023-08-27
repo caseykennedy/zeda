@@ -120,7 +120,7 @@ const Mission = () => {
                   We combine experience and expertise from diverse tech
                   industries
                 </h2>
-                <p>
+                <p className="text-lg">
                   From life-changing medical devices to the foremost
                   advancements in space, we use technology to better humanity.
                 </p>
@@ -140,7 +140,7 @@ const Mission = () => {
                           <div className="col-start-1 self-center justify-self-start">
                             0{id + 1}.
                           </div>
-                          <div className="col-span-6 col-start-2 self-center justify-self-start">
+                          <div className="col-span-6 col-start-2 self-center justify-self-start text-left">
                             <h4>{title}</h4>
                           </div>
                           <div className="col-start-8 self-center justify-self-end">
@@ -151,7 +151,7 @@ const Mission = () => {
                         {activeTab === id && (
                           <div className="mt-2 grid w-full grid-cols-8">
                             <div className="col-span-6 col-start-2">
-                              <p className="justify-self-start text-left text-silver-800">
+                              <p className="justify-self-start text-left text-base text-silver-800">
                                 {details}
                               </p>
                             </div>

@@ -28,7 +28,7 @@ const JobDialog = ({
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
-      <DialogContent className="max-h-[100svh] max-w-[780px] overflow-hidden overflow-y-auto rounded border-black bg-black text-white md:max-h-[90svh]">
+      <DialogContent className="max-h-[100svh] max-w-[780px] overflow-hidden overflow-y-auto rounded border border-black border-silver-900 bg-black text-white md:max-h-[90svh]">
         <DialogHeader className="">
           <div className="border-b border-silver-900 p-6">
             <DialogTitle className="max-w-[26ch] text-4xl leading-snug tracking-wide">
@@ -50,26 +50,28 @@ const JobDialog = ({
         <DialogDescription className="p-6 text-silver-100">
           <PostBody content={description} />
         </DialogDescription>
-        <div className="gap sticky bottom-0 flex items-center justify-between bg-violet-500 px-6 py-4 md:py-6">
-          <div>
-            <p className="text-lg font-medium leading-snug md:text-xl">
-              Join us and let&apos;s change the world together.
-            </p>
-          </div>
+        <div className="sticky bottom-0 bg-black px-6 pb-6">
+          <div className="gap flex items-center justify-between rounded-lg border border-black bg-violet-500 px-4 py-4">
+            <div>
+              <p className="text-lg font-medium leading-snug md:text-xl">
+                Join us and let&apos;s change the world together.
+              </p>
+            </div>
 
-          <Button variant="outline" className="text-black" asChild>
-            <a
-              href={applicationURL ?? '#'}
-              target="__blank"
-              rel="nofollow noreferrer"
-            >
-              <Icon
-                name="arrow-top-right"
-                className="relative transition-all group-hover:rotate-45"
-              />
-              Apply
-            </a>
-          </Button>
+            <Button variant="outline" className="text-black" asChild>
+              <a
+                href={applicationURL ?? '#'}
+                target="__blank"
+                rel="nofollow noreferrer"
+              >
+                <Icon
+                  name="arrow-top-right"
+                  className="relative transition-all group-hover:rotate-45"
+                />
+                Apply
+              </a>
+            </Button>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
