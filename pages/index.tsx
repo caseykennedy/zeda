@@ -14,7 +14,7 @@ import {
   CATEGORY_PRESS,
 } from 'utils/constants'
 
-import { IndexPage } from 'components/index'
+import { IndexPage } from 'components/home'
 
 interface PageProps extends SharedPageProps {
   jobPosts: JobPost[]

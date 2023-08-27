@@ -180,7 +180,7 @@
   }
 
   h2 {
-    @apply text-3xl md:text-4xl md:leading-tight;
+    @apply text-3xl lg:text-4xl md:leading-tight;
   }
 
   h3 {

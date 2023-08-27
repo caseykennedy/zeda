@@ -15,11 +15,16 @@ const ButtonLink = ({
   children,
   className,
 }: ButtonLinkProps): JSX.Element => (
-  <Button variant="ghost" size="icon" asChild>
+  <Button
+    variant="outline"
+    size="icon"
+    className="border-white hover:border-black"
+    asChild
+  >
     <a
       href={href}
       target="_blank noreferrer noopener"
-      className={cn(`text-silver-500 hover:text-white`, className)}
+      className={cn(`text-black hover:text-white`, className)}
     >
       {children}
     </a>

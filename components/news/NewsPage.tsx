@@ -1,6 +1,6 @@
 import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
 
-import IndexPageHead from 'components/index/IndexPageHead'
+import IndexPageHead from 'components/home/IndexPageHead'
 import Layout from 'components/Layout'
 import { PostGrid } from 'components/post'
 import PageTitle from 'components/ui/PageTitle'

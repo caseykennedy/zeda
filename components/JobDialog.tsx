@@ -35,7 +35,7 @@ const JobDialog = ({
               {title}
             </DialogTitle>
           </div>
-          <div className="flex w-full flex-wrap gap-2 border-b border-silver-900 bg-silver-950 p-6 text-sm uppercase">
+          <div className="flex w-full flex-wrap gap-2 border-b border-silver-900 bg-black p-6 text-sm uppercase">
             {metaData.map((value, i) => {
               return (
                 value?.length && (
@@ -47,10 +47,10 @@ const JobDialog = ({
             })}
           </div>
         </DialogHeader>
-        <DialogDescription className="p-6 text-silver-100">
+        <DialogDescription className="bg-silver-950 p-6 text-silver-100">
           <PostBody content={description} />
         </DialogDescription>
-        <div className="sticky bottom-0 bg-black px-6 pb-6">
+        <div className="sticky bottom-0 bg-silver-950 px-6 pb-6">
           <div className="gap flex items-center justify-between rounded-lg border border-black bg-violet-500 px-4 py-4">
             <div>
               <p className="text-lg font-medium leading-snug md:text-xl">

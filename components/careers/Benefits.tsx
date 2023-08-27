@@ -1,16 +1,10 @@
 import * as React from 'react'
-import {
-  FaceIcon,
-  PersonIcon,
-  RocketIcon,
-  RulerSquareIcon,
-} from '@radix-ui/react-icons'
 import goldenGateBridgeImg from 'public/images/about/goldengate-bridge.jpg'
 import workBalanceImg from 'public/images/about/work-life-balance.jpg'
 
 import Img from 'components/Img'
+import { Pill } from 'components/ui'
 import Section from 'components/ui/Section'
-import SectionTitle from 'components/ui/SectionTitle'
 
 const benefitsData = [
   {
@@ -34,15 +28,19 @@ const benefitsData = [
 const locationsData = [
   {
     city: 'Bay Area, CA',
+    type: 'headquarters',
   },
   {
     city: 'Cincinnati, OH',
+    type: 'manufacturing',
   },
   {
     city: 'Reno, NV',
+    type: 'medical',
   },
   {
     city: 'Singapore',
+    type: 'engineering',
   },
 ]
 
@@ -113,15 +111,15 @@ const Benefits = () => (
         <h2 className="max-w-[20ch]">Where we work</h2>
         <div className="mt-32 md:mt-64">
           <div className="flex flex-col">
-            {locationsData.map(({ city }, idx) => (
+            {locationsData.map(({ city, type }, idx) => (
               <div
-                className="border-t border-silver-800 py-6 last:pb-0"
+                className="flex items-center justify-between border-t border-silver-800 py-6 last:pb-0"
                 key={idx}
               >
                 <h3 className="font-display text-xl font-semibold md:text-2xl">
                   {city}
                 </h3>
-                {/* <p>{desc}</p> */}
+                <Pill variant="tertiary">{type}</Pill>
               </div>
             ))}
           </div>

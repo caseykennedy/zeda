@@ -9,7 +9,7 @@ import type {
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
 import FooterCTA from 'components/FooterCTA'
-import IndexPageHead from 'components/index/IndexPageHead'
+import IndexPageHead from 'components/home/IndexPageHead'
 import Layout from 'components/Layout'
 import { Button } from 'components/ui'
 import PageTitle from 'components/ui/PageTitle'

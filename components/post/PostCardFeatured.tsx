@@ -82,7 +82,6 @@ const PostCard = ({
           />
         </div>
       </div>
-      {/* {author && <Avatar name={author.name} picture={author.picture} />} */}
     </Link>
   )
 }

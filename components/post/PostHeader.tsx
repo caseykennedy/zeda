@@ -2,6 +2,7 @@ import type { Post } from 'lib/sanity.queries'
 
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
+import SocialShare from 'components/SocialShare'
 import { Pill } from 'components/ui'
 
 import CategoryTag from './CategoryTag'
@@ -15,6 +16,7 @@ const PostHeader = ({
   estimatedReadingTime,
   tags,
   categories,
+  slug,
 }: Pick<
   Post,
   | 'title'
@@ -24,6 +26,7 @@ const PostHeader = ({
   | 'estimatedReadingTime'
   | 'tags'
   | 'categories'
+  | 'slug'
 >) => {
   console.log('categories:', categories)
   return (
@@ -60,7 +63,7 @@ const PostHeader = ({
           </div>
         </div>
       </section>
-      <section className="max-h-[860px] overflow-hidden">
+      <section className="relative max-h-[860px] overflow-hidden">
         {coverImage ? (
           <CoverImage title={title} image={coverImage} priority={true} />
         ) : (
@@ -72,6 +75,11 @@ const PostHeader = ({
             {/* Press Release */}
           </div>
         )}
+        <div className="absolute right-4 top-4 flex flex-row gap-1 md:right-8 md:top-8 md:flex-col lg:right-10 lg:top-10">
+          <SocialShare name="linkedin" slug={slug} />
+          <SocialShare name="twitter" slug={slug} />
+          <SocialShare name="share" slug={slug} />
+        </div>
       </section>
     </>
   )
