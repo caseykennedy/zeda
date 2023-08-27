@@ -27,16 +27,18 @@ const Collapse = ({
       </div>
 
       <div className="flex w-full flex-1 items-center justify-between gap-2">
-        <Pill variant="primary" size="lg">
-          {location}
-        </Pill>
-        <Pill
-          variant="ghost"
-          size="lg"
-          className="hidden border-black text-black sm:flex"
-        >
-          {jobType}
-        </Pill>
+        <div className="flex w-full flex-row flex-wrap gap-2">
+          <div className="flex-[1]">
+            <Pill variant="primary" size="lg">
+              {location}
+            </Pill>
+          </div>
+          <div className="hidden flex-[1] sm:block">
+            <Pill variant="ghost" size="lg" className="border-black text-black">
+              {jobType}
+            </Pill>
+          </div>
+        </div>
         <div className="flex gap-2">
           <Button variant="outline" asChild>
             <a
