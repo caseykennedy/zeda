@@ -55,6 +55,7 @@ const PostPage = ({
                 estimatedReadingTime={post.estimatedReadingTime}
                 tags={post.tags}
                 categories={post.categories}
+                slug={post.slug}
               />
 
               <section className="gutter-x gutter-y w-full">

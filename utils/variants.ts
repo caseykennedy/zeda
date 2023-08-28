@@ -17,7 +17,7 @@ export const polyVariant = {
 
 export const staggerItems = {
   visible: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.15 },
+    transition: { staggerChildren: 0.07, delayChildren: 0.15 },
   },
 }
 

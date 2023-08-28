@@ -28,7 +28,6 @@ const PostHeader = ({
   | 'categories'
   | 'slug'
 >) => {
-  console.log('categories:', categories)
   return (
     <>
       <section className="overflow-hidden bg-white pt-header">

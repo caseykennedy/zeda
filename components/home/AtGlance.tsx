@@ -1,29 +1,10 @@
+import stats from 'config/stats.json'
 import Link from 'next/link'
 
+import Countup from 'components/Countup'
 import Button from 'components/ui/Button'
 import Icon from 'components/ui/Icon'
-import Section from 'components/ui/Section'
 import SectionPanel from 'components/ui/SectionPanel'
-import SectionTitle from 'components/ui/SectionTitle'
-
-const data = [
-  {
-    value: '4',
-    description: 'Globally operated advanced manufacturing businesses',
-  },
-  {
-    value: '5',
-    description: 'Established geographical locations around the world',
-  },
-  {
-    value: '$68m',
-    description: 'Total equity and financing capital raise as of 2023',
-  },
-  {
-    value: '46x',
-    description: 'Projected growth between 2022 — 2027',
-  },
-]
 
 const AtGlance = () => (
   <SectionPanel
@@ -43,12 +24,18 @@ const AtGlance = () => (
     }
   >
     <div className="mt-32 grid grid-cols-4 gap-16 md:mt-64 md:gap-10">
-      {[...data].map(({ value, description }, idx) => (
+      {stats.map(({ value, prefix, suffix, description }, idx) => (
         <div
           className="col-span-4 border-l border-black pl-5 sm:col-span-2 lg:col-span-1"
           key={idx}
         >
-          <h3 className="mb-8 font-display text-6xl font-semibold">{value}</h3>
+          <h3 className="mb-8 font-display text-6xl font-semibold">
+            <Countup
+              end={value}
+              prefix={prefix ?? prefix}
+              suffix={suffix ?? suffix}
+            />
+          </h3>
           <p className="text-lg">{description}</p>
         </div>
       ))}

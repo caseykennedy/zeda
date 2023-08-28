@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { CheckIcon, Link2Icon } from '@radix-ui/react-icons'
 import { useCopyToClipboard } from 'hooks'
 import { cn } from 'utils'
@@ -50,19 +50,16 @@ const SocialShare = ({ name, slug }: SocialShareProps): JSX.Element | null => {
 
   const shareSlug = `https://z8a.com/posts/${slug}`
 
-  const handleCopy = useCallback(
-    (href: string) => {
-      console.log('copied:', href)
+  const handleCopy = (href: string) => {
+    console.log('copied:', href)
 
-      copy(href)
-      setIsCopied(true)
+    copy(href)
+    setIsCopied(true)
 
-      setTimeout(() => {
-        setIsCopied(false)
-      }, 2000)
-    },
-    [copy]
-  )
+    setTimeout(() => {
+      setIsCopied(false)
+    }, 2000)
+  }
 
   switch (name) {
     case 'facebook':

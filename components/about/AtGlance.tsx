@@ -1,30 +1,12 @@
-import * as React from 'react'
+import stats from 'config/stats.json'
 import HandTurbine from 'public/images/about/hand-turbine.jpg'
 import WorkGroup from 'public/images/about/work-group.jpg'
 import WorkMask from 'public/images/about/work-mask.jpg'
 
+import Countup from 'components/Countup'
 import Img from 'components/Img'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
-
-const data = [
-  {
-    value: '4',
-    description: 'Globally operated advanced manufacturing businesses',
-  },
-  {
-    value: '5',
-    description: 'Established geographical locations around the world',
-  },
-  {
-    value: '$68m',
-    description: 'Total equity and financing capital raise as of 2023',
-  },
-  {
-    value: '46x',
-    description: 'Projected growth between 2022 — 2027',
-  },
-]
 
 const AtGlance = () => {
   return (
@@ -49,12 +31,18 @@ const AtGlance = () => {
       </div>
 
       <div className="mt-32 grid grid-cols-4 gap-16 md:mt-64 md:gap-10">
-        {[...data].map(({ value, description }, idx) => (
+        {stats.map(({ value, prefix, suffix, description }, idx) => (
           <div
             className="col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 lg:col-span-1"
             key={idx}
           >
-            <h3 className="mb-8 font-display text-6xl font-medium">{value}</h3>
+            <h3 className="mb-8 font-display text-6xl font-medium">
+              <Countup
+                end={value}
+                prefix={prefix ?? prefix}
+                suffix={suffix ?? suffix}
+              />
+            </h3>
             <p className="text-lg">{description}</p>
           </div>
         ))}

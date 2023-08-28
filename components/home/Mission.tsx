@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react'
-import { id } from 'date-fns/locale'
 import Image from 'next/image'
 
 import Icon from 'components/ui/Icon'

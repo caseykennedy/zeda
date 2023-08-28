@@ -43,18 +43,11 @@ const upVariants = {
   },
 }
 
-const Team = ({
-  people,
-}: {
-  people: Pick<
-    Person,
-    '_id' | 'bio' | 'linkedinURL' | 'name' | 'picture' | 'position' | 'seats'
-  >[]
-}) => {
+const Team = ({ people }: { people: Person[] }) => {
   const [filteredPosts, setFilteredPosts] = useState(people)
   const [activeBtn, setActiveBtn] = useState(CATEGORY_ALL)
 
-  const handleClick = useCallback(
+  const handleTabChange = useCallback(
     (category: string) => {
       if (category === CATEGORY_ALL) {
         setFilteredPosts(people)
@@ -88,7 +81,7 @@ const Team = ({
             <Button
               key={idx}
               variant={activeBtn === category ? 'primary' : 'secondary'}
-              onClick={() => handleClick(category)}
+              onClick={() => handleTabChange(category)}
             >
               {category}
             </Button>

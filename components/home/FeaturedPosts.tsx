@@ -105,18 +105,6 @@ const FeaturedPosts = ({ insights, news, press }: Props) => {
             />
           </div>
           <div className="flex flex-1 flex-col lg:flex-col xl:flex-row">
-            {news.slice(0, 1).map((post) => (
-              <PostTile
-                key={post._id}
-                coverImage={post.coverImage}
-                date={post.date}
-                estimatedReadingTime={post.estimatedReadingTime}
-                slug={post.slug}
-                title={post.title}
-                categories={post.categories}
-                tags={post.tags}
-              />
-            ))}
             {press.slice(0, 1).map((post) => (
               <PostTile
                 key={post._id}
@@ -128,6 +116,18 @@ const FeaturedPosts = ({ insights, news, press }: Props) => {
                 categories={post.categories}
                 tags={post.tags}
                 theme="dark"
+              />
+            ))}
+            {news.slice(0, 1).map((post) => (
+              <PostTile
+                key={post._id}
+                coverImage={post.coverImage}
+                date={post.date}
+                estimatedReadingTime={post.estimatedReadingTime}
+                slug={post.slug}
+                title={post.title}
+                categories={post.categories}
+                tags={post.tags}
               />
             ))}
           </div>
