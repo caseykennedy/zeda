@@ -1,6 +1,7 @@
-import React from 'react'
-import { Link2Icon } from '@radix-ui/react-icons'
-import cn from 'classnames'
+import { useCallback, useState } from 'react'
+import { CheckIcon, Link2Icon } from '@radix-ui/react-icons'
+import { useCopyToClipboard } from 'hooks'
+import { cn } from 'utils'
 
 import { Button, Icon } from 'components/ui'
 
@@ -8,28 +9,35 @@ interface ButtonLinkProps {
   href: string
   children: React.ReactNode
   className?: string
+  share?: boolean
 }
 
 const ButtonLink = ({
   href,
   children,
   className,
-}: ButtonLinkProps): JSX.Element => (
-  <Button
-    variant="outline"
-    size="icon"
-    className="border-white hover:border-black"
-    asChild
-  >
-    <a
-      href={href}
-      target="_blank noreferrer noopener"
-      className={cn(`text-black hover:text-white`, className)}
+  share,
+}: ButtonLinkProps): JSX.Element => {
+  return (
+    <Button
+      variant="outline"
+      size="icon"
+      className={cn(
+        `border-white text-black hover:border-black hover:text-white`,
+        className
+      )}
+      asChild
     >
-      {children}
-    </a>
-  </Button>
-)
+      {share ? (
+        <button>{children}</button>
+      ) : (
+        <a href={href} target="_blank noreferrer noopener">
+          {children}
+        </a>
+      )}
+    </Button>
+  )
+}
 
 interface SocialShareProps {
   name: 'facebook' | 'linkedin' | 'twitter' | 'share'
@@ -37,7 +45,24 @@ interface SocialShareProps {
 }
 
 const SocialShare = ({ name, slug }: SocialShareProps): JSX.Element | null => {
-  const shareSlug = `https://z8a.com/${slug}`
+  const [isCopied, setIsCopied] = useState(false)
+  const [, copy] = useCopyToClipboard()
+
+  const shareSlug = `https://z8a.com/posts/${slug}`
+
+  const handleCopy = useCallback(
+    (href: string) => {
+      console.log('copied:', href)
+
+      copy(href)
+      setIsCopied(true)
+
+      setTimeout(() => {
+        setIsCopied(false)
+      }, 2000)
+    },
+    [copy]
+  )
 
   switch (name) {
     case 'facebook':
@@ -62,11 +87,15 @@ const SocialShare = ({ name, slug }: SocialShareProps): JSX.Element | null => {
       )
     case 'share':
       return (
-        <ButtonLink
-          href={`//www.linkedin.com/shareArticle?mini=true&url=${shareSlug}`}
-        >
-          <Link2Icon name={name} className="h-5 w-5 shrink-0" />
-        </ButtonLink>
+        <div onClick={() => handleCopy(shareSlug)}>
+          <ButtonLink href={shareSlug} share={true}>
+            {isCopied ? (
+              <CheckIcon name={name} className="h-5 w-5 shrink-0" />
+            ) : (
+              <Link2Icon name={name} className="h-5 w-5 shrink-0" />
+            )}
+          </ButtonLink>
+        </div>
       )
     default:
       return null

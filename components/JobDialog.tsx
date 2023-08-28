@@ -30,12 +30,12 @@ const JobDialog = ({
       <DialogTrigger>{children}</DialogTrigger>
       <DialogContent className="max-h-[100svh] max-w-[780px] overflow-hidden overflow-y-auto rounded border border-black border-silver-900 bg-black text-white md:max-h-[90svh]">
         <DialogHeader className="">
-          <div className="border-b border-silver-900 p-6">
+          <div className="border-b border-silver-900 p-6 lg:p-8">
             <DialogTitle className="max-w-[26ch] text-4xl leading-snug tracking-wide">
               {title}
             </DialogTitle>
           </div>
-          <div className="flex w-full flex-wrap gap-2 border-b border-silver-900 bg-black p-6 text-sm uppercase">
+          <div className="flex w-full flex-wrap gap-2 border-b border-silver-900 bg-black p-6 text-sm uppercase lg:p-8">
             {metaData.map((value, i) => {
               return (
                 value?.length && (
@@ -47,9 +47,9 @@ const JobDialog = ({
             })}
           </div>
         </DialogHeader>
-        <DialogDescription className="bg-silver-950 p-6 text-silver-100">
+        <div className="bg-silver-950 p-6 text-silver-100 lg:p-8">
           <PostBody content={description} />
-        </DialogDescription>
+        </div>
         <div className="sticky bottom-0 bg-silver-950 px-6 pb-6">
           <div className="gap flex items-center justify-between rounded-lg border border-black bg-violet-500 px-4 py-4">
             <div>
