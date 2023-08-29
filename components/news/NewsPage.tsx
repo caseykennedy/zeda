@@ -1,9 +1,9 @@
 import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
 
-import IndexPageHead from 'components/home/IndexPageHead'
 import Layout from 'components/Layout'
+import PageHead from 'components/PageHead'
 import { PostGrid } from 'components/post'
-import PageTitle from 'components/ui/PageTitle'
+import { PageTitle } from 'components/ui'
 
 import FeaturedPosts from './FeaturedPosts'
 
@@ -17,7 +17,7 @@ const NewsPage = ({ posts, postCategories, settings }: PageProps) => {
   console.log('postCategories:', postCategories)
   return (
     <>
-      <IndexPageHead settings={settings} />
+      <PageHead settings={settings} />
       <Layout theme="light">
         <PageTitle className="[&>div]:mt-48">
           <h1 className="mb-2">News</h1>

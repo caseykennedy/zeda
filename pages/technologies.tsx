@@ -11,7 +11,7 @@ import type { JobPost, Partner, Post, Settings } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
-import { IndexPage } from 'components/home'
+import { TechnologiesPage } from 'components/technologies'
 
 interface PageProps extends SharedPageProps {
   jobPosts: JobPost[]
@@ -35,7 +35,7 @@ const Page = ({
   settings,
 }: PageProps) => {
   return (
-    <IndexPage
+    <TechnologiesPage
       jobPosts={jobPosts}
       insights={insights}
       news={news}

@@ -1,8 +1,4 @@
-import {
-  CATEGORY_INSIGHTS,
-  CATEGORY_NEWS,
-  CATEGORY_VIDEO,
-} from 'utils/constants'
+import { PostCategories } from 'lib/constants'
 
 import { Pill } from 'components/ui'
 
@@ -22,9 +18,11 @@ const CategoryTag = ({
     | undefined
 }): JSX.Element[] => {
   const isPrimary =
-    categories.includes(CATEGORY_NEWS) || categories.includes(CATEGORY_INSIGHTS)
+    categories.includes(PostCategories.CATEGORY_NEWS) ||
+    categories.includes(PostCategories.CATEGORY_INSIGHTS)
   const isVideo =
-    categories.includes(CATEGORY_VIDEO) || categories.includes('Featured')
+    categories.includes(PostCategories.CATEGORY_VIDEO) ||
+    categories.includes('Featured')
 
   return categories.map((tag, idx) => (
     <Pill

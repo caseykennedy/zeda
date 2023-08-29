@@ -1,13 +1,13 @@
 import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
+import HeroImg from 'public/images/about/work-suit.jpg'
 import ctaImgSrc from 'public/images/bg-corridor.jpg'
 
 import FooterCTA from 'components/FooterCTA'
-import IndexPageHead from 'components/home/IndexPageHead'
 import Layout from 'components/Layout'
-import PageTitle from 'components/ui/PageTitle'
+import PageHead from 'components/PageHead'
+import { PageHero, PageTitle } from 'components/ui'
 
 import AtGlance from './AtGlance'
-import Hero from './Hero'
 import PartnersGrid from './PartnersGrid'
 import Team from './Team'
 import TextMarquee from './TextMarquee'
@@ -22,12 +22,16 @@ interface PageProps {
 export const AboutPage = ({ partners, people, settings }: PageProps) => {
   return (
     <>
-      <IndexPageHead settings={settings} />
+      <PageHead settings={settings} />
       <Layout>
         <PageTitle>
           <h1 className="max-w-[18ch]">We make things better for everyone</h1>
         </PageTitle>
-        <Hero />
+        <PageHero
+          image={HeroImg}
+          alt="Zeda, Inc. - About us"
+          className=" object-left-top"
+        />
         <AboutZeda />
         <AtGlance />
         <Team people={people} />

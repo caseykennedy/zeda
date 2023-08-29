@@ -1,12 +1,9 @@
 import { type JobPost, type Settings } from 'lib/sanity.queries'
-import Link from 'next/link'
 
 import IndexPageHead from 'components/home/IndexPageHead'
 import JobList from 'components/JobList'
 import Layout from 'components/Layout'
-import Button from 'components/ui/Button'
-import Icon from 'components/ui/Icon'
-import PageTitle from 'components/ui/PageTitle'
+import { Button, Icon, PageTitle } from 'components/ui'
 
 import Benefits from './Benefits'
 import Hero from './Hero'

@@ -1,4 +1,5 @@
 import nav from 'config/nav-footer.json'
+import { type BrandTheme, BrandThemes } from 'lib/constants'
 import Link from 'next/link'
 import { currentYear, scrollTop } from 'utils'
 
@@ -60,7 +61,7 @@ const NavList = () =>
     </ul>
   ))
 
-const Footer = () => {
+const Footer = ({ brand }: { brand?: BrandTheme }) => {
   return (
     <footer className="gutter-y border-t border-silver-900 bg-black">
       <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
@@ -71,7 +72,7 @@ const Footer = () => {
 
           <div className="mt-24 flex justify-center lg:mb-16 lg:mt-0 lg:justify-end">
             <Link href="/" className="">
-              <LogoSymbol />
+              <LogoSymbol brand={brand} />
             </Link>
           </div>
         </div>

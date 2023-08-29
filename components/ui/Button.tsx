@@ -11,7 +11,7 @@ export const buttonVariants = cva(
         default:
           'border border-silver-900 bg-transparent text-silver-400 hover:text-black hover:bg-silver-500',
         primary:
-          'bg-black border-black text-white hover:bg-black/80 hover:bg-violet-600 hover:border-black',
+          'bg-black text-white hover:bg-black/80 hover:bg-violet-600 hover:border-black',
         secondary:
           'border border-transparent bg-silver-500 hover:bg-violet-600 text-white',
         accent: 'bg-violet-500 text-black hover:bg-violet-600 border-black',

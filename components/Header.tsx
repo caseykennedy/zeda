@@ -8,9 +8,10 @@ import {
 } from '@radix-ui/react-icons'
 import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
+import { type BrandTheme, BrandThemes } from 'lib/constants'
 import Link from 'next/link'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
-import { cn, stringToURL } from 'utils'
+import { cn } from 'utils'
 
 import Img from 'components/Img'
 import Logo from 'components/Logo'
@@ -240,7 +241,7 @@ const Navigation = () => {
   )
 }
 
-const Header = () => {
+const Header = ({ brand }: { brand?: BrandTheme }) => {
   const { hasScrolled } = useScrollTop()
   const { scrollDir } = useScrollDir()
 
@@ -256,7 +257,7 @@ const Header = () => {
       <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site md:grid-cols-6">
         <div className="col-span-1 flex items-center md:col-span-2">
           <Link href="/" className="inline-block">
-            <Logo className="w-[116px] sm:w-[138px]" />
+            <Logo brand={brand} className="w-[116px] sm:w-[138px]" />
           </Link>
         </div>
 

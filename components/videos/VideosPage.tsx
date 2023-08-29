@@ -4,10 +4,9 @@ import type { Settings, VideoPost } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
 import FooterCTA from 'components/FooterCTA'
-import IndexPageHead from 'components/home/IndexPageHead'
 import Layout from 'components/Layout'
-import { Button, Section } from 'components/ui'
-import PageTitle from 'components/ui/PageTitle'
+import PageHead from 'components/PageHead'
+import { Button, PageTitle, Section } from 'components/ui'
 
 import FeaturedVideoCard from './FeaturedVideoCard'
 import VideoCard from './VideoCard'
@@ -56,7 +55,7 @@ const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
   console.log('featuredPost', featuredPost.content)
   return (
     <>
-      <IndexPageHead settings={settings} />
+      <PageHead settings={settings} />
       <Layout>
         <PageTitle className="[&>div]:mt-48">
           <h1 className="mb-2">Videos</h1>

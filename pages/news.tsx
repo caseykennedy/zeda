@@ -1,3 +1,4 @@
+import { PostCategories } from 'lib/constants'
 import { readToken } from 'lib/sanity.api'
 import {
   getAllPostCategories,
@@ -8,7 +9,6 @@ import {
 import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
-import { CATEGORY_NEWS, CATEGORY_PRESS } from 'utils/constants'
 
 import { NewsPage } from 'components/news'
 
@@ -25,13 +25,13 @@ interface Query {
 const Page = ({ posts, postCategories, settings }: PageProps) => {
   const filteredPosts = posts.filter(
     (post) =>
-      post.categories?.includes(CATEGORY_NEWS) ||
-      post.categories?.includes(CATEGORY_PRESS)
+      post.categories?.includes(PostCategories.CATEGORY_NEWS) ||
+      post.categories?.includes(PostCategories.CATEGORY_PRESS)
   )
   const filteredPostCategories = postCategories.filter(
     (category) =>
-      category.name.includes(CATEGORY_NEWS) ||
-      category.name.includes(CATEGORY_PRESS)
+      category.name.includes(PostCategories.CATEGORY_NEWS) ||
+      category.name.includes(PostCategories.CATEGORY_PRESS)
   )
   return (
     <NewsPage
