@@ -1,4 +1,4 @@
-import type { JobPost, Post, Settings } from 'lib/sanity.queries'
+import type { JobPost, Partner, Post, Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
 import FooterCTA from 'components/FooterCTA'
@@ -19,6 +19,7 @@ export interface IndexPageProps {
   insights: Post[]
   news: Post[]
   press: Post[]
+  partners: Partner[]
   settings: Settings
 }
 
@@ -27,6 +28,7 @@ export const IndexPage = ({
   insights,
   news,
   press,
+  partners,
   settings,
 }: IndexPageProps) => {
   return (
@@ -37,7 +39,7 @@ export const IndexPage = ({
       <WhyUs />
       <AtGlance />
       <SolutionSwiper />
-      <TrustedBy />
+      <TrustedBy partners={partners} />
       <FeaturedPosts insights={insights} news={news} press={press} />
       <JobList
         title="Zeda is a workplace where people from different aspects of life come together to create an unstoppable team. With strong values, connections, and progressive attitudes, we make sure everyone feels their best."

@@ -36,7 +36,7 @@ const AtGlance = () => {
             className="col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 lg:col-span-1"
             key={idx}
           >
-            <h3 className="mb-8 font-display text-6xl font-medium">
+            <h3 className="mb-8 font-display text-7xl font-medium">
               <Countup
                 end={value}
                 prefix={prefix ?? prefix}

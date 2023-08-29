@@ -50,6 +50,7 @@ const WhitePaperPostPage = ({
                 estimatedReadingTime={post.estimatedReadingTime}
                 tags={post.tags}
                 categories={['White paper']}
+                slug={slug}
               />
 
               <section className="gutter-x gutter-y w-full">

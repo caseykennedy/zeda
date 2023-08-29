@@ -40,7 +40,7 @@ const Hero = () => {
           disablePictureInPicture
           loop
           muted
-          poster="/public/images/hero-careers.jpg"
+          // poster="public/images/hero-careers.jpg"
           preload="metadata"
           tabIndex={-1}
           className="h-full w-full object-cover brightness-50"
