@@ -93,8 +93,6 @@ async function queryStaleRoutes(
   }
 
   switch (body._type) {
-    case 'author':
-      return await queryStaleAuthorRoutes(client, body._id)
     case 'post':
       return await queryStalePostRoutes(client, body._id)
     case 'settings':
@@ -129,24 +127,24 @@ async function mergeWithMoreStories(
   return slugs
 }
 
-async function queryStaleAuthorRoutes(
-  client: SanityClient,
-  id: string
-): Promise<StaleRoute[]> {
-  let slugs = await client.fetch(
-    groq`*[_type == "author" && _id == $id] {
-    "slug": *[_type == "post" && references(^._id)].slug.current
-  }["slug"][]`,
-    { id }
-  )
+// async function queryStaleAuthorRoutes(
+//   client: SanityClient,
+//   id: string
+// ): Promise<StaleRoute[]> {
+//   let slugs = await client.fetch(
+//     groq`*[_type == "author" && _id == $id] {
+//     "slug": *[_type == "post" && references(^._id)].slug.current
+//   }["slug"][]`,
+//     { id }
+//   )
 
-  if (slugs.length > 0) {
-    slugs = await mergeWithMoreStories(client, slugs)
-    return ['/', ...slugs.map((slug: string) => `/posts/${slug}`)]
-  }
+//   if (slugs.length > 0) {
+//     slugs = await mergeWithMoreStories(client, slugs)
+//     return ['/', ...slugs.map((slug: string) => `/posts/${slug}`)]
+//   }
 
-  return []
-}
+//   return []
+// }
 
 async function queryStalePostRoutes(
   client: SanityClient,

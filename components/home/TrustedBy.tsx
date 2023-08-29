@@ -14,7 +14,7 @@ const TrustedBy = ({ partners }: { partners: Partner[] }) => {
       title="Innovations that once took years can now be accomplished in months, weeks or even days. We take great ideas and move them through complex hurdles in a short period of time."
       btn={
         <Button variant="primary" asChild>
-          <Link href="/">
+          <Link href="/about/#partners">
             <Icon
               name="arrow-right"
               color="white"

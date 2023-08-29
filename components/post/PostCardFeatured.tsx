@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from '@radix-ui/react-icons'
 import type { Post } from 'lib/sanity.queries'
 import Link from 'next/link'
 
@@ -71,14 +72,13 @@ const PostCard = ({
               ))}
           </div>
         </div>
-        <div className="hidden flex-col justify-between lg:flex">
-          <p className="mb-4 line-clamp-4 leading-relaxed text-silver-600">
+        <div className="flex flex-col justify-between">
+          <p className="mb-4 line-clamp-4 hidden leading-relaxed text-silver-600 lg:flex">
             {excerpt}
           </p>
           <PostDateReadingTime
             dateString={date}
             estimatedReadingTime={estimatedReadingTime}
-            className="pb-2 sm:pt-4 md:pb-0"
           />
         </div>
       </div>

@@ -1,57 +1,9 @@
 import type { Post } from 'lib/sanity.queries'
-import Link from 'next/link'
 import careersBgImg from 'public/images/irridescence.jpg'
-import { cn } from 'utils'
 
 import Img from 'components/Img'
-import {
-  CategoryTag,
-  PostCardSplit,
-  PostDateReadingTime,
-} from 'components/post'
-import { Button } from 'components/ui'
-
-interface PostTileProps extends Partial<Post> {
-  theme?: 'light' | 'dark'
-}
-
-const PostTile = ({
-  title,
-  coverImage,
-  date,
-  estimatedReadingTime,
-  tags,
-  categories = [],
-  slug,
-  theme = 'light',
-}: PostTileProps) => {
-  return (
-    <Link
-      href={`/posts/${slug}`}
-      aria-label={`Read "${title}"`}
-      className={cn(
-        'flex flex-col justify-between p-4 md:p-6 lg:h-full lg:p-8',
-        theme === 'light' ? 'bg-white text-black' : 'bg-violet-500 text-white'
-      )}
-    >
-      <div>
-        <h2 className="mb-4 line-clamp-4 text-2xl decoration-2 hover:underline">
-          {title}
-        </h2>
-        <div>
-          <CategoryTag categories={categories} variant="outline" />
-        </div>
-      </div>
-      <div className="mt-16 md:mt-24">
-        <PostDateReadingTime
-          dateString={date}
-          estimatedReadingTime={estimatedReadingTime}
-          className={cn(theme === 'light' ? '' : 'text-white')}
-        />
-      </div>
-    </Link>
-  )
-}
+import { PostCardSplit } from 'components/post'
+import { PostTile } from 'components/post'
 
 interface Props {
   insights: Post[]
@@ -115,7 +67,7 @@ const FeaturedPosts = ({ insights, news, press }: Props) => {
                 title={post.title}
                 categories={post.categories}
                 tags={post.tags}
-                theme="dark"
+                className="bg-violet-600 text-white"
               />
             ))}
             {news.slice(0, 1).map((post) => (

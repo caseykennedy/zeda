@@ -10,6 +10,7 @@ import PostHeader from './PostHeader'
 import PostMeta from './PostMeta'
 import PostPage, { type PostPageProps } from './PostPage'
 import PostPageHead from './PostPageHead'
+import PostTile from './PostTile'
 import PreviewPostPage from './PreviewPostPage'
 
 export {
@@ -26,5 +27,6 @@ export {
   PostPage,
   PostPageHead,
   type PostPageProps,
+  PostTile,
   PreviewPostPage,
 }

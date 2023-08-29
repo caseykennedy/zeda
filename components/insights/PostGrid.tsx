@@ -31,7 +31,6 @@ const PostGrid = ({
                 slug={post.slug}
                 title={post.title}
                 tags={post.tags}
-                excerpt={post.excerpt}
               />
             ) : (
               <PostCard

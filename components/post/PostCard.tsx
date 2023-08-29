@@ -7,7 +7,6 @@ import LogoSymbol from 'components/LogoSymbol'
 import { Pill } from 'components/ui'
 
 import CategoryTag from './CategoryTag'
-import PostDate from './PostDate'
 import PostDateReadingTime from './PostDateReadingTime'
 
 const PostCard = ({
@@ -85,24 +84,6 @@ const PostCard = ({
             dateString={date}
             estimatedReadingTime={estimatedReadingTime}
           />
-          {/* <div>
-            <Link
-              href={`/posts/${slug}`}
-              className={cn(
-                `group relative inline-flex flex-row items-center text-sm font-medium uppercase tracking-wide`
-              )}
-            >
-              <Icon
-                name="arrow-right"
-                color="text-emerald-400"
-                size={18}
-                className="absolute left-0 opacity-0 transition-all group-hover:opacity-100"
-              />
-              <span className="transition-all ease-out group-hover:translate-x-6">
-                Read more
-              </span>
-            </Link>
-          </div> */}
         </div>
       </Link>
     </div>

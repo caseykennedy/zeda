@@ -1,10 +1,10 @@
+import { ArrowRightIcon } from '@radix-ui/react-icons'
 import type { Post } from 'lib/sanity.queries'
 import Link from 'next/link'
 
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
 import { Pill } from 'components/ui'
-import ArrowLink from 'components/ui/LinkArrow'
 
 import CategoryTag from './CategoryTag'
 import PostDateReadingTime from './PostDateReadingTime'
@@ -54,11 +54,11 @@ const PostCardSplit = ({
       <Link
         href={`/posts/${slug}`}
         aria-label={`Read "${title}"`}
-        className="flex flex-1 flex-col justify-between bg-black text-white"
+        className="group flex flex-1 flex-col justify-between bg-black text-white"
       >
         <div className="gutter col-span-2 flex flex-col justify-between sm:flex-col lg:col-span-1">
           <div className="flex w-full flex-col even:flex-col md:flex-row even:md:flex-row-reverse">
-            <h2 className="mb-4 max-w-[24ch] leading-snug decoration-2 hover:underline">
+            <h2 className="mb-4 max-w-[24ch] leading-snug decoration-2 group-hover:underline">
               {title}
             </h2>
           </div>
@@ -77,12 +77,12 @@ const PostCardSplit = ({
             dateString={date}
             estimatedReadingTime={estimatedReadingTime}
           />
+          <ArrowRightIcon className="h-6 w-6 -translate-x-6 opacity-0 transition-all group-hover:translate-x-0 group-hover:text-white group-hover:opacity-100" />
           {/* <ArrowLink href={`/posts/${slug}`} className="text-white">
             Read more
           </ArrowLink> */}
         </div>
       </Link>
-      {/* {author && <Avatar name={author.name} picture={author.picture} />} */}
     </div>
   )
 }

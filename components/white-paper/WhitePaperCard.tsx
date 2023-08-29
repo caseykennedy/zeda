@@ -2,8 +2,8 @@ import type { Post } from 'lib/sanity.queries'
 import Link from 'next/link'
 
 import LogoSymbol from 'components/LogoSymbol'
-import { CategoryTag, PostDate } from 'components/post'
-import { Pill } from 'components/ui'
+import { CategoryTag } from 'components/post'
+import { PostDateReadingTime } from 'components/post'
 
 const slugPath = 'white-papers'
 
@@ -60,33 +60,13 @@ const WhitePaperCard = ({
         </div>
 
         <div className="mt-3">
-          {/* {excerpt && (
+          {excerpt && (
             <p className="mb-6 line-clamp-2 leading-relaxed">{excerpt}</p>
-          )} */}
-          <div className="text-sm font-medium uppercase tracking-wide">
-            <PostDate dateString={date} />{' '}
-            <span className="text-silver-500">
-              {estimatedReadingTime && `| ${estimatedReadingTime} min read`}
-            </span>
-          </div>
-          {/* <div>
-            <Link
-              href={`/posts/${slug}`}
-              className={cn(
-                `group relative inline-flex flex-row items-center text-sm font-medium uppercase tracking-wide`
-              )}
-            >
-              <Icon
-                name="arrow-right"
-                color="text-emerald-400"
-                size={18}
-                className="absolute left-0 opacity-0 transition-all group-hover:opacity-100"
-              />
-              <span className="transition-all ease-out group-hover:translate-x-6">
-                Read more
-              </span>
-            </Link>
-          </div> */}
+          )}
+          <PostDateReadingTime
+            dateString={date}
+            estimatedReadingTime={estimatedReadingTime}
+          />
         </div>
       </Link>
     </div>
