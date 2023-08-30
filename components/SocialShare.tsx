@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { CheckIcon, Link2Icon } from '@radix-ui/react-icons'
 import { useCopyToClipboard } from 'hooks'
-import { cn } from 'utils'
+import { cn, getBaseUrl } from 'utils'
 
 import { Button, Icon } from 'components/ui'
 
@@ -54,7 +54,7 @@ const SocialShare = ({ name, slug }: SocialShareProps): JSX.Element | null => {
   const [isCopied, setIsCopied] = useState(false)
   const [, copy] = useCopyToClipboard()
 
-  const shareSlug = `https://z8a.com/posts/${slug}`
+  const shareSlug = `${getBaseUrl()}/posts/${slug}`
 
   const handleCopy = (href: string) => {
     console.log('copied:', href)

@@ -19,4 +19,8 @@ function stringToURL(str: string) {
   return str.replace(/\s+/g, '-').toLowerCase()
 }
 
-export { cn, currentYear, scrollTop, stringToURL }
+const getBaseUrl = () => {
+  return process.env.NEXT_PUBLIC_BASE_URL || ''
+}
+
+export { cn, currentYear, getBaseUrl, scrollTop, stringToURL }
