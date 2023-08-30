@@ -58,7 +58,7 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
 
       <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
         <Button variant="accent" asChild>
-          <Link href="/">
+          <Link href="/contact">
             <Icon
               name="arrow-right"
               className="relative -translate-x-1 transition-all group-hover:translate-x-1"
@@ -70,7 +70,7 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
     </div>
 
     <div className="mt-32">
-      <div className="text-lg">Why partner with us?</div>
+      <div className="text-lg text-silver-500">Why partner with us?</div>
       <div className="mt-24 grid grid-cols-4 gap-16 md:gap-10">
         {data.map(({ icon, title, desc }, idx) => (
           <FeatureGridItem icon={icon} title={title} desc={desc} key={idx} />

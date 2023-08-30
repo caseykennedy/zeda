@@ -29,9 +29,9 @@ const TrustedBy = ({ partners }: { partners: Partner[] }) => {
         <SectionTitle>Trusted by</SectionTitle>
 
         <div className="">
-          <Marquee speed={80}>
+          <Marquee speed={120}>
             {partners.map(({ name, logo }, idx) => (
-              <div className="px-10" key={idx}>
+              <div className="gutter-x" key={idx}>
                 <Img
                   src={urlForImage(logo).width(180).height(80).url()}
                   alt={`Proudly partnered with ${name}`}

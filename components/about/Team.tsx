@@ -123,7 +123,7 @@ const Team = ({ people }: { people: Person[] }) => {
                               size: 'icon',
                             })}
                           >
-                            <PlusIcon className="h-5 w-5 text-black" />
+                            <PlusIcon className="h-5 w-5" />
                           </div>
                         </TeamBio>
                       </motion.div>

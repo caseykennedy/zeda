@@ -241,7 +241,7 @@ const Navigation = () => {
   )
 }
 
-const Header = ({ brand }: { brand?: BrandTheme }) => {
+const Header = ({ brand = BrandThemes.zeda }: { brand: BrandTheme }) => {
   const { hasScrolled } = useScrollTop()
   const { scrollDir } = useScrollDir()
 
