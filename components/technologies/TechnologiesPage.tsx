@@ -32,7 +32,6 @@ export const IndexPage = ({
   return (
     <Layout brand={BrandThemes.technologies}>
       <PageHead settings={settings} />
-
       <PageTitle>
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
           <div className="flex-[2]">
@@ -42,7 +41,7 @@ export const IndexPage = ({
           </div>
           <div className="flex w-full flex-1 flex-row justify-end">
             <Button variant="primaryTech" asChild>
-              <a href="#open-positions">
+              <a href="#capabilities">
                 <Icon
                   name="arrow-right"
                   className="relative -translate-x-1 transition-all group-hover:translate-x-1"

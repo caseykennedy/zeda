@@ -10,9 +10,11 @@ import SectionTitle from 'components/ui/SectionTitle'
 
 const Capabilities = () => {
   return (
-    <Section className="dark border-t border-silver-900 bg-black text-white">
+    <Section
+      id="capabilities"
+      className="dark border-t border-silver-900 bg-black text-white"
+    >
       <SectionTitle dark>Capabilities</SectionTitle>
-
       <div className="grid grid-cols-6">
         <div className="col-span-6 mb-8 md:col-span-4">
           <h2>
@@ -21,7 +23,6 @@ const Capabilities = () => {
             together
           </h2>
         </div>
-
         <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
           <p className="max-w-[40ch] text-lg text-silver-500">
             Zeda&apos;s objective is to better lives by investing in
@@ -29,7 +30,6 @@ const Capabilities = () => {
           </p>
         </div>
       </div>
-
       <div className="mt-32 grid grid-cols-4 gap-16 md:mt-64 md:gap-10">
         {stats.map(({ value, suffix, description }, idx) => (
           <div
@@ -43,7 +43,6 @@ const Capabilities = () => {
           </div>
         ))}
       </div>
-
       <div className="gutter-t gap grid grid-cols-3 grid-rows-3">
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-2 sm:row-span-3">
           <Img
