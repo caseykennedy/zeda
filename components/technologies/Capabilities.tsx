@@ -64,10 +64,8 @@ const Capabilities = () => {
             src={LatticeStructure}
             alt="Zeda Inc. manufacturing facility"
             fill={true}
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center top',
-            }}
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
           />
         </figure>
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-1 sm:row-span-2">
@@ -75,10 +73,8 @@ const Capabilities = () => {
             src={MfgJumpsuit}
             alt="Zeda Inc. manufacturing facility"
             fill={true}
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center top',
-            }}
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
           />
         </figure>
       </div>

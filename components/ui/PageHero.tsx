@@ -18,7 +18,8 @@ const PageHero = ({ image, alt, className }: Props) => {
           alt={alt}
           fill={true}
           priority={true}
-          className={cn(`object-cover object-center`, className)}
+          className={cn(`object-cover object-top`, className)}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 80vw"
         />
       </div>
     </section>

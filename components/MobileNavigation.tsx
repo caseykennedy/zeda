@@ -64,7 +64,7 @@ const ListItem = ({ title, href }: { title: string; href: string }) => {
 const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
   return (
     <Sheet>
-      <SheetTrigger>{children}</SheetTrigger>
+      <SheetTrigger aria-label="Open navigation">{children}</SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle className="mb-6">

@@ -35,12 +35,13 @@ const TeamBio = ({
           <div className="flex flex-col bg-violet-500 sm:flex-row">
             <figure className="relative block aspect-square h-[300px]">
               <Img
-                src={urlForImage(picture).width(300).height(300).url()}
+                src={urlForImage(picture).url()}
                 alt="Zeda Inc. manufacturing facility"
                 blurDataURL={picture?.metadata.lqip}
                 fill={true}
                 style={{ objectFit: 'cover' }}
                 className="overflow-hidden"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </figure>
             <div className="gutter flex flex-1 flex-col justify-end border-l border-black">

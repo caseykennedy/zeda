@@ -6,16 +6,18 @@ import { cn } from 'utils'
 import { Button, Icon } from 'components/ui'
 
 interface ButtonLinkProps {
-  href: string
-  children: React.ReactNode
   className?: string
+  children: React.ReactNode
+  href: string
+  name: string
   share?: boolean
 }
 
 const ButtonLink = ({
-  href,
-  children,
   className,
+  children,
+  href,
+  name,
   share,
 }: ButtonLinkProps): JSX.Element => {
   return (
@@ -29,9 +31,13 @@ const ButtonLink = ({
       asChild
     >
       {share ? (
-        <button>{children}</button>
+        <button aria-label={`Copy this article's URL`}>{children}</button>
       ) : (
-        <a href={href} target="_blank noreferrer noopener">
+        <a
+          href={href}
+          target="_blank noreferrer noopener"
+          aria-label={`Share this article on ${name}`}
+        >
           {children}
         </a>
       )}
@@ -64,7 +70,10 @@ const SocialShare = ({ name, slug }: SocialShareProps): JSX.Element | null => {
   switch (name) {
     case 'facebook':
       return (
-        <ButtonLink href={`//www.facebook.com/sharer.php?u=${shareSlug}`}>
+        <ButtonLink
+          href={`//www.facebook.com/sharer.php?u=${shareSlug}`}
+          name={name}
+        >
           <Icon name={name} size={20} />
         </ButtonLink>
       )
@@ -72,20 +81,21 @@ const SocialShare = ({ name, slug }: SocialShareProps): JSX.Element | null => {
       return (
         <ButtonLink
           href={`//www.linkedin.com/shareArticle?mini=true&url=${shareSlug}`}
+          name={name}
         >
           <Icon name={name} size={20} />
         </ButtonLink>
       )
     case 'twitter':
       return (
-        <ButtonLink href={`//twitter.com/share?url=${shareSlug}`}>
+        <ButtonLink href={`//twitter.com/share?url=${shareSlug}`} name={name}>
           <Icon name={name} size={20} />
         </ButtonLink>
       )
     case 'share':
       return (
         <div onClick={() => handleCopy(shareSlug)}>
-          <ButtonLink href={shareSlug} share={true}>
+          <ButtonLink href={shareSlug} share={true} name={name}>
             {isCopied ? (
               <CheckIcon name={name} className="h-5 w-5 shrink-0" />
             ) : (

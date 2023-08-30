@@ -28,12 +28,13 @@ const social = [
 ]
 
 const SocialList = () =>
-  social.map(({ icon, href }, idx) => (
+  social.map(({ name, icon, href }, idx) => (
     <a
       key={idx}
       href={href}
       className="text-silver-500 hover:text-white"
       rel="nofollow noreferrer"
+      aria-label={`Follow us on ${name}`}
     >
       <Icon name={icon} size={20} />
     </a>
@@ -84,7 +85,13 @@ const Footer = ({ brand }: { brand?: BrandTheme }) => {
             </div>
           </div>
           <div className="flex flex-1 justify-center">
-            <Button variant="default" size="icon" onClick={scrollTop}>
+            <Button
+              variant="default"
+              size="icon"
+              onClick={scrollTop}
+              role="button"
+              aria-label="Scroll to top"
+            >
               <Icon name="chevron-up" color="text-white" />
             </Button>
           </div>

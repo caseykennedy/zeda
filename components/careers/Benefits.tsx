@@ -81,11 +81,8 @@ const Benefits = () => (
           fill={true}
           // width={980}
           // height={886}
-          style={{
-            objectFit: 'cover',
-            objectPosition: 'top right',
-          }}
-          className="aspect-square sm:aspect-video lg:aspect-square"
+          className="aspect-square object-cover object-right-top sm:aspect-video lg:aspect-square"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
     </div>
@@ -99,11 +96,8 @@ const Benefits = () => (
           fill={true}
           // width={980}
           // height={886}
-          style={{
-            objectFit: 'cover',
-            objectPosition: 'top right',
-          }}
-          className="aspect-square sm:aspect-video lg:aspect-square"
+          className="aspect-square object-cover object-right-top sm:aspect-video lg:aspect-square"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
 

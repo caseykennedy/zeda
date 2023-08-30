@@ -18,7 +18,13 @@ const Progress = React.forwardRef<
   const indicatorStyle = { transform: `translateX(-${100 - value}%)` }
 
   return (
-    <ProgressPrimitive.Root ref={ref} className={sectionClasses} {...props}>
+    <ProgressPrimitive.Root
+      ref={ref}
+      className={sectionClasses}
+      {...props}
+      role="progressbar"
+      aria-label="Tab progress indicator"
+    >
       <ProgressPrimitive.Indicator
         className="h-full w-full flex-1 bg-black"
         style={indicatorStyle}

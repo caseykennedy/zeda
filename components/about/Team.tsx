@@ -142,6 +142,8 @@ const Team = ({ people }: { people: Person[] }) => {
                               variant: 'ghost',
                               size: 'icon',
                             })}
+                            role="button"
+                            aria-label={`Read more about ${name}`}
                           >
                             <PlusIcon className="h-5 w-5 text-black" />
                           </div>

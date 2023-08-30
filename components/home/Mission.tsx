@@ -140,7 +140,7 @@ const Mission = () => {
                             0{id + 1}.
                           </div>
                           <div className="col-span-6 col-start-2 self-center justify-self-start text-left">
-                            <h4>{title}</h4>
+                            <h3 className="text-2xl">{title}</h3>
                           </div>
                           <div className="col-start-8 hidden self-center justify-self-end sm:block">
                             {activeTab === id && <Icon name="arrow-right" />}
@@ -185,6 +185,7 @@ const Mission = () => {
                       quality={80}
                       fill={true}
                       style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     />
                   </figure>
                 </TabsContent>

@@ -45,6 +45,7 @@ const Collapse = ({
               href={applicationURL ?? '#'}
               target="__blank"
               rel="nofollow noreferrer"
+              aria-label="Apply for the job"
             >
               <Icon
                 name="arrow-top-right"
@@ -66,6 +67,8 @@ const Collapse = ({
                 variant: 'outline',
                 size: 'icon',
               })}
+              role="button"
+              aria-label="Read the job description"
             >
               <PlusIcon className="h-5 w-5" />
             </div>

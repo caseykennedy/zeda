@@ -1,12 +1,12 @@
 import { type JobPost, type Settings } from 'lib/sanity.queries'
+import HeroImg from 'public/images/hero-careers.jpg'
 
 import IndexPageHead from 'components/home/IndexPageHead'
 import JobList from 'components/JobList'
 import Layout from 'components/Layout'
-import { Button, Icon, PageTitle } from 'components/ui'
+import { Button, Icon, PageHero, PageTitle } from 'components/ui'
 
 import Benefits from './Benefits'
-import Hero from './Hero'
 import WhyUs from './WhyUs'
 
 interface PageProps {
@@ -39,7 +39,7 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
             </div>
           </div>
         </PageTitle>
-        <Hero />
+        <PageHero image={HeroImg} alt="Work at Zeda, Inc." />
         <WhyUs />
         <Benefits />
         <JobList

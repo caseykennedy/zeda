@@ -45,8 +45,8 @@ const Slide = ({ heading, message, image, alt, href, btnText }: SlideProps) => {
           alt={alt}
           fill={true}
           style={{ objectFit: 'cover' }}
-          sizes="100%"
           className="brightness-50"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 80vw"
         />
       </figure>
     </>

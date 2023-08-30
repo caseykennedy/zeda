@@ -73,6 +73,7 @@ const AtGlance = () => {
               objectFit: 'cover',
               objectPosition: 'center top',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </figure>
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-1 sm:row-span-2">
@@ -84,6 +85,7 @@ const AtGlance = () => {
               objectFit: 'cover',
               objectPosition: 'center top',
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </figure>
       </div>
