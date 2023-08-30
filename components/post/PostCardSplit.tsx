@@ -33,7 +33,6 @@ const PostCardSplit = ({
         href={`/posts/${slug}`}
         aria-label={`Read "${title}"`}
         className="group flex-1"
-        prefetch={false}
       >
         {coverImage ? (
           <CoverImage
@@ -56,7 +55,6 @@ const PostCardSplit = ({
         href={`/posts/${slug}`}
         aria-label={`Read "${title}"`}
         className="group flex flex-1 flex-col justify-between bg-black text-white"
-        prefetch={false}
       >
         <div className="gutter col-span-2 flex flex-col justify-between sm:flex-col lg:col-span-1">
           <div className="flex w-full flex-col even:flex-col md:flex-row even:md:flex-row-reverse">
