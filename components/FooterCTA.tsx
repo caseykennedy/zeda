@@ -1,6 +1,7 @@
 import { type StaticImageData } from 'next/image'
 import Link from 'next/link'
 import bgImg from 'public/images/about/work-suit.jpg'
+import { cn } from 'utils'
 
 import Img from 'components/Img'
 import Button from 'components/ui/Button'
@@ -8,23 +9,53 @@ import Section from 'components/ui/Section'
 
 import Icon from './ui/Icon'
 
-interface Props {
-  heading: string
-  message: string
+interface FigureProps {
   src: StaticImageData
   alt: string
+  className?: string
+  overlayColor?: string
+}
+
+const FooterCTAFigure = ({
+  src = bgImg,
+  alt = 'Zeda, Inc., Manufacturing',
+  className,
+  overlayColor,
+}: FigureProps) => {
+  return (
+    <figure
+      className={cn(
+        `absolute left-0 top-0 z-0 h-full w-full bg-violet-600`,
+        overlayColor
+      )}
+    >
+      <Img
+        src={src}
+        alt={alt}
+        fill={true}
+        style={{ objectFit: 'cover' }}
+        className={cn(`mix-blend-screen`, className)}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      />
+    </figure>
+  )
+}
+
+interface FooterCTAProps {
+  heading: string
+  message: string
   href: string
   btnText: string
+  children: React.ReactNode
 }
 
 const FooterCTA = ({
   heading = 'Join forces with us. Let’s change the world together',
   message = '<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing.',
-  src = bgImg,
-  alt = 'Zeda Inc. - Contact us',
   href = '/contact',
   btnText = 'Get in touch',
-}: Props) => {
+  children,
+}: FooterCTAProps) => {
   return (
     <Section className="dark overflow-hidden bg-black">
       <div className="relative z-10">
@@ -50,18 +81,9 @@ const FooterCTA = ({
         </div>
       </div>
 
-      <figure className="absolute left-0 top-0 z-0 h-full w-full bg-violet-600">
-        <Img
-          src={src}
-          alt={alt}
-          fill={true}
-          style={{ objectFit: 'cover' }}
-          className="mix-blend-screen"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-      </figure>
+      {children}
     </Section>
   )
 }
 
-export default FooterCTA
+export { FooterCTA, FooterCTAFigure }

@@ -87,7 +87,7 @@ export const Collapse = ({
     <AccordionTrigger className="hover:bg-violet-500 hover:text-black data-[state=open]:bg-black data-[state=open]:text-violet-500 [&[data-state=open]>div>div>svg]:rotate-180">
       <div className="gutter-x flex flex-nowrap items-center gap-4 md:gap-12">
         <div className="text-base">0{id}</div>
-        <h2 className="font-sans text-xl font-medium md:text-3xl">{title}</h2>
+        <h3 className="font-sans text-xl font-medium md:text-3xl">{title}</h3>
       </div>
       <div className="gutter-r">
         <ChevronDownIcon className="text-muted-foreground h-8 w-8 shrink-0 transition-transform duration-200" />

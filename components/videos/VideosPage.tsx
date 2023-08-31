@@ -4,7 +4,7 @@ import { LayoutThemes } from 'lib/constants'
 import type { Settings, VideoPost } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
-import FooterCTA from 'components/FooterCTA'
+import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { Button, PageTitle, Section } from 'components/ui'
@@ -75,11 +75,11 @@ const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
         <FooterCTA
           heading="Join forces with us. Let’s change the world together"
           message="<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing."
-          src={ctaImgSrc}
-          alt="Zeda Inc. - Contact us"
           href="/contact"
           btnText="Get in touch"
-        />
+        >
+          <FooterCTAFigure src={ctaImgSrc} alt="Zeda Inc. - Contact us" />
+        </FooterCTA>
       </Layout>
     </>
   )

@@ -9,7 +9,7 @@ import type {
 } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
-import FooterCTA from 'components/FooterCTA'
+import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import IndexPageHead from 'components/home/IndexPageHead'
 import Layout from 'components/Layout'
 import { Button, PageTitle, Section } from 'components/ui'
@@ -102,11 +102,11 @@ const InsightsPage = ({
         <FooterCTA
           heading="Join forces with us. Let’s change the world together"
           message="<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing."
-          src={ctaImgSrc}
-          alt="Zeda Inc. - Contact us"
           href="/contact"
           btnText="Get in touch"
-        />
+        >
+          <FooterCTAFigure src={ctaImgSrc} alt="Zeda Inc. - Contact us" />
+        </FooterCTA>
       </Layout>
     </>
   )

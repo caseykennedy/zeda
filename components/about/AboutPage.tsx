@@ -3,7 +3,7 @@ import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
 import HeroImg from 'public/images/about/work-suit.jpg'
 import ctaImgSrc from 'public/images/bg-corridor.jpg'
 
-import FooterCTA from 'components/FooterCTA'
+import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { PageHero, PageTitle } from 'components/ui'
@@ -39,13 +39,13 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
         <TextMarquee />
         <PartnersGrid partners={partners} />
         <FooterCTA
-          heading="Join forces with us. Let's change the world together"
-          message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
-          src={ctaImgSrc}
-          alt="Zeda Inc. - Contact us"
+          heading="Join forces with us. Let’s change the world together"
+          message="<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing."
           href="/contact"
           btnText="Get in touch"
-        />
+        >
+          <FooterCTAFigure src={ctaImgSrc} alt="Zeda Inc. - Contact us" />
+        </FooterCTA>
       </Layout>
     </>
   )

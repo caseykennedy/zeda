@@ -33,7 +33,7 @@ const Slide = ({ heading, message, image, alt, href, btnText }: SlideProps) => {
             dangerouslySetInnerHTML={{ __html: message }}
             className="max-w-[38ch] text-base text-white"
           />
-          <Button variant="outline" className="relative z-20" asChild>
+          <Button variant="secondary" className="relative z-20" asChild>
             <Link href={href}>{btnText}</Link>
           </Button>
         </div>

@@ -8,10 +8,16 @@ import { Button, Icon } from 'components/ui'
 import SectionPanel from 'components/ui/SectionPanel'
 import SectionTitle from 'components/ui/SectionTitle'
 
-const TrustedBy = ({ partners }: { partners: Partner[] }) => {
+const TrustedBy = ({
+  partners,
+  title,
+}: {
+  partners: Partner[]
+  title: string
+}) => {
   return (
     <SectionPanel
-      title="Innovations that once took years can now be accomplished in months, weeks or even days. We take great ideas and move them through complex hurdles in a short period of time."
+      title={title}
       btn={
         <Button variant="primary" asChild>
           <Link href="/about/#partners">
@@ -20,7 +26,7 @@ const TrustedBy = ({ partners }: { partners: Partner[] }) => {
               color="white"
               className="relative -translate-x-1 transition-all group-hover:translate-x-1"
             />
-            Partner with us
+            Why partner with us?
           </Link>
         </Button>
       }
