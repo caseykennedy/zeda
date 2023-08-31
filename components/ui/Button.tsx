@@ -9,18 +9,16 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'border border-silver-900 bg-transparent text-silver-400 hover:text-black hover:bg-silver-500',
+          'border border-silver-500 bg-silver-500 text-white hover:bg-black',
         primary:
           'bg-black text-white hover:bg-black/80 hover:bg-violet-600 hover:border-black',
-        primaryTech:
-          'bg-black text-white hover:bg-black/80 hover:bg-blue-600 hover:border-black dark:hover:bg-blue-600 dark:hover:border-blue-500 dark:hover:text-white dark:bg-white dark:text-black dark:border-black',
         secondary:
-          'border border-transparent bg-silver-500 hover:bg-violet-600 text-white',
+          'border-none bg-white hover:bg-black text-black hover:text-white',
         accent: 'bg-violet-500 text-white hover:bg-violet-600 border-black',
         outline:
-          'border text-black border-black bg-white hover:bg-black hover:text-white',
+          'border text-black border-black bg-white hover:bg-black hover:text-white hover:border-white',
         ghost:
-          'border-none bg-white text-black hover:text-white hover:bg-black',
+          'border-none bg-transparent text-black hover:text-white hover:bg-black',
         link: 'border-none text-black decoration-2 underline-offset-4 hover:underline',
       },
       size: {

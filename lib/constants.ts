@@ -6,6 +6,12 @@ export const enum PostCategories {
 }
 export type PostCategory = keyof typeof PostCategories
 
+export enum LayoutThemes {
+  dark = 'dark',
+  light = 'light',
+}
+export type LayoutTheme = keyof typeof LayoutThemes
+
 export enum BrandThemes {
   zeda = 'zeda',
   technologies = 'technologies',

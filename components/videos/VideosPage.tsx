@@ -1,5 +1,6 @@
 import { CardStackPlusIcon } from '@radix-ui/react-icons'
 import useLoadMore from 'hooks/useLoadMore'
+import { LayoutThemes } from 'lib/constants'
 import type { Settings, VideoPost } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
@@ -57,7 +58,7 @@ const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
     <>
       <PageHead settings={settings} />
       <Layout>
-        <PageTitle className="[&>div]:mt-48">
+        <PageTitle theme={LayoutThemes.dark} className="[&>div]:mt-48">
           <h1 className="mb-2">Videos</h1>
           <p className="max-w-[26ch] text-lg font-medium text-silver-500">
             Get to know our team, our culture, and our manufacturing processes.

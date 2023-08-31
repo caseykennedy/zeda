@@ -37,7 +37,7 @@ const FooterCTA = ({
             dangerouslySetInnerHTML={{ __html: message }}
             className="max-w-[32ch] text-lg text-white"
           />
-          <Button variant="outline" className="relative z-20" asChild>
+          <Button variant="secondary" className="relative z-20" asChild>
             <Link href={href}>
               <Icon
                 name="arrow-right"

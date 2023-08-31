@@ -1,4 +1,4 @@
-import { BrandThemes } from 'lib/constants'
+import { BrandThemes, LayoutThemes } from 'lib/constants'
 import type { JobPost, Partner, Post, Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
 import HeroImg from 'public/images/technologies/mfg-orange-suit.jpg'
@@ -32,7 +32,7 @@ export const IndexPage = ({
   return (
     <Layout brand={BrandThemes.technologies}>
       <PageHead settings={settings} />
-      <PageTitle>
+      <PageTitle theme={LayoutThemes.dark}>
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
           <div className="flex-[2]">
             <h1 className="max-w-[26ch]">
@@ -40,7 +40,7 @@ export const IndexPage = ({
             </h1>
           </div>
           <div className="flex w-full flex-1 flex-row justify-end">
-            <Button variant="primaryTech" asChild>
+            <Button variant="primary" className="hover:bg-blue-600" asChild>
               <a href="#capabilities">
                 <Icon
                   name="arrow-right"

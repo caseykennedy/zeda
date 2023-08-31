@@ -8,7 +8,12 @@ import {
 } from '@radix-ui/react-icons'
 import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
-import { type BrandTheme, BrandThemes } from 'lib/constants'
+import {
+  type BrandTheme,
+  BrandThemes,
+  type LayoutTheme,
+  LayoutThemes,
+} from 'lib/constants'
 import Link from 'next/link'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
 import { cn } from 'utils'
@@ -241,7 +246,13 @@ const Navigation = () => {
   )
 }
 
-const Header = ({ brand = BrandThemes.zeda }: { brand: BrandTheme }) => {
+const Header = ({
+  brand = BrandThemes.zeda,
+  theme,
+}: {
+  brand: BrandTheme
+  theme: LayoutTheme
+}) => {
   const { hasScrolled } = useScrollTop()
   const { scrollDir } = useScrollDir()
 
@@ -249,12 +260,18 @@ const Header = ({ brand = BrandThemes.zeda }: { brand: BrandTheme }) => {
 
   return (
     <header
-      className={`overflow-none fixed z-40 h-18 w-full items-center border-b border-silver-500/20 text-black  transition-all dark:border-silver-300/20 dark:text-white md:h-header md:dark:hover:bg-black ${cn(
-        scrollDown ? '-translate-y-[100px]' : 'translate-y-0',
-        hasScrolled && 'bg-white backdrop-blur-md dark:bg-black'
-      )}`}
+      className={cn(
+        `overflow-none fixed z-40 h-18 w-full items-center transition-all md:h-header`,
+        theme,
+        scrollDown ? '-translate-y-[100px]' : 'translate-y-0'
+      )}
     >
-      <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site md:grid-cols-6">
+      <div
+        className={cn(
+          'gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center border-b border-silver-500/20 text-black dark:border-silver-300/20 dark:text-white md:max-w-site md:grid-cols-6 md:dark:hover:bg-black',
+          hasScrolled && 'bg-white dark:bg-black'
+        )}
+      >
         <div className="col-span-1 flex items-center md:col-span-2">
           <Link href="/" className="inline-block">
             <Logo brand={brand} className="w-[116px] sm:w-[138px]" />

@@ -1,3 +1,4 @@
+import { LayoutThemes } from 'lib/constants'
 import { type JobPost, type Settings } from 'lib/sanity.queries'
 import HeroImg from 'public/images/hero-careers.jpg'
 
@@ -19,7 +20,7 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
     <>
       <IndexPageHead settings={settings} />
       <Layout theme="light">
-        <PageTitle>
+        <PageTitle theme={LayoutThemes.light}>
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
             <div className="flex-[2]">
               <h1 className="max-w-[24ch]">

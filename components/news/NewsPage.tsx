@@ -1,3 +1,4 @@
+import { LayoutThemes } from 'lib/constants'
 import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
 
 import Layout from 'components/Layout'
@@ -19,7 +20,7 @@ const NewsPage = ({ posts, postCategories, settings }: PageProps) => {
     <>
       <PageHead settings={settings} />
       <Layout theme="light">
-        <PageTitle className="[&>div]:mt-48">
+        <PageTitle theme={LayoutThemes.light} className="[&>div]:mt-48">
           <h1 className="mb-2">News</h1>
           <p className="max-w-[26ch] text-lg font-medium text-silver-500">
             Zeda in the news and how we&apos;re involved in our community.

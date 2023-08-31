@@ -1,5 +1,9 @@
-import cn from 'classnames'
-import { type BrandTheme, BrandThemes } from 'lib/constants'
+import {
+  type BrandTheme,
+  BrandThemes,
+  type LayoutTheme,
+  LayoutThemes,
+} from 'lib/constants'
 
 import AlertBanner from 'components/AlertBanner'
 import Footer from 'components/Footer'
@@ -9,7 +13,7 @@ interface Props {
   children?: React.ReactNode
   loading?: boolean
   preview?: boolean
-  theme?: 'light' | 'dark'
+  theme?: LayoutTheme
   brand?: BrandTheme
 }
 
@@ -17,21 +21,21 @@ const Layout = ({
   children,
   loading,
   preview,
-  theme = 'dark',
+  theme = LayoutThemes.dark,
   brand = BrandThemes.zeda,
 }: Props) => {
-  const layoutClassName = cn(
-    'align-center relative flex min-h-screen w-full flex-col justify-between',
-    theme
-  )
+  // const layoutStyles = cn(
+  //   'align-center relative flex min-h-screen w-full flex-col justify-between',
+  //   theme
+  // )
 
   return (
-    <div className={layoutClassName}>
-      <Header brand={brand} />
+    <>
+      <Header brand={brand} theme={theme} />
       <main className="nowrap flex w-full flex-auto flex-col">{children}</main>
       <AlertBanner preview={preview} loading={loading} />
       <Footer brand={brand} />
-    </div>
+    </>
   )
 }
 

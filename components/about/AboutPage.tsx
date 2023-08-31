@@ -1,3 +1,4 @@
+import { LayoutThemes } from 'lib/constants'
 import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
 import HeroImg from 'public/images/about/work-suit.jpg'
 import ctaImgSrc from 'public/images/bg-corridor.jpg'
@@ -24,7 +25,7 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
     <>
       <PageHead settings={settings} />
       <Layout>
-        <PageTitle>
+        <PageTitle theme={LayoutThemes.dark}>
           <h1 className="max-w-[18ch]">We make things better for everyone</h1>
         </PageTitle>
         <PageHero

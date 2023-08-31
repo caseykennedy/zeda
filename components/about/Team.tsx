@@ -44,16 +44,16 @@ const upVariants = {
 }
 
 const Team = ({ people }: { people: Person[] }) => {
-  const [filteredPosts, setFilteredPosts] = useState(people)
+  const [filteredTeam, setFilteredTeam] = useState(people)
   const [activeBtn, setActiveBtn] = useState(CATEGORY_ALL)
 
   const handleTabChange = useCallback(
     (category: string) => {
       if (category === CATEGORY_ALL) {
-        setFilteredPosts(people)
+        setFilteredTeam(people)
         setActiveBtn(CATEGORY_ALL)
       } else {
-        setFilteredPosts(
+        setFilteredTeam(
           people.filter((person) => person.seats?.includes(category))
         )
         setActiveBtn(category)
@@ -80,7 +80,7 @@ const Team = ({ people }: { people: Person[] }) => {
           {teamCategories.map((category, idx) => (
             <Button
               key={idx}
-              variant={activeBtn === category ? 'primary' : 'secondary'}
+              variant={activeBtn === category ? 'primary' : 'default'}
               onClick={() => handleTabChange(category)}
             >
               {category}
@@ -89,7 +89,7 @@ const Team = ({ people }: { people: Person[] }) => {
         </div>
         <AnimatePresence>
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-            {filteredPosts.map(
+            {filteredTeam.map(
               ({ _id, bio, linkedinURL, name, picture, position, seats }) => (
                 <motion.div
                   key={_id}
@@ -119,7 +119,7 @@ const Team = ({ people }: { people: Person[] }) => {
                         >
                           <div
                             className={buttonVariants({
-                              variant: 'ghost',
+                              variant: 'outline',
                               size: 'icon',
                             })}
                           >
@@ -139,7 +139,7 @@ const Team = ({ people }: { people: Person[] }) => {
                         >
                           <div
                             className={buttonVariants({
-                              variant: 'ghost',
+                              variant: 'outline',
                               size: 'icon',
                             })}
                             role="button"

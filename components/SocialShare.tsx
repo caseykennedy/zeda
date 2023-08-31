@@ -22,12 +22,9 @@ const ButtonLink = ({
 }: ButtonLinkProps): JSX.Element => {
   return (
     <Button
-      variant="outline"
+      variant="secondary"
       size="icon"
-      className={cn(
-        `border-white text-black hover:border-black hover:text-white`,
-        className
-      )}
+      className={cn(``, className)}
       asChild
     >
       {share ? (

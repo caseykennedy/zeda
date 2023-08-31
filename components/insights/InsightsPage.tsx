@@ -1,5 +1,6 @@
 import { CardStackPlusIcon } from '@radix-ui/react-icons'
 import useLoadMore from 'hooks/useLoadMore'
+import { LayoutThemes } from 'lib/constants'
 import type {
   Post,
   Settings,
@@ -77,7 +78,7 @@ const InsightsPage = ({
     <>
       <IndexPageHead settings={settings} />
       <Layout>
-        <PageTitle className="[&>div]:mt-48">
+        <PageTitle theme={LayoutThemes.dark} className="[&>div]:mt-60">
           <h1 className="mb-2">Insights</h1>
           <p className="max-w-[26ch] text-lg font-medium text-silver-500">
             Data-rich industry insights from our experts and engineers.

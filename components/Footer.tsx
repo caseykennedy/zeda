@@ -86,13 +86,14 @@ const Footer = ({ brand }: { brand?: BrandTheme }) => {
           </div>
           <div className="flex flex-1 justify-center">
             <Button
-              variant="default"
+              variant="primary"
               size="icon"
+              className="border-silver-500 text-silver-500 hover:border-silver-800 hover:bg-silver-900 "
               onClick={scrollTop}
               role="button"
               aria-label="Scroll to top"
             >
-              <Icon name="chevron-up" color="text-white" />
+              <Icon name="chevron-up" />
             </Button>
           </div>
           <div className="flex flex-1 justify-end text-white">
