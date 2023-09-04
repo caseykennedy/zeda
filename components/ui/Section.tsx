@@ -26,11 +26,11 @@ const Section = ({
     pb,
     className
   )
-  const contentClasses = cn('mx-auto h-full w-full', maxWidth, pl, pr)
+  const containerClasses = cn('mx-auto h-full w-full', maxWidth, pl, pr)
 
   return (
     <section className={sectionClasses} {...props}>
-      <div className={contentClasses}>{children}</div>
+      <div className={containerClasses}>{children}</div>
     </section>
   )
 }

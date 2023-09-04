@@ -36,7 +36,7 @@ const WhyUs = () => {
             key={idx}
           >
             <h3 className="mb-8 font-display text-5xl font-medium md:text-7xl">
-              <Countup end={value} suffix={suffix ?? suffix} />
+              <Countup end={value} suffix={suffix && suffix} />
             </h3>
             <p className="text-lg">{description}</p>
           </div>

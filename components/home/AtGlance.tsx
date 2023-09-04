@@ -32,8 +32,8 @@ const AtGlance = () => (
           <h3 className="mb-8 font-display text-7xl font-semibold">
             <Countup
               end={value}
-              prefix={prefix ?? prefix}
-              suffix={suffix ?? suffix}
+              prefix={prefix && prefix}
+              suffix={suffix && suffix}
             />
           </h3>
           <p className="text-lg">{description}</p>

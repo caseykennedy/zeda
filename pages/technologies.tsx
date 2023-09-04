@@ -1,23 +1,12 @@
-import { PostCategories } from 'lib/constants'
 import { readToken } from 'lib/sanity.api'
-import {
-  getAllJobPosts,
-  getAllPartners,
-  getClient,
-  getFeaturedPostsByCategoryQuery,
-  getSettings,
-} from 'lib/sanity.client'
-import type { JobPost, Partner, Post, Settings } from 'lib/sanity.queries'
+import { getAllPartners, getClient, getSettings } from 'lib/sanity.client'
+import type { Partner, Settings } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
 
 import { TechnologiesPage } from 'components/technologies'
 
 interface PageProps extends SharedPageProps {
-  jobPosts: JobPost[]
-  insights: Post[]
-  news: Post[]
-  press: Post[]
   partners: Partner[]
   settings: Settings
 }
@@ -26,52 +15,21 @@ interface Query {
   [key: string]: string
 }
 
-const Page = ({
-  jobPosts,
-  insights,
-  news,
-  press,
-  partners,
-  settings,
-}: PageProps) => {
-  return (
-    <TechnologiesPage
-      jobPosts={jobPosts}
-      insights={insights}
-      news={news}
-      press={press}
-      partners={partners}
-      settings={settings}
-    />
-  )
+const Page = ({ partners, settings }: PageProps) => {
+  return <TechnologiesPage partners={partners} settings={settings} />
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx
-  const client = getClient(draftMode ? { token: readToken } : undefined)
+  const client = getClient()
 
-  const [
-    jobPosts = [],
-    insights = [],
-    news = [],
-    press = [],
-    partners = [],
-    settings,
-  ] = await Promise.all([
-    getAllJobPosts(client),
-    getFeaturedPostsByCategoryQuery(client, PostCategories.CATEGORY_INSIGHTS),
-    getFeaturedPostsByCategoryQuery(client, PostCategories.CATEGORY_NEWS),
-    getFeaturedPostsByCategoryQuery(client, PostCategories.CATEGORY_PRESS),
+  const [partners = [], settings] = await Promise.all([
     getAllPartners(client),
     getSettings(client),
   ])
 
   return {
     props: {
-      jobPosts,
-      insights,
-      news,
-      press,
       partners,
       settings,
       draftMode,

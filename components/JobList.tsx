@@ -42,7 +42,7 @@ const Collapse = ({
         <div className="flex gap-2">
           <Button variant="outline" asChild>
             <a
-              href={applicationURL ?? '#'}
+              href={applicationURL && '#'}
               target="__blank"
               rel="nofollow noreferrer"
               aria-label="Apply for the job"

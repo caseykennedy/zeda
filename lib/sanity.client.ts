@@ -27,6 +27,7 @@ import {
   videoPostAndMoreVideosQuery,
   videoPostBySlugQuery,
   videoPostSlugsQuery,
+  whitePaperAndMorePostsQuery,
   whitePaperBySlugQuery,
   type WhitePaperPost,
   whitePaperSlugsQuery,
@@ -149,6 +150,13 @@ export async function getWhitePaperBySlug(
   slug: string | undefined
 ): Promise<WhitePaperPost> {
   return (await client.fetch(whitePaperBySlugQuery, { slug })) || ({} as any)
+}
+
+export async function getWhitePaperAndMorePosts(
+  client: SanityClient,
+  slug: string | undefined
+): Promise<{ post: Post; morePosts: Post[] }> {
+  return await client.fetch(whitePaperAndMorePostsQuery, { slug })
 }
 
 export async function getAllVideoPosts(

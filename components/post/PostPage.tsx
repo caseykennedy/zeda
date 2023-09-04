@@ -1,3 +1,4 @@
+import { PostCategories } from 'lib/constants'
 import type { Post, Settings } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
 
@@ -5,11 +6,11 @@ import Layout from 'components/Layout'
 import ScrollProgress from 'components/ScrollProgress'
 import Separator from 'components/ui/Separator'
 
+import MorePosts from './MorePosts'
 import PostBody from './PostBody'
 import PostHeader from './PostHeader'
 import PostMeta from './PostMeta'
 import PostPageHead from './PostPageHead'
-import RelatedPosts from './RelatedPosts'
 
 export interface PostPageProps {
   preview?: boolean
@@ -29,7 +30,7 @@ const PostPage = ({
   settings,
 }: PostPageProps) => {
   const slug = post?.slug
-  const isPR = post?.categories?.includes('Press Release')
+  const isInsight = post?.categories?.includes(PostCategories.CATEGORY_INSIGHTS)
 
   if (!slug && !preview) {
     notFound()
@@ -38,9 +39,7 @@ const PostPage = ({
   return (
     <>
       <PostPageHead settings={settings} post={post} />
-
       <ScrollProgress />
-
       <Layout preview={preview!} loading={loading} theme="light">
         {preview && !post ? (
           <div>Loading…</div>
@@ -57,36 +56,23 @@ const PostPage = ({
                 categories={post.categories}
                 slug={post.slug}
               />
-
               <section className="gutter-x gutter-y w-full">
                 <div className="mx-auto max-w-2xl">
                   <PostBody content={post.content} />
                 </div>
               </section>
-
-              {/* {isPR && (
-                <section className="gutter-x gutter-y w-full">
-                  <div className="mx-auto max-w-2xl">
-                    <h4>About Zeda, Inc.</h4>
-                    <p>
-                      Zeda is a leading technology solutions company. Our
-                      objective is to better lives by investing in cutting-edge
-                      technologies, innovative companies, and groundbreaking
-                      ideas. Our foundation combines expertise from diverse
-                      industries, including AM, nanotech, precision
-                      manufacturing, and incubating new ideas. Servicing highly
-                      regulated industries such as medical, space, defense, and
-                      aerospace, Zeda&apos;s mission is to build it all better
-                      together.
-                    </p>
-                  </div>
-                </section>
-              )} */}
-
               <PostMeta notes={post.notes} slug={slug} tags={post.tags} />
             </article>
+
             <Separator className="bg-silver-100" />
-            {morePosts?.length > 0 && <RelatedPosts posts={morePosts} />}
+
+            {morePosts?.length > 0 && (
+              <MorePosts
+                posts={morePosts}
+                btnText={isInsight ? 'All insights' : 'All news'}
+                btnHref={isInsight ? '/insights' : '/news'}
+              />
+            )}
           </>
         )}
       </Layout>

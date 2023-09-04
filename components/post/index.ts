@@ -1,4 +1,5 @@
 import CategoryTag from './CategoryTag'
+import MorePosts from './MorePosts'
 import PostBody from './PostBody'
 import PostCard from './PostCard'
 import PostCardFeatured from './PostCardFeatured'
@@ -15,6 +16,7 @@ import PreviewPostPage from './PreviewPostPage'
 
 export {
   CategoryTag,
+  MorePosts,
   PostBody,
   PostCard,
   PostCardFeatured,

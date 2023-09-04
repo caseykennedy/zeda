@@ -60,7 +60,7 @@ const JobDialog = ({
 
             <Button variant="outline" className="text-black" asChild>
               <a
-                href={applicationURL ?? '#'}
+                href={applicationURL && '#'}
                 target="__blank"
                 rel="nofollow noreferrer"
               >

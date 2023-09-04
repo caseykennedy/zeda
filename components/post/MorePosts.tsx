@@ -4,20 +4,27 @@ import Link from 'next/link'
 import { PostCardFeatured } from 'components/post'
 import Button from 'components/ui/Button'
 
-const RelatedPosts = ({ posts }: { posts: Post[] }) => {
-  console.log('posts:', posts)
+const MorePosts = ({
+  posts,
+  btnHref = '/news',
+  btnText = 'All news',
+}: {
+  posts: Post[]
+  btnHref?: string
+  btnText?: string
+}) => {
   return (
     <section className="relative w-full bg-white">
       <div className="border-b border-silver-100">
         <div className="gutter-x mx-auto flex max-w-site items-center justify-between py-6">
           <div>
             <h2 className="font-sans text-base font-medium uppercase tracking-wide">
-              Related
+              Latest
             </h2>
           </div>
           <div>
             <Button variant="primary" asChild>
-              <Link href="/news">All news</Link>
+              <Link href={btnHref}>{btnText}</Link>
             </Button>
           </div>
         </div>
@@ -35,7 +42,7 @@ const RelatedPosts = ({ posts }: { posts: Post[] }) => {
               excerpt={post.excerpt}
               slug={post.slug}
               title={post.title}
-              categories={post.categories}
+              categories={post.categories || ['White paper']}
               tags={post.tags}
             />
           </div>
@@ -45,4 +52,4 @@ const RelatedPosts = ({ posts }: { posts: Post[] }) => {
   )
 }
 
-export default RelatedPosts
+export default MorePosts

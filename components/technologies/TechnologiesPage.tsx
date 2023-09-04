@@ -1,5 +1,5 @@
 import { BrandThemes, LayoutThemes } from 'lib/constants'
-import type { JobPost, Partner, Post, Settings } from 'lib/sanity.queries'
+import type { Partner, Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/hero-test.png'
 import HeroImg from 'public/images/technologies/mfg-orange-suit.jpg'
 
@@ -11,26 +11,16 @@ import { Button, Icon, PageHero, PageTitle } from 'components/ui'
 
 import Capabilities from './Capabilities'
 import Intro from './Intro'
+import Services from './Services'
 import TextMarquee from './TextMarquee'
 import WhyUs from './WhyUs'
 
 interface Props {
-  jobPosts: JobPost[]
-  insights: Post[]
-  news: Post[]
-  press: Post[]
   partners: Partner[]
   settings: Settings
 }
 
-export const IndexPage = ({
-  jobPosts,
-  insights,
-  news,
-  press,
-  partners,
-  settings,
-}: Props) => {
+export const IndexPage = ({ partners, settings }: Props) => {
   return (
     <Layout brand={BrandThemes.technologies}>
       <PageHead settings={settings} />
@@ -63,6 +53,7 @@ export const IndexPage = ({
       <WhyUs />
       <TextMarquee />
       <Capabilities />
+      <Services />
       <TrustedBy
         title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic manufacturing renaissance through innovation and technology."
         partners={partners}

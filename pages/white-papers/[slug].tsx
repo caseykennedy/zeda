@@ -3,18 +3,17 @@ import {
   getAllWhitePapersSlugs,
   getClient,
   getSettings,
-  getWhitePaperBySlug,
+  getWhitePaperAndMorePosts,
 } from 'lib/sanity.client'
 import type { Settings, WhitePaperPost } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
-import post from 'schemas/post'
 
-import { PreviewPostPage } from 'components/post'
 import { WhitePaperPostPage } from 'components/white-paper'
 
 interface PageProps extends SharedPageProps {
   post: WhitePaperPost
+  morePosts: WhitePaperPost[]
   settings?: Settings
 }
 
@@ -22,22 +21,23 @@ interface Query {
   [key: string]: string
 }
 
-const WhitePapersSlugRoute = (props: PageProps) => {
-  const { settings, post, draftMode } = props
-
-  // if (draftMode) {
-  //   return <PreviewPostPage post={post} morePosts={[]} settings={settings} />
-  // }
-
-  return <WhitePaperPostPage post={post} morePosts={[]} settings={settings} />
+const WhitePapersSlugRoute = ({
+  post,
+  morePosts,
+  settings,
+  draftMode,
+}: PageProps) => {
+  return (
+    <WhitePaperPostPage post={post} morePosts={morePosts} settings={settings} />
+  )
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false, params = {} } = ctx
   const client = getClient(draftMode ? { token: readToken } : undefined)
 
-  const [post, settings] = await Promise.all([
-    getWhitePaperBySlug(client, params.slug),
+  const [{ post, morePosts }, settings] = await Promise.all([
+    getWhitePaperAndMorePosts(client, params.slug),
     getSettings(client),
   ])
 
@@ -50,6 +50,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   return {
     props: {
       post,
+      morePosts,
       settings,
       draftMode,
       token: draftMode ? readToken : '',

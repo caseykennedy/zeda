@@ -188,6 +188,20 @@ export const whitePaperBySlugQuery = groq`
 }
 `
 
+export const whitePaperAndMorePostsQuery = groq`
+{
+  "post": *[_type == "whitePaper" && slug.current == $slug] | order(_updatedAt desc) [0] {
+    content,
+    ${readingTimeFields},
+    ${postFields}
+  },
+  "morePosts": *[_type == "whitePaper" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
+    ${readingTimeFields},
+    ${postFields}
+  }
+}
+`
+
 // Video Post Queries
 
 export const allVideoPostsQuery = groq`

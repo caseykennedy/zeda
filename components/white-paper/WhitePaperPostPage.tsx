@@ -3,7 +3,9 @@ import { notFound } from 'next/navigation'
 
 import Layout from 'components/Layout'
 import { PostBody, PostHeader, PostMeta, PostPageHead } from 'components/post'
+import { MorePosts } from 'components/post'
 import ScrollProgress from 'components/ScrollProgress'
+import { Separator } from 'components/ui'
 
 interface Props {
   preview?: boolean
@@ -61,8 +63,16 @@ const WhitePaperPostPage = ({
 
               <PostMeta notes={post.notes} slug={slug} tags={post.tags} />
             </article>
-            {/* <Separator className="bg-silver-100" /> */}
-            {/* {morePosts?.length > 0 && <RelatedPosts posts={morePosts} />} */}
+
+            <Separator className="bg-silver-100" />
+
+            {morePosts?.length > 0 && (
+              <MorePosts
+                posts={morePosts}
+                btnText="All white papers"
+                btnHref="/insights/#white-papers"
+              />
+            )}
           </>
         )}
       </Layout>

@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { LinkedInLogoIcon, PlusIcon } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
@@ -12,18 +12,22 @@ import Section from 'components/ui/Section'
 
 import TeamBio from './TeamBio'
 
-const CATEGORY_ALL = 'all'
-const CATEGORY_LEADERSHIP = 'leadership'
-const CATEGORY_BOARD_MEMBER = 'board member'
-const CATEGORY_BOARD_ADVISOR = 'board advisor'
-const CATEGORY_ADVISOR = 'advisor'
+enum TeamCategory {
+  ALL = 'all',
+  LEADERSHIP = 'leadership',
+  BOARD_MEMBER = 'board member',
+  BOARD_ADVISOR = 'board advisor',
+  ADVISOR = 'advisor',
+}
+
+type TeamCategories = (typeof TeamCategory)[keyof typeof TeamCategory]
 
 const teamCategories = [
-  CATEGORY_ALL,
-  CATEGORY_LEADERSHIP,
-  CATEGORY_BOARD_MEMBER,
-  CATEGORY_BOARD_ADVISOR,
-  CATEGORY_ADVISOR,
+  TeamCategory.ALL,
+  TeamCategory.LEADERSHIP,
+  TeamCategory.BOARD_MEMBER,
+  TeamCategory.BOARD_ADVISOR,
+  TeamCategory.ADVISOR,
 ]
 
 const upVariants = {
@@ -44,22 +48,19 @@ const upVariants = {
 }
 
 const Team = ({ people }: { people: Person[] }) => {
-  const [filteredTeam, setFilteredTeam] = useState(people)
-  const [activeBtn, setActiveBtn] = useState(CATEGORY_ALL)
+  const [activeCategory, setActiveCategory] = useState(TeamCategory.ALL)
+
+  const filteredTeam = useMemo(() => {
+    if (activeCategory === TeamCategory.ALL) {
+      return people
+    } else {
+      return people.filter((person) => person.seats?.includes(activeCategory))
+    }
+  }, [people, activeCategory])
 
   const handleTabChange = useCallback(
-    (category: string) => {
-      if (category === CATEGORY_ALL) {
-        setFilteredTeam(people)
-        setActiveBtn(CATEGORY_ALL)
-      } else {
-        setFilteredTeam(
-          people.filter((person) => person.seats?.includes(category))
-        )
-        setActiveBtn(category)
-      }
-    },
-    [people]
+    (category: TeamCategories) => setActiveCategory(category),
+    []
   )
 
   return (
@@ -80,7 +81,7 @@ const Team = ({ people }: { people: Person[] }) => {
           {teamCategories.map((category, idx) => (
             <Button
               key={idx}
-              variant={activeBtn === category ? 'primary' : 'default'}
+              variant={activeCategory === category ? 'primary' : 'default'}
               onClick={() => handleTabChange(category)}
             >
               {category}
