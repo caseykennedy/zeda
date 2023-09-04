@@ -88,7 +88,7 @@ const Team = ({ people }: { people: Person[] }) => {
           ))}
         </div>
         <AnimatePresence>
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-10 lg:grid-cols-3 2xl:grid-cols-4">
             {filteredTeam.map(
               ({ _id, bio, linkedinURL, name, picture, position, seats }) => (
                 <motion.div
@@ -128,7 +128,7 @@ const Team = ({ people }: { people: Person[] }) => {
                         </TeamBio>
                       </motion.div>
 
-                      <div className="absolute bottom-4 right-4 md:hidden">
+                      <div className="absolute bottom-2 right-2 md:hidden">
                         <TeamBio
                           bio={bio}
                           linkedinURL={linkedinURL}
@@ -145,7 +145,7 @@ const Team = ({ people }: { people: Person[] }) => {
                             role="button"
                             aria-label={`Read more about ${name}`}
                           >
-                            <PlusIcon className="h-5 w-5 text-black" />
+                            <PlusIcon className="h-5 w-5" />
                           </div>
                         </TeamBio>
                       </div>
@@ -160,9 +160,9 @@ const Team = ({ people }: { people: Person[] }) => {
                       />
                     </figure>
 
-                    <div className="gap mt-3 flex flex-row flex-nowrap">
+                    <div className="mt-3 flex flex-row flex-nowrap gap-4">
                       <div className="flex-1">
-                        <div className="font-display text-2xl font-semibold">
+                        <div className="mb-2 font-display text-xl font-semibold md:text-2xl">
                           {name}
                         </div>
                         <p className="text-sm font-medium uppercase text-silver-700">

@@ -25,7 +25,7 @@ const SectionPanel = ({
   <Section className={cn(className)} {...props}>
     {heading && <SectionTitle>{heading}</SectionTitle>}
 
-    <div className="grid grid-cols-6 gap-10">
+    <div className="grid grid-cols-6 md:gap-10">
       <div className="col-span-6 mb-8 md:col-span-4">
         <h2 dangerouslySetInnerHTML={{ __html: title }} />
       </div>

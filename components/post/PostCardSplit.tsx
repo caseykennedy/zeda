@@ -1,8 +1,9 @@
 import { ArrowRightIcon } from '@radix-ui/react-icons'
+import { urlForImage } from 'lib/sanity.image'
 import type { Post } from 'lib/sanity.queries'
 import Link from 'next/link'
 
-import CoverImage from 'components/CoverImage'
+import Img from 'components/Img'
 import LogoSymbol from 'components/LogoSymbol'
 import { Pill } from 'components/ui'
 
@@ -29,27 +30,36 @@ const PostCardSplit = ({
 >) => {
   return (
     <div className="flex w-full flex-col even:flex-col md:flex-row even:md:flex-row-reverse">
-      <Link
-        href={`/posts/${slug}`}
-        aria-label={`Read "${title}"`}
-        className="group flex-1"
-      >
-        {coverImage ? (
-          <CoverImage
-            image={coverImage}
-            title={title}
+      {coverImage ? (
+        <Link
+          href={`/posts/${slug}`}
+          aria-label={`Read "${title}"`}
+          className="group relative aspect-[16/8] min-h-[275px] flex-1 overflow-hidden"
+        >
+          <Img
+            src={urlForImage(coverImage).width(1080).height(608).url()}
+            alt={`Cover Image for ${title}`}
+            blurDataURL={coverImage.metadata.lqip}
+            fill={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={true}
-            className="overflow-hidden"
+            className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:scale-105"
           />
-        ) : (
+        </Link>
+      ) : (
+        <Link
+          href={`/posts/${slug}`}
+          aria-label={`Read "${title}"`}
+          className="group flex-1"
+        >
           <div
             aria-label={title}
             className="flex h-full w-full items-center justify-center bg-black"
           >
             <LogoSymbol width={44} />
           </div>
-        )}
-      </Link>
+        </Link>
+      )}
 
       <Link
         href={`/posts/${slug}`}

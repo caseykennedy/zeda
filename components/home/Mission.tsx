@@ -119,13 +119,13 @@ const Mission = () => {
                   We combine experience and expertise from diverse tech
                   industries
                 </h2>
-                <p className="text-lg">
+                <p className="max-w-[54ch] text-lg">
                   From life-changing medical devices to the foremost
                   advancements in space, we use technology to better humanity.
                 </p>
               </div>
 
-              <div className="mt-24">
+              <div className="mt-14 lg:mt-24">
                 <TabsList className="">
                   {data.map(({ value, id, title, details }, idx) => (
                     <div key={idx}>

@@ -18,12 +18,12 @@ export default function CoverImage(props: CoverImageProps) {
   const image = source?.asset?._ref ? (
     <div className={cn(`h-full overflow-hidden`, className)}>
       <Img
-        src={urlForImage(source).width(1920).height(1000).url()}
+        src={urlForImage(source).width(1920).height(1080).url()}
         alt={`Cover Image for ${title}`}
         blurDataURL={source.metadata.lqip}
         width={1920}
-        height={1000}
-        // sizes="100vw"
+        height={1080}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         priority={priority}
         className="h-full w-full transition-all duration-500 ease-out group-hover:scale-105"
       />
@@ -33,7 +33,7 @@ export default function CoverImage(props: CoverImageProps) {
   )
 
   return (
-    <figure className="h-full">
+    <figure className="">
       {slug ? (
         <Link href={`/posts/${slug}`} aria-label={title}>
           {image}

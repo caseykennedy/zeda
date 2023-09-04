@@ -1,5 +1,6 @@
 import { ChevronDownIcon, ReaderIcon } from '@radix-ui/react-icons'
 import { cva } from 'class-variance-authority'
+import { BrandThemes } from 'lib/constants'
 import Link from 'next/link'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
 import { cn } from 'utils'
@@ -69,7 +70,7 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
         <SheetHeader>
           <SheetTitle className="mb-6">
             <Link href="/">
-              <LogoSymbol width={32} />
+              <LogoSymbol brand={BrandThemes.zeda} width={32} />
             </Link>
           </SheetTitle>
           <div>

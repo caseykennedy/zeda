@@ -21,12 +21,7 @@ const ButtonLink = ({
   share,
 }: ButtonLinkProps): JSX.Element => {
   return (
-    <Button
-      variant="secondary"
-      size="icon"
-      className={cn(``, className)}
-      asChild
-    >
+    <Button variant="outline" size="icon" className={cn(``, className)} asChild>
       {share ? (
         <button aria-label={`Copy this article's URL`}>{children}</button>
       ) : (

@@ -1,10 +1,16 @@
 import { type BrandTheme, BrandThemes } from 'lib/constants'
 
-const Logo = ({ brand, width }: { brand?: BrandTheme; width?: number }) => {
+const Logo = ({
+  brand = BrandThemes.zeda,
+  width,
+}: {
+  brand?: BrandTheme
+  width?: number
+}) => {
   let brandFillColor
   let brandFillColorDark
 
-  if (!brand || brand === BrandThemes.zeda) {
+  if (brand === BrandThemes.zeda) {
     brandFillColor = '#8E72FF'
     brandFillColorDark = '#453195'
   } else if (brand === BrandThemes.technologies) {

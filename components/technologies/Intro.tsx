@@ -67,7 +67,7 @@ const data: AccordionFeatureShape[] = [
 
 const Lead = () => (
   <Section>
-    <h2 className="mx-auto my-24 max-w-[54ch] text-center text-3xl md:my-32 md:text-4xl md:leading-tight">
+    <h2 className="mx-auto my-16 max-w-[54ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
       Vertex Manufacturing (now Zeda, Inc.), a Cincinnati-based business, was
       born out of the desire of a select group of individuals to leverage their
       advanced manufacturing and technology backgrounds to help companies solve

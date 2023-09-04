@@ -64,7 +64,7 @@ const Benefits = () => (
                 className="group col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 md:col-span-1"
                 key={idx}
               >
-                <h3 className="mb-8 font-display text-xl font-semibold md:text-2xl">
+                <h3 className="mb-4 font-display text-xl font-semibold md:text-2xl">
                   {title}
                 </h3>
                 <p className="text-silver-500">{desc}</p>
@@ -104,19 +104,17 @@ const Benefits = () => (
       <div className="gutter flex flex-col justify-between bg-black">
         <h2 className="max-w-[20ch]">Where we work</h2>
         <div className="mt-32 md:mt-64">
-          <div className="flex flex-col">
+          <ul className="flex flex-col">
             {locationsData.map(({ city, type }, idx) => (
               <div
-                className="flex items-center justify-between border-t border-silver-800 py-6 last:pb-0"
+                className="flex items-center justify-between border-t border-silver-800 py-4 font-display text-xl font-semibold md:py-6 md:text-2xl"
                 key={idx}
               >
-                <h3 className="font-display text-xl font-semibold md:text-2xl">
-                  {city}
-                </h3>
+                {city}
                 <Pill variant="tertiary">{type}</Pill>
               </div>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>

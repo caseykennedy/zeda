@@ -9,7 +9,7 @@ const TextMarquee = () => {
       pb="pb-16"
       pl="pl-0"
       maxWidth="w-full"
-      className="overflow-hidden bg-background-600 text-background-500"
+      className="overflow-hidden border-b border-t border-silver-900 bg-silver-950 text-silver-900"
     >
       <Marquee pauseOnHover={false} speed={175}>
         <div className="gutter-x font-display text-8xl font-bold leading-snug md:text-[10rem] md:leading-snug">

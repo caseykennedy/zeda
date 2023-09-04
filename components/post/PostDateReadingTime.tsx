@@ -11,7 +11,12 @@ const PostDateReadingTime = ({
   estimatedReadingTime?: number
   className?: string
 }) => (
-  <div className={cn(`text-sm font-medium uppercase tracking-wide`, className)}>
+  <div
+    className={cn(
+      `w-max text-sm font-medium uppercase tracking-wide`,
+      className
+    )}
+  >
     <PostDate dateString={dateString} />{' '}
     <span className={cn(`text-silver-500`, className)}>
       {estimatedReadingTime && `| ${estimatedReadingTime} min read`}

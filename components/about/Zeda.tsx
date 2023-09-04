@@ -62,7 +62,7 @@ const data: AccordionFeatureShape[] = [
 
 const Intro = () => (
   <Section>
-    <h2 className="mx-auto my-24 max-w-[48ch] text-center text-3xl md:my-32 md:text-4xl md:leading-tight">
+    <h2 className="mx-auto my-16 max-w-[48ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
       Rapid prototyping is more than having fast equipment. You need talented
       engineers and a robust design hardware and software ecosystem. Zeda offers
       all of this.

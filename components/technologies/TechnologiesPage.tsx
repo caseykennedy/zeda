@@ -11,6 +11,8 @@ import { Button, Icon, PageHero, PageTitle } from 'components/ui'
 
 import Capabilities from './Capabilities'
 import Intro from './Intro'
+import TextMarquee from './TextMarquee'
+import WhyUs from './WhyUs'
 
 interface Props {
   jobPosts: JobPost[]
@@ -58,9 +60,11 @@ export const IndexPage = ({
         className="object-left-top"
       />
       <Intro />
+      <WhyUs />
+      <TextMarquee />
       <Capabilities />
       <TrustedBy
-        title="We harness cutting-edge manufacturing techniques and technology to solve your most difficult problems fast"
+        title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic manufacturing renaissance through innovation and technology."
         partners={partners}
       />
       <FooterCTA

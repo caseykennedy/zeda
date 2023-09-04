@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react'
+import { CardStackPlusIcon } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useLoadMore } from 'hooks'
 import type { Post, PostCategory } from 'lib/sanity.queries'
 import { polyVariant } from 'utils/variants'
 
@@ -16,46 +18,47 @@ const PostGrid = ({
   posts: Post[]
   postCategories: PostCategory[]
 }) => {
-  const [filteredPosts, setFilteredPosts] = useState(posts)
-  const [activeBtn, setActiveBtn] = useState(CATEGORY_ALL)
+  const { list, handleLoadMore, hasMore } = useLoadMore(posts.slice(2, 99), 6)
 
-  const handleClick = useCallback(
-    (category: string) => {
-      if (category === CATEGORY_ALL) {
-        setFilteredPosts(posts)
-        setActiveBtn(CATEGORY_ALL)
-      } else {
-        setFilteredPosts(
-          posts.filter((post) => post.categories?.includes(category))
-        )
-        setActiveBtn(category)
-      }
-    },
-    [posts]
-  )
+  // const [filteredPosts, setFilteredPosts] = useState(list)
+  // const [activeBtn, setActiveBtn] = useState(CATEGORY_ALL)
+
+  // const handleClick = useCallback(
+  //   (category: string) => {
+  //     if (category === CATEGORY_ALL) {
+  //       setFilteredPosts(list)
+  //       setActiveBtn(CATEGORY_ALL)
+  //     } else {
+  //       setFilteredPosts(
+  //         list.filter((post) => post.categories?.includes(category))
+  //       )
+  //       setActiveBtn(category)
+  //     }
+  //   },
+  //   [list]
+  // )
+
+  // const postCategoriesWithAll = [
+  //   CATEGORY_ALL,
+  //   ...postCategories.map((category) => category.name),
+  // ]
 
   return (
     <Section className="border-t border-silver-100">
-      <div className="gutter-b flex gap-1.5">
-        <Button
-          variant={activeBtn === CATEGORY_ALL ? 'primary' : 'secondary'}
-          onClick={() => handleClick(CATEGORY_ALL)}
-        >
-          {CATEGORY_ALL}
-        </Button>
-        {postCategories.map((category) => (
+      {/* <div className="gutter-b flex gap-1.5">
+        {postCategoriesWithAll.map((category) => (
           <Button
-            key={category._id}
-            variant={activeBtn === category.name ? 'primary' : 'secondary'}
-            onClick={() => handleClick(category.name)}
+            key={category}
+            variant={activeBtn === category ? 'primary' : 'default'}
+            onClick={() => handleClick(category)}
           >
-            {category.name}
+            {category}
           </Button>
         ))}
-      </div>
+      </div> */}
       <AnimatePresence>
         <div className="gap grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-          {filteredPosts.map((post) => (
+          {list.map((post) => (
             <motion.div
               key={post._id}
               variants={polyVariant}
@@ -77,6 +80,19 @@ const PostGrid = ({
           ))}
         </div>
       </AnimatePresence>
+
+      <div className="gutter-t flex justify-center">
+        {hasMore && (
+          <Button
+            variant="outline"
+            onClick={handleLoadMore}
+            className="load-more"
+          >
+            <CardStackPlusIcon className="h-5 w-5 shrink-0 transition-transform duration-200" />
+            Load More
+          </Button>
+        )}
+      </div>
     </Section>
   )
 }

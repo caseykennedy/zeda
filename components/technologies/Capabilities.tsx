@@ -1,85 +1,147 @@
-import stats from 'config/tech-stats.json'
-import HandsScrew from 'public/images/technologies/hands-screw.jpg'
-import LatticeStructure from 'public/images/technologies/lattice-structure.jpg'
-import MfgJumpsuit from 'public/images/technologies/mfg-jumpsuit.jpg'
+import * as React from 'react'
+import { ArrowRightIcon } from '@radix-ui/react-icons'
+import goldenGateBridgeImg from 'public/images/about/goldengate-bridge.jpg'
+import imgCapabilities from 'public/images/technologies/mfg-capabilities.jpg'
+import mfgMaskImg from 'public/images/technologies/mfg-mask.jpg'
 
-import Countup from 'components/Countup'
 import Img from 'components/Img'
+import { Pill } from 'components/ui'
 import Section from 'components/ui/Section'
-import SectionTitle from 'components/ui/SectionTitle'
 
-const Capabilities = () => {
-  return (
-    <Section
-      id="capabilities"
-      className="dark border-t border-silver-900 bg-black text-white"
-    >
-      <SectionTitle dark>Capabilities</SectionTitle>
-      <div className="grid grid-cols-6">
-        <div className="col-span-6 mb-8 md:col-span-4">
-          <h2>
-            We build it better
-            <br />
-            together
-          </h2>
-        </div>
-        <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
-          <p className="max-w-[40ch] text-lg text-silver-500">
-            Zeda&apos;s objective is to better lives by investing in
-            cutting-edge tech, innovative companies, and groundbreaking ideas.
-          </p>
-        </div>
-      </div>
-      <div className="mt-32 grid grid-cols-4 gap-16 md:mt-64 md:gap-10">
-        {stats.map(({ value, suffix, description }, idx) => (
-          <div
-            className="col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 lg:col-span-1"
-            key={idx}
-          >
-            <h3 className="mb-8 font-display text-7xl font-medium">
-              <Countup end={value} suffix={suffix ?? suffix} />
-            </h3>
-            <p className="text-lg">{description}</p>
-          </div>
-        ))}
-      </div>
-      <div className="gutter-t gap grid grid-cols-3 grid-rows-3">
-        <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-2 sm:row-span-3">
-          <Img
-            src={HandsScrew}
-            alt="Zeda Inc. manufacturing facility"
-            placeholder="blur"
-            fill={false}
-            width={1440}
-            height={658}
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center top',
-              transform: 'scaleX(-1)',
-            }}
-          />
-        </figure>
-        <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-1 sm:row-span-1">
-          <Img
-            src={LatticeStructure}
-            alt="Zeda Inc. manufacturing facility"
-            fill={true}
-            className="object-cover object-top"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
-          />
-        </figure>
-        <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-1 sm:row-span-2">
-          <Img
-            src={MfgJumpsuit}
-            alt="Zeda Inc. manufacturing facility"
-            fill={true}
-            className="object-cover object-center"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
-          />
-        </figure>
-      </div>
-    </Section>
-  )
-}
+const capabilities = [
+  {
+    title: 'Advanced CAM programming',
+  },
+  {
+    title: 'In-house full 5-axis advanced CNC machining',
+  },
+  {
+    title: 'Metal additive manufacturing',
+  },
+  {
+    title: 'Polymer 3D printing',
+  },
+  {
+    title: 'Dimensional inspection, including CMM measurement',
+  },
+  {
+    title: 'Dimensional inspection, including CMM measurement',
+  },
+  {
+    title: 'EDM Wire',
+  },
+]
 
-export default Capabilities
+const services = [
+  {
+    title: 'Heat treating',
+  },
+  {
+    title: 'AFM',
+  },
+  {
+    title: 'Surface finishing',
+  },
+  {
+    title: 'X-ray',
+  },
+  {
+    title: 'CT scan',
+  },
+  {
+    title: 'FPI',
+  },
+  {
+    title: 'Flow testing',
+  },
+]
+
+const Benefits = () => (
+  <Section
+    pt="pt-0"
+    pr="pr-0"
+    pb="pb-0"
+    pl="pl-0"
+    className="bg-black text-white"
+  >
+    <div className="relative grid grid-cols-1 lg:grid-cols-2">
+      <div className="gutter flex flex-col justify-between bg-black">
+        <h2 className="mb-4 max-w-[20ch]">Capabilities</h2>
+        <p className="text-silver-400">
+          We firmly believe that a robust manufacturing capability is vital for
+          a strong economy and national security. Zeda blends traditional
+          methods like CNC machining and EDM with cutting-edge technologies like
+          additive manufacturing, PECM, and automation.
+        </p>
+        <div className="mt-16 md:mt-32">
+          <ul className="flex flex-col">
+            {capabilities.map(({ title }, idx) => (
+              <li
+                className="flex items-center gap-4 border-t border-silver-800 py-4 font-display text-xl font-semibold last:pb-0"
+                key={idx}
+              >
+                <span>
+                  <ArrowRightIcon className="h-5 w-5 shrink-0 text-blue-500" />
+                </span>
+                {title}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="relative h-full min-h-[600px] bg-violet-500">
+        <Img
+          src={mfgMaskImg}
+          alt="Zeda Inc. manufacturing facility"
+          placeholder="blur"
+          fill={true}
+          // width={980}
+          // height={886}
+          className="aspect-square object-cover object-right-top sm:aspect-video lg:aspect-square"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
+    </div>
+
+    <div className="relative grid grid-cols-1 lg:grid-cols-2">
+      <div className="relative order-last h-full min-h-[600px] bg-violet-500 lg:order-first">
+        <Img
+          src={imgCapabilities}
+          alt="San Francisco Golden Gate Bridge"
+          placeholder="blur"
+          fill={true}
+          // width={980}
+          // height={886}
+          className="aspect-square object-cover object-right-top sm:aspect-video lg:aspect-square"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
+
+      <div className="gutter flex flex-col justify-between bg-black">
+        <h2 className="mb-4 max-w-[20ch]">Services</h2>
+        <p className="text-silver-400">
+          Zeda aims to enhance project efficiency and success by leveraging our
+          extensive experience and strong sourcing relationships to manage all
+          project steps alongside our internal capabilities.
+        </p>
+        <div className="mt-16 md:mt-32">
+          <ul className="flex flex-col">
+            {services.map(({ title }, idx) => (
+              <li
+                className="flex items-center gap-4 border-t border-silver-800 py-4 font-display text-xl font-semibold last:pb-0"
+                key={idx}
+              >
+                <span>
+                  <ArrowRightIcon className="h-5 w-5 shrink-0 text-blue-500" />
+                </span>
+                {title}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Section>
+)
+
+export default Benefits

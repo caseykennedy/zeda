@@ -17,12 +17,12 @@ const PageTitle = ({
     <section className={cn(theme)}>
       <div
         className={cn(
-          `gutter-b overflow-hidden bg-white pt-header dark:bg-black dark:text-white`,
+          `gutter-b overflow-hidden bg-white pt-18 dark:bg-black dark:text-white md:pt-header`,
           className
         )}
         {...props}
       >
-        <div className="gutter-x mx-auto mt-60 max-w-site md:mt-80">
+        <div className="gutter-x mx-auto mt-52 max-w-site md:mt-72">
           {children}
         </div>
       </div>

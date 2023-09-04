@@ -1,57 +1,52 @@
-import stats from 'config/stats.json'
-import HandTurbine from 'public/images/about/hand-turbine.jpg'
-import WorkGroup from 'public/images/about/work-group.jpg'
-import WorkMask from 'public/images/about/work-mask.jpg'
+import stats from 'config/tech-stats.json'
+import HandsScrew from 'public/images/technologies/hands-screw.jpg'
+import LatticeStructure from 'public/images/technologies/lattice-structure.jpg'
+import MfgJumpsuit from 'public/images/technologies/mfg-jumpsuit.jpg'
 
 import Countup from 'components/Countup'
 import Img from 'components/Img'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 
-const AtGlance = () => {
+const WhyUs = () => {
   return (
-    <Section className="dark border-t border-silver-900 bg-black text-white">
-      <SectionTitle dark>At a glance</SectionTitle>
-
+    <Section
+      id="capabilities"
+      className="dark border-t border-silver-900 bg-black text-white"
+    >
+      <SectionTitle dark>Why us?</SectionTitle>
       <div className="grid grid-cols-6">
         <div className="col-span-6 mb-8 md:col-span-4">
           <h2>
-            We build it better
+            Ideas—
             <br />
-            together
+            meet reality
           </h2>
         </div>
-
         <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
           <p className="max-w-[40ch] text-lg text-silver-400">
-            Zeda&apos;s objective is to better lives by investing in
-            cutting-edge tech, innovative companies, and groundbreaking ideas.
+            We leverage advanced manufacturing and technology to help companies
+            solve some of their most difficult challenges.
           </p>
         </div>
       </div>
-
       <div className="mt-32 grid grid-cols-4 gap-16 md:mt-64 md:gap-10">
-        {stats.map(({ value, prefix, suffix, description }, idx) => (
+        {stats.map(({ value, suffix, description }, idx) => (
           <div
             className="col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 lg:col-span-1"
             key={idx}
           >
-            <h3 className="mb-8 font-display text-7xl font-medium">
-              <Countup
-                end={value}
-                prefix={prefix ?? prefix}
-                suffix={suffix ?? suffix}
-              />
+            <h3 className="mb-8 font-display text-5xl font-medium md:text-7xl">
+              <Countup end={value} suffix={suffix ?? suffix} />
             </h3>
             <p className="text-lg">{description}</p>
           </div>
         ))}
       </div>
-
       <div className="gutter-t gap grid grid-cols-3 grid-rows-3">
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-2 sm:row-span-3">
           <Img
-            src={WorkMask}
+            src={HandsScrew}
             alt="Zeda Inc. manufacturing facility"
             placeholder="blur"
             fill={false}
@@ -66,26 +61,20 @@ const AtGlance = () => {
         </figure>
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-1 sm:row-span-1">
           <Img
-            src={HandTurbine}
+            src={LatticeStructure}
             alt="Zeda Inc. manufacturing facility"
             fill={true}
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center top',
-            }}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
           />
         </figure>
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-1 sm:row-span-2">
           <Img
-            src={WorkGroup}
+            src={MfgJumpsuit}
             alt="Zeda Inc. manufacturing facility"
             fill={true}
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center top',
-            }}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
           />
         </figure>
       </div>
@@ -93,4 +82,4 @@ const AtGlance = () => {
   )
 }
 
-export default AtGlance
+export default WhyUs
