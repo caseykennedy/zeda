@@ -196,7 +196,7 @@
   }
 
   p {
-    @apply mb-6 text-base md:text-lg last:mb-0;
+    @apply mb-6 text-lg last:mb-0;
   }
 
   a {

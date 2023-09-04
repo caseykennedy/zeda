@@ -15,9 +15,9 @@ const WhyUs = () => {
       <div className="grid grid-cols-6">
         <div className="col-span-6 mb-8 md:col-span-4">
           <h2>
-            Zeda is where
+            Zeda is where ideas
             <br />
-            ideas meet reality
+            meet reality
           </h2>
         </div>
         <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">

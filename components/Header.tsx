@@ -268,36 +268,34 @@ const Header = ({
     >
       <div
         className={cn(
-          'h-full w-full content-center border-b border-silver-500/20 text-black dark:border-silver-300/20 dark:text-white md:dark:hover:bg-black',
+          'gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center border-b border-silver-500/20 text-black dark:border-silver-300/20 dark:text-white md:max-w-site md:grid-cols-6 md:dark:hover:bg-black',
           hasScrolled && 'bg-white dark:bg-black'
         )}
       >
-        <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site md:grid-cols-6">
-          <div className="col-span-1 flex items-center md:col-span-2">
-            <Link href="/" className="inline-block">
-              <Logo brand={brand} className="w-[116px] sm:w-[138px]" />
-            </Link>
+        <div className="col-span-1 flex items-center md:col-span-2">
+          <Link href="/" className="inline-block">
+            <Logo brand={brand} className="w-[116px] sm:w-[138px]" />
+          </Link>
+        </div>
+
+        <div className="col-start-3 hidden items-center md:flex lg:col-start-4">
+          <Navigation />
+        </div>
+
+        <div className="col-span-1 col-start-6 flex items-center justify-end lg:col-start-6">
+          <div className="hidden md:block">
+            <LinkArrow
+              href="/contact"
+              className="text-lg capitalize tracking-wide"
+            >
+              Contact
+            </LinkArrow>
           </div>
 
-          <div className="col-start-3 hidden items-center md:flex lg:col-start-4">
-            <Navigation />
-          </div>
-
-          <div className="col-span-1 col-start-6 flex items-center justify-end lg:col-start-6">
-            <div className="hidden md:block">
-              <LinkArrow
-                href="/contact"
-                className="text-lg capitalize tracking-wide"
-              >
-                Contact
-              </LinkArrow>
-            </div>
-
-            <div className="flex items-center md:hidden">
-              <MobileNavigation>
-                <HamburgerMenuIcon className="h-6 w-6" />
-              </MobileNavigation>
-            </div>
+          <div className="flex items-center md:hidden">
+            <MobileNavigation>
+              <HamburgerMenuIcon className="h-6 w-6" />
+            </MobileNavigation>
           </div>
         </div>
       </div>
