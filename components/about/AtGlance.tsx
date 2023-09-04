@@ -1,4 +1,5 @@
 import stats from 'config/stats.json'
+import ImgBoard from 'public/images/about/board.jpg'
 import HandTurbine from 'public/images/about/hand-turbine.jpg'
 import WorkGroup from 'public/images/about/work-group.jpg'
 import WorkMask from 'public/images/about/work-mask.jpg'
@@ -66,7 +67,7 @@ const AtGlance = () => {
         </figure>
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-1 sm:row-span-1">
           <Img
-            src={HandTurbine}
+            src={ImgBoard}
             alt="Zeda Inc. manufacturing facility"
             fill={true}
             style={{

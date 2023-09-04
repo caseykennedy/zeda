@@ -1,5 +1,7 @@
 import stats from 'config/tech-stats.json'
-import HandsScrew from 'public/images/technologies/hands-screw.jpg'
+import ImgBigMachine from 'public/images/technologies/big-machine.jpg'
+import ImgHandsOn from 'public/images/technologies/hands-on.jpg'
+// import HandsScrew from 'public/images/technologies/hands-screw.jpg'
 import LatticeStructure from 'public/images/technologies/lattice-structure.jpg'
 import MfgJumpsuit from 'public/images/technologies/mfg-jumpsuit.jpg'
 
@@ -43,17 +45,13 @@ const WhyUs = () => {
       <div className="gutter-t gap grid grid-cols-3 grid-rows-3">
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-2 sm:row-span-3">
           <Img
-            src={HandsScrew}
+            src={ImgBigMachine}
             alt="Zeda Inc. manufacturing facility"
             placeholder="blur"
             fill={false}
             width={1440}
             height={658}
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center top',
-              transform: 'scaleX(-1)',
-            }}
+            className="object-cover object-top"
           />
         </figure>
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-1 sm:row-span-1">

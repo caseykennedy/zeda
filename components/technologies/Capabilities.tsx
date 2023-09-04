@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ArrowRightIcon } from '@radix-ui/react-icons'
-import imgServices from 'public/images/technologies/mfg-inspect.jpg'
-import imgCapabilities from 'public/images/technologies/mfg-mask.jpg'
+import imgCapabilities from 'public/images/technologies/mfg-capabilities.jpg'
+import imgServices from 'public/images/technologies/mfg-services.jpg'
 
 import Img from 'components/Img'
 import Section from 'components/ui/Section'
