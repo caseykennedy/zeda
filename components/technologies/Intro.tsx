@@ -1,12 +1,15 @@
 import {
   ChevronDownIcon,
   FaceIcon,
+  GearIcon,
+  HandIcon,
   LayersIcon,
   PersonIcon,
   RocketIcon,
   RulerSquareIcon,
   TimerIcon,
 } from '@radix-ui/react-icons'
+import { ShieldIcon } from 'lucide-react'
 
 import FeatureGridItem, { type FeatureShape } from 'components/FeatureGridItem'
 import {
@@ -29,49 +32,49 @@ interface AccordionFeatureShape extends FeatureShape {
 const data: AccordionFeatureShape[] = [
   {
     type: FeatureTypes.usFirst,
-    icon: <FaceIcon />,
-    title: 'Learn',
-    desc: 'Knowledge is power. We offer entry-level courses for clinicians to learn how to generate their own pre-operative surgical models as well as advanced courses for engineers needing training on powder-bed laser and e-beam metal 3D printers.',
+    icon: <GearIcon />,
+    title: 'Industrial Fusion',
+    desc: 'The new industrial revolution includes additive and traditional manufacturing melded together with real time data analytics and quality control systems.',
   },
   {
     type: FeatureTypes.usFirst,
-    icon: <RocketIcon />,
-    title: 'Accelerate',
-    desc: `Let Zeda take your concepts to prototypes and take your prototypes to volume production. We understand clinical deadlines and can offer "next build plate priority" service, so we'll get it to you as soon as possible.`,
+    icon: <HandIcon />,
+    title: 'Skilled Workforce',
+    desc: `We hire highly trained, competent technicians, engineers, and craftsmen who work in a brightly lit, climate controlled, epoxy floor, lab environment.`,
   },
   {
     type: FeatureTypes.usFirst,
-    icon: <PersonIcon />,
-    title: 'Collaborate',
-    desc: 'Academic innovators have access to our team and technology, as well as secure, on-site co-location. Zeda has agreements to collaboratively develop and commercialize novel medical devices with universities. Start-ups focused on related technologies can leverage our accelerator program.',
+    icon: <ShieldIcon />,
+    title: 'Economic Security',
+    desc: 'At Zeda we believe a strong manufacturing base is critical to a healthy economy and paramount to national security.',
   },
   {
     type: FeatureTypes.process,
     icon: <RulerSquareIcon />,
     title: 'Prototype',
-    desc: 'PLA, ABS, PEEK, 316L, Ti6Al4V-ELI and more. Optional "guaranteed next build plate" priority service.',
+    desc: 'Rapid prototyping is more than having fast equipment. You need talented engineers and a robust design hardware and software ecosystem.',
   },
   {
     type: FeatureTypes.process,
     icon: <LayersIcon />,
     title: 'Design',
-    desc: `We offer full contract design services or we can augment your engineering capabilities as a technical consultant.`,
+    desc: `Mastering intricate geometries for a transformative impact in medical, aerospace, defense, space and energy.`,
   },
   {
     type: FeatureTypes.process,
     icon: <TimerIcon />,
-    title: 'Time',
-    desc: 'Design, prototype and manufacture locally. Cut down validation & qualification time by prototyping on the same platforms used for production.',
+    title: 'Delivery',
+    desc: 'We accelerate innovative ideas of every level. Whether you are a multi-national corporation in need of advanced design consultation, or an individual looking to develop an initial prototype.',
   },
 ]
 
 const Lead = () => (
   <Section>
-    <h2 className="mx-auto my-16 max-w-[54ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
-      Vertex Manufacturing (now Zeda, Inc.), a Cincinnati-based business, was
-      born out of the desire of a select group of individuals to leverage their
-      advanced manufacturing and technology backgrounds to help companies solve
-      some of their most difficult problems.
+    <h2 className="mx-auto my-16 max-w-[52ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
+      A robust manufacturing capability is vital for a strong economy and
+      national security. We blend traditional methods like CNC machining and EDM
+      with cutting-edge technologies like additive manufacturing, PECM and
+      automation.
     </h2>
   </Section>
 )

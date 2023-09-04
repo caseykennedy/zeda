@@ -23,22 +23,22 @@ const data: FeatureShape[] = [
   {
     icon: <RocketIcon />,
     title: 'Elevate your platform',
-    desc: 'Expand use cases, drive product stickiness, and build stronger customer relationships.',
+    desc: 'We embrace a culture of innovation, constantly pushing boundaries and seeking new solutions to complex challenges.',
   },
   {
     icon: <RulerSquareIcon />,
     title: 'Prototype faster',
-    desc: 'Expand use cases, drive product stickiness, and build stronger customer relationships.',
+    desc: 'With our state-of-the-art equipment and a multidisciplinary team of skilled engineers, we accelerate the realization of innovative ideas at every level.',
   },
   {
     icon: <FaceIcon />,
     title: 'Build it better',
-    desc: 'Expand use cases, drive product stickiness, and build stronger customer relationships.',
+    desc: 'We strive for excellence in everything we do, delivering high-quality results and exceeding expectations.',
   },
   {
     icon: <PersonIcon />,
     title: 'Collab & co-locate',
-    desc: 'Expand use cases, drive product stickiness, and build stronger customer relationships.',
+    desc: 'We believe in the power of collaboration, fostering strong partnerships and teamwork to achieve collective success.',
   },
 ]
 

@@ -1,4 +1,8 @@
-import { ChevronDownIcon, ReaderIcon } from '@radix-ui/react-icons'
+import {
+  ArrowRightIcon,
+  ChevronDownIcon,
+  ReaderIcon,
+} from '@radix-ui/react-icons'
 import { cva } from 'class-variance-authority'
 import { BrandThemes } from 'lib/constants'
 import Link from 'next/link'
@@ -36,7 +40,7 @@ const Collapse = ({
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value={title}>
-        <AccordionTrigger className="border-silver-900 px-0 [&>div]:py-4 [&[data-state=open]>div>div>div>div>svg]:rotate-180">
+        <AccordionTrigger className="border-silver-900 px-0 [&>div]:py-4 [&[data-state=open]>div>div>svg]:rotate-180">
           <div className={mobileNavStyle()}>{title}</div>
 
           <div className="">
@@ -58,6 +62,21 @@ const ListItem = ({ title, href }: { title: string; href: string }) => {
       className="focus:text-accent-foreground group-hover: inline select-none py-2.5 font-display text-base font-medium capitalize tracking-wider text-white no-underline outline-none transition-all hover:pl-0.5 hover:text-violet-500 focus:text-violet-500 active:text-violet-400"
     >
       {title}
+    </Link>
+  )
+}
+
+const SingleLink = ({ title, href }: { title: string; href: string }) => {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        mobileNavStyle(),
+        `flex w-full border-t border-silver-900 py-4`
+      )}
+    >
+      {title}
+      <ArrowRightIcon className="ml-auto h-5 w-5 shrink-0" />
     </Link>
   )
 }
@@ -91,7 +110,7 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
                     </div>
                   </div>
                 </li>
-                <li className="row-span-3">
+                <li className="row-span-3 min-h-[138px]">
                   <Link
                     className="group relative flex h-full w-full select-none flex-col justify-end overflow-hidden rounded border border-silver-900 p-4 no-underline outline-none hover:border-violet-500"
                     href="/careers"
@@ -190,15 +209,8 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
                 ))}
               </ul>
             </Collapse>
-            <Link
-              href="/news"
-              className={cn(
-                mobileNavStyle(),
-                `flex w-full border-t border-silver-900 py-4`
-              )}
-            >
-              News
-            </Link>
+            <SingleLink title="News" href="/news" />
+            <SingleLink title="Contact" href="/contact" />
           </div>
         </SheetHeader>
       </SheetContent>

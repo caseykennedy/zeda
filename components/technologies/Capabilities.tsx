@@ -1,11 +1,9 @@
 import * as React from 'react'
 import { ArrowRightIcon } from '@radix-ui/react-icons'
-import goldenGateBridgeImg from 'public/images/about/goldengate-bridge.jpg'
-import imgCapabilities from 'public/images/technologies/mfg-capabilities.jpg'
-import mfgMaskImg from 'public/images/technologies/mfg-mask.jpg'
+import imgServices from 'public/images/technologies/mfg-inspect.jpg'
+import imgCapabilities from 'public/images/technologies/mfg-mask.jpg'
 
 import Img from 'components/Img'
-import { Pill } from 'components/ui'
 import Section from 'components/ui/Section'
 
 const capabilities = [
@@ -25,7 +23,7 @@ const capabilities = [
     title: 'Dimensional inspection, including CMM measurement',
   },
   {
-    title: 'Dimensional inspection, including CMM measurement',
+    title: 'Extrude honing',
   },
   {
     title: 'EDM Wire',
@@ -66,19 +64,18 @@ const Benefits = () => (
     id="capabilities"
   >
     <div className="relative grid grid-cols-1 lg:grid-cols-2">
-      <div className="gutter flex flex-col justify-between bg-black">
+      <div className="gutter flex flex-col justify-between">
         <h2 className="mb-4 max-w-[20ch]">Capabilities</h2>
         <p className="text-silver-400">
-          A robust manufacturing capability is vital for a strong economy and
-          national security. We blend traditional methods like CNC machining and
-          EDM with cutting-edge technologies like additive manufacturing, PECM,
-          and automation.
+          We believe that leveraging our past experience with a variety of
+          processes, combined with our strong sourcing relationships, we can
+          provide a more complete value by managing complete project steps.
         </p>
         <div className="mt-16 md:mt-32">
           <ul className="flex flex-col">
             {capabilities.map(({ title }, idx) => (
               <li
-                className="flex items-center gap-4 border-t border-silver-800 py-4 font-display text-xl font-semibold last:pb-0"
+                className="flex items-center gap-4 border-t border-silver-800 py-4 font-display text-xl font-semibold capitalize last:pb-0"
                 key={idx}
               >
                 <span>
@@ -92,7 +89,7 @@ const Benefits = () => (
       </div>
       <div className="relative h-full min-h-[600px] bg-blue-500">
         <Img
-          src={mfgMaskImg}
+          src={imgCapabilities}
           alt="Zeda Inc. manufacturing facility"
           placeholder="blur"
           fill={true}
@@ -107,7 +104,7 @@ const Benefits = () => (
     <div className="relative grid grid-cols-1 lg:grid-cols-2">
       <div className="relative order-last h-full min-h-[600px] bg-blue-500 lg:order-first">
         <Img
-          src={imgCapabilities}
+          src={imgServices}
           alt="San Francisco Golden Gate Bridge"
           placeholder="blur"
           fill={true}
@@ -118,7 +115,7 @@ const Benefits = () => (
         />
       </div>
 
-      <div className="gutter flex flex-col justify-between bg-black">
+      <div className="gutter flex flex-col justify-between">
         <h2 className="mb-4 max-w-[20ch]">Services</h2>
         <p className="text-silver-400">
           Our aim is to enhance project efficiency and success by leveraging our

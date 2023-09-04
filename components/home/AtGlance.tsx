@@ -12,7 +12,7 @@ const AtGlance = () => (
     title="Our objective is to better lives through investing in cutting-edge tech, innovative companies, and groundbreaking ideas."
     btn={
       <Button variant="primary" asChild>
-        <Link href="/">
+        <Link href="/about#leadership">
           <Icon
             name="arrow-right"
             color="white"

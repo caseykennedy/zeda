@@ -30,10 +30,10 @@ const TeamBio = ({
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
-      <DialogContent className="max-h-screen max-w-[900px] overflow-hidden overflow-y-auto rounded border-black bg-black text-white">
+      <DialogContent className="max-h-[100svh] max-w-[900px] overflow-hidden overflow-y-auto rounded border-black bg-black text-white">
         <DialogHeader>
           <div className="flex flex-col bg-violet-500 sm:flex-row">
-            <figure className="relative block aspect-square h-[300px]">
+            <figure className="relative block aspect-[13/16]">
               <Img
                 src={urlForImage(picture).url()}
                 alt="Zeda Inc. manufacturing facility"
@@ -41,7 +41,7 @@ const TeamBio = ({
                 fill={true}
                 style={{ objectFit: 'cover' }}
                 className="overflow-hidden"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
               />
             </figure>
             <div className="gutter flex flex-1 flex-col justify-end border-l border-black">
@@ -51,7 +51,6 @@ const TeamBio = ({
               </div>
               {linkedinURL && (
                 <p>
-                  {' '}
                   <Link
                     href={linkedinURL}
                     target="_blank"
