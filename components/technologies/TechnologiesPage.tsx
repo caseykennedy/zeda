@@ -38,7 +38,7 @@ export const IndexPage = ({
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
           <div className="flex-[2]">
             <h1 className="max-w-[26ch]">
-              We use technology to build a better world for everyone
+              Harnessing technology to build a better world for everyone
             </h1>
           </div>
           <div className="flex w-full flex-1 flex-row justify-end">

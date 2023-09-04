@@ -10,10 +10,7 @@ import SectionTitle from 'components/ui/SectionTitle'
 
 const WhyUs = () => {
   return (
-    <Section
-      id="capabilities"
-      className="dark border-t border-silver-900 bg-black text-white"
-    >
+    <Section className="dark border-t border-silver-900 bg-black text-white">
       <SectionTitle dark>Why us?</SectionTitle>
       <div className="grid grid-cols-6">
         <div className="col-span-6 mb-8 md:col-span-4">

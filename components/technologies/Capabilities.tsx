@@ -63,15 +63,16 @@ const Benefits = () => (
     pb="pb-0"
     pl="pl-0"
     className="bg-black text-white"
+    id="capabilities"
   >
     <div className="relative grid grid-cols-1 lg:grid-cols-2">
       <div className="gutter flex flex-col justify-between bg-black">
         <h2 className="mb-4 max-w-[20ch]">Capabilities</h2>
         <p className="text-silver-400">
-          We firmly believe that a robust manufacturing capability is vital for
-          a strong economy and national security. Zeda blends traditional
-          methods like CNC machining and EDM with cutting-edge technologies like
-          additive manufacturing, PECM, and automation.
+          A robust manufacturing capability is vital for a strong economy and
+          national security. We blend traditional methods like CNC machining and
+          EDM with cutting-edge technologies like additive manufacturing, PECM,
+          and automation.
         </p>
         <div className="mt-16 md:mt-32">
           <ul className="flex flex-col">
@@ -120,7 +121,7 @@ const Benefits = () => (
       <div className="gutter flex flex-col justify-between bg-black">
         <h2 className="mb-4 max-w-[20ch]">Services</h2>
         <p className="text-silver-400">
-          Zeda aims to enhance project efficiency and success by leveraging our
+          Our aim is to enhance project efficiency and success by leveraging our
           extensive experience and strong sourcing relationships to manage all
           project steps alongside our internal capabilities.
         </p>
