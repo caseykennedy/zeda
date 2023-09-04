@@ -89,7 +89,7 @@ const Benefits = () => (
           </ul>
         </div>
       </div>
-      <div className="relative h-full min-h-[600px] bg-violet-500">
+      <div className="relative h-full min-h-[600px] bg-blue-500">
         <Img
           src={mfgMaskImg}
           alt="Zeda Inc. manufacturing facility"
@@ -104,7 +104,7 @@ const Benefits = () => (
     </div>
 
     <div className="relative grid grid-cols-1 lg:grid-cols-2">
-      <div className="relative order-last h-full min-h-[600px] bg-violet-500 lg:order-first">
+      <div className="relative order-last h-full min-h-[600px] bg-blue-500 lg:order-first">
         <Img
           src={imgCapabilities}
           alt="San Francisco Golden Gate Bridge"
