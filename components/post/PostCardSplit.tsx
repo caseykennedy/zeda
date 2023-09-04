@@ -34,7 +34,7 @@ const PostCardSplit = ({
         <Link
           href={`/posts/${slug}`}
           aria-label={`Read "${title}"`}
-          className="group relative aspect-[16/8] min-h-[275px] flex-1 overflow-hidden"
+          className="group relative min-h-[275px] flex-1 overflow-hidden md:aspect-[16/8]"
         >
           <Img
             src={urlForImage(coverImage).width(1080).height(608).url()}
