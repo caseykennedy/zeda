@@ -22,9 +22,9 @@ interface Props {
 
 export const IndexPage = ({ partners, settings }: Props) => {
   return (
-    <Layout brand={BrandThemes.technologies}>
+    <Layout brand={BrandThemes.TECHNOLOGIES}>
       <PageHead settings={settings} />
-      <PageTitle theme={LayoutThemes.dark}>
+      <PageTitle theme={LayoutThemes.DARK}>
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
           <div className="flex-[2]">
             <h1 className="max-w-[26ch]">

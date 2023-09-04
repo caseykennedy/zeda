@@ -2,14 +2,13 @@ import { useCallback, useState } from 'react'
 import { CardStackPlusIcon } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useLoadMore } from 'hooks'
+import { PostCategories } from 'lib/constants'
 import type { Post, PostCategory } from 'lib/sanity.queries'
 import { polyVariant } from 'utils/variants'
 
 import { PostCard } from 'components/post'
 import Button from 'components/ui/Button'
 import Section from 'components/ui/Section'
-
-const CATEGORY_ALL = 'All'
 
 const PostGrid = ({
   posts,
@@ -21,13 +20,13 @@ const PostGrid = ({
   const { list, handleLoadMore, hasMore } = useLoadMore(posts.slice(2, 99), 6)
 
   // const [filteredPosts, setFilteredPosts] = useState(list)
-  // const [activeBtn, setActiveBtn] = useState(CATEGORY_ALL)
+  // const [activeBtn, setActiveBtn] = useState(PostCategories.ALL)
 
   // const handleClick = useCallback(
   //   (category: string) => {
-  //     if (category === CATEGORY_ALL) {
+  //     if (category === PostCategories.ALL) {
   //       setFilteredPosts(list)
-  //       setActiveBtn(CATEGORY_ALL)
+  //       setActiveBtn(PostCategories.ALL)
   //     } else {
   //       setFilteredPosts(
   //         list.filter((post) => post.categories?.includes(category))
@@ -39,7 +38,7 @@ const PostGrid = ({
   // )
 
   // const postCategoriesWithAll = [
-  //   CATEGORY_ALL,
+  //   PostCategories.ALL,
   //   ...postCategories.map((category) => category.name),
   // ]
 

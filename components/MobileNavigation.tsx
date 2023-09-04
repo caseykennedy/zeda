@@ -89,7 +89,7 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
         <SheetHeader>
           <SheetTitle className="mb-6">
             <Link href="/">
-              <LogoSymbol brand={BrandThemes.zeda} width={32} />
+              <LogoSymbol brand={BrandThemes.ZEDA} width={32} />
             </Link>
           </SheetTitle>
           <div>

@@ -1,20 +1,23 @@
 export const enum PostCategories {
-  CATEGORY_NEWS = 'News',
-  CATEGORY_PRESS = 'Press Release',
-  CATEGORY_INSIGHTS = 'Insight',
-  CATEGORY_VIDEO = 'Video',
+  NEWS = 'News',
+  PRESS = 'Press Release',
+  INSIGHTS = 'Insight',
+  VIDEO = 'Video',
 }
-export type PostCategory = keyof typeof PostCategories
+
+export type PostCategory = (typeof PostCategories)[keyof typeof PostCategories]
 
 export enum LayoutThemes {
-  dark = 'dark',
-  light = 'light',
+  DARK = 'dark',
+  LIGHT = 'light',
 }
-export type LayoutTheme = keyof typeof LayoutThemes
+
+export type LayoutTheme = (typeof LayoutThemes)[keyof typeof LayoutThemes]
 
 export enum BrandThemes {
-  zeda = 'zeda',
-  technologies = 'technologies',
-  health = 'health',
+  ZEDA = 'zeda',
+  TECHNOLOGIES = 'technologies',
+  HEALTH = 'health',
 }
-export type BrandTheme = keyof typeof BrandThemes
+
+export type BrandTheme = (typeof BrandThemes)[keyof typeof BrandThemes]

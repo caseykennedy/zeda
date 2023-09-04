@@ -18,11 +18,10 @@ const CategoryTag = ({
     | undefined
 }): JSX.Element[] => {
   const isPrimary =
-    categories.includes(PostCategories.CATEGORY_NEWS) ||
-    categories.includes(PostCategories.CATEGORY_INSIGHTS)
+    categories.includes(PostCategories.NEWS) ||
+    categories.includes(PostCategories.INSIGHTS)
   const isVideo =
-    categories.includes(PostCategories.CATEGORY_VIDEO) ||
-    categories.includes('Featured')
+    categories.includes(PostCategories.VIDEO) || categories.includes('Featured')
 
   return categories.map((tag, idx) => (
     <Pill

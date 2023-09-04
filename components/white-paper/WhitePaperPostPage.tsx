@@ -1,3 +1,4 @@
+import { LayoutThemes } from 'lib/constants'
 import type { Post, Settings, WhitePaperPost } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
 
@@ -38,7 +39,7 @@ const WhitePaperPostPage = ({
 
       <ScrollProgress />
 
-      <Layout preview={preview!} loading={loading} theme="light">
+      <Layout preview={preview!} loading={loading} theme={LayoutThemes.LIGHT}>
         {preview && !post ? (
           <div>Loading…</div>
         ) : (

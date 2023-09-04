@@ -8,12 +8,7 @@ import {
 } from '@radix-ui/react-icons'
 import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
-import {
-  type BrandTheme,
-  BrandThemes,
-  type LayoutTheme,
-  LayoutThemes,
-} from 'lib/constants'
+import { type BrandTheme, BrandThemes, type LayoutTheme } from 'lib/constants'
 import Link from 'next/link'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
 import { cn } from 'utils'
@@ -247,7 +242,7 @@ const Navigation = () => {
 }
 
 const Header = ({
-  brand = BrandThemes.zeda,
+  brand = BrandThemes.ZEDA,
   theme,
 }: {
   brand: BrandTheme

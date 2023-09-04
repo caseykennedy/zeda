@@ -19,8 +19,8 @@ const NewsPage = ({ posts, postCategories, settings }: PageProps) => {
   return (
     <>
       <PageHead settings={settings} />
-      <Layout theme="light">
-        <PageTitle theme={LayoutThemes.light} className="[&>div]:mt-48">
+      <Layout theme={LayoutThemes.LIGHT}>
+        <PageTitle theme={LayoutThemes.LIGHT} className="[&>div]:mt-48">
           <h1 className="mb-2">News</h1>
           <p className="max-w-[26ch] text-lg font-medium text-silver-500">
             Zeda in the news and how we&apos;re involved in our community.

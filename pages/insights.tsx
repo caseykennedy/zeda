@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
     whitePapers = [],
     settings,
   ] = await Promise.all([
-    getAllPostsByCategoryAndFeatured(client, PostCategories.CATEGORY_INSIGHTS),
+    getAllPostsByCategoryAndFeatured(client, PostCategories.INSIGHTS),
     getAllVideoPosts(client),
     getAllWhitePapers(client),
     getSettings(client),

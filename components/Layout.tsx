@@ -21,8 +21,8 @@ const Layout = ({
   children,
   loading,
   preview,
-  theme = LayoutThemes.dark,
-  brand = BrandThemes.zeda,
+  theme = LayoutThemes.DARK,
+  brand = BrandThemes.ZEDA,
 }: Props) => {
   // const layoutStyles = cn(
   //   'align-center relative flex min-h-screen w-full flex-col justify-between',

@@ -10,7 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const PageTitle = ({
   children,
   className,
-  theme = LayoutThemes.dark,
+  theme = LayoutThemes.DARK,
   ...props
 }: Props) => {
   return (

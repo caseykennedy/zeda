@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
 import { type Person } from 'lib/sanity.queries'
 import Link from 'next/link'
-import { polyVariant } from 'utils/variants'
+import { polyVariant, upVariants } from 'utils/variants'
 
 import Img from 'components/Img'
 import Button, { buttonVariants } from 'components/ui/Button'
@@ -12,7 +12,7 @@ import Section from 'components/ui/Section'
 
 import TeamBio from './TeamBio'
 
-enum TeamCategory {
+enum TeamCategories {
   ALL = 'all',
   LEADERSHIP = 'leadership',
   BOARD_MEMBER = 'board member',
@@ -20,38 +20,15 @@ enum TeamCategory {
   ADVISOR = 'advisor',
 }
 
-type TeamCategories = (typeof TeamCategory)[keyof typeof TeamCategory]
+type TeamCategory = (typeof TeamCategories)[keyof typeof TeamCategories]
 
-const teamCategories = [
-  TeamCategory.ALL,
-  TeamCategory.LEADERSHIP,
-  TeamCategory.BOARD_MEMBER,
-  TeamCategory.BOARD_ADVISOR,
-  TeamCategory.ADVISOR,
-]
-
-const upVariants = {
-  up: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 400, velocity: -400, duration: 0.25, ease: 'easeInOut' },
-    },
-  },
-  down: {
-    y: 15,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 400, velocity: -400, duration: 0.25, ease: 'easeInOut' },
-    },
-  },
-}
+const teamCategories: TeamCategories[] = Object.values(TeamCategories)
 
 const Team = ({ people }: { people: Person[] }) => {
-  const [activeCategory, setActiveCategory] = useState(TeamCategory.ALL)
+  const [activeCategory, setActiveCategory] = useState(TeamCategories.ALL)
 
   const filteredTeam = useMemo(() => {
-    if (activeCategory === TeamCategory.ALL) {
+    if (activeCategory === TeamCategories.ALL) {
       return people
     } else {
       return people.filter((person) => person.seats?.includes(activeCategory))
@@ -59,7 +36,7 @@ const Team = ({ people }: { people: Person[] }) => {
   }, [people, activeCategory])
 
   const handleTabChange = useCallback(
-    (category: TeamCategories) => setActiveCategory(category),
+    (category: TeamCategory) => setActiveCategory(category),
     []
   )
 

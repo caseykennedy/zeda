@@ -58,7 +58,7 @@ const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
     <>
       <PageHead settings={settings} />
       <Layout>
-        <PageTitle theme={LayoutThemes.dark} className="[&>div]:mt-48">
+        <PageTitle theme={LayoutThemes.DARK} className="[&>div]:mt-48">
           <h1 className="mb-2">Videos</h1>
           <p className="max-w-[26ch] text-lg font-medium text-silver-500">
             Get to know our team, our culture, and our manufacturing processes.

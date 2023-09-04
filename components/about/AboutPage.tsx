@@ -25,7 +25,7 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
     <>
       <PageHead settings={settings} />
       <Layout>
-        <PageTitle theme={LayoutThemes.dark}>
+        <PageTitle theme={LayoutThemes.DARK}>
           <h1 className="max-w-[18ch]">We make things better for everyone</h1>
         </PageTitle>
         <PageHero

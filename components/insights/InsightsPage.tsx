@@ -78,7 +78,7 @@ const InsightsPage = ({
     <>
       <IndexPageHead settings={settings} />
       <Layout>
-        <PageTitle theme={LayoutThemes.dark} className="[&>div]:mt-60">
+        <PageTitle theme={LayoutThemes.DARK} className="[&>div]:mt-60">
           <h1 className="mb-2">Insights</h1>
           <p className="max-w-[26ch] text-lg font-medium text-silver-500">
             Data-rich industry insights from our experts and engineers.

@@ -19,8 +19,8 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
   return (
     <>
       <IndexPageHead settings={settings} />
-      <Layout theme="light">
-        <PageTitle theme={LayoutThemes.light}>
+      <Layout theme={LayoutThemes.LIGHT}>
+        <PageTitle theme={LayoutThemes.LIGHT}>
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
             <div className="flex-[2]">
               <h1 className="max-w-[24ch]">

@@ -59,9 +59,9 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
     settings,
   ] = await Promise.all([
     getAllJobPosts(client),
-    getFeaturedPostsByCategoryQuery(client, PostCategories.CATEGORY_INSIGHTS),
-    getFeaturedPostsByCategoryQuery(client, PostCategories.CATEGORY_NEWS),
-    getFeaturedPostsByCategoryQuery(client, PostCategories.CATEGORY_PRESS),
+    getFeaturedPostsByCategoryQuery(client, PostCategories.INSIGHTS),
+    getFeaturedPostsByCategoryQuery(client, PostCategories.NEWS),
+    getFeaturedPostsByCategoryQuery(client, PostCategories.PRESS),
     getAllPartners(client),
     getSettings(client),
   ])

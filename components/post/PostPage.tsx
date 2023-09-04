@@ -1,4 +1,4 @@
-import { PostCategories } from 'lib/constants'
+import { LayoutThemes, PostCategories } from 'lib/constants'
 import type { Post, Settings } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
 
@@ -30,7 +30,7 @@ const PostPage = ({
   settings,
 }: PostPageProps) => {
   const slug = post?.slug
-  const isInsight = post?.categories?.includes(PostCategories.CATEGORY_INSIGHTS)
+  const isInsight = post?.categories?.includes(PostCategories.INSIGHTS)
 
   if (!slug && !preview) {
     notFound()
@@ -40,7 +40,7 @@ const PostPage = ({
     <>
       <PostPageHead settings={settings} post={post} />
       <ScrollProgress />
-      <Layout preview={preview!} loading={loading} theme="light">
+      <Layout preview={preview!} loading={loading} theme={LayoutThemes.LIGHT}>
         {preview && !post ? (
           <div>Loading…</div>
         ) : (

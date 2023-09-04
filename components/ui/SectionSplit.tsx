@@ -25,7 +25,7 @@ const SectionSplit = ({
   id,
   image,
   alt,
-  theme = LayoutThemes.dark,
+  theme = LayoutThemes.DARK,
   reverse,
 }: Props) => {
   return (
@@ -35,7 +35,7 @@ const SectionSplit = ({
       pb="pb-0"
       pl="pl-0"
       className={cn(
-        theme === LayoutThemes.dark
+        theme === LayoutThemes.DARK
           ? `bg-black text-white`
           : `bg-background text-black`,
         className
