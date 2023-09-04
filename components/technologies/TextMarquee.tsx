@@ -11,8 +11,8 @@ const TextMarquee = () => {
       maxWidth="w-full"
       className="overflow-hidden border-b border-t border-silver-900 bg-silver-950 text-silver-900"
     >
-      <Marquee pauseOnHover={false} speed={175}>
-        <div className="gutter-x font-display text-8xl font-bold leading-snug md:text-[10rem] md:leading-snug">
+      <Marquee pauseOnHover={false} speed={225}>
+        <div className="gutter-x font-display text-6xl font-bold leading-snug md:text-[10rem] md:leading-snug">
           We accelerate innovative ideas at light speed.
         </div>
       </Marquee>
