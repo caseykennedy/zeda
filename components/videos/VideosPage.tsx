@@ -53,10 +53,16 @@ const GridSection = ({ posts }: { posts: VideoPost[] }) => {
 
 const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
   const featuredPost = featuredPosts[0]
-  console.log('featuredPost', featuredPost.content)
   return (
     <>
-      <PageHead settings={settings} />
+      <PageHead
+        settings={settings}
+        page={{
+          title: 'Videos',
+          description:
+            'Get to know our team, our culture, and our manufacturing processes.',
+        }}
+      />
       <Layout>
         <PageTitle theme={LayoutThemes.DARK} className="[&>div]:mt-48">
           <h1 className="mb-2">Videos</h1>

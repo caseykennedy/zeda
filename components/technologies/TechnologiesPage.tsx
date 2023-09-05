@@ -20,10 +20,17 @@ interface Props {
   settings: Settings
 }
 
-export const IndexPage = ({ partners, settings }: Props) => {
+export const TechnologiesPage = ({ partners, settings }: Props) => {
   return (
     <Layout brand={BrandThemes.TECHNOLOGIES}>
-      <PageHead settings={settings} />
+      <PageHead
+        settings={settings}
+        page={{
+          title: 'Technologies',
+          description:
+            'Zeda, Inc. blends traditional methods like CNC machining and EDM with cutting-edge technologies like additive manufacturing, PECM and automation.',
+        }}
+      />
       <PageTitle theme={LayoutThemes.DARK}>
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
           <div className="flex-[2]">
@@ -75,4 +82,4 @@ export const IndexPage = ({ partners, settings }: Props) => {
   )
 }
 
-export default IndexPage
+export default TechnologiesPage

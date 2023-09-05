@@ -14,7 +14,6 @@ const FeaturedVideoCard = ({
   content,
   videoURL,
 }: Pick<VideoPost, 'title' | 'date' | 'tags' | 'content' | 'videoURL'>) => {
-  console.log(content)
   return (
     <Section className="dark border-t border-silver-900 bg-black text-white">
       <div className="gap grid grid-cols-9">

@@ -7,24 +7,29 @@ import PageMeta from 'components/PageMeta'
 
 export interface PageHeadProps {
   settings: Settings
+  page?: {
+    title: string
+    description?: string
+  }
 }
 
-const PageHead = ({ settings }: PageHeadProps) => {
+const PageHead = ({ settings, page }: PageHeadProps) => {
   const {
     title = demo.title,
     description = demo.description,
     ogImage = {},
   } = settings
+  // const globalDescriptionString = (settings.description = demo.description)
   const ogImageTitle = ogImage?.title || demo.ogImageTitle
 
   return (
     <Head>
-      <title>{title}</title>
+      <title>{page?.title ? `${page.title} | ${title}` : title}</title>
       <PageMeta />
       <meta
         key="description"
         name="description"
-        content={toPlainText(description)}
+        content={page?.description || toPlainText(description)}
       />
       <meta
         property="og:image"

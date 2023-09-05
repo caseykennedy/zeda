@@ -27,8 +27,6 @@ const WhitePaperPostPage = ({
 }: Props) => {
   const slug = post?.slug
 
-  console.log('post.content', post.content)
-
   if (!slug && !preview) {
     notFound()
   }

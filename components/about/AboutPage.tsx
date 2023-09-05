@@ -23,7 +23,14 @@ interface PageProps {
 export const AboutPage = ({ partners, people, settings }: PageProps) => {
   return (
     <>
-      <PageHead settings={settings} />
+      <PageHead
+        settings={settings}
+        page={{
+          title: 'About',
+          description:
+            'Zeda was born out of the desire of a select group of individuals to leverage their advanced manufacturing and technology backgrounds to help companies solve some of their most difficult challenges.',
+        }}
+      />
       <Layout>
         <PageTitle theme={LayoutThemes.DARK}>
           <h1 className="max-w-[18ch]">We make things better for everyone</h1>

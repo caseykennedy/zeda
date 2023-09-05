@@ -4,12 +4,12 @@ import ctaImgSrc from 'public/images/bg-rocket.png'
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import JobList from 'components/JobList'
 import Layout from 'components/Layout'
+import PageHead from 'components/PageHead'
 import TrustedBy from 'components/TrustedBy'
 
 import AtGlance from './AtGlance'
 import FeaturedPosts from './FeaturedPosts'
 import Hero from './Hero'
-import IndexPageHead from './IndexPageHead'
 import Mission from './Mission'
 import SolutionSwiper from './SolutionSwiper'
 import WhyUs from './WhyUs'
@@ -33,7 +33,7 @@ export const IndexPage = ({
 }: IndexPageProps) => {
   return (
     <Layout>
-      <IndexPageHead settings={settings} />
+      <PageHead settings={settings} />
       <Hero />
       <Mission />
       <WhyUs />

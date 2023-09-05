@@ -1,6 +1,6 @@
 // All the demo data that used as fallbacks when there's nothing in the dataset yet
 
-export const title = 'Blog.'
+export const title = 'Zeda Inc.'
 
 export const description = [
   {
@@ -54,4 +54,5 @@ export const description = [
   },
 ]
 
-export const ogImageTitle = 'A Next.js Blog with a Native Authoring Experience'
+export const ogImageTitle =
+  "Zeda's objective is to better lives by investing in cutting-edge tech, innovative companies, and groundbreaking ideas."

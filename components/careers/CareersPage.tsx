@@ -2,9 +2,9 @@ import { LayoutThemes } from 'lib/constants'
 import { type JobPost, type Settings } from 'lib/sanity.queries'
 import HeroImg from 'public/images/hero-careers.jpg'
 
-import IndexPageHead from 'components/home/IndexPageHead'
 import JobList from 'components/JobList'
 import Layout from 'components/Layout'
+import PageHead from 'components/PageHead'
 import { Button, Icon, PageHero, PageTitle } from 'components/ui'
 
 import Benefits from './Benefits'
@@ -18,7 +18,14 @@ interface PageProps {
 export const CareersPage = ({ jobPosts, settings }: PageProps) => {
   return (
     <>
-      <IndexPageHead settings={settings} />
+      <PageHead
+        settings={settings}
+        page={{
+          title: 'Careers',
+          description:
+            "Zeda is not just a workplace; it's a vibrant community where individuals from diverse walks of life converge to create an unstoppable team.",
+        }}
+      />
       <Layout theme={LayoutThemes.LIGHT}>
         <PageTitle theme={LayoutThemes.LIGHT}>
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">

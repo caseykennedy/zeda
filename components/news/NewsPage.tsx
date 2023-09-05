@@ -15,10 +15,16 @@ interface PageProps {
 }
 
 const NewsPage = ({ posts, postCategories, settings }: PageProps) => {
-  console.log('postCategories:', postCategories)
   return (
     <>
-      <PageHead settings={settings} />
+      <PageHead
+        settings={settings}
+        page={{
+          title: 'News',
+          description:
+            "Zeda in the news and how we're involved in our community.",
+        }}
+      />
       <Layout theme={LayoutThemes.LIGHT}>
         <PageTitle theme={LayoutThemes.LIGHT} className="[&>div]:mt-48">
           <h1 className="mb-2">News</h1>

@@ -10,8 +10,8 @@ import type {
 import ctaImgSrc from 'public/images/bg-rocket.png'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
-import IndexPageHead from 'components/home/IndexPageHead'
 import Layout from 'components/Layout'
+import PageHead from 'components/PageHead'
 import { Button, PageTitle, Section } from 'components/ui'
 
 import FeaturedInsights from './FeaturedInsights'
@@ -76,7 +76,14 @@ const InsightsPage = ({
   // console.log('posts', featuredPosts)
   return (
     <>
-      <IndexPageHead settings={settings} />
+      <PageHead
+        settings={settings}
+        page={{
+          title: 'Insights',
+          description:
+            'Data-rich industry insights from our multidisciplinary experts and engineers.',
+        }}
+      />
       <Layout>
         <PageTitle theme={LayoutThemes.DARK} className="[&>div]:mt-60">
           <h1 className="mb-2">Insights</h1>

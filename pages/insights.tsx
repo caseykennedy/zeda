@@ -37,7 +37,6 @@ const Page = ({
   whitePapers,
   settings,
 }: PageProps) => {
-  console.log('posts', featuredPosts)
   return (
     <InsightsPage
       posts={posts}

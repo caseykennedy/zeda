@@ -12,7 +12,12 @@ interface Props {
 export const ContactPage = ({ settings }: Props) => {
   return (
     <>
-      <PageHead settings={settings} />
+      <PageHead
+        settings={settings}
+        page={{
+          title: 'Contact',
+        }}
+      />
       <Layout theme={LayoutThemes.LIGHT}>
         <PageTitle theme={LayoutThemes.LIGHT}>
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
