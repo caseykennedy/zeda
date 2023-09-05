@@ -10,7 +10,7 @@ const Logo = ({
   let brandFillColor
   let brandFillColorDark
 
-  if (brand === BrandThemes.ZEDA) {
+  if (!brand || brand === BrandThemes.ZEDA) {
     brandFillColor = '#8E72FF'
     brandFillColorDark = '#453195'
   } else if (brand === BrandThemes.TECHNOLOGIES) {
@@ -20,7 +20,7 @@ const Logo = ({
 
   return (
     <svg
-      width={width && 40}
+      width={width ?? 40}
       viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
