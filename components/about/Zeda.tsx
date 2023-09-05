@@ -63,9 +63,9 @@ const data: AccordionFeatureShape[] = [
 const Intro = () => (
   <Section>
     <h2 className="mx-auto my-16 max-w-[52ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
-      Zeda was born out of the desire of a select group of individuals to
-      leverage their advanced manufacturing and technology backgrounds to help
-      companies solve some of their most difficult challenges.
+      Zeda emerged from a collective vision: the desire to harness our deep
+      expertise in advanced manufacturing and technology to help people and
+      companies conquer their toughest challenges.
     </h2>
   </Section>
 )
