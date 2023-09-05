@@ -2,10 +2,10 @@ import { type BrandTheme, BrandThemes } from 'lib/constants'
 import { cn } from 'utils'
 
 const Logo = ({
-  brand,
+  brand = BrandThemes.ZEDA,
   className,
 }: {
-  brand: BrandTheme
+  brand?: BrandTheme
   className?: string
 }) => {
   let brandFillColor
