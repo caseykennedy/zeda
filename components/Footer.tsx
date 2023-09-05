@@ -62,7 +62,7 @@ const NavList = () =>
     </ul>
   ))
 
-const Footer = ({ brand }: { brand: BrandTheme }) => {
+const Footer = ({ brand }: { brand?: BrandTheme }) => {
   return (
     <footer className="gutter-y border-t border-silver-900 bg-black">
       <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
@@ -73,7 +73,7 @@ const Footer = ({ brand }: { brand: BrandTheme }) => {
 
           <div className="mt-24 flex justify-center lg:mb-16 lg:mt-0 lg:justify-end">
             <Link href="/" className="">
-              <LogoSymbol brand={BrandThemes.ZEDA} />
+              <LogoSymbol brand={brand} />
             </Link>
           </div>
         </div>

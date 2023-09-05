@@ -10,7 +10,7 @@ const Logo = ({
   let brandFillColor
   let brandFillColorDark
 
-  if (!brand || brand === BrandThemes.ZEDA) {
+  if (brand === BrandThemes.ZEDA) {
     brandFillColor = '#8E72FF'
     brandFillColorDark = '#453195'
   } else if (brand === BrandThemes.TECHNOLOGIES) {

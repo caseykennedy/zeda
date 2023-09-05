@@ -290,7 +290,7 @@ const Header = ({
 
             <div className="flex items-center md:hidden">
               <MobileNavigation>
-                <HamburgerMenuIcon className="h-6 w-6" />
+                <HamburgerMenuIcon className="h-8 w-8" />
               </MobileNavigation>
             </div>
           </div>
