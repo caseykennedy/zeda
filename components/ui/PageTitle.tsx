@@ -4,7 +4,7 @@ import { cn } from 'utils'
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   className?: string
-  theme: LayoutTheme
+  theme?: LayoutTheme
 }
 
 const PageTitle = ({

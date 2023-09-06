@@ -1,23 +1,28 @@
 import { type BrandTheme, BrandThemes } from 'lib/constants'
 import { cn } from 'utils'
 
-const Logo = ({
-  brand = BrandThemes.ZEDA,
-  className,
-}: {
+interface LogoProps {
   brand?: BrandTheme
   className?: string
-}) => {
-  let brandFillColor
-  let brandFillColorDark
+}
 
-  if (!brand || brand === BrandThemes.ZEDA) {
-    brandFillColor = '#8E72FF'
-    brandFillColorDark = '#453195'
-  } else if (brand === BrandThemes.TECHNOLOGIES) {
-    brandFillColor = '#2E97EF'
-    brandFillColorDark = '#136DB9'
-  }
+interface BrandColors {
+  fill: string
+  fillDark: string
+}
+
+const brandColors: Record<BrandTheme, BrandColors> = {
+  [BrandThemes.HEALTH]: { fill: '#EFD02E', fillDark: '#D0A128' },
+  [BrandThemes.TECHNOLOGIES]: { fill: '#2E97EF', fillDark: '#136DB9' },
+  [BrandThemes.ZEDA]: { fill: '#8E72FF', fillDark: '#453195' },
+}
+
+const Logo = ({ brand = BrandThemes.ZEDA, className }: LogoProps) => {
+  const selectedBrandColors =
+    brandColors[brand] || brandColors[BrandThemes.HEALTH]
+
+  const brandFillColor = selectedBrandColors.fill
+  const brandFillColorDark = selectedBrandColors.fillDark
 
   return (
     <svg

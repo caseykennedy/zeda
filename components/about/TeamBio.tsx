@@ -33,7 +33,7 @@ const TeamBio = ({
       <DialogContent className="max-h-[100svh] max-w-[900px] overflow-hidden overflow-y-auto rounded border-black bg-black text-white">
         <DialogHeader>
           <div className="flex flex-col bg-violet-500 sm:flex-row">
-            <figure className="relative block aspect-[13/16]">
+            <figure className="relative block aspect-[13/16] h-full">
               <Img
                 src={urlForImage(picture).url()}
                 alt="Zeda Inc. manufacturing facility"
@@ -44,7 +44,7 @@ const TeamBio = ({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
               />
             </figure>
-            <div className="gutter flex flex-1 flex-col justify-end border-l border-black">
+            <div className="gutter flex flex-1 flex-col justify-end">
               <div className="gutter-b mt-10 md:mt-16">
                 <h4 className="mb-2 flex-[1] text-5xl">{name}</h4>
                 <p className="text-sm font-medium uppercase">{position}</p>

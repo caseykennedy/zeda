@@ -1,7 +1,7 @@
-import { BrandThemes, LayoutThemes } from 'lib/constants'
+import { BrandThemes } from 'lib/constants'
 import type { Partner, Settings } from 'lib/sanity.queries'
-import ctaImgSrc from 'public/images/hero-test.png'
-import HeroImg from 'public/images/technologies/mfg-orange-suit.jpg'
+import HeroImg from 'public/images/health/hero-pieces.jpg'
+import CtaImgSrc from 'public/images/hero-test.png'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
@@ -20,26 +20,25 @@ interface Props {
   settings: Settings
 }
 
-export const TechnologiesPage = ({ partners, settings }: Props) => {
+const HealthPage = ({ partners, settings }: Props) => {
   return (
-    <Layout brand={BrandThemes.TECHNOLOGIES}>
+    <Layout brand={BrandThemes.HEALTH}>
       <PageHead
         settings={settings}
         page={{
-          title: 'Technologies',
-          description:
-            'Zeda, Inc. blends traditional methods like CNC machining and EDM with cutting-edge technologies like additive manufacturing, PECM and automation.',
+          title: 'Health',
+          description: 'health',
         }}
       />
-      <PageTitle theme={LayoutThemes.DARK}>
+      <PageTitle>
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
           <div className="flex-[2]">
             <h1 className="max-w-[26ch]">
-              Harnessing technology to build a better world for everyone
+              Pushing the upper limits of medical device technology
             </h1>
           </div>
           <div className="flex w-full flex-1 flex-row justify-end">
-            <Button variant="primary" className="hover:bg-blue-600" asChild>
+            <Button variant="primary" className="hover:bg-yellow-600" asChild>
               <a href="#capabilities">
                 <Icon
                   name="arrow-right"
@@ -65,21 +64,21 @@ export const TechnologiesPage = ({ partners, settings }: Props) => {
         title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic manufacturing renaissance through innovation and technology."
         partners={partners}
       />
-      <FooterCTA
+      {/* <FooterCTA
         heading="Join forces with us. Let's change the world together"
         message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
         href="/contact"
         btnText="Get in touch"
       >
         <FooterCTAFigure
-          src={ctaImgSrc}
-          alt="Zeda Inc. - Contact us"
-          overlayColor="bg-blue-600"
-          className=" opacity-80"
+          src={CtaImgSrc}
+          alt="Zeda Inc. | Health"
+          overlayColor="bg-yellow-600"
+          // className=" opacity-80"
         />
-      </FooterCTA>
+      </FooterCTA> */}
     </Layout>
   )
 }
 
-export default TechnologiesPage
+export default HealthPage

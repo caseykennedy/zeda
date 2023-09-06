@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from '@radix-ui/react-icons'
-import imgCapabilities from 'public/images/technologies/mfg-capabilities.jpg'
+import ImgCapabilities from 'public/images/technologies/mfg-capabilities.jpg'
 
 import { SectionSplit } from 'components/ui'
 
@@ -33,7 +33,7 @@ const Capabilities = () => (
     description="We believe that leveraging our past experience with a variety of
     processes, combined with our strong sourcing relationships, we can provide
     a more complete value by managing complete project steps."
-    image={imgCapabilities}
+    image={ImgCapabilities}
     alt="Zeda Inc. manufacturing capabilities"
     id="capabilities"
     reverse={true}

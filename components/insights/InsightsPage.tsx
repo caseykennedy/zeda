@@ -7,9 +7,7 @@ import type {
   VideoPost,
   WhitePaperPost,
 } from 'lib/sanity.queries'
-import ctaImgSrc from 'public/images/bg-rocket.png'
 
-import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { Button, PageTitle, Section } from 'components/ui'
@@ -73,7 +71,6 @@ const InsightsPage = ({
   whitePapers,
   videoPosts,
 }: PageProps) => {
-  // console.log('posts', featuredPosts)
   return (
     <>
       <PageHead
@@ -106,14 +103,6 @@ const InsightsPage = ({
           posts={whitePapers}
           whitePaper={true}
         />
-        <FooterCTA
-          heading="Join forces with us. Let’s change the world together"
-          message="<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing."
-          href="/contact"
-          btnText="Get in touch"
-        >
-          <FooterCTAFigure src={ctaImgSrc} alt="Zeda Inc. - Contact us" />
-        </FooterCTA>
       </Layout>
     </>
   )

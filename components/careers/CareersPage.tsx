@@ -35,7 +35,7 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
               </h1>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
-              <Button variant="primary" asChild>
+              <Button variant="outline" asChild>
                 <a href="#open-positions">
                   <Icon
                     name="arrow-right"

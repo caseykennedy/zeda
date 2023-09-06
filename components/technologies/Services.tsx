@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ArrowRightIcon } from '@radix-ui/react-icons'
-import imgServices from 'public/images/technologies/mfg-services.jpg'
+import ImgServices from 'public/images/technologies/mfg-services.jpg'
 
 import { SectionSplit } from 'components/ui'
 
@@ -34,7 +34,7 @@ const Services = () => (
     description="Our aim is to enhance project efficiency and success by leveraging our
     extensive experience and strong sourcing relationships to manage all
     project steps alongside our internal capabilities."
-    image={imgServices}
+    image={ImgServices}
     alt="Zeda Inc. manufacturing services"
     id="services"
   >

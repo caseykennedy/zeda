@@ -15,8 +15,7 @@ import { cn } from 'utils'
 
 import Img from 'components/Img'
 import Logo from 'components/Logo'
-import LogoSymbolHealth from 'components/LogoSymbolHealth'
-import LogoSymbolTech from 'components/LogoSymbolTech'
+import LogoSymbol from 'components/LogoSymbol'
 import LinkArrow from 'components/ui/LinkArrow'
 import {
   NavigationMenu,
@@ -37,14 +36,14 @@ export const solutionsNav = [
     title: 'zeda technologies',
     href: '/technologies',
     desc: 'Space, defense &amp; aerospace',
-    icon: <LogoSymbolTech width={32} />,
+    icon: <LogoSymbol brand={BrandThemes.TECHNOLOGIES} width={32} />,
     className: 'hover:border-blue-500',
   },
   {
     title: 'zeda health',
-    href: '//orthoimplantcompany.com',
+    href: '/health',
     desc: 'Orthopaedic implants &amp; nanotech',
-    icon: <LogoSymbolHealth width={32} />,
+    icon: <LogoSymbol brand={BrandThemes.HEALTH} width={32} />,
     className: 'hover:border-yellow-500',
   },
 ]

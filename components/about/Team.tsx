@@ -43,8 +43,8 @@ const Team = ({ people }: { people: Person[] }) => {
   return (
     <Section id="leadership">
       <div className="gap grid grid-cols-6">
-        <div className="col-span-6 mb-8 md:col-span-4">
-          <h2>
+        <div className="col-span-6 mb-8 lg:col-span-5">
+          <h2 className="max-w-[54ch]">
             Our team is driven by a shared mission to improve lives and make a
             lasting impact on society — from life-changing medical devices that
             save lives, to pioneering advancements in space exploration, we

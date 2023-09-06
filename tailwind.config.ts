@@ -60,6 +60,8 @@ module.exports = {
         },
         yellow: {
           500: 'hsla(50, 86%, 56%, 1)',
+          600: 'hsla(50, 86%, 45%, 1)',
+          700: 'hsla(50, 86%, 37%, 1)',
         },
       },
       fontFamily: {
