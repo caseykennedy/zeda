@@ -43,9 +43,9 @@ const Hero = () => {
           // poster="public/images/hero-careers.jpg"
           preload="metadata"
           tabIndex={-1}
-          className="h-full w-full object-cover brightness-50"
+          className=" h-full w-full object-cover brightness-[0.65]"
         >
-          <source src="/video/b-roll-hd.mp4" type="video/mp4" />
+          <source src="/video/hero--med.mp4" type="video/mp4" />
           {/* <source src="video.ogg" type="video/ogg" /> */}
           {/* <source src="video.webm" type="video/webm" /> */}
           {/* <object data="video.mp4" width="470" height="255">

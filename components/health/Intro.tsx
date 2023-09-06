@@ -72,7 +72,7 @@ const Lead = () => (
   <Section>
     <h2 className="mx-auto my-16 max-w-[52ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
       Zeda Health focuses on combining 3D printing with nanotechnologies to
-      address the needs of the spine device market. We help customers at every
+      address the needs of the medical device market. We help customers at every
       stage of their productization life cycle.
     </h2>
   </Section>
