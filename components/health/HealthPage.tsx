@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-import { useNetworkState } from '@uidotdev/usehooks'
 import { BrandThemes } from 'lib/constants'
 import type { Partner, Settings } from 'lib/sanity.queries'
 import HeroImg from 'public/images/health/hero-pieces.jpg'
@@ -23,12 +21,6 @@ interface Props {
 }
 
 const HealthPage = ({ partners, settings }: Props) => {
-  const network = useNetworkState()
-
-  useEffect(() => {
-    console.log(network)
-  }, [network])
-
   return (
     <Layout brand={BrandThemes.HEALTH}>
       <PageHead

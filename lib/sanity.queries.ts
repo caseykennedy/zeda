@@ -329,7 +329,7 @@ export interface Person {
 }
 
 export interface Settings {
-  title: string
+  title?: string
   description?: any[]
   ogImage?: {
     title?: string
