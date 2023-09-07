@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ImgService from 'public/images/health/oic-tray.jpg'
+import ImgService from 'public/images/technologies/mfg-jumpsuit.jpg'
 
 import { SectionSplit } from 'components/ui'
 
@@ -25,7 +25,7 @@ const data = [
 const Services = () => (
   <SectionSplit
     title="Title"
-    description="Zeda Health focuses on combining 3D printing with nanotechnologies to address the needs of the spine device market. We help customers at every stage of their productization life cycle."
+    description="Description here."
     image={ImgService}
     alt="Zeda Inc. manufacturing services"
     id="services"

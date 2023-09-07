@@ -26,8 +26,8 @@ const capabilities = [
 
 const Capabilities = () => (
   <SectionSplit
-    title="Title"
-    description="description"
+    title="Capabilities"
+    description="Description here."
     image={imgInspect}
     alt="Zeda Inc. manufacturing capabilities"
     id="capabilities"

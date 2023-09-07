@@ -44,7 +44,7 @@ const HealthPage = ({ partners, settings }: Props) => {
                   name="arrow-right"
                   className="relative -translate-x-1 transition-all group-hover:translate-x-1"
                 />
-                Orthopedic Implant Co.
+                Capabilities
               </a>
             </Button>
           </div>

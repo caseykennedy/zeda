@@ -49,7 +49,7 @@ const WhyUs = () => {
             fill={false}
             width={1440}
             height={658}
-            className="-scale-x-100 object-cover object-top"
+            className="object-cover object-top"
           />
         </figure>
         <figure className="relative col-span-3 overflow-hidden rounded sm:col-span-1 sm:row-span-1">

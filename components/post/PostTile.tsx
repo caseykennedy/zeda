@@ -27,7 +27,7 @@ const PostTile = ({
       )}
     >
       <div>
-        <h2 className="mb-4 line-clamp-4 text-2xl decoration-2 group-hover:underline">
+        <h2 className="-mt-1.5 mb-4 line-clamp-4 text-2xl decoration-2 group-hover:underline">
           {title}
         </h2>
         <div>
