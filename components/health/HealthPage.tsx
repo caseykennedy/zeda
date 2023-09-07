@@ -44,7 +44,7 @@ const HealthPage = ({ partners, settings }: Props) => {
                   name="arrow-right"
                   className="relative -translate-x-1 transition-all group-hover:translate-x-1"
                 />
-                Capabilities
+                Orthopedic Implant Co.
               </a>
             </Button>
           </div>
@@ -64,7 +64,7 @@ const HealthPage = ({ partners, settings }: Props) => {
         title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic manufacturing renaissance through innovation and technology."
         partners={partners}
       />
-      {/* <FooterCTA
+      <FooterCTA
         heading="Join forces with us. Let's change the world together"
         message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
         href="/contact"
@@ -73,10 +73,10 @@ const HealthPage = ({ partners, settings }: Props) => {
         <FooterCTAFigure
           src={CtaImgSrc}
           alt="Zeda Inc. | Health"
-          overlayColor="bg-yellow-600"
+          overlayColor="bg-yellow-700"
           // className=" opacity-80"
         />
-      </FooterCTA> */}
+      </FooterCTA>
     </Layout>
   )
 }

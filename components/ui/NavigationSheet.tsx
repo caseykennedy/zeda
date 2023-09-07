@@ -112,9 +112,9 @@ const NavigationSheet = ({ children }: { children: React.ReactNode }) => {
                       <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
                         Careers
                       </div>
-                      <div className="text-silver-200">
+                      <p className="text-base text-silver-200">
                         Explore open career opportunities
-                      </div>
+                      </p>
                     </div>
                     <figure className="absolute inset-0 z-0 transition-transform group-hover:scale-105">
                       <Img
@@ -126,6 +126,7 @@ const NavigationSheet = ({ children }: { children: React.ReactNode }) => {
                           objectFit: 'cover',
                           objectPosition: 'center top',
                         }}
+                        className="object-cover object-bottom"
                       />
                       <div className="absolute z-[1] h-full w-full bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
                     </figure>
@@ -142,7 +143,7 @@ const NavigationSheet = ({ children }: { children: React.ReactNode }) => {
                     <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
                       Newsroom
                     </div>
-                    <p className="text-silver-200">
+                    <p className="text-base text-silver-200">
                       Get the latest scoop on Zeda
                     </p>
                   </Link>
@@ -170,7 +171,7 @@ const NavigationSheet = ({ children }: { children: React.ReactNode }) => {
                         </div>
                         <p
                           dangerouslySetInnerHTML={{ __html: desc }}
-                          className="text-silver-200"
+                          className="text-base text-silver-200"
                         />
                       </Link>
                     </li>
@@ -195,7 +196,7 @@ const NavigationSheet = ({ children }: { children: React.ReactNode }) => {
                       </div>
                       <p
                         dangerouslySetInnerHTML={{ __html: desc }}
-                        className="text-silver-200"
+                        className="text-base text-silver-200"
                       />
                     </Link>
                   </li>
