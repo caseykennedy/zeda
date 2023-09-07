@@ -4,14 +4,12 @@ import {
   ReaderIcon,
 } from '@radix-ui/react-icons'
 import { cva } from 'class-variance-authority'
-import { BrandThemes } from 'lib/constants'
 import Link from 'next/link'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
 import { cn } from 'utils'
 
 import { insightsNav, solutionsNav } from 'components/Header'
 import Img from 'components/Img'
-import LogoSymbol from 'components/LogoSymbol'
 import {
   Accordion,
   AccordionContent,
@@ -40,7 +38,7 @@ const Collapse = ({
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value={title}>
-        <AccordionTrigger className="border-silver-900 px-0 [&>div]:py-4 [&[data-state=open]>div>div>svg]:rotate-180">
+        <AccordionTrigger className="border-b border-t-0 border-silver-900 px-0 data-[state=open]:border-black [&>div]:py-4 [&[data-state=open]>div>div>svg]:rotate-180">
           <div className={mobileNavStyle()}>{title}</div>
 
           <div className="">
@@ -48,7 +46,7 @@ const Collapse = ({
           </div>
         </AccordionTrigger>
         <AccordionContent>
-          <div className="pb-6 pt-2">{children}</div>
+          <div className="border-b border-silver-900 pb-6 pt-2">{children}</div>
         </AccordionContent>
       </AccordionItem>
     </Accordion>
@@ -72,7 +70,7 @@ const SingleLink = ({ title, href }: { title: string; href: string }) => {
       href={href}
       className={cn(
         mobileNavStyle(),
-        `flex w-full border-t border-silver-900 py-4`
+        `flex w-full items-center border-b border-silver-900 py-4`
       )}
     >
       {title}
@@ -81,17 +79,12 @@ const SingleLink = ({ title, href }: { title: string; href: string }) => {
   )
 }
 
-const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
+const NavigationSheet = ({ children }: { children: React.ReactNode }) => {
   return (
     <Sheet>
       <SheetTrigger aria-label="Open navigation">{children}</SheetTrigger>
-      <SheetContent>
+      <SheetContent className="max-h-[100vh] overflow-y-auto">
         <SheetHeader>
-          <SheetTitle className="mb-6">
-            <Link href="/">
-              <LogoSymbol brand={BrandThemes.ZEDA} width={32} />
-            </Link>
-          </SheetTitle>
           <div>
             <Collapse title="Company">
               <ul className="gap grid w-full text-white lg:grid-cols-3">
@@ -218,4 +211,4 @@ const MobileNavigation = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
-export default MobileNavigation
+export default NavigationSheet

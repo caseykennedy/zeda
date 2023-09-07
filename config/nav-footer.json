@@ -33,7 +33,7 @@
       },
       {
         "name": "health",
-        "link": "/"
+        "link": "/health"
       }
     ]
   },

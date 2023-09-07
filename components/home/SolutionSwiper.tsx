@@ -87,7 +87,7 @@ const SolutionSwiper = () => {
           <Slide
             heading="We offer better value for the devices you know and use everyday."
             message="<strong>Zeda health</strong><br />Devices that are good for all<br />—made better."
-            image="solutions-health.jpg"
+            image="health/med-device.jpg"
             alt="Zeda Inc. manufacturing facility"
             href="/technologies"
             btnText="Zeda Health"

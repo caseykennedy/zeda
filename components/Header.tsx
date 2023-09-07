@@ -16,6 +16,7 @@ import { cn } from 'utils'
 import Img from 'components/Img'
 import Logo from 'components/Logo'
 import LogoSymbol from 'components/LogoSymbol'
+import { NavigationSheet } from 'components/ui'
 import LinkArrow from 'components/ui/LinkArrow'
 import {
   NavigationMenu,
@@ -26,8 +27,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from 'components/ui/NavigationMenu'
-
-import MobileNavigation from './MobileNavigation'
 
 export const INSIGHTS_SLUG = 'insights'
 
@@ -288,9 +287,9 @@ const Header = ({
             </div>
 
             <div className="flex items-center md:hidden">
-              <MobileNavigation>
+              <NavigationSheet>
                 <HamburgerMenuIcon className="h-8 w-8" />
-              </MobileNavigation>
+              </NavigationSheet>
             </div>
           </div>
         </div>

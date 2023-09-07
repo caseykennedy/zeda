@@ -1,5 +1,6 @@
 import Button from './Button'
 import Icon from './Icon'
+import NavigationSheet from './NavigationSheet'
 import PageHero from './PageHero'
 import PageTitle from './PageTitle'
 import Pill from './Pill'
@@ -10,6 +11,7 @@ import Separator from './Separator'
 export {
   Button,
   Icon,
+  NavigationSheet,
   PageHero,
   PageTitle,
   Pill,

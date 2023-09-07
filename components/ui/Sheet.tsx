@@ -2,7 +2,11 @@ import * as React from 'react'
 import * as SheetPrimitive from '@radix-ui/react-dialog'
 import { Cross1Icon } from '@radix-ui/react-icons'
 import { cva, type VariantProps } from 'class-variance-authority'
+import { BrandThemes } from 'lib/constants'
+import Link from 'next/link'
 import { cn } from 'utils'
+
+import LogoSymbol from 'components/LogoSymbol'
 
 const Sheet = SheetPrimitive.Root
 
@@ -34,7 +38,7 @@ const SheetOverlay = React.forwardRef<
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
 
 const sheetVariants = cva(
-  'fixed z-50 gap-4 bg-black p-4 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 text-white',
+  'fixed z-50 bg-black p-4 h-full shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 text-white',
   {
     variants: {
       side: {
@@ -61,19 +65,23 @@ const SheetContent = React.forwardRef<
   SheetContentProps
 >(({ side = 'right', className, children, ...props }, ref) => (
   <SheetPortal>
-    <SheetOverlay className="overflow-y-auto">
-      <SheetPrimitive.Content
-        ref={ref}
-        className={cn(sheetVariants({ side }), className)}
-        {...props}
-      >
-        {children}
-        <SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none">
-          <Cross1Icon className="h-4 w-4" />
+    <SheetOverlay />
+    <SheetPrimitive.Content
+      ref={ref}
+      className={cn(sheetVariants({ side }), className)}
+      {...props}
+    >
+      <div className="mb-4 flex items-center justify-between py-2">
+        <Link href="/">
+          <LogoSymbol brand={BrandThemes.ZEDA} width={32} />
+        </Link>
+        <SheetPrimitive.Close className="z-50 rounded text-silver-500 ring-offset-violet-500 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none">
+          <Cross1Icon className="h-5 w-5" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
-      </SheetPrimitive.Content>
-    </SheetOverlay>
+      </div>
+      {children}
+    </SheetPrimitive.Content>
   </SheetPortal>
 ))
 SheetContent.displayName = SheetPrimitive.Content.displayName

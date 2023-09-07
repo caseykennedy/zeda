@@ -58,9 +58,9 @@ const PostCard = ({
       <div className="gap grid lg:col-span-2 lg:grid-cols-2">
         <div className="col-span-2 flex flex-col-reverse justify-between sm:flex-col lg:col-span-1">
           <div>
-            <h3 className="mb-4 leading-snug decoration-2 group-hover:underline md:text-2xl lg:text-3xl">
+            <h2 className="mb-4 max-w-[24ch] text-2xl leading-snug decoration-2 group-hover:underline md:text-3xl md:leading-snug">
               {title}
-            </h3>
+            </h2>
           </div>
           <div className="mb-4 flex flex-wrap gap-1.5 md:mb-0">
             <CategoryTag categories={categories || []} />

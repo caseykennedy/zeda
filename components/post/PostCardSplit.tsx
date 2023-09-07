@@ -68,7 +68,7 @@ const PostCardSplit = ({
       >
         <div className="gutter col-span-2 flex flex-col justify-between sm:flex-col lg:col-span-1">
           <div className="flex w-full flex-col even:flex-col md:flex-row even:md:flex-row-reverse">
-            <h2 className="mb-4 max-w-[24ch] leading-snug decoration-2 group-hover:underline">
+            <h2 className="mb-4 max-w-[24ch] text-2xl leading-snug decoration-2 group-hover:underline md:text-3xl md:leading-snug">
               {title}
             </h2>
           </div>
