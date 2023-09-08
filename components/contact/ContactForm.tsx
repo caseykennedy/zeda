@@ -1,26 +1,58 @@
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
 
-interface FormData {
-  name: string
-  email: string
-  message: string
-}
+import { Button, Input, Textarea } from 'components/ui'
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from 'components/ui/Form'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from 'components/ui/Select'
 
-const ContactForm: React.FC = () => {
-  const {
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm<FormData>({
+const selectOptions = ['a', 'b', 'c']
+
+const selectSchema = z
+  .string()
+  .refine((value) => selectOptions.includes(value), {
+    message: 'Invalid select option',
+  })
+
+const formSchema = z.object({
+  subject: selectSchema,
+  name: z.string().min(2).max(50).nonempty('Name is required'),
+  email: z
+    .string()
+    .email('Invalid email address')
+    .nonempty('Email is required'),
+  message: z.string().min(10).max(500).nonempty('Message is required'),
+})
+
+const ContactForm = () => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
+      subject: '',
       name: '',
       email: '',
       message: '',
     },
   })
 
-  const onSubmit = async (data: FormData) => {
+  async function onSubmit(data: z.infer<typeof formSchema>) {
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -33,7 +65,7 @@ const ContactForm: React.FC = () => {
 
       console.log('response', response)
 
-      console.log('Thanks for contacting us, we will get back to you soon!')
+      alert('Thanks for contacting us, we will get back to you soon!')
     } catch (error) {
       console.error(error)
 
@@ -42,65 +74,82 @@ const ContactForm: React.FC = () => {
   }
 
   return (
-    <form method="post" onSubmit={handleSubmit(onSubmit)}>
-      <div className="mb-4 flex flex-col">
-        <label htmlFor="name">Name</label>
-        <Controller
+    <Form {...form}>
+      <form method="post" onSubmit={form.handleSubmit(onSubmit)}>
+        <FormField
+          control={form.control}
+          name="subject"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Subject</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Please choose a subject" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {selectOptions.map((option) => (
+                    <SelectItem key={option} value={option}>
+                      {option}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
           name="name"
-          control={control}
-          rules={{ required: 'Name is required' }}
           render={({ field }) => (
-            <>
-              <input id="name" type="text" {...field} />
-              {errors.name && (
-                <div className="error">{errors.name.message}</div>
-              )}
-            </>
+            <FormItem>
+              <FormLabel>Name</FormLabel>
+              <FormControl>
+                <Input placeholder="shadcn" {...field} />
+              </FormControl>
+              {/* <FormDescription>
+                Name is required and must be at least 2 characters long.
+              </FormDescription> */}
+              <FormMessage />
+            </FormItem>
           )}
         />
-      </div>
-      <div className="mb-4 flex flex-col">
-        <label htmlFor="email">Email</label>
-        <Controller
+
+        <FormField
+          control={form.control}
           name="email"
-          control={control}
-          rules={{
-            required: 'Email is required',
-            pattern: {
-              value: /\S+@\S+\.\S+/,
-              message: 'Invalid email address',
-            },
-          }}
           render={({ field }) => (
-            <>
-              <input id="email" type="email" {...field} />
-              {errors.email && (
-                <div className="error">{errors.email.message}</div>
-              )}
-            </>
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input placeholder="shadcn" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
           )}
         />
-      </div>
-      <div className="mb-4 flex flex-col">
-        <label htmlFor="message">Message</label>
-        <Controller
+
+        <FormField
+          control={form.control}
           name="message"
-          control={control}
-          rules={{ required: 'Message is required' }}
           render={({ field }) => (
-            <>
-              <textarea id="message" {...field} />
-              {errors.message && (
-                <div className="error">{errors.message.message}</div>
-              )}
-            </>
+            <FormItem>
+              <FormLabel>Message</FormLabel>
+              <FormControl>
+                <Textarea placeholder="shadcn" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
           )}
         />
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+        <div>
+          <Button type="submit">Submit</Button>
+        </div>
+      </form>
+    </Form>
   )
 }
 
