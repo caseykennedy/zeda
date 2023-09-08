@@ -1,5 +1,6 @@
 import { forwardRef } from 'react'
 import {
+  BackpackIcon,
   HamburgerMenuIcon,
   LightningBoltIcon,
   PaperPlaneIcon,
@@ -8,10 +9,10 @@ import {
 } from '@radix-ui/react-icons'
 import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
-import { type BrandTheme, BrandThemes, type LayoutTheme } from 'lib/constants'
 import Link from 'next/link'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
 import { cn } from 'utils'
+import { type BrandTheme, BrandThemes, type LayoutTheme } from 'utils/constants'
 
 import Img from 'components/Img'
 import Logo from 'components/Logo'
@@ -119,6 +120,9 @@ const Navigation = () => {
                     href="/careers"
                   >
                     <div className="relative z-10">
+                      <div>
+                        <BackpackIcon className="h-6 w-6 transition-transform group-hover:-translate-y-1.5 group-hover:text-violet-500" />
+                      </div>
                       <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
                         Careers
                       </div>

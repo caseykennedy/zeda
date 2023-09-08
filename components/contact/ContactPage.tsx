@@ -1,9 +1,12 @@
-import { LayoutThemes } from 'lib/constants'
+import { EnvelopeOpenIcon, GlobeIcon } from '@radix-ui/react-icons'
 import type { Settings } from 'lib/sanity.queries'
+import { LayoutThemes } from 'utils/constants'
 
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
-import { Button, Icon, PageTitle } from 'components/ui'
+import { Button, Icon, PageTitle, Section } from 'components/ui'
+
+import ContactForm from './ContactForm'
 
 interface Props {
   settings: Settings
@@ -22,10 +25,14 @@ export const ContactPage = ({ settings }: Props) => {
         <PageTitle theme={LayoutThemes.LIGHT}>
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
             <div className="flex-[2]">
-              <h1 className="max-w-[24ch]">Contact</h1>
+              <h1 className="mb-2">Contact</h1>
+              <p className="max-w-[44ch] font-medium text-silver-500">
+                Whether you have questions, feedback, or want to explore
+                partnership opportunities, we&apos;re here to assist.
+              </p>
             </div>
-            <div className="flex w-full flex-1 flex-row justify-end">
-              <Button variant="primary" asChild>
+            {/* <div className="flex w-full flex-1 flex-row justify-end">
+              <Button variant="outline" asChild>
                 <a href="#open-positions">
                   <Icon
                     name="arrow-right"
@@ -34,9 +41,41 @@ export const ContactPage = ({ settings }: Props) => {
                   Email us
                 </a>
               </Button>
-            </div>
+            </div> */}
           </div>
         </PageTitle>
+        <Section className="border-t">
+          <div className="mx-auto grid grid-cols-4 gap-10">
+            <div className="col-span-4 md:col-span-2">
+              <div className="mb-6">
+                <EnvelopeOpenIcon className="h-8 w-8" />
+              </div>
+              <h2 className="mb-3 text-2xl md:text-3xl md:tracking-wide">
+                Email us
+              </h2>
+              <p className="max-w-[36ch]">
+                Send us an email using the contact form below. It is the
+                simplest way to connect with us.
+              </p>
+              <div className="mt-10">
+                <ContactForm />
+              </div>
+            </div>
+
+            <div className="col-span-4 md:col-span-2">
+              <div className="mb-6">
+                <GlobeIcon className="h-8 w-8" />
+              </div>
+              <h2 className="mb-3 text-2xl md:text-3xl md:tracking-wide">
+                Support
+              </h2>
+              <p className="max-w-[36ch]">
+                Go here first to find simple step-by-step solutions to common
+                issues.
+              </p>
+            </div>
+          </div>
+        </Section>
       </Layout>
     </>
   )

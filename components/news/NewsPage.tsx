@@ -1,5 +1,5 @@
-import { LayoutThemes } from 'lib/constants'
 import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
+import { LayoutThemes } from 'utils/constants'
 
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'

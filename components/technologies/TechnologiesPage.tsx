@@ -1,7 +1,7 @@
-import { BrandThemes, LayoutThemes } from 'lib/constants'
 import type { Partner, Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/hero-test.png'
 import HeroImg from 'public/images/technologies/mfg-orange-suit.jpg'
+import { BrandThemes, LayoutThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
@@ -62,7 +62,7 @@ export const TechnologiesPage = ({ partners, settings }: Props) => {
       <Capabilities />
       <Services />
       <TrustedBy
-        title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic manufacturing renaissance through innovation and technology."
+        title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic renaissance through innovation and technology."
         partners={partners}
       />
       <FooterCTA

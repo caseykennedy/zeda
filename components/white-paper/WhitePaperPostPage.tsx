@@ -1,6 +1,6 @@
-import { LayoutThemes } from 'lib/constants'
 import type { Post, Settings, WhitePaperPost } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
+import { LayoutThemes } from 'utils/constants'
 
 import Layout from 'components/Layout'
 import { PostBody, PostHeader, PostMeta, PostPageHead } from 'components/post'

@@ -1,5 +1,5 @@
-import { type BrandTheme, BrandThemes } from 'lib/constants'
 import { cn } from 'utils'
+import { type BrandTheme, BrandThemes } from 'utils/constants'
 
 interface LogoProps {
   brand?: BrandTheme

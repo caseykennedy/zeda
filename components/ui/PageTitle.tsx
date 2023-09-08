@@ -1,5 +1,5 @@
-import { type LayoutTheme, LayoutThemes } from 'lib/constants'
 import { cn } from 'utils'
+import { type LayoutTheme, LayoutThemes } from 'utils/constants'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
@@ -22,7 +22,7 @@ const PageTitle = ({
         )}
         {...props}
       >
-        <div className="gutter-x mx-auto mt-52 max-w-site md:mt-72">
+        <div className="gutter-x mx-auto mt-52 max-w-site md:mt-64">
           {children}
         </div>
       </div>

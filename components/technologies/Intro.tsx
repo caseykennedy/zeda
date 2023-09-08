@@ -70,7 +70,7 @@ const data: AccordionFeatureShape[] = [
 
 const Lead = () => (
   <Section>
-    <h2 className="mx-auto my-16 max-w-[52ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
+    <h2 className="mx-auto my-16 max-w-[53ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
       A robust manufacturing capability is vital for a strong economy and
       national security. We blend traditional methods like CNC machining and EDM
       with cutting-edge technologies like additive manufacturing, PECM and

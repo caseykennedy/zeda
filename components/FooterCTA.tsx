@@ -1,6 +1,6 @@
 import type { StaticImageData } from 'next/image'
 import Link from 'next/link'
-import bgImg from 'public/images/about/work-suit.jpg'
+import bgImg from 'public/images/about/hero-suit.jpg'
 import { cn } from 'utils'
 
 import Img from 'components/Img'

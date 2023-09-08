@@ -1,4 +1,3 @@
-import { PostCategories } from 'lib/constants'
 import { readToken } from 'lib/sanity.api'
 import {
   getAllPostCategories,
@@ -9,6 +8,7 @@ import {
 import type { Post, PostCategory, Settings } from 'lib/sanity.queries'
 import type { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
+import { PostCategories } from 'utils/constants'
 
 import { NewsPage } from 'components/news'
 

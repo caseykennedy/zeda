@@ -1,8 +1,8 @@
 import { CardStackPlusIcon } from '@radix-ui/react-icons'
 import useLoadMore from 'hooks/useLoadMore'
-import { LayoutThemes } from 'lib/constants'
 import type { Settings, VideoPost } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/bg-rocket.png'
+import { LayoutThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'

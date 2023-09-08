@@ -1,7 +1,7 @@
-import { BrandThemes } from 'lib/constants'
 import type { Partner, Settings } from 'lib/sanity.queries'
 import HeroImg from 'public/images/health/hero-pieces.jpg'
 import CtaImgSrc from 'public/images/hero-test.png'
+import { BrandThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'

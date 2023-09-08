@@ -1,4 +1,4 @@
-import { type BrandTheme, BrandThemes } from 'lib/constants'
+import { type BrandTheme, BrandThemes } from 'utils/constants'
 
 interface LogoSymbolProps {
   brand?: BrandTheme

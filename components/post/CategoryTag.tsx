@@ -1,4 +1,4 @@
-import { PostCategories } from 'lib/constants'
+import { PostCategories } from 'utils/constants'
 
 import { Pill } from 'components/ui'
 

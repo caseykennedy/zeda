@@ -1,6 +1,6 @@
-import { LayoutThemes, PostCategories } from 'lib/constants'
 import type { Post, Settings } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
+import { LayoutThemes, PostCategories } from 'utils/constants'
 
 import Layout from 'components/Layout'
 import ScrollProgress from 'components/ScrollProgress'

@@ -24,7 +24,7 @@ const ArrowLink = ({ children, href, className, ...props }: Props) => (
       size={18}
       className="absolute right-0 opacity-0 transition-all group-hover:opacity-100"
     />
-    <span className="transition-all ease-out group-hover:-translate-x-5">
+    <span className="transition-all ease-out group-hover:-translate-x-6">
       {children}
     </span>
   </Link>

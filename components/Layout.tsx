@@ -3,7 +3,7 @@ import {
   BrandThemes,
   type LayoutTheme,
   LayoutThemes,
-} from 'lib/constants'
+} from 'utils/constants'
 
 import AlertBanner from 'components/AlertBanner'
 import Footer from 'components/Footer'

@@ -1,6 +1,6 @@
-import { type LayoutTheme, LayoutThemes } from 'lib/constants'
 import type { StaticImageData } from 'next/image'
 import { cn } from 'utils'
+import { type LayoutTheme, LayoutThemes } from 'utils/constants'
 
 import Img from 'components/Img'
 import { Section } from 'components/ui'

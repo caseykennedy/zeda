@@ -1,12 +1,12 @@
 import { CardStackPlusIcon } from '@radix-ui/react-icons'
 import useLoadMore from 'hooks/useLoadMore'
-import { LayoutThemes } from 'lib/constants'
 import type {
   Post,
   Settings,
   VideoPost,
   WhitePaperPost,
 } from 'lib/sanity.queries'
+import { LayoutThemes } from 'utils/constants'
 
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'

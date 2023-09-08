@@ -1,6 +1,6 @@
-import { LayoutThemes } from 'lib/constants'
 import { type JobPost, type Settings } from 'lib/sanity.queries'
 import HeroImg from 'public/images/hero-careers.jpg'
+import { LayoutThemes } from 'utils/constants'
 
 import JobList from 'components/JobList'
 import Layout from 'components/Layout'

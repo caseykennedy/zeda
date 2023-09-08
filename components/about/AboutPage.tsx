@@ -1,7 +1,7 @@
-import { LayoutThemes } from 'lib/constants'
 import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
-import HeroImg from 'public/images/about/work-suit.jpg'
+import HeroImg from 'public/images/about/hero-suit.jpg'
 import ctaImgSrc from 'public/images/bg-corridor.jpg'
+import { LayoutThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'

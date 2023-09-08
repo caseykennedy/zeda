@@ -1,7 +1,7 @@
 import nav from 'config/nav-footer.json'
-import { type BrandTheme, BrandThemes } from 'lib/constants'
 import Link from 'next/link'
 import { currentYear, scrollTop } from 'utils'
+import { type BrandTheme, BrandThemes } from 'utils/constants'
 
 import LogoSymbol from 'components/LogoSymbol'
 import Button from 'components/ui/Button'
