@@ -1,9 +1,15 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import {
+  CheckCircledIcon,
+  EnvelopeClosedIcon,
+  PaperPlaneIcon,
+} from '@radix-ui/react-icons'
 import * as z from 'zod'
 
 import { Button, Input, Textarea } from 'components/ui'
+import { Alert, AlertDescription, AlertTitle } from 'components/ui/Alert'
 import {
   Form,
   FormControl,
@@ -23,7 +29,7 @@ import {
   SelectValue,
 } from 'components/ui/Select'
 
-const selectOptions = ['a', 'b', 'c']
+const selectOptions = ['General inquiry', 'Zeda Technologies', 'Zeda Health']
 
 const selectSchema = z
   .string()
@@ -42,18 +48,25 @@ const formSchema = z.object({
 })
 
 const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       subject: '',
-      name: '',
-      email: '',
-      message: '',
+      name: 'casey',
+      email: 'me@ck.com',
+      message: 'This is a test message.',
     },
   })
 
-  async function onSubmit(data: z.infer<typeof formSchema>) {
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    setIsSubmitting(false)
+    setIsSubmitSuccessful(false)
+
     try {
+      setIsSubmitting(true)
       const response = await fetch('/api/contact', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -63,17 +76,52 @@ const ContactForm = () => {
         throw new Error(`Invalid response: ${response.status}`)
       }
 
-      console.log('response', response)
+      // console.log('response', response)
 
-      alert('Thanks for contacting us, we will get back to you soon!')
+      setTimeout(() => {
+        setIsSubmitSuccessful(true)
+      }, 1000)
     } catch (error) {
       console.error(error)
-
       alert("We can't submit the form, try again later")
+    } finally {
+      setTimeout(() => {
+        setIsSubmitting(false)
+      }, 1000)
     }
   }
 
-  return (
+  const manualReset = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    form.reset({
+      subject: '',
+      name: '',
+      email: '',
+      message: '',
+    })
+    setIsSubmitSuccessful(false)
+  }
+
+  return isSubmitSuccessful ? (
+    <Alert>
+      <CheckCircledIcon className="mt-1 h-5 w-5" />
+      <AlertTitle className="text-white">Thanks for contacting us!</AlertTitle>
+      <AlertDescription>
+        <p className="mb-3">
+          Your message has been received. We will reach out soon!
+        </p>
+        <p>
+          <a
+            href="#"
+            onClick={manualReset}
+            className="text-white hover:underline"
+          >
+            Send a new message
+          </a>
+        </p>
+      </AlertDescription>
+    </Alert>
+  ) : (
     <Form {...form}>
       <form method="post" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
@@ -81,7 +129,7 @@ const ContactForm = () => {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel className="sr-only">Subject</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
@@ -100,15 +148,14 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel className="sr-only">Name</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Name" {...field} />
               </FormControl>
               {/* <FormDescription>
                 Name is required and must be at least 2 characters long.
@@ -117,36 +164,43 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="sr-only">Email</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel className="sr-only">Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="shadcn" {...field} />
+                <Textarea placeholder="Message" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <div>
-          <Button type="submit">Submit</Button>
+        <div className="mt-5">
+          <Button type="submit" variant="primary" disabled={isSubmitting}>
+            {isSubmitting ? (
+              'Sending...'
+            ) : (
+              <>
+                <PaperPlaneIcon className="relative -translate-x-1 transition-all group-hover:translate-x-1" />
+                Send message
+              </>
+            )}
+          </Button>
         </div>
       </form>
     </Form>

@@ -40,7 +40,7 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
               </h1>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
-              <Button variant="primary" className="hover:bg-blue-600" asChild>
+              <Button variant="primary" asChild>
                 <a href="#leadership">
                   <Icon
                     name="arrow-right"

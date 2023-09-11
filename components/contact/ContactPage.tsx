@@ -44,9 +44,9 @@ export const ContactPage = ({ settings }: Props) => {
             </div> */}
           </div>
         </PageTitle>
-        <Section className="border-t">
-          <div className="mx-auto grid grid-cols-4 gap-10">
-            <div className="col-span-4 md:col-span-2">
+        <Section pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0" className="border-t">
+          <div className="relative grid grid-cols-1 lg:grid-cols-2">
+            <div className="p-10 md:p-14 lg:p-20">
               <div className="mb-6">
                 <EnvelopeOpenIcon className="h-8 w-8" />
               </div>
@@ -62,7 +62,7 @@ export const ContactPage = ({ settings }: Props) => {
               </div>
             </div>
 
-            <div className="col-span-4 md:col-span-2">
+            <div className="bg-white p-10 text-black md:p-14 lg:p-20">
               <div className="mb-6">
                 <GlobeIcon className="h-8 w-8" />
               </div>

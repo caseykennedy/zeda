@@ -191,6 +191,10 @@
     @apply text-2xl;
   }
 
+  h5 {
+    @apply text-xl md:tracking-wide;
+  }
+
   .h6 {
     @apply text-sm font-medium uppercase tracking-wide;
   }
