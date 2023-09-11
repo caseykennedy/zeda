@@ -55,9 +55,9 @@ const ContactForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       subject: '',
-      name: 'casey',
-      email: 'me@ck.com',
-      message: 'This is a test message.',
+      name: '',
+      email: '',
+      message: '',
     },
   })
 
