@@ -21,8 +21,8 @@ export const ContactPage = ({ settings }: Props) => {
           title: 'Contact',
         }}
       />
-      <Layout theme={LayoutThemes.LIGHT}>
-        <PageTitle theme={LayoutThemes.LIGHT}>
+      <Layout theme={LayoutThemes.DARK}>
+        <PageTitle theme={LayoutThemes.DARK}>
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
             <div className="flex-[2]">
               <h1 className="mb-2">Contact</h1>
@@ -44,13 +44,13 @@ export const ContactPage = ({ settings }: Props) => {
             </div> */}
           </div>
         </PageTitle>
-        <Section pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0" className="border-t">
-          <div className="relative grid grid-cols-1 lg:grid-cols-2">
-            <div className="p-10 md:p-14 lg:p-20">
+        <Section pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0" className="">
+          <div className="relative grid grid-cols-1 bg-background-500 md:grid-cols-5">
+            <div className="px-6 py-10 md:col-span-3 md:p-14 lg:p-20">
               <div className="mb-6">
                 <EnvelopeOpenIcon className="h-8 w-8" />
               </div>
-              <h2 className="mb-3 text-2xl md:text-3xl md:tracking-wide">
+              <h2 className="mb-3 text-xl md:text-2xl md:tracking-wide">
                 Email us
               </h2>
               <p className="max-w-[36ch]">
@@ -62,16 +62,17 @@ export const ContactPage = ({ settings }: Props) => {
               </div>
             </div>
 
-            <div className="bg-white p-10 text-black md:p-14 lg:p-20">
+            <div className="bg-white px-6 py-10 text-black md:col-span-2 md:p-14 lg:p-20">
               <div className="mb-6">
                 <GlobeIcon className="h-8 w-8" />
               </div>
-              <h2 className="mb-3 text-2xl md:text-3xl md:tracking-wide">
-                Support
+              <h2 className="mb-3 text-xl md:text-2xl md:tracking-wide">
+                Address
               </h2>
               <p className="max-w-[36ch]">
-                Go here first to find simple step-by-step solutions to common
-                issues.
+                47929 Fremont Blvd.
+                <br />
+                Fremont, CA 94538
               </p>
             </div>
           </div>

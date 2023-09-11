@@ -112,7 +112,7 @@ const FeaturedVideos = ({ videos }: { videos: VideoPost[] }) => {
             </h2>
           </div>
           <div>
-            <Button variant="primary" asChild>
+            <Button variant="outline" asChild>
               <Link href="/videos">All videos</Link>
             </Button>
           </div>

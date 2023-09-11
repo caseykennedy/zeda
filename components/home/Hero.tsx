@@ -18,10 +18,10 @@ const Hero = () => {
     <Section className="dark h-[100svh] max-h-[1080px] min-h-[600px] overflow-hidden bg-black text-white">
       <div className="gap grid h-full grid-cols-1 content-end md:grid-cols-2">
         <div className="relative z-10 flex flex-col justify-end">
-          <p className=" max-w-[29ch] border-l border-white pl-4">
+          <p className=" max-w-[26ch] border-l border-white pl-4">
             <strong>Building together</strong>
             <br />
-            We use technology to better lives—built using trust.
+            We use technology to better lives—built with trust.
           </p>
         </div>
         <div className="relative z-10">
