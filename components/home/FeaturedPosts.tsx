@@ -67,7 +67,7 @@ const FeaturedPosts = ({ insights, news, press }: Props) => {
                 title={post.title}
                 categories={post.categories}
                 tags={post.tags}
-                className="bg-violet-600 text-white"
+                className="bg-violet-500 text-white"
               />
             ))}
             {news.slice(0, 1).map((post) => (

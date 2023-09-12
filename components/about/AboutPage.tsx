@@ -1,6 +1,6 @@
 import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
 import HeroImg from 'public/images/about/hero-suit.jpg'
-import ctaImgSrc from 'public/images/bg-corridor.jpg'
+import ctaImgSrc from 'public/images/bg-tech-shadow.png'
 import { LayoutThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
@@ -68,7 +68,12 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
           href="/contact"
           btnText="Get in touch"
         >
-          <FooterCTAFigure src={ctaImgSrc} alt="Zeda Inc. - Contact us" />
+          <FooterCTAFigure
+            src={ctaImgSrc}
+            alt="Zeda Inc. - Contact us"
+            overlayColor="bg-violet-600"
+            className="opacity-20 mix-blend-hard-light grayscale"
+          />
         </FooterCTA>
       </Layout>
     </>

@@ -1,5 +1,5 @@
 import type { Partner, Settings } from 'lib/sanity.queries'
-import ctaImgSrc from 'public/images/hero-test.png'
+import ctaImgSrc from 'public/images/hands-on.jpg'
 import HeroImg from 'public/images/technologies/mfg-orange-suit.jpg'
 import { BrandThemes, LayoutThemes } from 'utils/constants'
 
@@ -75,7 +75,7 @@ export const TechnologiesPage = ({ partners, settings }: Props) => {
           src={ctaImgSrc}
           alt="Zeda Inc. - Contact us"
           overlayColor="bg-blue-600"
-          className=" opacity-80"
+          className="opacity-20 mix-blend-hard-light grayscale"
         />
       </FooterCTA>
     </Layout>

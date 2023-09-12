@@ -1,7 +1,9 @@
 import { type JobPost, type Settings } from 'lib/sanity.queries'
+import ctaImgSrc from 'public/images/bg-tech-shadow.png'
 import HeroImg from 'public/images/hero-careers.jpg'
 import { LayoutThemes } from 'utils/constants'
 
+import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import JobList from 'components/JobList'
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
@@ -54,6 +56,20 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
           title="Join us on our journey as we drive technological advancements, transform industries, and make a positive impact on the world."
           posts={jobPosts}
         />
+
+        <FooterCTA
+          heading="Join our unstoppable team and let's change the world together"
+          message="<strong>Questions?</strong><br />Let's talk."
+          href="/contact"
+          btnText="Get in touch"
+        >
+          <FooterCTAFigure
+            src={ctaImgSrc}
+            alt="Zeda Inc. - Contact us"
+            overlayColor="bg-violet-600"
+            className="opacity-20 mix-blend-hard-light grayscale"
+          />
+        </FooterCTA>
       </Layout>
     </>
   )

@@ -1,6 +1,6 @@
 import type { Partner, Settings } from 'lib/sanity.queries'
+import CtaImgSrc from 'public/images/bg-nanotech.jpg'
 import HeroImg from 'public/images/health/hero-pieces.jpg'
-import CtaImgSrc from 'public/images/hero-test.png'
 import { BrandThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
@@ -73,8 +73,8 @@ const HealthPage = ({ partners, settings }: Props) => {
         <FooterCTAFigure
           src={CtaImgSrc}
           alt="Zeda Inc. | Health"
-          overlayColor="bg-yellow-700"
-          // className=" opacity-80"
+          overlayColor="bg-violet-600"
+          className="opacity-20 mix-blend-hard-light grayscale"
         />
       </FooterCTA>
     </Layout>

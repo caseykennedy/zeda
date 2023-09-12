@@ -1,5 +1,5 @@
 import type { JobPost, Partner, Post, Settings } from 'lib/sanity.queries'
-import ctaImgSrc from 'public/images/bg-rocket.png'
+import ctaImgSrc from 'public/images/bg-tech-suit.jpg'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import JobList from 'components/JobList'
@@ -55,7 +55,12 @@ export const IndexPage = ({
         href="/contact"
         btnText="Get in touch"
       >
-        <FooterCTAFigure src={ctaImgSrc} alt="Zeda Inc. - Contact us" />
+        <FooterCTAFigure
+          src={ctaImgSrc}
+          alt="Zeda Inc. - Contact us"
+          overlayColor="bg-violet-600"
+          className="opacity-20 mix-blend-hard-light grayscale"
+        />
       </FooterCTA>
     </Layout>
   )
