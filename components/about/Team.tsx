@@ -13,7 +13,7 @@ import Section from 'components/ui/Section'
 import TeamBio from './TeamBio'
 
 enum TeamCategories {
-  ALL = 'all',
+  // ALL = 'all',
   LEADERSHIP = 'leadership',
   BOARD_MEMBER = 'board member',
   BOARD_ADVISOR = 'board advisor',
@@ -25,11 +25,15 @@ type TeamCategory = (typeof TeamCategories)[keyof typeof TeamCategories]
 const teamCategories: TeamCategories[] = Object.values(TeamCategories)
 
 const Team = ({ people }: { people: Person[] }) => {
-  const [activeCategory, setActiveCategory] = useState(TeamCategories.ALL)
+  const [activeCategory, setActiveCategory] = useState(
+    TeamCategories.LEADERSHIP
+  )
 
   const filteredTeam = useMemo(() => {
-    if (activeCategory === TeamCategories.ALL) {
-      return people
+    if (activeCategory === TeamCategories.LEADERSHIP) {
+      return people.filter((person) =>
+        person.seats?.includes(TeamCategories.LEADERSHIP)
+      )
     } else {
       return people.filter((person) => person.seats?.includes(activeCategory))
     }
