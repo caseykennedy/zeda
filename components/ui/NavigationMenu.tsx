@@ -37,7 +37,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  'group inline-flex h-9 w-max items-center justify-center font-display font-semibold capitalize tracking-wide transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg data-[state=open]:bg text-lg'
+  'group inline-flex h-9 w-max items-center justify-center font-display font-semibold capitalize tracking-wide transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-lg'
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -46,12 +46,16 @@ const NavigationMenuTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle(), 'group', className)}
+    className={cn(
+      navigationMenuTriggerStyle(),
+      'group data-[state=open]:text-silver-800 dark:data-[state=open]:text-violet-500',
+      className
+    )}
     {...props}
   >
     {children}{' '}
     <ChevronDownIcon
-      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180 group-data-[state=open]:text-silver-500 dark:group-data-[state=open]:text-violet-500"
       aria-hidden="true"
     />
   </NavigationMenuPrimitive.Trigger>

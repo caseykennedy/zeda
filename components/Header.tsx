@@ -11,6 +11,7 @@ import { useActiveLink } from 'hooks'
 import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
 import { cn } from 'utils'
 import { type BrandTheme, BrandThemes, type LayoutTheme } from 'utils/constants'
@@ -92,11 +93,21 @@ const ListItem = forwardRef<
 ListItem.displayName = 'ListItem'
 
 const Navigation = () => {
+  const router = useRouter()
+
+  const activeClasses = 'text-silver-700 dark:text-violet-500'
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={cn(
+              router.asPath.includes('about') && activeClasses,
+              router.asPath.includes('careers') && activeClasses
+            )}
+          >
+            Company
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="gap grid w-full text-white lg:grid-cols-3">
               <li className="flex flex-col">
@@ -127,7 +138,7 @@ const Navigation = () => {
                       <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
                         Careers
                       </div>
-                      <p className="text-base text-silver-200">
+                      <p className="text-base text-silver-400">
                         Explore open career opportunities
                       </p>
                     </div>
@@ -159,7 +170,7 @@ const Navigation = () => {
                     <div className="mt-6 font-display text-xl font-semibold capitalize tracking-wider text-white">
                       Newsroom
                     </div>
-                    <p className="text-base text-silver-200">
+                    <p className="text-base text-silver-400">
                       Get the latest scoop on Zeda
                     </p>
                   </Link>
@@ -170,7 +181,14 @@ const Navigation = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={cn(
+              router.asPath.includes('technologies') && activeClasses,
+              router.asPath.includes('health') && activeClasses
+            )}
+          >
+            Solutions
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="gap grid w-full max-w-[1024px] text-white lg:grid-cols-2">
               {solutionsNav.map(
@@ -192,7 +210,7 @@ const Navigation = () => {
                         </div>
                         <p
                           dangerouslySetInnerHTML={{ __html: desc }}
-                          className="text-base text-silver-200"
+                          className="text-base text-silver-400"
                         />
                       </Link>
                     </NavigationMenuLink>
@@ -204,7 +222,11 @@ const Navigation = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Insights</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={cn(router.asPath.includes('insights') && activeClasses)}
+          >
+            Insights
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="gap grid w-full text-white lg:grid-cols-3">
               {insightsNav.map(({ title, href, desc, icon }, idx) => (
@@ -222,7 +244,7 @@ const Navigation = () => {
                       </div>
                       <p
                         dangerouslySetInnerHTML={{ __html: desc }}
-                        className="text-base text-silver-200"
+                        className="text-base text-silver-400"
                       />
                     </Link>
                   </NavigationMenuLink>
@@ -234,7 +256,13 @@ const Navigation = () => {
 
         <NavigationMenuItem>
           <Link href="/news" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              className={cn(
+                navigationMenuTriggerStyle(),
+                `hover:text-silver-700`,
+                router.asPath.includes('news') && activeClasses
+              )}
+            >
               News
             </NavigationMenuLink>
           </Link>
