@@ -59,7 +59,7 @@ export const IndexPage = ({
           src={ctaImgSrc}
           alt="Zeda Inc. - Contact us"
           overlayColor="bg-violet-600"
-          className="opacity-20 mix-blend-hard-light grayscale"
+          className="object-right opacity-20 mix-blend-hard-light grayscale"
         />
       </FooterCTA>
     </Layout>

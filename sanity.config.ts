@@ -1,9 +1,9 @@
 /**
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
-
 import { visionTool } from '@sanity/vision'
 import { apiVersion, dataset, previewSecretId, projectId } from 'lib/sanity.api'
+import { leadershipPlugin, leadershipStructure } from 'plugins/leadership'
 import { previewDocumentNode } from 'plugins/previewPane'
 import { productionUrl } from 'plugins/productionUrl'
 import { settingsPlugin, settingsStructure } from 'plugins/settings'
@@ -12,6 +12,7 @@ import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import authorType from 'schemas/author'
 import jobPostType from 'schemas/job-post'
+import leadershipType from 'schemas/leadership'
 import partnerType from 'schemas/partner'
 import personType from 'schemas/person'
 import postType from 'schemas/post'
@@ -31,13 +32,13 @@ export default defineConfig({
   schema: {
     // If you want more content types, you can add them to this array
     types: [
-      authorType,
+      settingsType,
+      personType,
+      leadershipType,
       jobPostType,
       partnerType,
-      personType,
       postCategoryType,
       postType,
-      settingsType,
       videoType,
       whitePaperType,
     ],

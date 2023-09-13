@@ -163,6 +163,21 @@ export const personQuery = groq`*[_type == "person"] {
 } | order(name asc)
 `
 
+// Leadership Queries
+
+export const leadershipQuery = groq`*[_type == "leadership"][0] {
+  _id,
+  title,
+  people[]->{
+    ...,
+    picture{
+    ...,
+    "metadata": asset->metadata
+  }
+  }
+}
+`
+
 // Settings Queries
 
 export const settingsQuery = groq`*[_type == "settings"][0]`
@@ -326,6 +341,12 @@ export interface Person {
   linkedinURL?: string
   picture: SanityImage
   seats?: string[]
+}
+
+export interface Leadership {
+  _id: string
+  title: string
+  people: Person[]
 }
 
 export interface Settings {

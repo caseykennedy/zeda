@@ -4,10 +4,8 @@ import bgImg from 'public/images/about/hero-suit.jpg'
 import { cn } from 'utils'
 
 import Img from 'components/Img'
+import { Icon, Section } from 'components/ui'
 import Button from 'components/ui/Button'
-import Section from 'components/ui/Section'
-
-import Icon from './ui/Icon'
 
 interface FigureProps {
   src: StaticImageData

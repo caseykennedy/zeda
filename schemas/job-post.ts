@@ -16,7 +16,7 @@ import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'jobPost',
-  title: 'Job Post',
+  title: 'Job Posts',
   icon: BookIcon,
   type: 'document',
   fields: [

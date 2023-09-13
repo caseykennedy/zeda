@@ -14,21 +14,6 @@ interface Props {
 const FeaturedPosts = ({ insights, news, press }: Props) => {
   return (
     <section className="relative w-full border-b border-t border-b-black border-t-silver-900 bg-black">
-      {/* <div className="border-b border-silver-900">
-        <div className="gutter-x mx-auto flex max-w-site items-center justify-between py-6">
-          <div>
-            <h2 className="font-sans text-base font-medium uppercase tracking-wide text-silver-500">
-              Articles
-            </h2>
-          </div>
-          <div>
-            <Button variant="primary" asChild>
-              <Link href="/insights">All articles</Link>
-            </Button>
-          </div>
-        </div>
-      </div> */}
-
       <div className="mx-auto max-w-site">
         <div>
           {insights.map((post) => (

@@ -1,6 +1,5 @@
 import stats from 'config/stats.json'
 import ImgBoard from 'public/images/about/board.jpg'
-import HandTurbine from 'public/images/about/hand-turbine.jpg'
 import WorkGroup from 'public/images/about/work-group.jpg'
 import WorkMask from 'public/images/about/work-mask.jpg'
 

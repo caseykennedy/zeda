@@ -1,3 +1,5 @@
+import { fontFamily } from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
@@ -66,8 +68,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'Arial', 'sans-serif'],
-        display: ['Urbanist', 'Arial', 'sans-serif'],
+        sans: ['Inter', 'Arial', ...fontFamily.sans],
+        display: ['Urbanist', 'Arial', ...fontFamily.sans],
       },
       fontSize: {},
       keyframes: {

@@ -11,6 +11,8 @@ import {
   indexQuery,
   type JobPost,
   jobPostQuery,
+  type Leadership,
+  leadershipQuery,
   type Partner,
   partnerQuery,
   type Person,
@@ -72,6 +74,12 @@ export async function getAllPartners(client: SanityClient): Promise<Partner[]> {
 
 export async function getAllPeople(client: SanityClient): Promise<Person[]> {
   return (await client.fetch(personQuery)) || []
+}
+
+export async function getAllLeadership(
+  client: SanityClient
+): Promise<Leadership> {
+  return (await client.fetch(leadershipQuery)) || {}
 }
 
 export async function getAllPosts(client: SanityClient): Promise<Post[]> {
