@@ -183,8 +183,8 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger
             className={cn(
-              router.asPath.includes('technologies') && activeClasses,
-              router.asPath.includes('health') && activeClasses
+              router.asPath.includes('technologies') && 'text-blue-500',
+              router.asPath.includes('health') && 'text-yellow-500'
             )}
           >
             Solutions
@@ -223,7 +223,10 @@ const Navigation = () => {
 
         <NavigationMenuItem>
           <NavigationMenuTrigger
-            className={cn(router.asPath.includes('insights') && activeClasses)}
+            className={cn(
+              router.asPath.includes('insights') && activeClasses,
+              router.asPath.includes('videos') && activeClasses
+            )}
           >
             Insights
           </NavigationMenuTrigger>
@@ -259,7 +262,7 @@ const Navigation = () => {
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
-                `hover:text-silver-700`,
+                `hover:text-silver-700 dark:hover:text-violet-500`,
                 router.asPath.includes('news') && activeClasses
               )}
             >
