@@ -107,16 +107,14 @@ const ContactForm = () => {
       <CheckCircledIcon className="mt-1 h-5 w-5" />
       <AlertTitle className="text-white">Thanks for contacting us!</AlertTitle>
       <AlertDescription>
-        <p className="mb-3">
-          Your message has been received. We will reach out soon!
-        </p>
         <p>
+          Your message has been received. We will reach out soon!{' '}
           <a
             href="#"
             onClick={manualReset}
-            className="text-white hover:underline"
+            className="text-white underline hover:no-underline"
           >
-            Send a new message
+            Send another message
           </a>
         </p>
       </AlertDescription>

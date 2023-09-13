@@ -23,7 +23,7 @@ const MorePosts = ({
             </h2>
           </div>
           <div>
-            <Button variant="primary" asChild>
+            <Button variant="outline" asChild>
               <Link href={btnHref}>{btnText}</Link>
             </Button>
           </div>

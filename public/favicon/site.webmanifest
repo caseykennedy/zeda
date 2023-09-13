@@ -1,6 +1,7 @@
 {
-  "name": "Next.js",
-  "short_name": "Next.js",
+  "name": "Zeda, Inc. | Building the future together",
+  "short_name": "NeZeda, Inc. ",
+  "description": "Zeda's objective is to better lives by investing in cutting-edge tech, innovative companies, and groundbreaking ideas.",
   "icons": [
     {
       "src": "/favicon/android-chrome-192x192.png",

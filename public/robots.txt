@@ -1,0 +1,9 @@
+# Block all crawlers for /accounts
+User-agent: *
+Disallow: /studio
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://z8a.com/sitemap.xml

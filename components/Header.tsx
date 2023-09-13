@@ -7,6 +7,7 @@ import {
   ReaderIcon,
   VideoIcon,
 } from '@radix-ui/react-icons'
+import { useActiveLink } from 'hooks'
 import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
