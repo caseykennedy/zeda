@@ -30,7 +30,6 @@ const PostGrid = ({
                 estimatedReadingTime={post.estimatedReadingTime}
                 slug={post.slug}
                 title={post.title}
-                tags={post.tags}
               />
             ) : (
               <PostCard
