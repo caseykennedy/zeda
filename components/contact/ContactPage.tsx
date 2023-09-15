@@ -9,6 +9,7 @@ import { LayoutThemes } from 'utils/constants'
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { Button, Icon, PageTitle, Section } from 'components/ui'
+import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import ContactForm from './ContactForm'
 
@@ -28,14 +29,16 @@ export const ContactPage = ({ settings }: Props) => {
         }}
       />
       <Layout theme={LayoutThemes.DARK}>
-        <PageTitle theme={LayoutThemes.DARK} className="pt-8 md:pt-0">
-          <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
+        <PageTitle theme={LayoutThemes.DARK} className="[&>div]:md:mt-48">
+          <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
             <div className="flex-[2]">
-              <h1 className="mb-2">Contact</h1>
-              <p className="max-w-[44ch] font-medium text-silver-500">
-                Whether you have questions, feedback, or want to explore
-                partnership opportunities, we&apos;re here to assist.
-              </p>
+              <Heading1FadeIn>
+                <h1 className="mb-2">Contact</h1>
+                <p className="max-w-[44ch] font-medium text-silver-500">
+                  Whether you have questions, feedback, or want to explore
+                  partnership opportunities, we&apos;re here to assist.
+                </p>
+              </Heading1FadeIn>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
               <Button variant="primary" asChild>
@@ -56,7 +59,7 @@ export const ContactPage = ({ settings }: Props) => {
                 <EnvelopeOpenIcon className="h-6 w-6" />
               </div>
               <h2 className="mb-3 text-xl md:text-2xl md:tracking-wide">
-                Email us
+                Send us a message
               </h2>
               <p className="max-w-[36ch]">
                 Send us an email using the contact form below. It is the

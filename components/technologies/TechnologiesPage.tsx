@@ -9,6 +9,7 @@ import PageHead from 'components/PageHead'
 import TextMarquee from 'components/TextMarquee'
 import TrustedBy from 'components/TrustedBy'
 import { Button, Icon, PageHero, PageTitle } from 'components/ui'
+import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import Capabilities from './Capabilities'
 import Intro from './Intro'
@@ -34,9 +35,11 @@ export const TechnologiesPage = ({ partners, settings }: Props) => {
       <PageTitle theme={LayoutThemes.DARK}>
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
           <div className="flex-[2]">
-            <h1 className="max-w-[26ch]">
-              Harnessing technology to build a better world for everyone
-            </h1>
+            <Heading1FadeIn>
+              <h1 className="max-w-[26ch]">
+                Harnessing technology to build a better world for everyone
+              </h1>
+            </Heading1FadeIn>
           </div>
           <div className="flex w-full flex-1 flex-row justify-end">
             <Button variant="primary" className="hover:bg-blue-600" asChild>

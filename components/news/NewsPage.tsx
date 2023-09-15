@@ -5,6 +5,7 @@ import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { PostGrid } from 'components/post'
 import { PageTitle } from 'components/ui'
+import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import FeaturedPosts from './FeaturedPosts'
 
@@ -26,11 +27,13 @@ const NewsPage = ({ posts, postCategories, settings }: PageProps) => {
         }}
       />
       <Layout theme={LayoutThemes.LIGHT}>
-        <PageTitle theme={LayoutThemes.LIGHT} className="[&>div]:mt-48">
-          <h1 className="mb-2">News</h1>
-          <p className="max-w-[26ch] text-lg font-medium text-silver-500">
-            Zeda in the news and how we&apos;re involved in our community.
-          </p>
+        <PageTitle theme={LayoutThemes.LIGHT} className="[&>div]:md:mt-48">
+          <Heading1FadeIn>
+            <h1 className="mb-2">News</h1>
+            <p className="max-w-[26ch] text-lg font-medium text-silver-500">
+              Zeda in the news and how we&apos;re involved in our community.
+            </p>
+          </Heading1FadeIn>
         </PageTitle>
         <FeaturedPosts posts={posts.slice(0, 2) || []} />
         <PostGrid posts={posts || []} postCategories={postCategories || []} />

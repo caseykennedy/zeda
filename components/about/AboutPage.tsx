@@ -7,6 +7,7 @@ import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { Button, Icon, PageHero, PageTitle } from 'components/ui'
+import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import AtGlance from './AtGlance'
 import PartnersGrid from './PartnersGrid'
@@ -35,9 +36,11 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
         <PageTitle theme={LayoutThemes.DARK}>
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
             <div className="flex-[2]">
-              <h1 className="max-w-[18ch]">
-                We make things better for everyone
-              </h1>
+              <Heading1FadeIn>
+                <h1 className="max-w-[18ch]">
+                  We make things better for everyone
+                </h1>
+              </Heading1FadeIn>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
               <Button variant="primary" asChild>

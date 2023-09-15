@@ -11,6 +11,7 @@ import { LayoutThemes } from 'utils/constants'
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { Button, PageTitle, Section } from 'components/ui'
+import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import FeaturedInsights from './FeaturedInsights'
 import FeaturedVideos from './FeaturedVideos'
@@ -82,11 +83,13 @@ const InsightsPage = ({
         }}
       />
       <Layout>
-        <PageTitle theme={LayoutThemes.DARK} className="[&>div]:mt-60">
-          <h1 className="mb-2">Insights</h1>
-          <p className="max-w-[26ch] text-lg font-medium text-silver-500">
-            Data-rich industry insights from our experts and engineers.
-          </p>
+        <PageTitle theme={LayoutThemes.DARK} className="[&>div]:md:mt-60">
+          <Heading1FadeIn>
+            <h1 className="mb-2">Insights</h1>
+            <p className="max-w-[26ch] text-lg font-medium text-silver-500">
+              Data-rich industry insights from our experts and engineers.
+            </p>
+          </Heading1FadeIn>
         </PageTitle>
         <FeaturedInsights posts={featuredPosts} />
         <GridSection

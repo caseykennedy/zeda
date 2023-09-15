@@ -8,6 +8,7 @@ import JobList from 'components/JobList'
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { Button, Icon, PageHero, PageTitle } from 'components/ui'
+import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import Benefits from './Benefits'
 import WhyUs from './WhyUs'
@@ -32,9 +33,11 @@ export const CareersPage = ({ jobPosts, settings }: PageProps) => {
         <PageTitle theme={LayoutThemes.LIGHT}>
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
             <div className="flex-[2]">
-              <h1 className="max-w-[24ch]">
-                Unleash your potential and join our unstoppable team
-              </h1>
+              <Heading1FadeIn>
+                <h1 className="max-w-[24ch]">
+                  Unleash your potential and join our unstoppable team
+                </h1>
+              </Heading1FadeIn>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
               <Button variant="outline" asChild>

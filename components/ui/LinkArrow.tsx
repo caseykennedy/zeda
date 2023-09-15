@@ -13,7 +13,7 @@ const ArrowLink = ({ children, href, className, ...props }: Props) => (
   <Link
     href={href}
     className={cn(
-      `group relative flex flex-row items-center font-display text-sm font-semibold uppercase tracking-wider`,
+      `text-silver group relative flex flex-row items-center font-display text-sm font-semibold uppercase tracking-wider transition-colors hover:text-silver-800 hover:dark:text-silver-200`,
       className
     )}
     {...props}

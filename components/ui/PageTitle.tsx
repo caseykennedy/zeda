@@ -1,5 +1,13 @@
+import { motion } from 'framer-motion'
 import { cn } from 'utils'
 import { type LayoutTheme, LayoutThemes } from 'utils/constants'
+import { polyVariant } from 'utils/variants'
+
+export const Heading1FadeIn = ({ children }: { children: React.ReactNode }) => (
+  <motion.div variants={polyVariant} initial="hidden" animate="visible">
+    {children}
+  </motion.div>
+)
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
@@ -22,7 +30,7 @@ const PageTitle = ({
         )}
         {...props}
       >
-        <div className="gutter-x mx-auto mt-52 max-w-site md:mt-64">
+        <div className="gutter-x mx-auto mt-44 max-w-site md:mt-64">
           {children}
         </div>
       </div>

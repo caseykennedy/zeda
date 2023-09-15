@@ -95,7 +95,7 @@ ListItem.displayName = 'ListItem'
 const Navigation = () => {
   const router = useRouter()
 
-  const activeClasses = 'text-silver-700 dark:text-violet-500'
+  const activeClasses = 'text-silver-800 dark:text-silver-200'
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -111,7 +111,7 @@ const Navigation = () => {
           <NavigationMenuContent>
             <ul className="gap grid w-full text-white lg:grid-cols-3">
               <li className="flex flex-col">
-                <div className="gap group grid grid-cols-2 content-center">
+                <div className="gap group grid grid-cols-2 content-center lg:-mb-14">
                   <div className="flex flex-col items-start justify-end">
                     <div className="mb-6 font-display text-sm font-medium uppercase tracking-wider text-silver-500">
                       Company
@@ -150,8 +150,9 @@ const Navigation = () => {
                         sizes="(max-width: 768px) 300px"
                         style={{
                           objectFit: 'cover',
-                          objectPosition: 'center top',
+                          objectPosition: 'center center',
                         }}
+                        className="object-cover object-center"
                       />
                       <div className="absolute z-[1] h-full w-full bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
                     </figure>
@@ -183,8 +184,8 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger
             className={cn(
-              router.asPath.includes('technologies') && 'text-blue-500',
-              router.asPath.includes('health') && 'text-yellow-500'
+              router.asPath.includes('technologies') && activeClasses,
+              router.asPath.includes('health') && activeClasses
             )}
           >
             Solutions
@@ -262,7 +263,7 @@ const Navigation = () => {
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
-                `hover:text-silver-700 dark:hover:text-violet-500`,
+                `hover:text-silver-800 dark:hover:text-silver-200`,
                 router.asPath.includes('news') && activeClasses
               )}
             >

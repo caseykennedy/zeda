@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import Button from 'components/ui/Button'
+import { Button, Icon } from 'components/ui'
 
 import 'swiper/css/effect-fade'
 import 'swiper/css/pagination'
@@ -31,10 +31,17 @@ const Slide = ({ heading, message, image, alt, href, btnText }: SlideProps) => {
         <div className="mt-96 border-l border-white pl-5">
           <p
             dangerouslySetInnerHTML={{ __html: message }}
-            className="max-w-[38ch] text-base text-white"
+            className="max-w-[28ch] text-base text-white"
           />
-          <Button variant="outline" className="relative z-20" asChild>
-            <Link href={href}>{btnText}</Link>
+          <Button variant="outline" size="sm" className="relative z-20" asChild>
+            <Link href={href}>
+              <Icon
+                name="arrow-right"
+                color="white"
+                className="relative -translate-x-1 transition-all group-hover:translate-x-1"
+              />
+              {btnText}
+            </Link>
           </Button>
         </div>
       </div>
@@ -74,23 +81,23 @@ const SolutionSwiper = () => {
         <SwiperSlide>
           <Slide
             heading="What can we do to better lives and what can we build together?"
-            message="<strong>Zeda technologies</strong><br />We use technology to better humanity<br />—built with
+            message="<strong>Zeda Technologies</strong><br />We use technology to better humanity—built with
           trust."
             image="solutions-tech.jpg"
             alt="Zeda Inc. manufacturing facility"
             href="/technologies"
-            btnText="Zeda Technologies"
+            btnText="Technologies"
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <Slide
             heading="We offer better value for the devices you know and use everyday."
-            message="<strong>Zeda health</strong><br />Devices that are good for all<br />—made better."
+            message="<strong>Zeda Health</strong><br />Devices that are good for all<br />—made better."
             image="health/med-device.jpg"
             alt="Zeda Inc. manufacturing facility"
             href="/health"
-            btnText="Zeda Health"
+            btnText="Health"
           />
         </SwiperSlide>
 

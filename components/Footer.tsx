@@ -53,7 +53,7 @@ const NavList = () =>
         <li key={sub.name}>
           <Link
             href={sub.link}
-            className="inline-block py-0.5 text-white transition-all hover:pl-0.5 hover:text-violet-500"
+            className=" inline-block whitespace-nowrap py-0.5 text-white transition-all hover:pl-0.5 hover:text-violet-500"
           >
             {sub.name}
           </Link>
@@ -64,7 +64,7 @@ const NavList = () =>
 
 const Footer = ({ brand }: { brand?: BrandTheme }) => {
   return (
-    <footer className="gutter-y border-t border-silver-900 bg-black">
+    <footer className="gutter-y dark border-t border-silver-900 bg-black">
       <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
         <div className="gap grid grid-cols-1 lg:mb-32 lg:grid-cols-2">
           <div className="grid grid-cols-2 gap-10 xl:grid-cols-4">
@@ -111,7 +111,7 @@ const Footer = ({ brand }: { brand?: BrandTheme }) => {
       <Separator className="bg-silver-900" />
 
       <div className="gutter-x mx-auto max-w-site pb-4 sm:pb-0">
-        <div className="flex flex-col items-start justify-between pt-4 text-xs uppercase text-silver-800 sm:flex-row">
+        <div className="flex flex-col items-start justify-between pt-4 text-xs uppercase text-silver-700 sm:flex-row">
           <div className="flex-1">© {currentYear} Zeda, Inc.</div>
           <div className="flex-1 sm:text-center">
             Zeda Is An ISO 13485 Facility
