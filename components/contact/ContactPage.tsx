@@ -8,7 +8,7 @@ import { LayoutThemes } from 'utils/constants'
 
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
-import { Button, Icon, PageTitle, Section } from 'components/ui'
+import { Button, PageTitle, Section } from 'components/ui'
 import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import ContactForm from './ContactForm'

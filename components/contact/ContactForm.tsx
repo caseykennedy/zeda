@@ -53,12 +53,6 @@ const ContactForm = () => {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      subject: '',
-      name: '',
-      email: '',
-      message: '',
-    },
   })
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
@@ -93,12 +87,7 @@ const ContactForm = () => {
 
   const manualReset = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    form.reset({
-      subject: '',
-      name: '',
-      email: '',
-      message: '',
-    })
+    form.reset()
     setIsSubmitSuccessful(false)
   }
 
@@ -135,11 +124,14 @@ const ContactForm = () => {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {selectOptions.map((option) => (
-                    <SelectItem key={option} value={option}>
-                      {option}
-                    </SelectItem>
-                  ))}
+                  <SelectGroup>
+                    <SelectLabel>Subject</SelectLabel>
+                    {selectOptions.map((option) => (
+                      <SelectItem key={option} value={option}>
+                        {option}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
                 </SelectContent>
               </Select>
               <FormMessage />
