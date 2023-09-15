@@ -174,7 +174,7 @@ const ContactForm = () => {
             <FormItem>
               <FormLabel className="sr-only">Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Message" {...field} />
+                <Textarea placeholder="Message" {...field} rows={6} />
               </FormControl>
               <FormMessage />
             </FormItem>

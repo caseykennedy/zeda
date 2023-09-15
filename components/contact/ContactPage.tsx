@@ -59,11 +59,11 @@ export const ContactPage = ({ settings }: Props) => {
         </PageTitle>
         <Section pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0" className="">
           <div className="relative grid grid-cols-1 bg-background-500 md:grid-cols-5">
-            <div className="px-6 py-10 md:col-span-3 md:p-14 lg:p-20">
+            <div className="border-b px-6 py-10 md:col-span-3 md:border-b-0 md:border-r md:p-14 lg:p-20">
               <div className="mb-5">
                 <EnvelopeOpenIcon className="h-6 w-6" />
               </div>
-              <h2 className="mb-3 text-xl md:text-2xl md:tracking-wide">
+              <h2 className="mb-3 text-2xl md:tracking-wide">
                 Send us a message
               </h2>
               <p className="max-w-[42ch]">
@@ -86,9 +86,7 @@ export const ContactPage = ({ settings }: Props) => {
               <div className="mb-5">
                 <GlobeIcon className="h-6 w-6" />
               </div>
-              <h2 className="mb-3 text-xl md:text-2xl md:tracking-wide">
-                Headquarters
-              </h2>
+              <h2 className="mb-3 text-2xl md:tracking-wide">Headquarters</h2>
               <p className="max-w-[36ch]">
                 47929 Fremont Blvd
                 <br />

@@ -18,7 +18,7 @@ const WhyUs = () => {
       pl="pl-0"
       maxWidth="w-full"
     >
-      <div className="relative grid min-h-[600px] grid-cols-1 md:grid-cols-2">
+      <div className="relative grid min-h-[700px] grid-cols-1 md:grid-cols-2">
         <div className="relative min-h-[333px]">
           <figure className="absolute bottom-0 left-0 z-30 flex h-full w-full items-end overflow-hidden md:overflow-visible">
             <Image
