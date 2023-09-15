@@ -19,7 +19,7 @@ export const buttonVariants = cva(
           'border text-black border-black bg-white hover:bg-black hover:text-white hover:border-white | dark:text-white dark:border-white dark:bg-black dark:hover:bg-white dark:hover:text-black dark:hover:border-black',
         ghost:
           'border-none bg-transparent text-black hover:text-white hover:bg-black',
-        link: 'border-none text-black decoration-2 underline-offset-4 hover:underline',
+        link: 'border-none text-black decoration-2 underline-offset-4 hover:underline | dark:text-white',
       },
       size: {
         default: 'h-10 px-5 py-2',

@@ -41,7 +41,12 @@ export const ContactPage = ({ settings }: Props) => {
               </Heading1FadeIn>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
-              <Button variant="primary" asChild>
+              <Button
+                variant="link"
+                size="sm"
+                className="dark:text-silver-100"
+                asChild
+              >
                 <a
                   href={`mailto:${emailAddress}?subject=Zeda, Inc. | Contact request`}
                 >
@@ -61,9 +66,16 @@ export const ContactPage = ({ settings }: Props) => {
               <h2 className="mb-3 text-xl md:text-2xl md:tracking-wide">
                 Send us a message
               </h2>
-              <p className="max-w-[36ch]">
-                Send us an email using the contact form below. It is the
-                simplest way to connect with us.
+              <p className="max-w-[42ch]">
+                Feel free to{' '}
+                <a
+                  href={`mailto:${emailAddress}?subject=Zeda, Inc. | Contact request`}
+                  className="font-medium decoration-2 hover:underline"
+                >
+                  email us
+                </a>{' '}
+                or use the form below to send us a message. We will get back to
+                you as soon as possible.
               </p>
               <div className="mt-10">
                 <ContactForm />

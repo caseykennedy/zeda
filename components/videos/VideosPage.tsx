@@ -8,6 +8,7 @@ import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { Button, PageTitle, Section } from 'components/ui'
+import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import FeaturedVideoCard from './FeaturedVideoCard'
 import VideoCard from './VideoCard'
@@ -65,10 +66,13 @@ const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
       />
       <Layout>
         <PageTitle theme={LayoutThemes.DARK} className="[&>div]:mt-48">
-          <h1 className="mb-2">Videos</h1>
-          <p className="max-w-[26ch] text-lg font-medium text-silver-500">
-            Get to know our team, our culture, and our manufacturing processes.
-          </p>
+          <Heading1FadeIn>
+            <h1 className="mb-2">Videos</h1>
+            <p className="max-w-[26ch] text-lg font-medium text-silver-500">
+              Get to know our team, our culture, and our manufacturing
+              processes.
+            </p>
+          </Heading1FadeIn>
         </PageTitle>
         <FeaturedVideoCard
           title={featuredPost.title}

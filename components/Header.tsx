@@ -12,7 +12,7 @@ import useScrollDir from 'hooks/useScrollDir'
 import useScrollTop from 'hooks/useScrollTop'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import careersBgImg from 'public/images/bg-nav-careers-b.jpg'
+import careersBgImg from 'public/images/hero-careers.jpg'
 import { cn } from 'utils'
 import { type BrandTheme, BrandThemes, type LayoutTheme } from 'utils/constants'
 
@@ -148,11 +148,7 @@ const Navigation = () => {
                         alt="Careers"
                         fill={true}
                         sizes="(max-width: 768px) 300px"
-                        style={{
-                          objectFit: 'cover',
-                          objectPosition: 'center center',
-                        }}
-                        className="object-cover object-center"
+                        className="object-cover object-center brightness-75 transition-all group-hover:brightness-50"
                       />
                       <div className="absolute z-[1] h-full w-full bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
                     </figure>

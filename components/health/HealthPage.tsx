@@ -32,10 +32,10 @@ const HealthPage = ({ partners, settings }: Props) => {
         }}
       />
       <PageTitle>
-        <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
+        <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
           <div className="flex-[2]">
             <Heading1FadeIn>
-              <h1 className="max-w-[26ch]">
+              <h1 className="max-w-[24ch]">
                 Pushing the upper limits of medical device technology
               </h1>
             </Heading1FadeIn>

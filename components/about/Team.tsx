@@ -70,7 +70,7 @@ const Team = ({ people }: { people: Person[] }) => {
           ))}
         </div>
         <AnimatePresence>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-10 lg:grid-cols-3 2xl:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-10 lg:grid-cols-3 xl:grid-cols-4">
             {filteredTeam.map(
               ({ _id, bio, linkedinURL, name, picture, position, seats }) => (
                 <motion.div
