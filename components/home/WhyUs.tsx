@@ -11,15 +11,15 @@ const WhyUs = () => {
   ]
   return (
     <Section
-      className="border-b border-t border-black bg-black"
+      className="border-b border-t border-black bg-black text-white"
       pt="pt-0"
       pr="pr-0"
       pb="pb-0"
       pl="pl-0"
       maxWidth="w-full"
     >
-      <div className="relative grid min-h-[700px] grid-cols-1 md:grid-cols-2">
-        <div className="relative min-h-[333px]">
+      <div className="relative grid min-h-[500px] grid-cols-1 md:grid-cols-2 lg:min-h-[700px]">
+        <div className="relative min-h-[400px]">
           <figure className="absolute bottom-0 left-0 z-30 flex h-full w-full items-end overflow-hidden md:overflow-visible">
             <Image
               src="/images/turbine-tilt.png"

@@ -299,7 +299,11 @@ const Header = ({
       >
         <div className="gutter-x gap mx-auto grid h-full w-full grid-cols-2 content-center md:max-w-site md:grid-cols-6">
           <div className="col-span-1 flex items-center md:col-span-2">
-            <Link href="/" className="inline-block">
+            <Link
+              href="/"
+              className="inline-block"
+              aria-label="Back to home page"
+            >
               <Logo brand={brand} className="w-[116px] sm:w-[138px]" />
             </Link>
           </div>

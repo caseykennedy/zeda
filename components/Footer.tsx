@@ -67,12 +67,12 @@ const Footer = ({ brand }: { brand?: BrandTheme }) => {
     <footer className="gutter-y dark border-t border-silver-900 bg-black">
       <div className="gutter-x mx-auto flex w-full flex-col md:max-w-site">
         <div className="gap grid grid-cols-1 lg:mb-32 lg:grid-cols-2">
-          <div className="grid grid-cols-2 gap-10 xl:grid-cols-4">
+          <nav className="grid grid-cols-2 gap-10 xl:grid-cols-4">
             <NavList />
-          </div>
+          </nav>
 
           <div className="mt-24 flex justify-center lg:mb-16 lg:mt-0 lg:justify-end">
-            <Link href="/" className="">
+            <Link href="/" aria-label="Back to home page">
               <LogoSymbol brand={brand} />
             </Link>
           </div>

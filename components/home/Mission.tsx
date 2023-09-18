@@ -127,7 +127,7 @@ const Mission = () => {
 
               <div className="mt-14 lg:mt-24">
                 <TabsList className="">
-                  {data.map(({ value, id, title, details }, idx) => (
+                  {data.map(({ value, id, title, details, figure }, idx) => (
                     <div key={idx}>
                       <TabsTrigger
                         value={value}
@@ -135,11 +135,11 @@ const Mission = () => {
                         onClick={() => handleTabClick(id)}
                         data-state={activeTab === id ? 'active' : 'inactive'}
                       >
-                        <div className="grid w-full grid-cols-8">
-                          <div className="col-start-1 self-center justify-self-start">
+                        <div className="grid w-full grid-cols-1 sm:grid-cols-8">
+                          <div className="self-center justify-self-start sm:col-start-1">
                             0{id + 1}.
                           </div>
-                          <div className="col-span-6 col-start-2 self-center justify-self-start text-left">
+                          <div className="self-center justify-self-start text-left sm:col-span-6 sm:col-start-2">
                             <h3 className="text-2xl">{title}</h3>
                           </div>
                           <div className="col-start-8 hidden self-center justify-self-end sm:block">
@@ -148,8 +148,23 @@ const Mission = () => {
                         </div>
 
                         {activeTab === id && (
-                          <div className="mt-2 grid w-full grid-cols-8">
-                            <div className="col-span-8 col-start-2">
+                          <div className="mt-2 grid w-full sm:grid-cols-8">
+                            <div className="sm:col-span-8 sm:col-start-2">
+                              <figure className="mb-6 mt-4 aspect-video overflow-hidden rounded sm:hidden">
+                                <Image
+                                  src={`/images/${figure.src}`}
+                                  alt={figure.alt}
+                                  width={500}
+                                  height={200}
+                                  placeholder="blur"
+                                  blurDataURL="/images/wormhole.png"
+                                  quality={80}
+                                  // fill={true}
+                                  // style={{ objectFit: 'cover' }}
+                                  // className="aspect-video"
+                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                                />
+                              </figure>
                               <p className="justify-self-start text-left text-base text-silver-800">
                                 {details}
                               </p>
