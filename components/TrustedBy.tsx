@@ -33,7 +33,7 @@ const TrustedBy = ({
       <div className="mt-32 md:mt-64">
         <SectionTitle>Trusted by</SectionTitle>
 
-        <div className="">
+        <div>
           <Marquee speed={120}>
             {partners.map(({ name, logo }, idx) => (
               <div className="gutter-x" key={idx}>

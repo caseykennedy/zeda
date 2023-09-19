@@ -40,7 +40,7 @@ const Collapse = ({
         <AccordionTrigger className="border-b border-t-0 border-silver-900 px-0 data-[state=open]:border-black [&>div]:py-4 [&[data-state=open]>div>div>svg]:rotate-180">
           <div className={mobileNavStyle()}>{title}</div>
 
-          <div className="">
+          <div>
             <ChevronDownIcon className="text-muted-foreground h-5 w-5 shrink-0 transition-transform duration-200" />
           </div>
         </AccordionTrigger>

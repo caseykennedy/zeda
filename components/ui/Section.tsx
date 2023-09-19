@@ -19,7 +19,7 @@ const Section = ({
   pb = 'gutter-b',
   pl = 'gutter-l',
   ...props
-}: Props): JSX.Element => {
+}: Props) => {
   const sectionClasses = cn(
     'relative w-full overflow-hidden',
     pt,

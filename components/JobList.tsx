@@ -87,7 +87,7 @@ const JobList = ({
   title: string
   hasBtn?: boolean
   posts: JobPost[]
-}): JSX.Element => {
+}) => {
   return (
     <SectionPanel
       id="open-positions"

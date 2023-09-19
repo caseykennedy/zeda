@@ -28,7 +28,7 @@ const JobDialog = ({
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
       <DialogContent className="max-h-[100svh] max-w-[780px] overflow-hidden overflow-y-auto rounded border border-black border-silver-900 bg-black text-white md:max-h-[90svh]">
-        <DialogHeader className="">
+        <DialogHeader>
           <div className="border-b border-silver-900 p-6 lg:p-8">
             <DialogTitle className="max-w-[26ch] text-4xl leading-snug tracking-wide">
               {title}

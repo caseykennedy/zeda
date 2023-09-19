@@ -107,8 +107,8 @@ const Mission = () => {
   // }, [currentTab])
 
   return (
-    <Section className="">
-      <div className="">
+    <Section>
+      <div>
         <SectionTitle>Mission</SectionTitle>
 
         <Tabs defaultValue="additive" orientation="vertical">
@@ -126,7 +126,7 @@ const Mission = () => {
               </div>
 
               <div className="mt-14 lg:mt-24">
-                <TabsList className="">
+                <TabsList>
                   {data.map(({ value, id, title, details, figure }, idx) => (
                     <div key={idx}>
                       <TabsTrigger

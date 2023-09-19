@@ -16,7 +16,7 @@ const CategoryTag = ({
     | 'ghost'
     | null
     | undefined
-}): JSX.Element[] => {
+}) => {
   const isPrimary =
     categories.includes(PostCategories.NEWS) ||
     categories.includes(PostCategories.INSIGHTS)

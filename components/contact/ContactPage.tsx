@@ -58,7 +58,7 @@ export const ContactPage = ({ settings }: Props) => {
             </div>
           </div>
         </PageTitle>
-        <Section pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0" className="">
+        <Section pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0">
           <div className="relative grid grid-cols-1 bg-background-500 md:grid-cols-5">
             <div className="border-b px-6 py-10 md:col-span-3 md:border-b-0 md:border-r md:p-14 lg:p-20">
               <div className="mb-5">

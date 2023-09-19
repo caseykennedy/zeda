@@ -32,7 +32,7 @@ export default function CoverImage(props: CoverImageProps) {
   )
 
   return (
-    <figure className="">
+    <figure>
       {slug ? (
         <Link href={`/posts/${slug}`} aria-label={title}>
           {image}

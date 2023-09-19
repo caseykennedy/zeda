@@ -19,7 +19,7 @@ const ButtonLink = ({
   href,
   name,
   share,
-}: ButtonLinkProps): JSX.Element => {
+}: ButtonLinkProps) => {
   return (
     <Button variant="outline" size="icon" className={cn(``, className)} asChild>
       {share ? (

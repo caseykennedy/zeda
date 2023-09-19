@@ -7,7 +7,7 @@ import Img from 'components/Img'
 import { Icon, Section } from 'components/ui'
 import Button from 'components/ui/Button'
 
-interface FigureProps {
+interface FooterCTAFigureProps {
   src: StaticImageData
   alt: string
   className?: string
@@ -19,7 +19,7 @@ const FooterCTAFigure = ({
   alt = 'Zeda, Inc., Manufacturing',
   className,
   overlayColor,
-}: FigureProps) => {
+}: FooterCTAFigureProps) => {
   return (
     <figure
       className={cn(
