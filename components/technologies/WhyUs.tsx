@@ -1,7 +1,5 @@
 import stats from 'config/tech-stats.json'
 import ImgBigMachine from 'public/images/technologies/big-machine.jpg'
-import ImgHandsOn from 'public/images/technologies/hands-on.jpg'
-// import HandsScrew from 'public/images/technologies/hands-screw.jpg'
 import LatticeStructure from 'public/images/technologies/lattice-structure.jpg'
 import MfgJumpsuit from 'public/images/technologies/mfg-jumpsuit.jpg'
 

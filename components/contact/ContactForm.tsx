@@ -1,11 +1,7 @@
-import { useEffect, useState } from 'react'
-import { Controller, useForm } from 'react-hook-form'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import {
-  CheckCircledIcon,
-  EnvelopeClosedIcon,
-  PaperPlaneIcon,
-} from '@radix-ui/react-icons'
+import { CheckCircledIcon, PaperPlaneIcon } from '@radix-ui/react-icons'
 import * as z from 'zod'
 
 import { Button, Input, Textarea } from 'components/ui'
@@ -13,7 +9,6 @@ import { Alert, AlertDescription, AlertTitle } from 'components/ui/Alert'
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,

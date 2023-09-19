@@ -18,8 +18,6 @@ import { type BrandTheme, BrandThemes, type LayoutTheme } from 'utils/constants'
 import Img from 'components/Img'
 import Logo from 'components/Logo'
 import LogoSymbol from 'components/LogoSymbol'
-import { NavigationSheet } from 'components/ui'
-import LinkArrow from 'components/ui/LinkArrow'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -28,7 +26,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from 'components/ui/NavigationMenu'
+} from 'components/NavigationMenu'
+import NavigationSheet from 'components/NavigationSheet'
+import LinkArrow from 'components/ui/LinkArrow'
 
 export const INSIGHTS_SLUG = 'insights'
 

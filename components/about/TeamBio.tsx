@@ -7,9 +7,7 @@ import Img from 'components/Img'
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from 'components/ui/Dialog'
 
@@ -24,7 +22,6 @@ const TeamBio = ({
   name,
   picture,
   position,
-  seats,
   children,
 }: Props) => {
   return (

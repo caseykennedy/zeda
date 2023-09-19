@@ -1,9 +1,7 @@
-import { useCallback, useState } from 'react'
 import { CardStackPlusIcon } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useLoadMore } from 'hooks'
 import type { Post, PostCategory } from 'lib/sanity.queries'
-import { PostCategories } from 'utils/constants'
 import { polyVariant } from 'utils/variants'
 
 import { PostCard } from 'components/post'
@@ -12,7 +10,6 @@ import Section from 'components/ui/Section'
 
 const PostGrid = ({
   posts,
-  postCategories,
 }: {
   posts: Post[]
   postCategories: PostCategory[]

@@ -5,7 +5,6 @@ import { Button, Icon, Pill } from 'components/ui'
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,

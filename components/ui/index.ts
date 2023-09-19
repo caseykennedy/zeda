@@ -2,9 +2,6 @@ import Button from './Button'
 import Icon from './Icon'
 import Input from './Input'
 import Label from './Label'
-import NavigationSheet from './NavigationSheet'
-import PageHero from './PageHero'
-import PageTitle from './PageTitle'
 import Pill from './Pill'
 import Section from './Section'
 import SectionSplit from './SectionSplit'
@@ -16,9 +13,6 @@ export {
   Icon,
   Input,
   Label,
-  NavigationSheet,
-  PageHero,
-  PageTitle,
   Pill,
   Section,
   SectionSplit,

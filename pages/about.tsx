@@ -23,7 +23,7 @@ interface Query {
   [key: string]: string
 }
 
-const Page = ({ leadership, partners, people, settings }: PageProps) => {
+const Page = ({ leadership, partners, settings }: PageProps) => {
   // if (draftMode) {
   //   return <PreviewIndexPage posts={posts} settings={settings} />
   // }

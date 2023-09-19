@@ -2,9 +2,9 @@ import type { Post } from 'lib/sanity.queries'
 
 import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
+import { Heading1FadeIn } from 'components/PageTitle'
 import SocialShare from 'components/SocialShare'
 import { Pill } from 'components/ui'
-import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import CategoryTag from './CategoryTag'
 import PostDateReadingTime from './PostDateReadingTime'

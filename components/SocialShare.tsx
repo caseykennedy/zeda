@@ -66,7 +66,7 @@ const SocialShare = ({ name, slug }: SocialShareProps): JSX.Element | null => {
           href={`//www.facebook.com/sharer.php?u=${shareSlug}`}
           name={name}
         >
-          <Icon name={name} size={20} />
+          <Icon name={name} />
         </ButtonLink>
       )
     case 'linkedin':
@@ -75,13 +75,13 @@ const SocialShare = ({ name, slug }: SocialShareProps): JSX.Element | null => {
           href={`//www.linkedin.com/shareArticle?mini=true&url=${shareSlug}`}
           name={name}
         >
-          <Icon name={name} size={20} />
+          <Icon name={name} />
         </ButtonLink>
       )
     case 'twitter':
       return (
         <ButtonLink href={`//twitter.com/share?url=${shareSlug}`} name={name}>
-          <Icon name={name} size={20} />
+          <Icon name={name} />
         </ButtonLink>
       )
     case 'share':

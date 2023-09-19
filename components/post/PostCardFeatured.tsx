@@ -1,4 +1,3 @@
-import { ArrowRightIcon } from '@radix-ui/react-icons'
 import type { Post } from 'lib/sanity.queries'
 import Link from 'next/link'
 

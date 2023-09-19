@@ -11,7 +11,7 @@ import { type Settings, settingsQuery } from 'lib/sanity.queries'
 
 import { height, OpenGraphImage, width } from 'components/OpenGraphImage'
 
-export default async function og(req: NextRequest, res: NextResponse) {
+export default async function og(req: NextRequest, _res: NextResponse) {
   const font = fetch(new URL('public/Inter-Bold.woff', import.meta.url)).then(
     (res) => res.arrayBuffer()
   )

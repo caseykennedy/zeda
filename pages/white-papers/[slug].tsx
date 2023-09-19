@@ -21,12 +21,7 @@ interface Query {
   [key: string]: string
 }
 
-const WhitePapersSlugRoute = ({
-  post,
-  morePosts,
-  settings,
-  draftMode,
-}: PageProps) => {
+const WhitePapersSlugRoute = ({ post, morePosts, settings }: PageProps) => {
   return (
     <WhitePaperPostPage post={post} morePosts={morePosts} settings={settings} />
   )

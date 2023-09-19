@@ -1,7 +1,6 @@
 import type { VideoPost } from 'lib/sanity.queries'
 import { cn } from 'utils'
 
-import { CategoryTag, PostDate } from 'components/post'
 import { Pill } from 'components/ui'
 
 import VideoPlayer from './VideoPlayer'
@@ -12,15 +11,10 @@ export interface FeaturedProps extends VideoPost {
 
 const VideoCard = ({
   title,
-  date,
   tags,
-  content,
   videoURL,
   className,
-}: Pick<
-  FeaturedProps,
-  'title' | 'date' | 'tags' | 'content' | 'videoURL' | 'className'
->) => {
+}: Pick<FeaturedProps, 'title' | 'tags' | 'videoURL' | 'className'>) => {
   return (
     <div className={cn(`flex flex-col gap-6`, className)}>
       <div className="aspect-video w-full">

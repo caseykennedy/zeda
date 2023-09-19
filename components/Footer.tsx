@@ -1,7 +1,7 @@
 import nav from 'config/nav-footer.json'
 import Link from 'next/link'
 import { currentYear, scrollTop } from 'utils'
-import { type BrandTheme, BrandThemes } from 'utils/constants'
+import { type BrandTheme } from 'utils/constants'
 
 import LogoSymbol from 'components/LogoSymbol'
 import Button from 'components/ui/Button'
@@ -36,7 +36,7 @@ const SocialList = () =>
       rel="nofollow noreferrer"
       aria-label={`Follow us on ${name}`}
     >
-      <Icon name={icon} size={20} />
+      <Icon name={icon} />
     </a>
   ))
 

@@ -1,3 +1,9 @@
+import {
+  ArrowRightIcon,
+  ArrowTopRightIcon,
+  CaretUpIcon,
+  ChevronUpIcon,
+} from '@radix-ui/react-icons'
 import { cn } from 'utils'
 
 type IconProps = {
@@ -11,62 +17,36 @@ type IconProps = {
     | 'twitter'
     | string
   className?: string
-  color?: string
-  fill?: string
-  size?: number
-  stroke?: string
-  strokeWidth?: string
 }
 
-export default function Icon({
-  name,
-  className,
-  color,
-  size = 18,
-  stroke,
-  strokeWidth,
-}: IconProps) {
+export default function Icon({ name, className }: IconProps) {
+  const iconClassNames = 'icon | h-4 w-4'
+
   switch (name) {
     case 'arrow-right':
-      return (
-        <span className={cn('icon', color, className)}>
-          <ArrowRight size={size} />
-        </span>
-      )
+      return <ArrowRightIcon className={cn(iconClassNames, className)} />
     case 'arrow-top-right':
-      return (
-        <span className={cn('icon', color, className)}>
-          <ArrowTopRight size={size} />
-        </span>
-      )
+      return <ArrowTopRightIcon className={cn(iconClassNames, className)} />
     case 'carat-up':
-      return (
-        <span className={cn('icon', color, className)}>
-          <CaratUp size={size} />
-        </span>
-      )
+      return <CaretUpIcon className={cn(iconClassNames, className)} />
     case 'chevron-up':
-      return (
-        <span className={cn('icon', color, className)}>
-          <ChevronUp size={size} />
-        </span>
-      )
+      return <ChevronUpIcon className={cn(iconClassNames, className)} />
     case 'instagram':
       return (
-        <span className={cn('icon', color, className)}>
-          <Instagram size={size} />
+        <span className={cn('icon', className)}>
+          <Instagram size={20} />
         </span>
       )
     case 'linkedin':
       return (
-        <span className={cn('icon', color, className)}>
-          <LinkedIn size={size} />
+        <span className={cn('icon', className)}>
+          <LinkedIn size={20} />
         </span>
       )
     case 'twitter':
       return (
-        <span className={cn('icon', color, className)}>
-          <Twitter size={size} />
+        <span className={cn('icon', className)}>
+          <Twitter size={20} />
         </span>
       )
   }
@@ -74,82 +54,6 @@ export default function Icon({
 
 type SVGProps = {
   size: number
-}
-
-function ArrowRight({ size }: SVGProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 15 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-        fill="currentColor"
-        fillRule="evenodd"
-        clipRule="evenodd"
-      />
-    </svg>
-  )
-}
-
-function ArrowTopRight({ size }: SVGProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 15 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
-        fill="currentColor"
-        fillRule="evenodd"
-        clipRule="evenodd"
-      />
-    </svg>
-  )
-}
-
-function CaratUp({ size }: SVGProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 15 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M4.18179 8.81819C4.00605 8.64245 4.00605 8.35753 4.18179 8.18179L7.18179 5.18179C7.26618 5.0974 7.38064 5.04999 7.49999 5.04999C7.61933 5.04999 7.73379 5.0974 7.81819 5.18179L10.8182 8.18179C10.9939 8.35753 10.9939 8.64245 10.8182 8.81819C10.6424 8.99392 10.3575 8.99392 10.1818 8.81819L7.49999 6.13638L4.81819 8.81819C4.64245 8.99392 4.35753 8.99392 4.18179 8.81819Z"
-        fill="currentColor"
-        fillRule="evenodd"
-        clipRule="evenodd"
-      />
-    </svg>
-  )
-}
-
-function ChevronUp({ size }: SVGProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 15 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M3.13523 8.84197C3.3241 9.04343 3.64052 9.05363 3.84197 8.86477L7.5 5.43536L11.158 8.86477C11.3595 9.05363 11.6759 9.04343 11.8648 8.84197C12.0536 8.64051 12.0434 8.32409 11.842 8.13523L7.84197 4.38523C7.64964 4.20492 7.35036 4.20492 7.15803 4.38523L3.15803 8.13523C2.95657 8.32409 2.94637 8.64051 3.13523 8.84197Z"
-        fill="currentColor"
-        fillRule="evenodd"
-        clipRule="evenodd"
-      />
-    </svg>
-  )
 }
 
 function Instagram({ size }: SVGProps) {

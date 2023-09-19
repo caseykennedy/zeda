@@ -1,6 +1,5 @@
 import type { VideoPost } from 'lib/sanity.queries'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
 import { cn } from 'utils'
 
 import { CategoryTag, PostDate } from 'components/post'
@@ -16,12 +15,11 @@ const VideoCard = ({
   title,
   date,
   tags,
-  slug,
   videoURL,
   className,
 }: Pick<
   FeaturedProps,
-  'title' | 'date' | 'tags' | 'slug' | 'videoURL' | 'className'
+  'title' | 'date' | 'tags' | 'videoURL' | 'className'
 >) => {
   return (
     <div

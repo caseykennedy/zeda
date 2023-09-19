@@ -20,7 +20,6 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from 'components/ui/Sheet'
 

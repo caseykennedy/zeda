@@ -1,11 +1,8 @@
 import {
   ChevronDownIcon,
-  FaceIcon,
   GearIcon,
   HandIcon,
   LayersIcon,
-  PersonIcon,
-  RocketIcon,
   RulerSquareIcon,
   TimerIcon,
 } from '@radix-ui/react-icons'

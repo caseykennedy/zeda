@@ -23,7 +23,7 @@ interface Query {
 }
 
 const VideosSlugRoute = (props: PageProps) => {
-  const { post, morePosts, settings, draftMode } = props
+  const { post, morePosts, settings } = props
 
   // if (draftMode) {
   //   return <PreviewPostPage post={post} morePosts={[]} settings={settings} />

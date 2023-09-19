@@ -14,15 +14,7 @@ interface Props {
   settings?: Settings
 }
 
-const NO_POSTS: VideoPost[] = []
-
-const VideoPostPage = ({
-  preview,
-  loading,
-  morePosts = NO_POSTS,
-  post,
-  settings,
-}: Props) => {
+const VideoPostPage = ({ preview, loading, post, settings }: Props) => {
   const slug = post?.slug
 
   // console.log('video.morePosts', morePosts)

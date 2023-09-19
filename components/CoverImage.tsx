@@ -9,12 +9,11 @@ interface CoverImageProps {
   slug?: string
   image: any
   priority?: boolean
-  aspectRatio?: string
   className?: string
 }
 
 export default function CoverImage(props: CoverImageProps) {
-  const { title, slug, image: source, priority, aspectRatio, className } = props
+  const { title, slug, image: source, priority, className } = props
   const image = source?.asset?._ref ? (
     <div className={cn(`h-full overflow-hidden`, className)}>
       <Img

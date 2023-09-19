@@ -3,9 +3,8 @@ import { LayoutThemes } from 'utils/constants'
 
 import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
+import PageTitle, { Heading1FadeIn } from 'components/PageTitle'
 import { PostGrid } from 'components/post'
-import { PageTitle } from 'components/ui'
-import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import FeaturedPosts from './FeaturedPosts'
 

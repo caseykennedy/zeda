@@ -1,72 +1,12 @@
-import {
-  ChevronDownIcon,
-  FaceIcon,
-  GearIcon,
-  HandIcon,
-  LayersIcon,
-  PersonIcon,
-  RocketIcon,
-  RulerSquareIcon,
-  TimerIcon,
-} from '@radix-ui/react-icons'
-import { ShieldIcon } from 'lucide-react'
+import { ChevronDownIcon } from '@radix-ui/react-icons'
 
 import FeatureGridItem, { type FeatureShape } from 'components/FeatureGridItem'
 import {
-  Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from 'components/ui/Accordion'
 import Section from 'components/ui/Section'
-
-enum FeatureTypes {
-  usFirst = 'us-first',
-  process = 'proccess',
-}
-
-interface AccordionFeatureShape extends FeatureShape {
-  type: string
-}
-
-const data: AccordionFeatureShape[] = [
-  {
-    type: FeatureTypes.usFirst,
-    icon: <GearIcon />,
-    title: 'Industrial Fusion',
-    desc: 'The new industrial revolution includes additive and traditional manufacturing melded together with real time data analytics and quality control systems.',
-  },
-  {
-    type: FeatureTypes.usFirst,
-    icon: <HandIcon />,
-    title: 'Skilled Workforce',
-    desc: `We hire highly trained, competent technicians, engineers, and craftsmen who work in a brightly lit, climate controlled, epoxy floor, lab environment.`,
-  },
-  {
-    type: FeatureTypes.usFirst,
-    icon: <ShieldIcon />,
-    title: 'Economic Security',
-    desc: 'At Zeda we believe a strong manufacturing base is critical to a healthy economy and paramount to national security.',
-  },
-  {
-    type: FeatureTypes.process,
-    icon: <RulerSquareIcon />,
-    title: 'Prototype',
-    desc: 'Rapid prototyping is more than having fast equipment. You need talented engineers and a robust design hardware and software ecosystem.',
-  },
-  {
-    type: FeatureTypes.process,
-    icon: <LayersIcon />,
-    title: 'Design',
-    desc: `Mastering intricate geometries for a transformative impact in medical, aerospace, defense, space and energy.`,
-  },
-  {
-    type: FeatureTypes.process,
-    icon: <TimerIcon />,
-    title: 'Delivery',
-    desc: 'We accelerate innovative ideas of every level. Whether you are a multi-national corporation in need of advanced design consultation, or an individual looking to develop an initial prototype.',
-  },
-]
 
 const Lead = () => (
   <Section>

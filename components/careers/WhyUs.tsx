@@ -2,7 +2,6 @@ import * as React from 'react'
 import {
   FaceIcon,
   LightningBoltIcon,
-  PersonIcon,
   RocketIcon,
   RulerSquareIcon,
 } from '@radix-ui/react-icons'

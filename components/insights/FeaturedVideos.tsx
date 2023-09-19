@@ -10,7 +10,6 @@ const FeaturedCard = ({
   title,
   date,
   tags,
-  slug,
   content,
   videoURL,
 }: Pick<
@@ -61,9 +60,7 @@ interface FeaturedProps extends VideoPost {
 
 const HighlightCard = ({
   title,
-  date,
   tags,
-  slug,
   videoURL,
   className,
 }: Pick<
