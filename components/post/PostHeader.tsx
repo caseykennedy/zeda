@@ -4,6 +4,7 @@ import CoverImage from 'components/CoverImage'
 import LogoSymbol from 'components/LogoSymbol'
 import SocialShare from 'components/SocialShare'
 import { Pill } from 'components/ui'
+import { Heading1FadeIn } from 'components/ui/PageTitle'
 
 import CategoryTag from './CategoryTag'
 import PostDateReadingTime from './PostDateReadingTime'
@@ -38,9 +39,11 @@ const PostHeader = ({
             className="mb-6"
           />
 
-          <h1 className="mb-14 max-w-[30ch] text-4xl font-semibold leading-tight tracking-normal md:mb-24 md:text-6xl md:leading-tight md:tracking-normal">
-            {title}
-          </h1>
+          <Heading1FadeIn>
+            <h1 className="mb-14 max-w-[30ch] text-4xl font-semibold leading-tight tracking-normal md:mb-24 md:text-6xl md:leading-tight md:tracking-normal">
+              {title}
+            </h1>
+          </Heading1FadeIn>
 
           <div className="gap grid grid-cols-4">
             <div className="col-span-4 flex items-end lg:col-span-1">

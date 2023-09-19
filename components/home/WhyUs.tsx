@@ -11,7 +11,7 @@ const WhyUs = () => {
   ]
   return (
     <Section
-      className="border-b border-t border-black bg-black text-white"
+      className="border-b border-t border-black bg-black"
       pt="pt-0"
       pr="pr-0"
       pb="pb-0"

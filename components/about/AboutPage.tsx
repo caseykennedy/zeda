@@ -1,6 +1,6 @@
 import { type Partner, type Person, type Settings } from 'lib/sanity.queries'
 import HeroImg from 'public/images/about/hero-suit.jpg'
-import ctaImgSrc from 'public/images/bg-tech-shadow.png'
+import ctaImgSrc from 'public/images/bg-rocket.png'
 import { LayoutThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
@@ -73,9 +73,8 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
         >
           <FooterCTAFigure
             src={ctaImgSrc}
-            alt="Zeda Inc. - Contact us"
-            overlayColor="bg-violet-600"
-            className="opacity-20 mix-blend-hard-light grayscale"
+            alt="Zeda Inc. - Rocket ship"
+            className=" object-[-600px_top] sm:object-center"
           />
         </FooterCTA>
       </Layout>

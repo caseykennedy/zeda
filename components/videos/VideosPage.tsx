@@ -83,12 +83,16 @@ const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
         />
         <GridSection posts={posts} />
         <FooterCTA
-          heading="Join forces with us. Let’s change the world together"
-          message="<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing."
+          heading="Join forces with us. Let's change the world together"
+          message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
           href="/contact"
           btnText="Get in touch"
         >
-          <FooterCTAFigure src={ctaImgSrc} alt="Zeda Inc. - Contact us" />
+          <FooterCTAFigure
+            src={ctaImgSrc}
+            alt="Zeda Inc. - Contact us"
+            className=" object-[-550px_top] sm:object-center"
+          />
         </FooterCTA>
       </Layout>
     </>
