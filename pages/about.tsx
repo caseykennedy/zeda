@@ -23,19 +23,13 @@ interface Query {
   [key: string]: string
 }
 
-const Page = ({ leadership, partners, settings }: PageProps) => {
-  // if (draftMode) {
-  //   return <PreviewIndexPage posts={posts} settings={settings} />
-  // }
-
-  return (
-    <AboutPage
-      partners={partners}
-      people={leadership.people}
-      settings={settings}
-    />
-  )
-}
+const Page = ({ leadership, partners, settings }: PageProps) => (
+  <AboutPage
+    partners={partners}
+    people={leadership.people}
+    settings={settings}
+  />
+)
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx

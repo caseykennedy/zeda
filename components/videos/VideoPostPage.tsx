@@ -17,8 +17,6 @@ interface Props {
 const VideoPostPage = ({ preview, loading, post, settings }: Props) => {
   const slug = post?.slug
 
-  // console.log('video.morePosts', morePosts)
-
   if (!slug && !preview) {
     notFound()
   }

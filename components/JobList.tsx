@@ -98,7 +98,6 @@ const JobList = ({
             <Link href="/careers">
               <Icon
                 name="arrow-right"
-                color="white"
                 className="relative -translate-x-1 transition-all group-hover:translate-x-1"
               />
               Work with us

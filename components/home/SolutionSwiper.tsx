@@ -37,7 +37,6 @@ const Slide = ({ heading, message, image, alt, href, btnText }: SlideProps) => {
             <Link href={href}>
               <Icon
                 name="arrow-right"
-                color="white"
                 className="relative -translate-x-1 transition-all group-hover:translate-x-1"
               />
               {btnText}

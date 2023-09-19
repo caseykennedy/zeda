@@ -21,7 +21,6 @@ const ArrowLink = ({ children, href, className, ...props }: Props) => (
     <span className="-translate-x-5 transition-all ease-out group-hover:-translate-x-2">
       <Icon
         name="arrow-right"
-        size={18}
         className="opacity-0 transition-all group-hover:opacity-100"
       />
     </span>

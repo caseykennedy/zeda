@@ -25,14 +25,7 @@ const GridSection = ({ posts }: { posts: VideoPost[] }) => {
     <Section className="dark border-t border-silver-900 bg-black text-white">
       <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
         {list.map(({ _id, title, date, tags, content, videoURL }) => (
-          <VideoCard
-            key={_id}
-            title={title}
-            date={date}
-            tags={tags}
-            content={content}
-            videoURL={videoURL}
-          />
+          <VideoCard key={_id} title={title} tags={tags} videoURL={videoURL} />
         ))}
       </div>
 
