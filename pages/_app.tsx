@@ -1,4 +1,5 @@
 import { lazy } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { readToken } from 'lib/sanity.api'
 import { getAllPeople, getClient, getSettings } from 'lib/sanity.client'
 import { type Person, type Settings } from 'lib/sanity.queries'
@@ -39,7 +40,10 @@ export default function App({
           <Component {...pageProps} />
         </PreviewProvider>
       ) : (
-        <Component {...pageProps} />
+        <>
+          <Component {...pageProps} />
+          <Analytics />
+        </>
       )}
     </>
   )

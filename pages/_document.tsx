@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/react'
 import { Head, Html, Main, NextScript } from 'next/document'
 
 const Document = () => {
@@ -8,7 +7,6 @@ const Document = () => {
       <body className="no-scrollbar">
         <Main />
         <NextScript />
-        <Analytics />
       </body>
     </Html>
   )
