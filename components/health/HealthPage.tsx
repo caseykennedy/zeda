@@ -78,7 +78,7 @@ const HealthPage = ({ partners, settings }: Props) => {
           src={CtaImgSrc}
           alt="Zeda Inc. | Health"
           overlayColor="bg-yellow-600"
-          className="opacity-50 mix-blend-normal"
+          className="opacity-25 mix-blend-difference grayscale"
         />
       </FooterCTA>
     </Layout>

@@ -24,7 +24,13 @@ import {
   SelectValue,
 } from 'components/ui/Select'
 
-const selectOptions = ['General inquiry', 'Zeda Technologies', 'Zeda Health']
+const selectOptions = [
+  'General contact',
+  'Press inquiry',
+  'I am an investor',
+  'Zeda Technologies',
+  'Zeda Health',
+]
 
 const selectSchema = z
   .string()

@@ -31,17 +31,13 @@ const AtGlance = () => {
       </div>
 
       <div className="mt-32 grid grid-cols-4 gap-16 md:mt-64 md:gap-10">
-        {stats.map(({ value, prefix, suffix, description }, idx) => (
+        {stats.map(({ value, description }, idx) => (
           <div
             className="col-span-4 border-l border-silver-800 pl-5 sm:col-span-2 lg:col-span-1"
             key={idx}
           >
             <h3 className="mb-8 font-display text-7xl font-medium">
-              <Countup
-                end={value}
-                prefix={prefix && prefix}
-                suffix={suffix && suffix}
-              />
+              <Countup end={value} />
             </h3>
             <p className="text-lg">{description}</p>
           </div>

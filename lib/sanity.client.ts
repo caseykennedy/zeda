@@ -12,7 +12,7 @@ import {
   type JobPost,
   jobPostQuery,
   type Leadership,
-  leadershipQuery,
+  leadershipByDepartmentQuery,
   type Partner,
   partnerQuery,
   type Person,
@@ -76,10 +76,11 @@ export async function getAllPeople(client: SanityClient): Promise<Person[]> {
   return (await client.fetch(personQuery)) || []
 }
 
-export async function getAllLeadership(
-  client: SanityClient
+export async function getLeadershipByDepartment(
+  client: SanityClient,
+  department: string
 ): Promise<Leadership> {
-  return (await client.fetch(leadershipQuery)) || {}
+  return await client.fetch(leadershipByDepartmentQuery, { department })
 }
 
 export async function getAllPosts(client: SanityClient): Promise<Post[]> {

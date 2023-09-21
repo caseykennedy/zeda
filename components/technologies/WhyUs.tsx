@@ -1,5 +1,4 @@
-import stats from 'config/tech-stats.json'
-import ImgBigMachine from 'public/images/technologies/big-machine.jpg'
+import ImgBigMachine from 'public/images/technologies/big-machine-2.jpg'
 import LatticeStructure from 'public/images/technologies/lattice-structure.jpg'
 import MfgJumpsuit from 'public/images/technologies/mfg-jumpsuit.jpg'
 
@@ -7,6 +6,26 @@ import Countup from 'components/Countup'
 import Img from 'components/Img'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
+
+const stats = [
+  {
+    value: 3,
+    description: 'Globally operated advanced manufacturing businesses',
+  },
+  {
+    value: 73,
+    suffix: 'k',
+    description: 'Square feet of advanced manufacturing facilities.',
+  },
+  {
+    value: 3,
+    description: 'Established geographical locations around the world',
+  },
+  {
+    value: 1,
+    description: 'Mission: to better lives by building it all better together.',
+  },
+]
 
 const WhyUs = () => {
   return (

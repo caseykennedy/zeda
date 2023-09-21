@@ -1,12 +1,11 @@
 import { readToken } from 'lib/sanity.api'
 import {
-  getAllLeadership,
   getAllPartners,
-  getAllPeople,
   getClient,
+  getLeadershipByDepartment,
   getSettings,
 } from 'lib/sanity.client'
-import type { Leadership, Partner, Person, Settings } from 'lib/sanity.queries'
+import type { Leadership, Partner, Settings } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import { type SharedPageProps } from 'pages/_app'
 
@@ -15,7 +14,6 @@ import { AboutPage } from 'components/about'
 interface PageProps extends SharedPageProps {
   leadership: Leadership
   partners: Partner[]
-  people: Person[]
   settings: Settings
 }
 
@@ -35,10 +33,9 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx
   const client = getClient(draftMode ? { token: readToken } : undefined)
 
-  const [leadership, partners = [], people = [], settings] = await Promise.all([
-    getAllLeadership(client),
+  const [leadership, partners = [], settings] = await Promise.all([
+    getLeadershipByDepartment(client, 'All'),
     getAllPartners(client),
-    getAllPeople(client),
     getSettings(client),
   ])
 
@@ -46,7 +43,6 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
     props: {
       leadership,
       partners,
-      people,
       settings,
       draftMode,
       token: readToken,

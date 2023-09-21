@@ -66,6 +66,8 @@ export default defineType({
   preview: {
     select: {
       title: 'name',
+      subtitle: 'position',
+      media: 'picture',
     },
     prepare(selection) {
       return { ...selection }

@@ -6,7 +6,7 @@ const useScrollDir = () => {
   >(null)
 
   useEffect(() => {
-    const threshold = 16
+    const threshold = 24
     let lastScrollY = window.scrollY
     let ticking = false
 

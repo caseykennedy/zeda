@@ -42,12 +42,7 @@ export const ContactPage = ({ settings }: Props) => {
               </Heading1FadeIn>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
-              <Button
-                variant="link"
-                size="sm"
-                className="dark:text-silver-100"
-                asChild
-              >
+              <Button variant="outline" size="sm" asChild>
                 <a
                   href={`mailto:${emailAddress}?subject=Zeda, Inc. | Contact request`}
                 >

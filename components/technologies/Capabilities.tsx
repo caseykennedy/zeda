@@ -13,11 +13,11 @@ const capabilities = [
   {
     title: 'Metal additive manufacturing',
   },
+  // {
+  //   title: 'Polymer 3D printing',
+  // },
   {
-    title: 'Polymer 3D printing',
-  },
-  {
-    title: 'Dimensional inspection, including CMM measurement',
+    title: 'Complete dimensional inspection',
   },
   {
     title: 'Extrude honing',

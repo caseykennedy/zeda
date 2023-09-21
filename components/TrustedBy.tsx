@@ -44,7 +44,7 @@ const TrustedBy = ({
                   fill={false}
                   width={180}
                   height={80}
-                  className="grayscale invert"
+                  className="brightness-[67%] invert"
                 />
               </div>
             ))}

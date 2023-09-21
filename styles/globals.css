@@ -226,7 +226,15 @@
     font-variant-ligatures: discretionary-ligatures;
   }
 
-  .swiper-pagination-bullet {
-    @apply h-10 w-10;
+  .swiper-pagination {
+    @apply flex items-center justify-center;
+
+    .swiper-pagination-bullet {
+      @apply h-4 w-4 bg-transparent border-2 border-silver-100 aspect-square opacity-100;
+    }
+
+    .swiper-pagination-bullet-active {
+      @apply bg-silver-100;
+    }
   }
 }

@@ -1,4 +1,3 @@
-import stats from 'config/tech-stats.json'
 import ImgFoot from 'public/images/health/3d-foot.jpg'
 import ImgScrew from 'public/images/health/hand-screw.jpg'
 import ImgNanotech from 'public/images/nanotech.jpg'
@@ -7,6 +6,26 @@ import Countup from 'components/Countup'
 import Img from 'components/Img'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
+
+const stats = [
+  {
+    value: 3,
+    description: 'Globally operated advanced manufacturing businesses',
+  },
+  {
+    value: 73,
+    suffix: 'k',
+    description: 'Square feet of advanced manufacturing facilities.',
+  },
+  {
+    value: 3,
+    description: 'Established geographical locations around the world',
+  },
+  {
+    value: 1,
+    description: 'Mission: to better lives by building it all better together.',
+  },
+]
 
 const WhyUs = () => {
   return (

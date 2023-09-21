@@ -9,7 +9,6 @@ import 'swiper/css/effect-fade'
 import 'swiper/css/pagination'
 
 import 'swiper/css'
-// import styles from './swiper.module.css'
 
 interface SlideProps {
   heading: string
@@ -24,7 +23,7 @@ const Slide = ({ heading, message, image, alt, href, btnText }: SlideProps) => {
   return (
     <>
       <div className="gutter-y gutter-x relative z-10 mx-auto max-w-site">
-        <div className="max-w-[48ch] text-white">
+        <div className="max-w-[60ch] text-white">
           <h2>{heading}</h2>
         </div>
 
@@ -51,7 +50,7 @@ const Slide = ({ heading, message, image, alt, href, btnText }: SlideProps) => {
           alt={alt}
           fill={true}
           style={{ objectFit: 'cover' }}
-          className="brightness-75"
+          className="brightness-[0.65]"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 80vw"
         />
       </figure>
@@ -100,7 +99,7 @@ const SolutionSwiper = () => {
           />
         </SwiperSlide>
 
-        <div className="absolute right-10 top-6 z-10 pr-10 pt-8">
+        <div className="absolute bottom-6 right-10 z-10 pt-8 sm:top-6 sm:pr-10 md:bottom-auto">
           <div className="swiper-pagination" />
         </div>
       </Swiper>

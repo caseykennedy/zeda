@@ -43,15 +43,15 @@ const WhyUs = () => {
           </figure>
         </div>
 
-        <div className="gutter-x gutter-y relative flex flex-col items-end justify-between border-l border-black bg-violet-500 text-black">
-          <div className="w-full">
-            <SectionTitle>Why us?</SectionTitle>
-            <h2 className="mb-16 max-w-[24ch]">
+        <div className="gutter-x gutter-y relative flex flex-col items-center justify-center border-l border-black bg-violet-500 text-black">
+          <div className="flex w-full">
+            {/* <SectionTitle>Why us?</SectionTitle> */}
+            <h2 className="mx-auto mb-16 max-w-[24ch] text-center text-4xl">
               We accelerate innovative ideas of every level at light speed.
             </h2>
           </div>
 
-          <div className="translate-x-gutter relative flex flex-row flex-nowrap gap-2 rounded-bl-full rounded-tl-full bg-black p-4 pr-16 sm:pr-24">
+          {/* <div className="translate-x-gutter relative flex flex-row flex-nowrap gap-2 rounded-bl-full rounded-tl-full bg-black p-4 pr-16 sm:pr-24">
             {certBadges.map(({ image, alt }, i) => (
               <figure
                 key={i}
@@ -66,7 +66,7 @@ const WhyUs = () => {
                 />
               </figure>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </Section>

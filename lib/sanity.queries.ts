@@ -152,7 +152,7 @@ export const partnerQuery = groq`*[_type == "partner"] {
 } | order(name asc)
 `
 
-// Person Queries
+// People / Leadership Queries
 
 export const personQuery = groq`*[_type == "person"] {
   ...,
@@ -163,17 +163,15 @@ export const personQuery = groq`*[_type == "person"] {
 } | order(name asc)
 `
 
-// Leadership Queries
-
-export const leadershipQuery = groq`*[_type == "leadership"][0] {
+export const leadershipByDepartmentQuery = groq`*[_type == "leadership" && title == $department][0] {
   _id,
   title,
   people[]->{
     ...,
     picture{
-    ...,
-    "metadata": asset->metadata
-  }
+      ...,
+      "metadata": asset->metadata
+    }
   }
 }
 `

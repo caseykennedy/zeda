@@ -8,14 +8,11 @@
     "description": "Established geographical locations around the world"
   },
   {
-    "value": 68,
-    "prefix": "$",
-    "suffix": "m",
-    "description": "Total equity and financing capital raise as of 2023"
+    "value": 12,
+    "description": "Technology patents"
   },
   {
-    "value": 46,
-    "suffix": "x",
-    "description": "Projected growth between 2022 — 2027"
+    "value": 1,
+    "description": "Mission: to better lives by building it all better together."
   }
 ]

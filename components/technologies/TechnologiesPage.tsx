@@ -1,15 +1,15 @@
-import type { Partner, Settings } from 'lib/sanity.queries'
+import type { Leadership, Partner, Settings } from 'lib/sanity.queries'
 import ctaImgSrc from 'public/images/hands-on.jpg'
 import HeroImg from 'public/images/technologies/mfg-orange-suit.jpg'
 import { BrandThemes, LayoutThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
+import LeadershipPanel from 'components/LeadershipPanel'
 import PageHead from 'components/PageHead'
 import PageHero from 'components/PageHero'
 import PageTitle, { Heading1FadeIn } from 'components/PageTitle'
 import TextMarquee from 'components/TextMarquee'
-import TrustedBy from 'components/TrustedBy'
 import { Button, Icon } from 'components/ui'
 
 import Capabilities from './Capabilities'
@@ -18,11 +18,13 @@ import Services from './Services'
 import WhyUs from './WhyUs'
 
 interface Props {
+  leadership: Leadership
   partners: Partner[]
   settings: Settings
 }
 
-export const TechnologiesPage = ({ partners, settings }: Props) => {
+export const TechnologiesPage = ({ leadership, settings }: Props) => {
+  console.log('leadership', leadership)
   return (
     <Layout brand={BrandThemes.TECHNOLOGIES}>
       <PageHead
@@ -30,7 +32,7 @@ export const TechnologiesPage = ({ partners, settings }: Props) => {
         page={{
           title: 'Technologies',
           description:
-            'Zeda, Inc. blends traditional methods like CNC machining and EDM with cutting-edge technologies like additive manufacturing, PECM and automation.',
+            'Zeda, Inc. blends traditional methods like CNC machining and EDM with cutting-edge technologies like additive manufacturing and automation.',
         }}
       />
       <PageTitle theme={LayoutThemes.DARK}>
@@ -65,9 +67,9 @@ export const TechnologiesPage = ({ partners, settings }: Props) => {
       <TextMarquee text="We accelerate innovative ideas at light speed." />
       <Capabilities />
       <Services />
-      <TrustedBy
+      <LeadershipPanel
+        people={leadership.people}
         title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic renaissance through innovation and technology."
-        partners={partners}
       />
       <FooterCTA
         heading="Join forces with us. Let's change the world together"
