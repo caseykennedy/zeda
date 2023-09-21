@@ -82,7 +82,7 @@ const NavigationSheet = ({ children }: { children: React.ReactNode }) => {
   return (
     <Sheet>
       <SheetTrigger aria-label="Open navigation">{children}</SheetTrigger>
-      <SheetContent className="max-h-[100vh] overflow-y-auto">
+      <SheetContent className="max-h-[100svh] overflow-y-auto">
         <SheetHeader>
           <div>
             <Collapse title="Company">
