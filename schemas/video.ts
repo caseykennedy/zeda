@@ -1,11 +1,11 @@
-import { BookIcon } from '@sanity/icons'
+import { PlayIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'video',
   title: 'Video',
-  icon: BookIcon,
+  icon: PlayIcon,
   type: 'document',
   fields: [
     defineField({

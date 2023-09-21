@@ -1,11 +1,11 @@
-import { BookIcon } from '@sanity/icons'
+import { DocumentIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'whitePaper',
   title: 'White Paper',
-  icon: BookIcon,
+  icon: DocumentIcon,
   type: 'document',
   fields: [
     defineField({

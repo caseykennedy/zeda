@@ -1,4 +1,4 @@
-import { BookIcon } from '@sanity/icons'
+import { DocumentIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
@@ -7,7 +7,7 @@ import postCategoryType from './post-category'
 export default defineType({
   name: 'post',
   title: 'Article',
-  icon: BookIcon,
+  icon: DocumentIcon,
   type: 'document',
   fields: [
     defineField({

@@ -1,10 +1,10 @@
-import { UserIcon } from '@sanity/icons'
+import { EarthGlobeIcon } from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'partner',
   title: 'Partners',
-  icon: UserIcon,
+  icon: EarthGlobeIcon,
   type: 'document',
   fields: [
     defineField({
@@ -32,6 +32,7 @@ export default defineType({
   preview: {
     select: {
       title: 'name',
+      media: 'logo',
     },
     prepare(selection) {
       return { ...selection }

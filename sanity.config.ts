@@ -38,8 +38,8 @@ export default defineConfig({
       partnerType,
       postCategoryType,
       postType,
-      videoType,
       whitePaperType,
+      videoType,
     ],
   },
   plugins: [

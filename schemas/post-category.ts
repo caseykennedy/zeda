@@ -1,10 +1,10 @@
-import { UserIcon } from '@sanity/icons'
+import { FilterIcon } from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'postCategory',
   title: 'Article Category',
-  icon: UserIcon,
+  icon: FilterIcon,
   type: 'document',
   fields: [
     defineField({

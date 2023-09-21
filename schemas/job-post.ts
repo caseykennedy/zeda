@@ -1,4 +1,4 @@
-import { BookIcon } from '@sanity/icons'
+import { ClipboardIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
@@ -17,7 +17,7 @@ import { defineField, defineType } from 'sanity'
 export default defineType({
   name: 'jobPost',
   title: 'Job Posts',
-  icon: BookIcon,
+  icon: ClipboardIcon,
   type: 'document',
   fields: [
     defineField({
