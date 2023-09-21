@@ -27,7 +27,7 @@ const TeamBio = ({
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
-      <DialogContent className="max-h-[100svh] max-w-[900px] overflow-hidden overflow-y-auto rounded border-black bg-black text-white">
+      <DialogContent className="max-h-[100vh] max-w-[900px] overflow-hidden overflow-y-auto rounded border-black bg-black text-white">
         <DialogHeader>
           <div className="flex flex-col bg-violet-500 sm:flex-row">
             <figure className="relative h-full sm:max-w-xs">
