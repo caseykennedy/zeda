@@ -41,7 +41,7 @@ const Services = () => (
     <ul className="flex flex-col">
       {services.map(({ title }, idx) => (
         <li
-          className="flex items-center gap-4 border-t border-silver-800 py-4 font-display text-xl font-semibold last:pb-0"
+          className="flex items-center gap-4 border-t border-silver-900 py-6 font-display text-xl font-semibold last:pb-0"
           key={idx}
         >
           <span>

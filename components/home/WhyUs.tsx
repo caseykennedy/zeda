@@ -18,8 +18,8 @@ const WhyUs = () => {
       pl="pl-0"
       maxWidth="w-full"
     >
-      <div className="relative grid min-h-[500px] grid-cols-1 md:grid-cols-2 lg:min-h-[700px]">
-        <div className="relative min-h-[400px]">
+      <div className="relative grid grid-cols-1 md:grid-cols-2">
+        <div className="relative aspect-square min-h-[400px]">
           <figure className="absolute bottom-0 left-0 z-30 flex h-full w-full items-end overflow-hidden md:overflow-visible">
             <Image
               src="/images/turbine-tilt.png"
@@ -28,7 +28,8 @@ const WhyUs = () => {
               height={980}
               width={1149}
               quality={50}
-              className="object-fit-contain xl:scale-115 sm:translate-y-10 md:translate-x-16 md:scale-125 xl:translate-y-32 2xl:translate-y-48"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
+              className="object-fit-contain xl:scale-115 sm:translate-y-10 md:translate-x-16 md:scale-125 xl:translate-y-8"
             />
           </figure>
           <figure className="absolute left-0 top-0 z-10 h-full w-full">
@@ -43,13 +44,13 @@ const WhyUs = () => {
           </figure>
         </div>
 
-        <div className="gutter-x gutter-y relative flex flex-col items-center justify-center border-l border-black bg-violet-500 text-black">
-          <div className="flex w-full">
-            {/* <SectionTitle>Why us?</SectionTitle> */}
+        <div className="gutter-x gutter-y relative flex aspect-square flex-col items-center justify-center border-l border-black bg-violet-500 text-black">
+          {/* <div className="flex w-full">
+            <SectionTitle>Why us?</SectionTitle>
             <h2 className="mx-auto mb-16 max-w-[24ch] text-center text-4xl">
               We accelerate innovative ideas of every level at light speed.
             </h2>
-          </div>
+          </div> */}
 
           {/* <div className="translate-x-gutter relative flex flex-row flex-nowrap gap-2 rounded-bl-full rounded-tl-full bg-black p-4 pr-16 sm:pr-24">
             {certBadges.map(({ image, alt }, i) => (

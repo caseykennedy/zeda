@@ -95,7 +95,7 @@ const InsightsPage = ({
         <GridSection
           id="articles"
           title="Articles"
-          subTitle="Data-rich industry insights from our experts and engineers."
+          subTitle="Industry deep-dives and analysis."
           posts={posts}
         />
         <FeaturedVideos videos={videoPosts} />

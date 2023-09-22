@@ -60,11 +60,11 @@
     "link": "/news",
     "sub": [
       {
-        "name": "press releases",
-        "link": "/news/#press-releases"
+        "name": "newsroom",
+        "link": "/news"
       },
       {
-        "name": "news",
+        "name": "press",
         "link": "/news"
       }
     ]

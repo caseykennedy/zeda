@@ -24,7 +24,6 @@ interface Props {
 }
 
 export const TechnologiesPage = ({ leadership, settings }: Props) => {
-  console.log('leadership', leadership)
   return (
     <Layout brand={BrandThemes.TECHNOLOGIES}>
       <PageHead
@@ -67,12 +66,14 @@ export const TechnologiesPage = ({ leadership, settings }: Props) => {
       <TextMarquee text="We accelerate innovative ideas at light speed." />
       <Capabilities />
       <Services />
+      <section className="gutter h-[300px] border-b border-t border-silver-900 bg-black text-silver-800">
+        certs
+      </section>
       <LeadershipPanel
         people={leadership.people}
-        title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic renaissance through innovation and technology."
+        title="At Zeda we leverage advanced manufacturing and technology backgrounds to help companies solve some of their most difficult problems."
       />
       <FooterCTA
-        heading="Join forces with us. Let's change the world together"
         message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
         href="/contact"
         btnText="Get in touch"

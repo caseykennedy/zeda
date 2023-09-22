@@ -1,15 +1,15 @@
-import type { Partner, Settings } from 'lib/sanity.queries'
+import type { Leadership, Settings } from 'lib/sanity.queries'
 import CtaImgSrc from 'public/images/bg-nanotech.jpg'
 import HeroImg from 'public/images/health/hero-pieces.jpg'
 import { BrandThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
+import LeadershipPanel from 'components/LeadershipPanel'
 import PageHead from 'components/PageHead'
 import PageHero from 'components/PageHero'
 import PageTitle, { Heading1FadeIn } from 'components/PageTitle'
 import TextMarquee from 'components/TextMarquee'
-import TrustedBy from 'components/TrustedBy'
 import { Button, Icon } from 'components/ui'
 
 import Capabilities from './Capabilities'
@@ -18,11 +18,11 @@ import Services from './Services'
 import WhyUs from './WhyUs'
 
 interface Props {
-  partners: Partner[]
+  leadership: Leadership
   settings: Settings
 }
 
-const HealthPage = ({ partners, settings }: Props) => {
+const HealthPage = ({ leadership, settings }: Props) => {
   return (
     <Layout brand={BrandThemes.HEALTH}>
       <PageHead
@@ -42,7 +42,11 @@ const HealthPage = ({ partners, settings }: Props) => {
             </Heading1FadeIn>
           </div>
           <div className="flex w-full flex-1 flex-row justify-end">
-            <Button variant="primary" className="hover:bg-yellow-600" asChild>
+            <Button
+              variant="primary"
+              className="hover:bg-yellow-600 hover:text-black"
+              asChild
+            >
               <a href="#capabilities">
                 <Icon
                   name="arrow-right"
@@ -64,12 +68,11 @@ const HealthPage = ({ partners, settings }: Props) => {
       <TextMarquee text="We accelerate innovative ideas at light speed." />
       <Capabilities />
       <Services />
-      <TrustedBy
-        title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic manufacturing renaissance through innovation and technology."
-        partners={partners}
+      <LeadershipPanel
+        people={leadership.people}
+        title="We take pride in being at the forefront of advanced manufacturing. Our mission is to champion a thriving domestic renaissance through innovation and technology."
       />
       <FooterCTA
-        heading="Join forces with us. Let's change the world together"
         message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
         href="/contact"
         btnText="Get in touch"
@@ -78,7 +81,7 @@ const HealthPage = ({ partners, settings }: Props) => {
           src={CtaImgSrc}
           alt="Zeda Inc. | Health"
           overlayColor="bg-yellow-600"
-          className="opacity-25 mix-blend-difference grayscale"
+          className="opacity-50 mix-blend-hard-light grayscale"
         />
       </FooterCTA>
     </Layout>

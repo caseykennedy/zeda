@@ -1,6 +1,7 @@
 // import { useEventListener } from 'usehooks-ts'
-import TextFader from 'components/TextFader'
 import Section from 'components/ui/Section'
+
+import TextFader from './TextFader'
 
 const Hero = () => {
   // const documentRef = useRef<Document>(document)
@@ -28,7 +29,7 @@ const Hero = () => {
           <h1 className="dark:text-white">
             Building <TextFader />
             <br />
-            together.
+            together
           </h1>
         </div>
       </div>

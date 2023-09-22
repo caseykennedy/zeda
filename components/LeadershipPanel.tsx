@@ -30,7 +30,7 @@ const LeadershipPanel = ({
       </div>
 
       <div className="mt-32 md:mt-48">
-        <SectionTitle>Leadership</SectionTitle>
+        {/* <SectionTitle>Leadership</SectionTitle> */}
         <AnimatePresence>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-10 lg:grid-cols-3 xl:grid-cols-4">
             {people.map(

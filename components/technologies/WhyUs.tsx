@@ -15,15 +15,15 @@ const stats = [
   {
     value: 73,
     suffix: 'k',
-    description: 'Square feet of advanced manufacturing facilities.',
+    description: 'Square feet of advanced manufacturing facilities',
   },
   {
-    value: 3,
-    description: 'Established geographical locations around the world',
+    value: 12,
+    description: 'Technology patents',
   },
   {
     value: 1,
-    description: 'Mission: to better lives by building it all better together.',
+    description: 'Mission: to better lives by building it all better together',
   },
 ]
 

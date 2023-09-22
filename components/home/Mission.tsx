@@ -102,10 +102,6 @@ const Mission = () => {
     }
   }, [activeTab, animateProgress, currentTab])
 
-  // useEffect(() => {
-  //   console.log('currentTab', currentTab)
-  // }, [currentTab])
-
   return (
     <Section>
       <div>
@@ -117,7 +113,7 @@ const Mission = () => {
               <div className="max-w-[69ch]">
                 <h2 className="mb-6">
                   We combine experience and expertise from diverse tech
-                  industries
+                  industries.
                 </h2>
                 <p className="max-w-[54ch] text-lg">
                   From life-changing medical devices to the foremost

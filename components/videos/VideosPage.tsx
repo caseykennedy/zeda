@@ -76,7 +76,6 @@ const VideosPage = ({ posts, featuredPosts, settings }: PageProps) => {
         />
         <GridSection posts={posts} />
         <FooterCTA
-          heading="Join forces with us. Let's change the world together"
           message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
           href="/contact"
           btnText="Get in touch"

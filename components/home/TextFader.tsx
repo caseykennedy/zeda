@@ -13,10 +13,10 @@ const WORDS_TO_ANIMATE = [
   // 'better outcomes',
   'tools',
   'tomorrow',
-  'security',
-  'equality',
-  'planes',
-  'cars',
+  // 'security',
+  // 'equality',
+  // 'planes',
+  // 'cars',
   'machines',
 ]
 

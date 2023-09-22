@@ -40,7 +40,7 @@ const FooterCTAFigure = ({
 }
 
 interface FooterCTAProps {
-  heading: string
+  heading?: string
   message: string
   href: string
   btnText: string
@@ -48,7 +48,7 @@ interface FooterCTAProps {
 }
 
 const FooterCTA = ({
-  heading = 'Join forces with us. Let’s change the world together',
+  heading = 'Join forces with us, let’s change the world together.',
   message = '<strong>Contact us</strong><br />We’d love to discuss the design and innovation challenges you are facing.',
   href = '/contact',
   btnText = 'Get in touch',

@@ -59,8 +59,6 @@ const Slide = ({ heading, message, image, alt, href, btnText }: SlideProps) => {
 }
 
 const SolutionSwiper = () => {
-  // const paginationRef = useRef(null)
-
   return (
     <section className="relative bg-black">
       <Swiper

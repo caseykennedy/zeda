@@ -67,7 +67,7 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
         <TextMarquee />
         <PartnersGrid partners={partners} />
         <FooterCTA
-          heading="Join forces with us. Let's change the world together"
+          heading="Join forces with us. Let's change the world together."
           message="<strong>Contact us</strong><br />We'd love to discuss the design and innovation challenges you are facing."
           href="/contact"
           btnText="Get in touch"
