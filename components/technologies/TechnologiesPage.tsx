@@ -66,9 +66,6 @@ export const TechnologiesPage = ({ leadership, settings }: Props) => {
       <TextMarquee text="We accelerate innovative ideas at light speed." />
       <Capabilities />
       <Services />
-      <section className="gutter h-[300px] border-b border-t border-silver-900 bg-black text-silver-800">
-        certs
-      </section>
       <LeadershipPanel
         people={leadership.people}
         title="At Zeda we leverage advanced manufacturing and technology backgrounds to help companies solve some of their most difficult problems."
