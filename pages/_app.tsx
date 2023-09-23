@@ -5,8 +5,21 @@ import { getAllPeople, getClient, getSettings } from 'lib/sanity.client'
 import { type Person, type Settings } from 'lib/sanity.queries'
 import { type GetStaticProps } from 'next'
 import { AppProps } from 'next/app'
+import { Inter, Urbanist } from 'next/font/google'
 
 import 'styles/globals.css'
+
+export const urbanist = Urbanist({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-urbanist',
+})
+
+export const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 
 interface Query {
   [key: string]: string
@@ -35,6 +48,12 @@ export default function App({
   )
   return (
     <>
+      <style jsx global>{`
+        :root {
+          --font-urbanist: ${urbanist.style.fontFamily};
+          --font-inter: ${inter.style.fontFamily};
+        }
+      `}</style>
       {draftMode ? (
         <PreviewProvider token={token}>
           <Component {...pageProps} />

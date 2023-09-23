@@ -63,7 +63,10 @@ export const TechnologiesPage = ({ leadership, settings }: Props) => {
       />
       <Intro />
       <WhyUs />
-      <TextMarquee text="We accelerate innovative ideas at light speed." />
+      <TextMarquee
+        text="We accelerate innovative ideas at light speed."
+        className="border-b border-t border-silver-900 bg-silver-950 text-silver-900/75"
+      />
       <Capabilities />
       <Services />
       <LeadershipPanel

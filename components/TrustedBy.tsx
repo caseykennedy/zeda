@@ -19,11 +19,7 @@ const TrustedBy = ({
     <SectionPanel
       title={title}
       btn={
-        <Button
-          variant="primary"
-          // className="hover:bg-yellow-600 hover:text-black"
-          asChild
-        >
+        <Button variant="primary" asChild>
           <Link href="/about/#partners">
             <Icon
               name="arrow-right"

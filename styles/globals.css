@@ -51,108 +51,20 @@
 }
 
 @layer base {
-  /* Urbanist Regular */
-  @font-face {
-    font-family: 'Urbanist';
-    src: url('/fonts/Urbanist-Regular.eot');
-    src: url('/fonts/Urbanist-Regular.woff2') format('woff2'),
-      url('/fonts/Urbanist-Regular.woff') format('woff'),
-      url('/fonts/Urbanist-Regular.otf') format('opentype'),
-      url('/fonts/Urbanist-Regular.eot'?#iefix) format('embedded-opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  html {
+    @apply bg-black;
   }
 
-  /* Urbanist Medium */
-  @font-face {
-    font-family: 'Urbanist';
-    src: url('/fonts/Urbanist-Medium.eot');
-    src: url('/fonts/Urbanist-Medium.woff2') format('woff2'),
-      url('/fonts/Urbanist-Medium.woff') format('woff'),
-      url('/fonts/Urbanist-Medium.otf') format('opentype'),
-      url('/fonts/Urbanist-Medium.eot'?#iefix) format('embedded-opentype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
+  body {
+    @apply relative flex min-h-screen w-full flex-col justify-between bg-background-500 font-sans font-normal antialiased;
 
-  /* Urbanist SemiBold */
-  @font-face {
-    font-family: 'Urbanist';
-    src: url('/fonts/Urbanist-SemiBold.eot');
-    src: url('/fonts/Urbanist-SemiBold.woff2') format('woff2'),
-      url('/fonts/Urbanist-SemiBold.woff') format('woff'),
-      url('/fonts/Urbanist-SemiBold.otf') format('opentype'),
-      url('/fonts/Urbanist-SemiBold.eot'?#iefix) format('embedded-opentype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  /* Urbanist Bold */
-  @font-face {
-    font-family: 'Urbanist';
-    src: url('/fonts/Urbanist-Bold.eot');
-    src: url('/fonts/Urbanist-Bold.woff2') format('woff2'),
-      url('/fonts/Urbanist-Bold.woff') format('woff'),
-      url('/fonts/Urbanist-Bold.otf') format('opentype'),
-      url('/fonts/Urbanist-Bold.eot'?#iefix) format('embedded-opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  /* Inter Regular */
-  @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-Regular.eot');
-    src: url('/fonts/Inter-Regular.woff2') format('woff2'),
-      url('/fonts/Inter-Regular.woff') format('woff'),
-      url('/fonts/Inter-Regular.otf') format('opentype'),
-      url('/fonts/Inter-Regular.eot'?#iefix) format('embedded-opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  /* Inter Medium */
-  @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-Medium.eot');
-    src: url('/fonts/Inter-Medium.woff2') format('woff2'),
-      url('/fonts/Inter-Medium.woff') format('woff'),
-      url('/fonts/Inter-Medium.otf') format('opentype'),
-      url('/fonts/Inter-Medium.eot'?#iefix) format('embedded-opentype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  /* Inter SemiBold */
-  @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-SemiBold.eot');
-    src: url('/fonts/Inter-SemiBold.woff2') format('woff2'),
-      url('/fonts/Inter-SemiBold.woff') format('woff'),
-      url('/fonts/Inter-SemiBold.otf') format('opentype'),
-      url('/fonts/Inter-SemiBold.eot'?#iefix) format('embedded-opentype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  /* Inter Bold */
-  @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-Bold.eot');
-    src: url('/fonts/Inter-Bold.woff2') format('woff2'),
-      url('/fonts/Inter-Bold.woff') format('woff'),
-      url('/fonts/Inter-Bold.otf') format('opentype'),
-      url('/fonts/Inter-Bold.eot'?#iefix) format('embedded-opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-feature-settings: 'pnum';
+    text-rendering: geometricPrecision;
+    font-feature-settings: 'pnum';
+    font-variant-numeric: proportional-nums;
+    font-variant-ligatures: discretionary-ligatures;
   }
 
   h1,
@@ -209,28 +121,11 @@
   hr {
   }
 
-  html {
-    @apply bg-black;
-  }
-
-  body {
-    @apply relative flex min-h-screen w-full flex-col justify-between bg-background-500 font-normal;
-
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-feature-settings: 'pnum';
-    text-rendering: geometricPrecision;
-    font-feature-settings: 'pnum';
-    font-variant-numeric: proportional-nums;
-    font-variant-ligatures: discretionary-ligatures;
-  }
-
   .swiper-pagination {
     @apply flex items-center justify-center;
 
     .swiper-pagination-bullet {
-      @apply h-4 w-4 bg-transparent border-2 border-silver-100 aspect-square opacity-100;
+      @apply aspect-square h-4 w-4 border-2 border-silver-100 bg-transparent opacity-100;
     }
 
     .swiper-pagination-bullet-active {

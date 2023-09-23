@@ -8,12 +8,12 @@ import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import PageHero from 'components/PageHero'
 import PageTitle, { Heading1FadeIn } from 'components/PageTitle'
+import TextMarquee from 'components/TextMarquee'
 import { Button, Icon } from 'components/ui'
 
 import AtGlance from './AtGlance'
 import PartnersGrid from './PartnersGrid'
 import Team from './Team'
-import TextMarquee from './TextMarquee'
 import AboutZeda from './Zeda'
 
 interface PageProps {
@@ -64,7 +64,7 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
         <AboutZeda />
         <AtGlance />
         <Team people={people} />
-        <TextMarquee />
+        <TextMarquee text="We build things better together." />
         <PartnersGrid partners={partners} />
         <FooterCTA
           heading="Join forces with us. Let's change the world together."

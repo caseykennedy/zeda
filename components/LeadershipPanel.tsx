@@ -9,7 +9,6 @@ import TeamBio from 'components/about/TeamBio'
 import Img from 'components/Img'
 import { buttonVariants } from 'components/ui/Button'
 import Section from 'components/ui/Section'
-import SectionTitle from 'components/ui/SectionTitle'
 
 const LeadershipPanel = ({
   people,

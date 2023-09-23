@@ -24,11 +24,6 @@ const Layout = ({
   theme = LayoutThemes.DARK,
   brand = BrandThemes.ZEDA,
 }: Props) => {
-  // const layoutStyles = cn(
-  //   'align-center relative flex min-h-screen w-full flex-col justify-between',
-  //   theme
-  // )
-
   return (
     <>
       <Header brand={brand} theme={theme} />

@@ -68,8 +68,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'Arial', ...fontFamily.sans],
-        display: ['Urbanist', 'Arial', ...fontFamily.sans],
+        sans: ['var(--font-inter)', 'Arial', ...fontFamily.sans],
+        display: ['var(--font-urbanist)', 'Arial', ...fontFamily.sans],
       },
       fontSize: {},
       keyframes: {
