@@ -17,11 +17,10 @@ const WhyUs = () => (
           <Image
             src="/images/turbine-tilt.png"
             alt="Zeda Inc. manufacturing facility"
-            // fill={true}
             height={980}
             width={1149}
             quality={50}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
+            sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
             className="object-fit-contain xl:scale-115 sm:translate-y-10 md:translate-x-16 md:scale-125 xl:translate-y-8"
           />
         </figure>
@@ -32,7 +31,7 @@ const WhyUs = () => (
             fill={true}
             style={{ objectFit: 'cover' }}
             quality={50}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
           />
         </figure>
       </div>

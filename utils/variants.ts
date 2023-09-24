@@ -3,7 +3,7 @@ const polyVariant = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.35,
+      duration: 0.2,
       stiffness: 100,
       velocity: -10,
       type: 'spring',

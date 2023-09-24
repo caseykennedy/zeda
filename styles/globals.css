@@ -56,7 +56,7 @@
   }
 
   body {
-    @apply relative flex min-h-screen w-full flex-col justify-between bg-background-500 font-sans font-normal antialiased;
+    @apply relative flex min-h-screen w-full flex-col justify-between scroll-smooth bg-background-500 font-sans font-normal antialiased;
 
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
@@ -74,18 +74,6 @@
   h5 {
     @apply font-display font-semibold leading-snug tracking-normal;
   }
-
-  /* h1::before,
-  h2::before,
-  h3::before,
-  h4::before,
-  h5::before {
-    content: '';
-    display: block;
-    height: 0;
-    width: 0;
-    margin-top: calc(0.1 * 0.5em);
-  } */
 
   h1 {
     @apply text-4xl md:text-5xl md:leading-tight;

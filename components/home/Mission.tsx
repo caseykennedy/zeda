@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+import { polyVariant } from 'utils/variants'
 
 import Icon from 'components/ui/Icon'
 import { Progress } from 'components/ui/Progress'
@@ -144,28 +146,40 @@ const Mission = () => {
                         </div>
 
                         {activeTab === id && (
-                          <div className="mt-2 grid w-full sm:grid-cols-8">
-                            <div className="sm:col-span-8 sm:col-start-2">
-                              <figure className="mb-6 mt-4 aspect-video overflow-hidden rounded sm:hidden">
-                                <Image
-                                  src={`/images/${figure.src}`}
-                                  alt={figure.alt}
-                                  width={500}
-                                  height={200}
-                                  placeholder="blur"
-                                  blurDataURL="/images/wormhole.png"
-                                  quality={80}
-                                  // fill={true}
-                                  // style={{ objectFit: 'cover' }}
-                                  // className="aspect-video"
-                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-                                />
-                              </figure>
-                              <p className="justify-self-start text-left text-base text-silver-800">
-                                {details}
-                              </p>
+                          <AnimatePresence>
+                            <div className="mt-2 grid w-full sm:grid-cols-8">
+                              <motion.div
+                                variants={polyVariant}
+                                layout
+                                initial="hidden"
+                                animate="visible"
+                                exit="hidden"
+                                className="sm:col-span-8 sm:col-start-2"
+                              >
+                                <motion.figure
+                                  initial={['hidden', 'down']}
+                                  whileHover={['visible', 'up']}
+                                  animate={['hidden', 'down']}
+                                  className="mb-6 mt-4 aspect-video overflow-hidden rounded sm:hidden"
+                                >
+                                  <Image
+                                    src={`/images/${figure.src}`}
+                                    alt={figure.alt}
+                                    width={500}
+                                    height={200}
+                                    placeholder="blur"
+                                    blurDataURL={`/images/${figure.src}`}
+                                    quality={60}
+                                    sizes="40vw"
+                                    priority={true}
+                                  />
+                                </motion.figure>
+                                <p className="justify-self-start text-left text-base text-silver-800">
+                                  {details}
+                                </p>
+                              </motion.div>
                             </div>
-                          </div>
+                          </AnimatePresence>
                         )}
                       </TabsTrigger>
                       {activeTab === id && (
@@ -189,14 +203,12 @@ const Mission = () => {
                     <Image
                       src={`/images/${currentTab.figure.src}`}
                       alt={currentTab.figure.alt}
-                      // width={791}
-                      // height={891}
                       placeholder="blur"
-                      blurDataURL="/images/wormhole.png"
+                      blurDataURL={`/images/${currentTab.figure.src}`}
                       quality={80}
                       fill={true}
                       style={{ objectFit: 'cover' }}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                      sizes="(max-width: 1200px) 40vw, 33vw"
                     />
                   </figure>
                 </TabsContent>
