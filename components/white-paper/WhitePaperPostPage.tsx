@@ -12,7 +12,7 @@ interface Props {
   preview?: boolean
   loading?: boolean
   post: WhitePaperPost
-  morePosts: Post[]
+  morePosts: WhitePaperPost[]
   settings?: Settings
 }
 

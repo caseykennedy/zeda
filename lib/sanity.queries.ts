@@ -360,6 +360,7 @@ export interface Settings {
 
 export interface WhitePaperPost extends ReadingTime {
   _id: string
+  categories?: string[]
   content?: any
   coverImage?: SanityImage
   date?: string

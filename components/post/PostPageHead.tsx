@@ -1,13 +1,13 @@
 import * as demo from 'lib/demo.data'
 import { urlForImage } from 'lib/sanity.image'
-import { type Post, type Settings } from 'lib/sanity.queries'
+import { type Post, type Settings, WhitePaperPost } from 'lib/sanity.queries'
 import Head from 'next/head'
 
 import PageMeta from 'components/PageMeta'
 
 export interface PostPageHeadProps {
   settings?: Settings
-  post: Post
+  post: Post | WhitePaperPost
 }
 
 export default function PostPageHead({ settings, post }: PostPageHeadProps) {

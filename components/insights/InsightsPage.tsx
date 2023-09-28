@@ -35,7 +35,7 @@ const GridSection = ({
   id: string
   title: string
   subTitle: string
-  posts: Post[]
+  posts: Post[] | WhitePaperPost[]
   whitePaper?: boolean
 }) => {
   const { list, handleLoadMore, hasMore } = useLoadMore(posts, 3)

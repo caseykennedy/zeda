@@ -1,4 +1,4 @@
-import type { Post } from 'lib/sanity.queries'
+import type { Post, WhitePaperPost } from 'lib/sanity.queries'
 import Link from 'next/link'
 
 import { PostCardFeatured } from 'components/post'
@@ -9,7 +9,7 @@ const MorePosts = ({
   btnHref = '/news',
   btnText = 'All news',
 }: {
-  posts: Post[]
+  posts: Post[] | WhitePaperPost[]
   btnHref?: string
   btnText?: string
 }) => {
