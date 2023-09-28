@@ -109,6 +109,10 @@
   hr {
   }
 
+  b {
+    @apply font-semibold;
+  }
+
   .swiper-pagination {
     @apply flex items-center justify-center;
 

@@ -33,7 +33,7 @@ const WhyUs = () => {
     { image: 'badge-as.png', alt: 'as9100d certification' },
     { image: 'badge-itar.png', alt: 'International Traffic in Arms Compliant' },
     { image: 'badge-iso.png', alt: 'Medical Devices Quality Management' },
-    { image: 'badge-itar.png', alt: 'Medical Devices Quality Management' },
+    { image: 'badge-firearms-cert.png', alt: 'USA Firearms Dealer' },
   ]
 
   return (
@@ -110,7 +110,7 @@ const WhyUs = () => {
             {certBadges.map(({ image, alt }, i) => (
               <figure
                 key={i}
-                className="inline-block rounded-full border border-silver-800 bg-silver-900"
+                className="inline-block rounded-full border border-silver-800 bg-black"
               >
                 <Img
                   src={`/images/${image}`}

@@ -7,21 +7,21 @@ import SectionPanel from 'components/ui/SectionPanel'
 
 const stats = [
   {
+    value: 7,
+    suffix: '+',
+    description: 'Strategic partners with a $340B combined market cap',
+  },
+  {
+    value: 6,
+    description: 'Years in business',
+  },
+  {
     value: 3,
-    description: 'Globally operated advanced manufacturing businesses',
-  },
-  {
-    value: 73,
-    suffix: 'k',
-    description: 'Square feet of advanced manufacturing facilities',
-  },
-  {
-    value: 12,
-    description: 'Technology patents',
+    description: 'Major acquisitions',
   },
   {
     value: 1,
-    description: 'Mission: to better lives by building it all better together',
+    description: 'Mission: to better lives by building it better together',
   },
 ]
 

@@ -40,12 +40,12 @@ export const IndexPage = ({
       <AtGlance />
       <SolutionSwiper />
       <TrustedBy
-        title="Innovations that once took years can now be accomplished in months, weeks or even days. We take great ideas and move them through complex hurdles in a short period of time."
+        title="We power highly regulated industries through our unique powder-to-finished-part end to end solution. By fusing nanotech with advanced additive technologies, we can build on a digital manufacturing platform that allows us to deploy anywhere. Supply chain issues eliminated."
         partners={partners}
       />
       <FeaturedPosts insights={insights} news={news} press={press} />
       <JobList
-        title="Zeda is a workplace where people from different aspects of life come together to create an unstoppable team. With strong values, connections, and progressive attitudes, we make sure everyone feels their best."
+        title="Zeda is a workplace where people work together and make a difference."
         hasBtn={true}
         posts={jobPosts}
       />

@@ -9,13 +9,14 @@ const postFields = groq`
   notes,
   tags,
   title,
+  hasExternalURL,
+  articleURL,
   "categories": postCategory[]->name,
   coverImage{
     ...,
     "metadata": asset->metadata
   },
   "slug": slug.current,
-  "author": author->{name, picture},
 `
 
 const whitePaperFields = groq`
@@ -296,11 +297,13 @@ export interface SanityImage {
 
 export interface Post extends ReadingTime {
   _id: string
+  articleURL: string
   categories?: string[]
   content?: any
   coverImage?: SanityImage
   date?: string
   excerpt?: string
+  hasExternalURL: boolean
   notes?: any
   slug?: string
   tags: string[]

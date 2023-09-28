@@ -71,14 +71,13 @@ const ContactForm = () => {
         throw new Error(`Invalid response: ${response.status}`)
       }
 
-      // console.log('response', response)
-
       setTimeout(() => {
         setIsSubmitSuccessful(true)
       }, 1000)
     } catch (error) {
       console.error(error)
-      alert("We can't submit the form, try again later")
+
+      alert('Something went wrong, please try sending your message again.')
     } finally {
       setTimeout(() => {
         setIsSubmitting(false)

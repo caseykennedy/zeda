@@ -28,7 +28,13 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
   ],
-
+  orderings: [
+    {
+      title: 'Alphabetical a–>z',
+      name: 'name',
+      by: [{ field: 'name', direction: 'asc' }],
+    },
+  ],
   preview: {
     select: {
       title: 'name',

@@ -77,8 +77,7 @@ const SolutionSwiper = () => {
         <SwiperSlide>
           <Slide
             heading="What can we do to better lives and what can we build together?"
-            message="<strong>Zeda Technologies</strong><br />We use technology to better humanity—built with
-          trust."
+            message="<strong>Zeda Technologies</strong><br />We win together."
             image="solutions-tech.jpg"
             alt="Zeda Inc. manufacturing facility"
             href="/technologies"
@@ -88,8 +87,8 @@ const SolutionSwiper = () => {
 
         <SwiperSlide>
           <Slide
-            heading="We offer better value for the devices you know and use everyday."
-            message="<strong>Zeda Health</strong><br />Devices that are good for all<br />—made better."
+            heading="We aim to give the world cost effective, life saving devices."
+            message="<strong>Zeda Health</strong><br />We design for regional markets."
             image="health/med-device.jpg"
             alt="Zeda Inc. manufacturing facility"
             href="/health"

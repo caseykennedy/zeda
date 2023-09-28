@@ -26,9 +26,9 @@ const data = [
   {
     id: 1,
     value: 'precision',
-    title: 'Precision manufacturing',
+    title: 'Secondary process',
     details:
-      'Employing meticulous techniques like CNC machining and microfabrication to create intricate and accurate components.',
+      'Our end-to-end solution covers the entire process, from powder materials to the finished part.',
     figure: {
       src: 'precision-manufacturing.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -39,7 +39,7 @@ const data = [
     value: 'nanotech',
     title: 'Nanotech',
     details:
-      'Manipulating matter at the nanoscale, utilizing methods like self-assembly and nanolithography to create new materials.',
+      'We apply nano technology, using atomic layer deposition, to surfaces in order to improve patient outcomes.',
     figure: {
       src: 'nanotech.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -50,7 +50,7 @@ const data = [
     value: 'semiconductor',
     title: 'Semiconductor technologies',
     details:
-      'Utilizing processes like photolithography and doping to manufacture electronic components from semiconductor materials.',
+      'Applying semiconductor technologies on top of additive manufacturing to achieve new breakthroughs.',
     figure: {
       src: 'semiconductors.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -114,13 +114,17 @@ const Mission = () => {
             <div>
               <div className="max-w-[69ch]">
                 <h2 className="mb-6">
-                  We combine experience and expertise from diverse tech
-                  industries.
+                  Zeda is a leading global technology solutions company.
                 </h2>
                 <p className="max-w-[54ch] text-lg">
+                  Our foundation combines expertise from diverse industries,
+                  including additive manufacturing, nanotech, precision
+                  machining and regulatory know-how.
+                </p>
+                {/* <p className="max-w-[54ch] text-lg">
                   From life-changing medical devices to the foremost
                   advancements in space, we use technology to better humanity.
-                </p>
+                </p> */}
               </div>
 
               <div className="mt-14 lg:mt-24">

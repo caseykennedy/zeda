@@ -4,6 +4,7 @@ import { LayoutThemes, PostCategories } from 'utils/constants'
 
 import Layout from 'components/Layout'
 import ScrollProgress from 'components/ScrollProgress'
+import { Button } from 'components/ui'
 import Separator from 'components/ui/Separator'
 
 import MorePosts from './MorePosts'
@@ -36,6 +37,8 @@ const PostPage = ({
     notFound()
   }
 
+  console.log('post', post)
+
   return (
     <>
       <PostPageHead settings={settings} post={post} />
@@ -59,6 +62,18 @@ const PostPage = ({
               <section className="gutter-x gutter-y w-full">
                 <div className="mx-auto max-w-2xl">
                   <PostBody content={post.content} />
+
+                  {post.hasExternalURL && (
+                    <Button variant="primary" className="mt-12" asChild>
+                      <a
+                        href={post.articleURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Read Article
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </section>
               <PostMeta notes={post.notes} slug={slug} tags={post.tags} />

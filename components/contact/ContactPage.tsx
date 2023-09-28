@@ -10,7 +10,7 @@ import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import { Heading1FadeIn } from 'components/PageTitle'
 import PageTitle from 'components/PageTitle'
-import { Button, Section } from 'components/ui'
+import { Button, Section, Separator } from 'components/ui'
 
 import ContactForm from './ContactForm'
 
@@ -83,10 +83,34 @@ export const ContactPage = ({ settings }: Props) => {
                 <GlobeIcon className="h-6 w-6" />
               </div>
               <h2 className="mb-3 text-2xl md:tracking-wide">Headquarters</h2>
-              <p className="max-w-[36ch]">
+              <p className="">
+                <b>Zeda Holdings, Inc.</b>
+                <br />
                 47929 Fremont Blvd
                 <br />
                 Fremont, CA 94538
+              </p>
+
+              <Separator className="my-10 bg-silver-200" />
+
+              <p className="text-base">
+                <b>Zeda SG Pte Ltd</b>
+                <br />
+                10 Hospital Boulevard
+                <br />
+                The Innovation Center 02-02
+                <br />
+                168582, Singapore
+              </p>
+
+              <p className="text-base">
+                <b>Zeda Technologies</b>
+                <br />
+                1120 Strategic Parkway
+                <br />
+                Suite 300
+                <br />
+                Springdale, OH, 45246
               </p>
             </div>
           </div>
