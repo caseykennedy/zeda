@@ -5,17 +5,13 @@ import { BrandThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
 import Layout from 'components/Layout'
-import LeadershipPanel from 'components/LeadershipPanel'
 import PageHead from 'components/PageHead'
 import PageHero from 'components/PageHero'
 import PageTitle, { Heading1FadeIn } from 'components/PageTitle'
 import TextMarquee from 'components/TextMarquee'
 import TrustedBy from 'components/TrustedBy'
-import { Button, Icon } from 'components/ui'
 
-import Capabilities from './Capabilities'
 import Intro from './Intro'
-import Services from './Services'
 import WhyUs from './WhyUs'
 
 interface Props {
@@ -31,7 +27,7 @@ const HealthPage = ({ leadership, partners, settings }: Props) => {
         settings={settings}
         page={{
           title: 'Health',
-          description: 'health',
+          description: 'Pushing the upper limits of medical device technology.',
         }}
       />
       <PageTitle>
@@ -66,13 +62,13 @@ const HealthPage = ({ leadership, partners, settings }: Props) => {
         className="object-left-top"
       />
       <Intro />
-      <WhyUs />
-      {/* <TextMarquee
+      <TextMarquee
         text="We accelerate innovative ideas at light speed."
         className="border-b border-t border-silver-900 bg-silver-950 text-silver-900/75"
-      /> */}
-      {/* <Capabilities />
-      <Services /> */}
+      />
+      <WhyUs />
+      {/* <Capabilities /> */}
+      {/* <Services /> */}
       <TrustedBy
         title="Zeda Health is committed to making innovative healthcare accessible to all. Join us in imagining and creating the future of healthcare—one innovation at a time."
         partners={partners}
