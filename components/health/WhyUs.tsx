@@ -9,21 +9,22 @@ import SectionTitle from 'components/ui/SectionTitle'
 
 const stats = [
   {
-    value: 3,
-    description: 'Globally operated advanced manufacturing businesses',
+    value: 30,
+    suffix: '+',
+    description: 'FDA approved devices',
   },
   {
-    value: 73,
-    suffix: 'k',
-    description: 'Square feet of advanced manufacturing facilities.',
+    value: 12,
+    description: 'Patents',
   },
   {
-    value: 3,
-    description: 'Established geographical locations around the world',
+    value: 10,
+    suffix: '+',
+    description: 'Years helping those in need',
   },
   {
     value: 1,
-    description: 'Mission: to better lives by building it all better together.',
+    description: 'Mission: to better lives by building it all better together',
   },
 ]
 
@@ -34,15 +35,15 @@ const WhyUs = () => {
       <div className="grid grid-cols-6">
         <div className="col-span-6 mb-8 md:col-span-4">
           <h2>
-            Zeda is where ideas
+            Zeda Health is where
             <br />
-            meet reality
+            imagination becomes reality
           </h2>
         </div>
         <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">
           <p className="max-w-[40ch] text-lg text-silver-400">
-            We leverage advanced manufacturing and technology to help companies
-            solve some of their most difficult challenges.
+            Using technology to innovate design is powerful. Using it to create
+            accessible high quality healthcare is transformative.
           </p>
         </div>
       </div>

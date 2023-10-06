@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import Section from 'components/ui/Section'
+import SectionTitle from 'components/ui/SectionTitle'
 
 const WhyUs = () => (
   <Section
@@ -36,13 +37,11 @@ const WhyUs = () => (
         </figure>
       </div>
 
-      <div className="gutter-x gutter-y relative flex aspect-square flex-col items-center justify-center border-l border-black bg-violet-500 text-black">
-        {/* <div className="flex w-full">
-          <SectionTitle>Why us?</SectionTitle>
-          <h2 className="mx-auto mb-16 max-w-[24ch] text-center text-4xl">
-            We accelerate innovative ideas of every level at light speed.
-          </h2>
-        </div> */}
+      <div className="gutter-x gutter-y relative aspect-square border-l border-silver-900 bg-violet-500 text-black">
+        <SectionTitle>Why us?</SectionTitle>
+        <h2 className="mb-16 max-w-[24ch] text-4xl">
+          We accelerate innovative ideas of every level at light speed.
+        </h2>
 
         {/* <div className="translate-x-gutter relative flex flex-row flex-nowrap gap-2 rounded-bl-full rounded-tl-full bg-black p-4 pr-16 sm:pr-24">
           {certBadges.map(({ image, alt }, i) => (

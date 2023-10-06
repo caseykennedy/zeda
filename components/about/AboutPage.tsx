@@ -75,7 +75,7 @@ export const AboutPage = ({ partners, people, settings }: PageProps) => {
           <FooterCTAFigure
             src={ctaImgSrc}
             alt="Zeda Inc. - Rocket ship"
-            className=" object-[-600px_top] sm:object-center"
+            className="object-[-600px_top] sm:object-center"
           />
         </FooterCTA>
       </Layout>

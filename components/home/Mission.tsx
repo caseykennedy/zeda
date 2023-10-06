@@ -19,7 +19,7 @@ const data = [
     details:
       'Including processes such as rapid prototyping and mass customization, enabling the production of complex shapes and structures.',
     figure: {
-      src: 'additive-manufacturing.jpg',
+      src: 'additive-mfg.jpg',
       alt: 'Zeda Inc. manufacturing facility',
     },
   },
@@ -39,10 +39,10 @@ const data = [
     value: 'nanotech',
     title: 'Nanotech',
     details:
-      'We apply nano technology, using atomic layer deposition, to surfaces in order to improve patient outcomes.',
+      'We apply nano technology, using atomic layer deposition (ALD), to surfaces in order to improve patient outcomes.',
     figure: {
       src: 'nanotech.jpg',
-      alt: 'Zeda Inc. manufacturing facility',
+      alt: 'Zeda Inc. nanotechnology',
     },
   },
   {
@@ -50,10 +50,10 @@ const data = [
     value: 'semiconductor',
     title: 'Semiconductor technologies',
     details:
-      'Applying semiconductor technologies on top of additive manufacturing to achieve new breakthroughs.',
+      'Applying semiconductor technologies on top of additive manufacturing to reduce costs in production at scale.',
     figure: {
       src: 'semiconductors.jpg',
-      alt: 'Zeda Inc. manufacturing facility',
+      alt: 'Zeda Inc. semiconductor manufacturing facility',
     },
   },
 ]
@@ -127,7 +127,7 @@ const Mission = () => {
                 </p> */}
               </div>
 
-              <div className="mt-14 lg:mt-24">
+              <div className="mt-10">
                 <TabsList>
                   {data.map(({ value, id, title, details, figure }, idx) => (
                     <div key={idx}>
@@ -164,21 +164,21 @@ const Mission = () => {
                                   initial={['hidden', 'down']}
                                   whileHover={['visible', 'up']}
                                   animate={['hidden', 'down']}
-                                  className="mb-6 mt-4 aspect-video overflow-hidden rounded sm:hidden"
+                                  className="relative mb-6 mt-4 aspect-video overflow-hidden rounded sm:hidden"
                                 >
                                   <Image
                                     src={`/images/${figure.src}`}
                                     alt={figure.alt}
-                                    width={500}
-                                    height={200}
+                                    fill={true}
                                     placeholder="blur"
                                     blurDataURL={`/images/${figure.src}`}
                                     quality={60}
-                                    sizes="40vw"
+                                    sizes="(max-width: 800px) 33vw, 10vw"
                                     priority={true}
+                                    className="aspect-video object-cover object-[center_-200px]"
                                   />
                                 </motion.figure>
-                                <p className="justify-self-start text-left text-base text-silver-800">
+                                <p className="max-w-[54ch] justify-self-start text-left text-base text-silver-800">
                                   {details}
                                 </p>
                               </motion.div>
@@ -212,7 +212,7 @@ const Mission = () => {
                       quality={80}
                       fill={true}
                       style={{ objectFit: 'cover' }}
-                      sizes="(max-width: 1200px) 40vw, 33vw"
+                      sizes="(max-width: 1200px) 33vw, 25vw"
                     />
                   </figure>
                 </TabsContent>

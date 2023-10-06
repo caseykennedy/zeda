@@ -45,7 +45,7 @@ export const IndexPage = ({
       />
       <FeaturedPosts insights={insights} news={news} press={press} />
       <JobList
-        title="Zeda is a workplace where people work together and make a difference."
+        title="Zeda is a workplace where people come together in order to make a difference."
         hasBtn={true}
         posts={jobPosts}
       />

@@ -43,7 +43,7 @@ const data: AccordionFeatureShape[] = [
     type: FeatureTypes.usFirst,
     icon: <ShieldIcon />,
     title: 'Economic Security',
-    desc: 'At Zeda we believe a strong manufacturing base is critical to a healthy economy and paramount to national security.',
+    desc: 'At Zeda Technologies we believe a strong manufacturing base is critical to a healthy economy and paramount to national security.',
   },
   {
     type: FeatureTypes.process,
@@ -127,7 +127,7 @@ export const Intro = () => (
         id={1}
         type={FeatureTypes.usFirst}
         title="U.S. First Manufacturing"
-        desc="Zeda is a proud vendor of advanced manufacturing processes and is working hard to promote the domestic manufacturing renaissance."
+        desc="Zeda Technologies is a proud vendor of advanced manufacturing processes and is working hard to promote the domestic manufacturing renaissance."
         features={data.filter(({ type }) => type === FeatureTypes.usFirst)}
       />
       <Collapse

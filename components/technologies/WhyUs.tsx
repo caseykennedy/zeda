@@ -10,17 +10,17 @@ import SectionTitle from 'components/ui/SectionTitle'
 
 const stats = [
   {
-    value: 3,
-    description: 'Globally operated advanced manufacturing businesses',
+    value: 30,
+    description: 'Years of advanced manufacturing experience',
   },
   {
-    value: 73,
+    value: 150,
     suffix: 'k',
     description: 'Square feet of advanced manufacturing facilities',
   },
   {
-    value: 12,
-    description: 'Technology patents',
+    value: 5,
+    description: 'Regulated industries served',
   },
   {
     value: 1,
@@ -42,9 +42,9 @@ const WhyUs = () => {
       <div className="grid grid-cols-6">
         <div className="col-span-6 mb-8 md:col-span-4">
           <h2>
-            Zeda is where ideas
+            Zeda Technologies is where
             <br />
-            meet reality
+            ideas meet reality
           </h2>
         </div>
         <div className="col-span-6 flex md:col-span-2 md:col-start-5 md:justify-end">

@@ -1,12 +1,9 @@
 import {
   ChevronDownIcon,
-  GearIcon,
+  GlobeIcon,
   HandIcon,
   LayersIcon,
-  RulerSquareIcon,
-  TimerIcon,
 } from '@radix-ui/react-icons'
-import { ShieldIcon } from 'lucide-react'
 
 import FeatureGridItem, { type FeatureShape } from 'components/FeatureGridItem'
 import {
@@ -29,48 +26,31 @@ interface AccordionFeatureShape extends FeatureShape {
 const data: AccordionFeatureShape[] = [
   {
     type: FeatureTypes.usFirst,
-    icon: <GearIcon />,
-    title: 'Industrial Fusion',
-    desc: 'The new industrial revolution includes additive and traditional manufacturing melded together with real time data analytics and quality control systems.',
+    icon: <GlobeIcon />,
+    title: 'Global contribution',
+    desc: 'Zeda Health takes pride in actively contributing to the Global Healthcare Innovation Community. Our mission is to use technology to produce cutting edge devices and therapies that are accessible to every patient globally. ',
   },
   {
     type: FeatureTypes.usFirst,
     icon: <HandIcon />,
-    title: 'Skilled Workforce',
-    desc: `We hire highly trained, competent technicians, engineers, and craftsmen who work in a brightly lit, climate controlled, epoxy floor, lab environment.`,
+    title: 'Z-to-A approach',
+    desc: `Our name reflects our Z-to-A approach, emphasizing a patient-centric methodology that starts with understanding the patient's needs and ends with innovative products.`,
   },
   {
     type: FeatureTypes.usFirst,
-    icon: <ShieldIcon />,
-    title: 'Economic Security',
-    desc: 'At Zeda we believe a strong manufacturing base is critical to a healthy economy and paramount to national security.',
-  },
-  {
-    type: FeatureTypes.process,
-    icon: <RulerSquareIcon />,
-    title: 'Prototype',
-    desc: 'Rapid prototyping is more than having fast equipment. You need talented engineers and a robust design hardware and software ecosystem.',
-  },
-  {
-    type: FeatureTypes.process,
     icon: <LayersIcon />,
-    title: 'Design',
-    desc: `Mastering intricate geometries for a transformative impact in medical, aerospace, defense, space and energy.`,
-  },
-  {
-    type: FeatureTypes.process,
-    icon: <TimerIcon />,
-    title: 'Delivery',
-    desc: 'We accelerate innovative ideas of every level. Whether you are a multi-national corporation in need of advanced design consultation, or an individual looking to develop an initial prototype.',
+    title: 'Tech expertise',
+    desc: 'We have successfully integrated deep tech manufacturing capabilities with regulatory know-how, resulting in over 30 FDA-approved devices and a portfolio that includes 12 patents.',
   },
 ]
 
 const Lead = () => (
   <Section>
-    <h2 className="mx-auto my-16 max-w-[52ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
-      Zeda Health focuses on combining 3D printing with nanotechnologies to
-      address the needs of the medical device market. We help customers at every
-      stage of their productization life cycle.
+    <h2 className="mx-auto my-16 max-w-[56ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
+      Zeda Health, a medical technology company, pioneers solutions to global
+      healthcare challenges by integrating 3D printing and nanotechnologies.
+      Focused on accessibility, we imagine and create innovative devices and
+      therapies, ensuring better healthcare products for all.
     </h2>
   </Section>
 )
@@ -125,8 +105,8 @@ export const Intro = () => (
       <Collapse
         id={1}
         type={FeatureTypes.usFirst}
-        title="Advanced Manufacturing"
-        desc="Zeda is a proud vendor of advanced manufacturing processes and is working hard to promote the domestic manufacturing renaissance."
+        title="Build together"
+        desc="We're a deep technology company based in Singapore focused on advanced manufacturing. We bring healthcare ideas from concept to commercialization."
         features={data.filter(({ type }) => type === FeatureTypes.usFirst)}
       />
       {/* <Collapse

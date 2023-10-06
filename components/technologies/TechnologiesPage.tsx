@@ -29,7 +29,7 @@ export const TechnologiesPage = ({ leadership, settings }: Props) => {
       <PageHead
         settings={settings}
         page={{
-          title: 'Technologies',
+          title: 'Zeda Technologies',
           description:
             'Zeda, Inc. blends traditional methods like CNC machining and EDM with cutting-edge technologies like additive manufacturing and automation.',
         }}

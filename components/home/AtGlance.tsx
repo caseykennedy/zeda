@@ -17,7 +17,7 @@ const stats = [
   },
   {
     value: 3,
-    description: 'Major acquisitions',
+    description: 'Acquisitions',
   },
   {
     value: 1,
