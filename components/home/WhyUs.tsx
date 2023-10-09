@@ -62,30 +62,13 @@ const WhyUs = () => (
             {valueProps.map(({ value }, idx) => (
               <div
                 key={idx}
-                className="-mb-[1px] rounded-full border border-black px-10 py-7 text-xl font-medium transition-all duration-200 hover:bg-black hover:text-white md:text-2xl"
+                className="-mb-[1px] rounded-full border border-black px-6 md:px-10 py-5 md:py-7 text-xl font-medium transition-all duration-200 hover:bg-black hover:text-white md:text-2xl flex items-center"
               >
-                <span className="mr-6">0{idx + 1}.</span>
+                <span className="mr-2 md:mr-6 text-base">0{idx + 1}</span>
                 {value}
               </div>
             ))}
           </div>
-
-          {/* <div className="translate-x-gutter relative flex flex-row flex-nowrap gap-2 rounded-bl-full rounded-tl-full bg-black p-4 pr-16 sm:pr-24">
-          {certBadges.map(({ image, alt }, i) => (
-            <figure
-              key={i}
-              className="inline-block rounded-full border border-silver-800 bg-silver-900"
-            >
-              <Image
-                src={`/images/${image}`}
-                alt={alt}
-                height={120}
-                width={120}
-                quality={100}
-              />
-            </figure>
-          ))}
-        </div> */}
         </div>
       </div>
     </Section>

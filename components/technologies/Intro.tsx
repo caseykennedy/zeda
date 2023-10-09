@@ -67,11 +67,12 @@ const data: AccordionFeatureShape[] = [
 
 const Lead = () => (
   <Section>
-    <h2 className="mx-auto my-16 max-w-[50ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
-      A robust manufacturing capability is vital for a strong economy and
+    <h2 className="mx-auto my-16 max-w-[64ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
+      {/* A robust manufacturing capability is vital for a strong economy and
       national security. We blend traditional methods like CNC machining and EDM
       with cutting-edge technologies like additive manufacturing, robotics and
-      automation.
+      automation. */}
+      Founded in 1994 by Greg Morris and 2 friends, Morris Technologies was first to introduce additive manufacturing into the US. Innovating quickly, Morris Technologies develops the first metal 3D printed fuel-nozzle for aviation. Realizing the massive potential for additive manufacturing technologies, GE Aviation acquires Morris Technologies in 2012. Greg and team create Vertex Manufacturing 2020, which today continues to build on the trust that was created 30 years ago.
     </h2>
   </Section>
 )
