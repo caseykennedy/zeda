@@ -30,7 +30,7 @@ const PostCard = ({
 >) => {
   return (
     <Link
-      href={`/posts/${slug}`}
+      href={`/${slug}`}
       className="gap group grid w-full sm:grid-cols-2 lg:grid-cols-3"
       aria-label={`Read "${title}"`}
       title={title}

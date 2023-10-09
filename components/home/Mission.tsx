@@ -17,7 +17,7 @@ const data = [
     value: 'additive',
     title: 'Additive manufacturing',
     details:
-      'Including processes such as rapid prototyping and mass customization, enabling the production of complex shapes and structures.',
+      'Including rapid prototyping and mass customization, enabling the production of complex shapes and structures.',
     figure: {
       src: 'additive-mfg.jpg',
       alt: 'Zeda Inc. manufacturing facility',
@@ -52,7 +52,7 @@ const data = [
     details:
       'Applying semiconductor technologies on top of additive manufacturing to reduce costs in production at scale.',
     figure: {
-      src: 'semiconductors.jpg',
+      src: 'semi-conductors.jpg',
       alt: 'Zeda Inc. semiconductor manufacturing facility',
     },
   },

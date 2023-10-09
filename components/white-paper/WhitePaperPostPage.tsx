@@ -70,6 +70,7 @@ const WhitePaperPostPage = ({
                 posts={morePosts}
                 btnText="All white papers"
                 btnHref="/insights/#white-papers"
+                isWhitePaper={true}
               />
             )}
           </>

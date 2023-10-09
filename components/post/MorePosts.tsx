@@ -8,11 +8,14 @@ const MorePosts = ({
   posts,
   btnHref = '/news',
   btnText = 'All news',
+  isWhitePaper = false,
 }: {
   posts: Post[] | WhitePaperPost[]
   btnHref?: string
   btnText?: string
+  isWhitePaper?: boolean
 }) => {
+  const slugPath = isWhitePaper ? 'white-papers' : 'posts'
   return (
     <section className="relative w-full bg-white">
       <div className="border-b border-silver-100">
@@ -40,7 +43,7 @@ const MorePosts = ({
               date={post.date}
               estimatedReadingTime={post.estimatedReadingTime}
               excerpt={post.excerpt}
-              slug={post.slug}
+              slug={`${slugPath}/${post.slug}`}
               title={post.title}
               categories={post.categories || ['White paper']}
               tags={post.tags}

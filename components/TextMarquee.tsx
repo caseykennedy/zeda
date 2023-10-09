@@ -6,7 +6,7 @@ import Section from 'components/ui/Section'
 const TextMarquee = ({
   text,
   className,
-  speed = 225,
+  speed = 275,
 }: {
   text: string
   className?: string

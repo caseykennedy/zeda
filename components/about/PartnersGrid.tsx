@@ -103,13 +103,13 @@ const PartnersGrid = ({ partners }: { partners: Partner[] }) => (
       initial="hidden"
       whileInView="visible"
       viewport={viewport}
-      className="gap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4"
     >
       {partners.map(({ name, logo }, idx) => (
         <motion.figure
           key={idx}
           variants={polyVariant}
-          className="gutter-x flex items-center justify-center rounded border border-silver-900 py-8 md:py-14"
+          className="gutter-x gutter-y relative flex items-center justify-center py-8 before:absolute before:-left-1 before:bottom-0 before:top-0 before:w-[1px] before:bg-silver-900"
         >
           <Img
             src={urlForImage(logo).width(180).height(80).url()}

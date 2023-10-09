@@ -40,7 +40,7 @@ const SectionPanel = ({
       </div>
     </div>
 
-    <div className="mt-32 md:mt-64">{children}</div>
+    <div className="mt-32 md:mt-56">{children}</div>
   </Section>
 )
 

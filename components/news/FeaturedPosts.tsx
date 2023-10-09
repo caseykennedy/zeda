@@ -16,7 +16,7 @@ const FeaturedPosts = ({ posts }: { posts: Post[] }) => {
               date={post.date}
               estimatedReadingTime={post.estimatedReadingTime}
               excerpt={post.excerpt}
-              slug={post.slug}
+              slug={`posts/${post.slug}`}
               title={post.title}
               categories={post.categories}
               tags={post.tags}

@@ -7,10 +7,12 @@ import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import TrustedBy from 'components/TrustedBy'
 
+import Zeda from '../about/Zeda'
+
 import AtGlance from './AtGlance'
 import FeaturedPosts from './FeaturedPosts'
 import Hero from './Hero'
-import Mission from './Mission'
+import Intro from './Intro'
 import SolutionSwiper from './SolutionSwiper'
 import WhyUs from './WhyUs'
 
@@ -35,7 +37,7 @@ export const IndexPage = ({
     <Layout>
       <PageHead settings={settings} />
       <Hero />
-      <Mission />
+      <Intro />
       <WhyUs />
       <AtGlance />
       <SolutionSwiper />

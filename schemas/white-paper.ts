@@ -109,13 +109,14 @@ export default defineType({
     select: {
       title: 'title',
       date: 'date',
+      media: 'coverImage',
     },
-    prepare({ title, date }) {
-      const subTitles = [date && format(parseISO(date), 'LLL d, yyyy')].filter(
-        Boolean
-      )
+    prepare({ title, media, date }) {
+      const subtitles = [
+        date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
+      ].filter(Boolean)
 
-      return { title, subtitle: subTitles.join(' ') }
+      return { title, media, subtitle: subtitles.join(' ') }
     },
   },
 })

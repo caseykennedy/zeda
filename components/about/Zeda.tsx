@@ -63,9 +63,10 @@ const data: AccordionFeatureShape[] = [
 const Intro = () => (
   <Section>
     <h2 className="mx-auto my-16 max-w-[52ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
-      Zeda emerged from a collective vision: the desire to harness our deep
-      expertise in advanced manufacturing and technology to help people and
-      companies conquer their toughest challenges.
+      Our Z-to-A philosophy: Start with the customer&apos;s need in mind
+      first—then work with them to build the solution together. Our approach
+      combines advanced manufacturing with regulatory experience and expertise,
+      designed for highly regulated industries.
     </h2>
   </Section>
 )

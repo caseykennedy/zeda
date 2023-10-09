@@ -20,7 +20,7 @@ const WhyUs = () => (
             alt="Zeda Inc. manufacturing facility"
             height={980}
             width={1149}
-            quality={50}
+            quality={60}
             sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
             className="object-fit-contain xl:scale-115 sm:translate-y-10 md:translate-x-16 md:scale-125 xl:translate-y-8"
           />
