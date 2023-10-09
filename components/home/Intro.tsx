@@ -20,11 +20,11 @@ const SolutionLink = ({
   <Link
     href={href}
     className={cn(
-      `group w-full border-t border-black transition-all data-[state=open]:border-silver-900`,
+      `group relative w-full border-t border-black transition-all before:absolute before:left-0 before:z-0 before:h-full before:w-2 before:transition-all before:duration-500 hover:before:w-full data-[state=open]:border-silver-900`,
       className
     )}
   >
-    <div className="gutter-y mx-auto flex w-full max-w-site flex-1 items-center justify-between text-left">
+    <div className="gutter-y relative z-10 mx-auto flex w-full max-w-site flex-1 items-center justify-between text-left">
       <div className="gutter-x flex flex-nowrap items-center gap-4 md:gap-12">
         <div className="text-base">0{id}</div>
         <h3 className="font-sans text-xl font-medium md:text-3xl">{title}</h3>
@@ -59,13 +59,13 @@ const AtGlance = () => (
       id={1}
       title="Zeda Technologies"
       href="/technologies"
-      className="hover:bg-blue-500"
+      className="before:bg-blue-500"
     />
     <SolutionLink
       id={2}
       title="Zeda Health"
       href="/health"
-      className="hover:bg-yellow-500"
+      className="before:bg-yellow-500"
     />
   </>
 )

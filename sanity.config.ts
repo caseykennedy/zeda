@@ -19,8 +19,7 @@ import settingsType from 'schemas/settings'
 import videoType from 'schemas/video'
 import whitePaperType from 'schemas/white-paper'
 
-const title =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Next.js Blog with Sanity.io'
+const title = 'Zeda, Inc.'
 
 export default defineConfig({
   basePath: '/studio',
