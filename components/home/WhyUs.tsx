@@ -3,11 +3,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { polyVariant } from 'utils/variants'
 
-import Icon from 'components/ui/Icon'
 import { Progress } from 'components/ui/Progress'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/Tabs'
+import { Tabs, TabsList, TabsTrigger } from 'components/ui/Tabs'
 
 const INTERVAL_TIME = 9000
 

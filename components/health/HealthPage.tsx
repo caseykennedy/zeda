@@ -20,7 +20,7 @@ interface Props {
   settings: Settings
 }
 
-const HealthPage = ({ leadership, partners, settings }: Props) => {
+const HealthPage = ({ partners, settings }: Props) => {
   return (
     <Layout brand={BrandThemes.HEALTH}>
       <PageHead

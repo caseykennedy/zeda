@@ -7,8 +7,6 @@ import Layout from 'components/Layout'
 import PageHead from 'components/PageHead'
 import TrustedBy from 'components/TrustedBy'
 
-import Zeda from '../about/Zeda'
-
 import AtGlance from './AtGlance'
 import FeaturedPosts from './FeaturedPosts'
 import Hero from './Hero'
