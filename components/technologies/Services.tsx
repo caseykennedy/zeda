@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ArrowRightIcon } from '@radix-ui/react-icons'
-import ImgServices from 'public/images/technologies/mfg-services.jpg'
+import Figure from 'public/images/technologies/mfg-services.jpg'
 
 import { SectionSplit } from 'components/ui'
 
@@ -34,14 +34,14 @@ const Services = () => (
     description="Our aim is to enhance project efficiency and success by leveraging our
     extensive experience and strong sourcing relationships to manage all
     project steps alongside our internal capabilities."
-    image={ImgServices}
+    image={Figure}
     alt="Zeda Inc. manufacturing services"
     id="services"
   >
     <ul className="flex flex-col">
       {services.map(({ title }, idx) => (
         <li
-          className="flex items-center gap-4 border-t border-silver-900 py-6 font-display text-xl font-semibold last:pb-0"
+          className="flex items-center gap-4 border-t border-silver-900 py-5 font-display text-xl font-semibold last:pb-0"
           key={idx}
         >
           <span>

@@ -88,10 +88,11 @@ const JobList = ({
   hasBtn?: boolean
   posts: JobPost[]
 }) => {
+  const noPosts = posts.length === 0
   return (
     <SectionPanel
       id="open-positions"
-      title={title}
+      title={noPosts ? 'All our positions are filled at this time, but we’re always innovating. Check back periodically if you’re interested in working with us!' : title}
       btn={
         hasBtn ? (
           <Button variant="primary" asChild>
@@ -107,7 +108,7 @@ const JobList = ({
       }
     >
       <SectionTitle className="mb-0 border-b-0">Open positions</SectionTitle>
-      {posts.map(
+      {noPosts ? (<div className="border-t border-black pt-4">No open positions are available at this time.</div>) : posts.map(
         ({
           _id,
           applicationURL,

@@ -59,7 +59,7 @@ const AtGlance = () => (
       id={1}
       title="Zeda Technologies"
       href="/technologies"
-      className="before:bg-blue-500"
+      className="before:bg-blue-500 -mt-12"
     />
     <SolutionLink
       id={2}

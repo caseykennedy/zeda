@@ -37,7 +37,7 @@ const WhyUs = () => (
               width={1149}
               quality={60}
               sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
-              className="object-fit-contain xl:scale-115 sm:translate-y-14 md:translate-x-10 md:scale-125 xl:translate-y-20"
+              className="object-fit-contain xl:scale-115 sm:translate-y-14 md:translate-x-10 md:scale-125 xl:translate-y-32"
             />
           </figure>
           <figure className="absolute left-0 top-0 z-10 h-full w-full">
@@ -62,9 +62,9 @@ const WhyUs = () => (
             {valueProps.map(({ value }, idx) => (
               <div
                 key={idx}
-                className="-mb-[1px] rounded-full border border-black px-6 md:px-10 py-5 md:py-7 text-xl font-medium transition-all duration-200 hover:bg-black hover:text-white md:text-2xl flex items-center"
+                className="-mb-[1px] rounded-full border border-black px-6 lg:px-10 py-5 md:py-7 text-xl font-medium transition-all duration-200 hover:bg-black hover:text-white lg:text-2xl flex items-center"
               >
-                <span className="mr-2 md:mr-6 text-base">0{idx + 1}</span>
+                <span className="mr-3 md:mr-4 lg:mr-6 text-base">0{idx + 1}</span>
                 {value}
               </div>
             ))}

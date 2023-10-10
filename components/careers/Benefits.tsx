@@ -75,7 +75,7 @@ const Benefits = () => (
       <ul className="flex flex-col">
         {locationsData.map(({ city, type }, idx) => (
           <div
-            className="flex items-center justify-between border-t border-silver-900 py-6 font-display text-xl font-semibold md:py-6 md:text-2xl"
+            className="flex items-center justify-between border-t border-silver-900 py-5 font-display text-xl font-semibold md:py-6 md:text-2xl"
             key={idx}
           >
             {city}
