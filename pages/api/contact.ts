@@ -48,14 +48,14 @@ export default async function handler(
       Message: ${message}
     `
 
-    // // Perform your data processing here (e.g., send email, save to database)
-    // await sendgrid.send({
-    //   to: 'youremail@gmail.com', // Your email where you'll receive emails
-    //   from: 'youremail@gmail.com', // your website email address here
-    //   subject: `[Contact from z8a.com] : ${subject}`,
-    //   text: messageData,
-    //   html: messageData.replace(/rn/g, '<br>'),
-    // })
+    // Perform your data processing here (e.g., send email, save to database)
+    await sendgrid.send({
+      to: process.env.SENDGRID_FROM_EMAIL, // Your email where you'll receive emails
+      from: 'cklogik@gmail.com', // your website email address here
+      subject: `[Contact from z8a.com] : ${subject}`,
+      text: messageData,
+      html: messageData.replace(/rn/g, '<br>'),
+    })
 
     // Assuming the data processing is successful
     logger.info('Contact request processed successfully.')
