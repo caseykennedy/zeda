@@ -1,6 +1,8 @@
 /**
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
+
+import { dashboardTool } from '@sanity/dashboard'
 import { visionTool } from '@sanity/vision'
 import { apiVersion, dataset, previewSecretId, projectId } from 'lib/sanity.api'
 import { previewDocumentNode } from 'plugins/previewPane'
@@ -9,6 +11,7 @@ import { settingsPlugin, settingsStructure } from 'plugins/settings'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
+import { vercelWidget } from 'sanity-plugin-dashboard-widget-vercel'
 import jobPostType from 'schemas/job-post'
 import leadershipType from 'schemas/leadership'
 import partnerType from 'schemas/partner'
@@ -41,6 +44,9 @@ export default defineConfig({
     ],
   },
   plugins: [
+    dashboardTool({
+      widgets: [vercelWidget()],
+    }),
     deskTool({
       structure: settingsStructure(settingsType),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane

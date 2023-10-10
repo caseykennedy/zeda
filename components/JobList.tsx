@@ -92,7 +92,7 @@ const JobList = ({
   return (
     <SectionPanel
       id="open-positions"
-      title={noPosts ? 'All our positions are filled at this time, but we’re always innovating. Check back periodically if you’re interested in working with us!' : title}
+      title={noPosts ? "All our positions are filled at this time, but we're always innovating. Check back periodically if you're interested in working with us!" : title}
       btn={
         hasBtn ? (
           <Button variant="primary" asChild>

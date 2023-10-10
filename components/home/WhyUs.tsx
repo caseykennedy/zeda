@@ -58,13 +58,15 @@ const WhyUs = () => (
             every level at light speed.
           </h2>
 
-          <div className="grid">
+          <div className="">
             {valueProps.map(({ value }, idx) => (
               <div
                 key={idx}
-                className="-mb-[1px] rounded-full border border-black px-6 lg:px-10 py-5 md:py-7 text-xl font-medium transition-all duration-200 hover:bg-black hover:text-white lg:text-2xl flex items-center"
+                className="-mb-[1px] flex items-center rounded-full border border-black px-6 py-5 text-xl font-medium transition-all duration-200 hover:bg-black hover:text-white md:py-7 lg:px-10 lg:text-2xl"
               >
-                <span className="mr-3 md:mr-4 lg:mr-6 text-base">0{idx + 1}</span>
+                <span className="mr-3 text-base md:mr-4 lg:mr-6">
+                  0{idx + 1}
+                </span>
                 {value}
               </div>
             ))}
