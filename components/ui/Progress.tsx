@@ -12,7 +12,7 @@ const Progress = React.forwardRef<
   ProgressProps
 >(({ className, value = 0, ...props }, ref) => {
   const sectionClasses = cn(
-    'relative h-[1px] w-full overflow-hidden bg-silver-200',
+    'relative h-[1px] w-full overflow-hidden bg-transparent',
     className
   )
   const indicatorStyle = { transform: `translateX(-${100 - value}%)` }
