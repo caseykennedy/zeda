@@ -162,16 +162,16 @@ const WhyUs = () => {
                               >
                                 <div className="grid w-full grid-cols-1 sm:grid-cols-8">
                                   <div className="self-center justify-self-start sm:col-start-1">
-                                    0{id + 1}.
+                                    0{id + 1}
                                   </div>
                                   <div className="self-center justify-self-start text-left sm:col-span-6 sm:col-start-2">
                                     <h3 className="text-2xl">{title}</h3>
                                   </div>
-                                  <div className="col-start-8 hidden self-center justify-self-end sm:block">
+                                  {/* <div className="col-start-8 hidden self-center justify-self-end sm:block">
                                     {activeTab === id && (
                                       <Icon name="arrow-right" />
                                     )}
-                                  </div>
+                                  </div> */}
                                 </div>
 
                                 {activeTab === id && (
