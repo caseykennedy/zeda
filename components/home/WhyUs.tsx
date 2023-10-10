@@ -113,7 +113,7 @@ const WhyUs = () => {
         className="border-b border-t border-black bg-black"
       >
         <div className="relative grid grid-cols-1 md:grid-cols-2">
-          <div className="relative aspect-square min-h-[400px] border-l border-silver-900 md:aspect-auto">
+          <div className="relative aspect-square min-h-[400px] border-silver-900 md:aspect-auto md:border-l">
             <figure className="absolute bottom-0 left-0 z-30 flex h-full w-full items-end overflow-hidden md:overflow-visible">
               <Image
                 src="/images/turbine-tilt.png"
@@ -136,7 +136,7 @@ const WhyUs = () => {
               />
             </figure>
           </div>
-          <div className="gutter-x gutter-y after:bg-violet-00 dark relative border-l border-silver-900 bg-background-600 text-black after:absolute after:-right-[100%] after:top-0 after:h-full after:w-full after:bg-background-600">
+          <div className="gutter-x gutter-y after:bg-violet-00 dark relative border-silver-900 bg-background-600 text-black after:absolute after:-right-[100%] after:top-0 after:h-full after:w-full after:bg-background-600 md:border-l">
             <SectionTitle>Why us?</SectionTitle>
             <h2 className="mb-16 max-w-[32ch] md:mb-24">
               With our unique value proposition, we accelerate innovative ideas
