@@ -9,6 +9,9 @@ if (!process.env.SENDGRID_API_KEY) {
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 
+const TO_EMAIL = [`${process.env.SENDGRID_TO_EMAIL}`] || ''
+const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL || ''
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -50,8 +53,8 @@ export default async function handler(
 
     // Perform your data processing here (e.g., send email, save to database)
     await sendgrid.send({
-      to: process.env.SENDGRID_FROM_EMAIL, // Your email where you'll receive emails
-      from: 'cklogik@gmail.com', // your website email address here
+      to: TO_EMAIL, // Your email where you'll receive emails
+      from: FROM_EMAIL, // your website email address here
       subject: `[Contact from z8a.com] : ${subject}`,
       text: messageData,
       html: messageData.replace(/rn/g, '<br>'),
@@ -62,8 +65,11 @@ export default async function handler(
     console.log(messageData)
     res.send(200)
     // res.status(201).json({ message: 'Form data submitted successfully' })
-  } catch (error) {
+  } catch (error: any) {
     logger.error('Error processing contact request:', error)
+    if (error.response) {
+      console.log(error.response.body)
+    }
     res.status(500).json({ error: 'Internal Server Error' }) // Internal Server Error
   }
 }
