@@ -4,7 +4,7 @@ import { PostCardSplit } from 'components/post'
 
 const FeaturedInsights = ({ posts }: { posts: Post[] }) => {
   return (
-    <section className="relative w-full border-t border-silver-900 bg-black">
+    <section className="relative w-full border-b border-t border-silver-900 bg-black">
       <div className="mx-auto max-w-site">
         {posts.map((post) => (
           <PostCardSplit

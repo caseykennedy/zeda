@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "postbuild": "next-sitemap",
     "dev": "next",
     "format": "npx prettier --write . --ignore-path .gitignore --cache",
     "lint": "next lint -- --ignore-path .gitignore",
@@ -46,6 +47,7 @@
     "next": "13.4.7",
     "next-sanity": "5.1.0",
     "next-sanity-image": "6.1.0",
+    "next-sitemap": "^4.2.3",
     "react": "^18.2.0",
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
