@@ -39,6 +39,7 @@ const selectSchema = z
   })
 
 const formSchema = z.object({
+  honeypot: z.string().optional(),
   subject: selectSchema,
   name: z.string().min(2).max(50).nonempty('Name is required'),
   email: z
@@ -111,6 +112,22 @@ const ContactForm = () => {
   ) : (
     <Form {...form}>
       <form method="post" onSubmit={form.handleSubmit(onSubmit)}>
+        <FormField
+          control={form.control}
+          name="honeypot"
+          render={({ field }) => (
+            <FormItem className="hidden">
+              <FormLabel className="sr-only">Leave this field blank</FormLabel>
+              <FormControl>
+                <Input placeholder="Leave blank" {...field} />
+              </FormControl>
+              {/* <FormDescription>
+                Name is required and must be at least 2 characters long.
+              </FormDescription> */}
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="subject"

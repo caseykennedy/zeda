@@ -30,7 +30,15 @@ export default async function handler(
       return
     }
 
-    const { subject, name, email, message } = data
+    const { honeypot, subject, name, email, message } = data
+
+    // Basic honeypot spam protection
+    if (honeypot && honeypot.length > 0) {
+      res
+        .status(400)
+        .json({ error: 'Spam detected. Your submission has been blocked.' }) // Bad Request
+      return
+    }
 
     // Basic input validation
     if (!subject || !name || !email || !message) {
