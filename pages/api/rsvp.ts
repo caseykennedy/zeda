@@ -74,7 +74,7 @@ const buildConfirmationData = (firstName: string) => {
     <a href="https://maps.app.goo.gl/go6NpqWC9FMqC6K59">TownePlace Suites by Marriot Cincinnati Fairfield</a> rn rn
 
     We look forward to seeing you! rn rn
-    Zeda Technolgies,
+    Zeda Technolgies
   `
 }
 

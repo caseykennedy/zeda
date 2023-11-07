@@ -77,7 +77,8 @@ const RSVPForm = () => {
       <AlertTitle className="text-white">Thanks for registering!</AlertTitle>
       <AlertDescription>
         <p>
-          Your message has been received. We will reach out soon!{' '}
+          Your message has been received and we have sent you a confirmation
+          email. See you there!{' '}
           {/* <a
             href="#"
             onClick={manualReset}
