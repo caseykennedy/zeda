@@ -165,7 +165,7 @@ const RSVPForm = () => {
         />
         <div className="mt-5">
           <Button type="submit" variant="primary" disabled={isSubmitting}>
-            {isSubmitting ? 'Sending...' : 'Im coming!'}
+            {isSubmitting ? 'Sending...' : "I'm coming!"}
           </Button>
         </div>
       </form>
