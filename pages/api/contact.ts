@@ -12,6 +12,37 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 const TO_EMAIL = [`${process.env.SENDGRID_TO_EMAIL}`] || ''
 const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL || ''
 
+const parseRequestBody = (body: string) => {
+  try {
+    return JSON.parse(body)
+  } catch (error) {
+    return null
+  }
+}
+
+const handleSpamDetection = (honeypot: string) => {
+  return honeypot && honeypot.length > 0
+}
+
+const validateForm = (data: any) => {
+  const { subject, name, email, message } = data
+  return subject && name && email && message
+}
+
+const validateEmail = (email: string) => {
+  return validator.isEmail(email)
+}
+
+const buildMessageData = (data: any) => {
+  const { subject, name, email, message } = data
+  return `
+    Subject: ${subject}rn
+    Name: ${name}rn
+    Email: ${email}rn
+    Message: ${message}
+  `
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -22,61 +53,50 @@ export default async function handler(
   }
 
   try {
-    // Parse the JSON data from the request body
-    const data = JSON.parse(req.body)
+    const data = parseRequestBody(req.body)
 
     if (!data || typeof data !== 'object') {
       res.status(400).json({ error: 'Invalid data format' }) // Bad Request
       return
     }
 
-    const { honeypot, subject, name, email, message } = data
+    const { honeypot, subject, email } = data
 
-    // Basic honeypot spam protection
-    if (honeypot && honeypot.length > 0) {
+    if (handleSpamDetection(honeypot)) {
       res
         .status(400)
         .json({ error: 'Spam detected. Your submission has been blocked.' }) // Bad Request
       return
     }
 
-    // Basic input validation
-    if (!subject || !name || !email || !message) {
+    if (!validateForm(data)) {
       res.status(400).json({ error: 'Incomplete data' }) // Bad Request
       return
     }
 
-    // More specific email validation
-    if (!validator.isEmail(email)) {
+    if (!validateEmail(email)) {
       res.status(400).json({ error: 'Invalid email address' }) // Bad Request
       return
     }
 
-    const messageData = `
-      Subject: ${subject}rn
-      Name: ${name}rn
-      Email: ${email}rn
-      Message: ${message}
-    `
+    const messageData = buildMessageData(data)
 
-    // Perform your data processing here (e.g., send email, save to database)
     await sendgrid.send({
-      to: TO_EMAIL, // Your email where you'll receive emails
-      from: FROM_EMAIL, // your website email address here
+      to: TO_EMAIL,
+      from: FROM_EMAIL,
       subject: `[Contact from z8a.com] : ${subject}`,
       text: messageData,
       html: messageData.replace(/rn/g, '<br>'),
     })
 
-    // Assuming the data processing is successful
     logger.info('Contact request processed successfully.')
     console.log(messageData)
-    res.send(200)
-    // res.status(201).json({ message: 'Form data submitted successfully' })
+
+    res.status(200).json({ message: 'Form data submitted successfully' })
   } catch (error: any) {
     logger.error('Error processing contact request:', error)
     if (error.response) {
-      console.log(error.response.body)
+      logger.error(error.response.body)
     }
     res.status(500).json({ error: 'Internal Server Error' }) // Internal Server Error
   }

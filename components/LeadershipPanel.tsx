@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
 import { type Person } from 'lib/sanity.queries'
 import Link from 'next/link'
+import { cn } from 'utils'
 import { polyVariant, upVariants } from 'utils/variants'
 
 import TeamBio from 'components/about/TeamBio'
@@ -13,18 +14,20 @@ import Section from 'components/ui/Section'
 const LeadershipPanel = ({
   people,
   title,
+  className,
 }: {
   people: Person[]
   title: string
+  className?: string
 }) => {
   return (
     <Section
       id="leadership"
-      className="border-t border-silver-200 bg-background-600"
+      className={cn(`border-t border-silver-200 bg-background-600`, className)}
     >
       <div className="gap grid grid-cols-6">
         <div className="col-span-6 lg:col-span-5">
-          <h2 className="max-w-[50ch]">{title}</h2>
+          <h2 className="max-w-[50ch] dark:text-white">{title}</h2>
         </div>
       </div>
 
@@ -105,10 +108,10 @@ const LeadershipPanel = ({
 
                     <div className="mt-3 flex flex-row flex-nowrap gap-4">
                       <div className="flex-1">
-                        <div className="mb-2 font-display text-xl font-semibold md:text-2xl">
+                        <div className="mb-2 font-display text-xl font-semibold dark:text-white md:text-2xl">
                           {name}
                         </div>
-                        <p className="text-sm font-medium uppercase text-silver-700">
+                        <p className="text-sm font-medium uppercase text-silver-700 dark:text-silver-400">
                           {position}
                         </p>
                       </div>
@@ -118,7 +121,7 @@ const LeadershipPanel = ({
                             href={linkedinURL}
                             target="_blank"
                             rel="nofollow noreferrer"
-                            className="text-silver-500 transition-colors duration-200 hover:text-black"
+                            className="text-silver-500 transition-colors duration-200 hover:text-black dark:text-silver-400"
                           >
                             <LinkedInLogoIcon className="h-5 w-5" />
                           </Link>
