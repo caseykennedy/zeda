@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { CheckCircledIcon, PaperPlaneIcon } from '@radix-ui/react-icons'
+import { CheckCircledIcon } from '@radix-ui/react-icons'
 import * as z from 'zod'
 
 import { Button, Input, Textarea } from 'components/ui'
@@ -14,25 +14,8 @@ import {
   FormLabel,
   FormMessage,
 } from 'components/ui/Form'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from 'components/ui/Select'
 
-const selectOptions = [
-  'General contact',
-  'Press inquiry',
-  'I am an investor',
-  'Zeda Technologies',
-  'Zeda Health',
-]
-
-const formSchema = z.object({
+export const formSchema = z.object({
   honeypot: z.string().optional(),
   firstName: z.string().min(2).max(50).nonempty('First name is required'),
   lastName: z.string().min(2).max(50).nonempty('Last name is required'),
@@ -42,6 +25,8 @@ const formSchema = z.object({
     .nonempty('Email is required'),
   additionalInfo: z.string().min(10).max(500).nonempty('Message is required'),
 })
+
+export type FormSchemaType = z.ZodType<typeof formSchema>
 
 const RSVPForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -57,7 +42,7 @@ const RSVPForm = () => {
 
     try {
       setIsSubmitting(true)
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/rsvp', {
         method: 'POST',
         body: JSON.stringify(data),
       })
@@ -168,7 +153,11 @@ const RSVPForm = () => {
             <FormItem>
               <FormLabel className="sr-only">Additional info</FormLabel>
               <FormControl>
-                <Textarea placeholder="Additional info" {...field} rows={6} />
+                <Textarea
+                  placeholder="Additional info (food allergies, etc.)"
+                  {...field}
+                  rows={6}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

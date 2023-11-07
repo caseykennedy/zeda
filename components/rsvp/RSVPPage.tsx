@@ -8,11 +8,10 @@ import Img from 'components/Img'
 import Layout from 'components/Layout'
 import LeadershipPanel from 'components/LeadershipPanel'
 import PageHead from 'components/PageHead'
-import PageHero from 'components/PageHero'
 import { Heading1FadeIn } from 'components/PageTitle'
-import PageTitle from 'components/PageTitle'
 import { Button, Section } from 'components/ui'
 
+import PageTitle from './PageTitle'
 import Form from './RSVPForm'
 
 const emailAddress = 'info@z8a.com'
@@ -55,21 +54,19 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
         }}
       />
       <Layout theme={LayoutThemes.LIGHT} brand={BrandThemes.TECHNOLOGIES}>
-        <PageTitle theme={LayoutThemes.LIGHT} className="[&>div]:md:mt-48">
+        <PageTitle theme={LayoutThemes.LIGHT}>
           <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
             <div className="flex-[2]">
               <Heading1FadeIn>
                 <h1 className="mb-2">Open House Registration</h1>
-                <p className="max-w-[44ch] font-medium text-silver-700">
+                <p className="font-medium">
                   Wednesday, December 6th | 9:30AM-2PM PST
                 </p>
               </Heading1FadeIn>
             </div>
-            <div className="flex w-full flex-1 flex-row justify-end">
+            <div className="flex w-full flex-1 flex-row justify-end lg:hidden">
               <Button variant="outline" asChild>
-                <a
-                  href={`mailto:${emailAddress}?subject=Zeda, Inc. | Contact request`}
-                >
+                <a href="#register">
                   <Pencil2Icon className="relative -translate-x-0.5 transition-all group-hover:translate-x-1" />
                   Register
                 </a>
@@ -77,19 +74,6 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
             </div>
           </div>
         </PageTitle>
-
-        <section className="overflow-hidden bg-black text-white">
-          <div className="relative h-[500px] max-h-[600px] bg-blue-500 sm:h-[50vw]">
-            <Img
-              src={HeroImg}
-              alt="alt"
-              fill={true}
-              priority={true}
-              className="object-cover object-bottom mix-blend-multiply grayscale"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-            />
-          </div>
-        </section>
 
         <Section className="bg-white" pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0">
           <div className="relative grid grid-cols-1 lg:grid-cols-5">
@@ -114,14 +98,17 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
               </div>
             </div>
 
-            <div className="gutter bg-silver-100/60 md:col-span-2">
+            <div
+              id="register"
+              className="gutter bg-silver-100/60 md:col-span-2"
+            >
               <div className="mb-5">
                 <ClipboardIcon className="h-6 w-6" />
               </div>
               <h2 className="mb-3 text-2xl md:tracking-wide">Register here</h2>
               <p className="max-w-[42ch]">
                 Please register below to attend our Open House. Let us know if
-                you have any dietary restrictions.
+                you have any special requests.
               </p>
               <div className="mt-10">
                 <Form />
@@ -134,6 +121,7 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
           people={leadership.people}
           title="Speakers"
           className="dark border-silver-800 bg-silver-900"
+          titleMargin="md:mt-24"
         />
 
         <Section className="bg-blue-500 text-white">

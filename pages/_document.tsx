@@ -4,7 +4,7 @@ const Document = () => {
   return (
     <Html lang="en">
       <Head />
-      <body className="no-scrollbar">
+      <body className="no-scrollbar scroll-smooth">
         <Main />
         <NextScript />
       </body>
