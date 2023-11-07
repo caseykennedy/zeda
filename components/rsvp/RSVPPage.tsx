@@ -14,7 +14,26 @@ import { Button, Section } from 'components/ui'
 import PageTitle from './PageTitle'
 import Form from './RSVPForm'
 
-const emailAddress = 'info@z8a.com'
+const highlightsData = [
+  {
+    title: 'Exclusive Preview',
+    description:
+      'Be among the first to experience our groundbreaking digital manufacturing platform.',
+  },
+  {
+    title: 'Keynote Speeches',
+    description: 'Gain insights from our leadership and key partners.',
+  },
+  {
+    title: 'Networking Opportunities',
+    description: 'Connect with other prominent figures and thought leaders.',
+  },
+  {
+    title: 'Special Showcase',
+    description:
+      'A unique display of innovative technologies made possible by Additive Manufacturing.',
+  },
+]
 
 const agendaData = [
   {
@@ -50,7 +69,7 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
       <PageHead
         settings={settings}
         page={{
-          title: 'Contact',
+          title: 'Open House RSVP',
         }}
       />
       <Layout theme={LayoutThemes.LIGHT} brand={BrandThemes.TECHNOLOGIES}>
@@ -58,7 +77,9 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
           <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
             <div className="flex-[2]">
               <Heading1FadeIn>
-                <h1 className="mb-2">Open House Registration</h1>
+                <h1 className="mb-2">
+                  Come see the future of advanced manufacturing
+                </h1>
                 <p className="font-medium">
                   Wednesday, December 6th | 9:30AM-2PM PST
                 </p>
@@ -78,15 +99,41 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
         <Section className="bg-white" pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0">
           <div className="relative grid grid-cols-1 lg:grid-cols-5">
             <div className="gutter flex flex-col justify-between text-black md:col-span-3">
-              <h2 className="mb-16">
-                Join us at Zeda Technologies for a special Open House Wednesday,
-                December 6th where we&apos;ll share our vision for the future of
-                Advanced Manufacturing and how we&apos;re building it today.
-              </h2>
+              <div className="mb-16 lg:mb-24">
+                <h2 className="mb-4">
+                  We&apos;re personally inviting you to come see the future of
+                  advanced manufacturing, on Wednesday, December 6th.
+                </h2>
+
+                <p>
+                  Zeda Technologies is poised to introduce its long-term
+                  strategy, setting new benchmarks in Additive Manufacturing. We
+                  believe our journey is not just about transforming industries
+                  such as aerospace & defense, space, and energy, but also
+                  forging meaningful connections with leaders, visionaries, and
+                  influencers who share our passion and ethos. This event marks
+                  the beginning of what we envision to be a legacy of innovation
+                  and excellence.
+                </p>
+              </div>
 
               <div>
-                <h2 className="mb-12">Agenda</h2>
-                <ul className="gap flex grid-cols-3 flex-wrap md:grid-cols-4 lg:grid-cols-5">
+                <h3 className="mb-10">Event Highlights</h3>
+                <ul className="mb-20">
+                  {highlightsData.map(({ title, description }, idx) => (
+                    <li
+                      key={idx}
+                      className="mb-4 border-l border-silver-500 pl-4"
+                    >
+                      <span className="text-lg font-medium">{title}</span>
+                      <br />
+                      <span className="text-silver-700">{description}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <h3 className="mb-10">Agenda</h3>
+                <ul className="gap mb-20 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                   {agendaData.map(({ time, title }, idx) => (
                     <li key={idx} className="border-l border-silver-500 pl-4">
                       <span className="text-sm text-silver-600">{time}</span>
@@ -95,6 +142,11 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
                     </li>
                   ))}
                 </ul>
+
+                <h3 className="mb-10">Location</h3>
+                <p className="mb-4 border-l border-silver-500 pl-4">
+                  1120 Strategic Parkway, Suite 300, Springdale, OH 45246
+                </p>
               </div>
             </div>
 
@@ -105,10 +157,12 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
               <div className="mb-5">
                 <ClipboardIcon className="h-6 w-6" />
               </div>
-              <h2 className="mb-3 text-2xl md:tracking-wide">Register here</h2>
+              <h2 className="mb-3 text-2xl md:tracking-wide">
+                Let us know you&apos;re joining in
+              </h2>
               <p className="max-w-[42ch]">
-                Please register below to attend our Open House. Let us know if
-                you have any special requests.
+                Please register below to attend our event. Let us know if you
+                have any dietary restrictions.
               </p>
               <div className="mt-10">
                 <Form />
@@ -124,14 +178,27 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
           titleMargin="md:mt-24"
         />
 
-        <Section className="bg-blue-500 text-white">
+        <section className="overflow-hidden bg-black text-white">
+          <div className="relative h-[125px] bg-blue-600">
+            <Img
+              src={DecoratorImg}
+              alt="alt"
+              fill={true}
+              priority={true}
+              className="object-cover object-top mix-blend-hard-light grayscale"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+            />
+          </div>
+        </section>
+
+        {/* <Section className="bg-blue-500 text-white">
           <div className="py-12">
             <h3 className="mb-2 w-full text-center">Zeda Technologies</h3>
             <p className="text-center font-medium">
               1120 Strategic Parkway Suite 300 | Springdale, OH, 45246
             </p>
           </div>
-        </Section>
+        </Section> */}
       </Layout>
     </>
   )
