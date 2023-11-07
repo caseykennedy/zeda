@@ -1,4 +1,4 @@
-import { EnvelopeOpenIcon, Pencil2Icon } from '@radix-ui/react-icons'
+import { ClipboardIcon, Pencil2Icon } from '@radix-ui/react-icons'
 import type { Leadership, Partner, Settings } from 'lib/sanity.queries'
 import DecoratorImg from 'public/images/irridescence.jpg'
 import HeroImg from 'public/images/technologies/big-machine-2.jpg'
@@ -66,7 +66,7 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
               </Heading1FadeIn>
             </div>
             <div className="flex w-full flex-1 flex-row justify-end">
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" asChild>
                 <a
                   href={`mailto:${emailAddress}?subject=Zeda, Inc. | Contact request`}
                 >
@@ -92,16 +92,16 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
         </section>
 
         <Section className="bg-white" pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0">
-          <div className="relative grid grid-cols-1 md:grid-cols-5">
+          <div className="relative grid grid-cols-1 lg:grid-cols-5">
             <div className="gutter flex flex-col justify-between text-black md:col-span-3">
-              <h2 className="mb-8">
+              <h2 className="mb-16">
                 Join us at Zeda Technologies for a special Open House Wednesday,
                 December 6th where we&apos;ll share our vision for the future of
                 Advanced Manufacturing and how we&apos;re building it today.
               </h2>
 
               <div>
-                <h2 className="mb-16">Agenda</h2>
+                <h2 className="mb-12">Agenda</h2>
                 <ul className="gap flex grid-cols-3 flex-wrap md:grid-cols-4 lg:grid-cols-5">
                   {agendaData.map(({ time, title }, idx) => (
                     <li key={idx} className="border-l border-silver-500 pl-4">
@@ -116,7 +116,7 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
 
             <div className="gutter bg-silver-100/60 md:col-span-2">
               <div className="mb-5">
-                <EnvelopeOpenIcon className="h-6 w-6" />
+                <ClipboardIcon className="h-6 w-6" />
               </div>
               <h2 className="mb-3 text-2xl md:tracking-wide">Register here</h2>
               <p className="max-w-[42ch]">
@@ -130,24 +130,20 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
           </div>
         </Section>
 
-        {/* <section className="overflow-hidden bg-black text-white">
-          <div className="relative h-[100px] max-h-[100px] bg-blue-600 sm:h-[50vw]">
-            <Img
-              src={DecoratorImg}
-              alt="alt"
-              fill={true}
-              priority={true}
-              className="object-cover object-top mix-blend-hard-light grayscale"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-            />
-          </div>
-        </section> */}
-
         <LeadershipPanel
           people={leadership.people}
           title="Speakers"
           className="dark border-silver-800 bg-silver-900"
         />
+
+        <Section className="bg-blue-500 text-white">
+          <div className="py-12">
+            <h3 className="mb-2 w-full text-center">Zeda Technologies</h3>
+            <p className="text-center font-medium">
+              1120 Strategic Parkway Suite 300 | Springdale, OH, 45246
+            </p>
+          </div>
+        </Section>
       </Layout>
     </>
   )

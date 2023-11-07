@@ -89,17 +89,17 @@ const RSVPForm = () => {
   return isSubmitSuccessful ? (
     <Alert>
       <CheckCircledIcon className="mt-1 h-5 w-5" />
-      <AlertTitle className="text-white">Thanks for contacting us!</AlertTitle>
+      <AlertTitle className="text-white">Thanks for registering!</AlertTitle>
       <AlertDescription>
         <p>
           Your message has been received. We will reach out soon!{' '}
-          <a
+          {/* <a
             href="#"
             onClick={manualReset}
             className="text-white underline hover:no-underline"
           >
             Send another message
-          </a>
+          </a> */}
         </p>
       </AlertDescription>
     </Alert>
