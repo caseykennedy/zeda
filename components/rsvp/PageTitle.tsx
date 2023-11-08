@@ -39,7 +39,7 @@ const PageTitle = ({
       </div>
 
       <div className="z-0">
-        <div className="relative h-[400px] max-h-[800px] bg-blue-600 md:h-[70vh]">
+        <div className="relative h-[500px] max-h-[800px] bg-blue-600 md:h-[70vh]">
           <Img
             src={HeroImg}
             alt="alt"

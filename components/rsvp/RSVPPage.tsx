@@ -74,14 +74,16 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
       />
       <Layout theme={LayoutThemes.LIGHT} brand={BrandThemes.TECHNOLOGIES}>
         <PageTitle theme={LayoutThemes.LIGHT}>
-          <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
+          <div className="flex flex-col items-start justify-between gap-10 md:items-end lg:flex-row">
             <div className="flex-[2]">
               <Heading1FadeIn>
-                <h1 className="mb-2">
-                  Come see the future of advanced manufacturing
+                <h1 className="mb-4 lg:max-w-[32ch]">
+                  Witness the future of advanced manufacturing technologies
                 </h1>
                 <p className="font-medium">
-                  Wednesday, December 6th | 9:30AM-2PM PST
+                  Wednesday, December 6th
+                  <br />
+                  9:30AM-1:30PM EST
                 </p>
               </Heading1FadeIn>
             </div>
@@ -152,7 +154,7 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
 
             <div
               id="register"
-              className="gutter bg-silver-100/60 md:col-span-2"
+              className="gutter-x gutter-y bg-silver-100/60 md:col-span-2"
             >
               <div className="mb-5">
                 <ClipboardIcon className="h-6 w-6" />
@@ -175,10 +177,10 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
           people={leadership.people}
           title="Speakers"
           className="dark border-silver-800 bg-silver-900"
-          titleMargin="md:mt-24"
+          titleMargin="mt-16 md:mt-24"
         />
 
-        <section className="overflow-hidden bg-black text-white">
+        {/* <section className="overflow-hidden bg-black text-white">
           <div className="relative h-[125px] bg-blue-600">
             <Img
               src={DecoratorImg}
@@ -189,7 +191,7 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             />
           </div>
-        </section>
+        </section> */}
 
         {/* <Section className="bg-blue-500 text-white">
           <div className="py-12">

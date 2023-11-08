@@ -46,7 +46,7 @@ const data: AccordionFeatureShape[] = [
 
 const Lead = () => (
   <Section>
-    <h2 className="mx-auto my-16 max-w-[56ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
+    <h2 className="mx-auto max-w-[60ch] text-2xl sm:my-8 md:my-28 md:text-center md:text-4xl md:leading-tight">
       Zeda Health, a medical technology company, pioneers solutions to global
       healthcare challenges by integrating 3D printing and nanotechnologies.
       Focused on accessibility, we imagine and create innovative devices and

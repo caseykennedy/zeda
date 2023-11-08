@@ -62,7 +62,7 @@ const data: AccordionFeatureShape[] = [
 
 const Intro = () => (
   <Section>
-    <h2 className="mx-auto my-16 max-w-[52ch] text-center text-3xl md:my-28 md:text-4xl md:leading-tight">
+    <h2 className="mx-auto max-w-[60ch] text-2xl sm:my-8 md:my-28 md:text-center md:text-4xl md:leading-tight">
       Our Z-to-A philosophy: Start with the customer&apos;s need in mind
       first—then work with them to build the solution together. Our approach
       combines advanced manufacturing with regulatory experience and expertise,

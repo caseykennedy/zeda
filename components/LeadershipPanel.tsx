@@ -112,7 +112,7 @@ const LeadershipPanel = ({
                         <div className="mb-2 font-display text-xl font-semibold dark:text-white md:text-2xl">
                           {name}
                         </div>
-                        <p className="text-sm font-medium uppercase text-silver-700 dark:text-silver-400">
+                        <p className="text-xs font-medium uppercase text-silver-700 dark:text-silver-400">
                           {position}
                         </p>
                       </div>
