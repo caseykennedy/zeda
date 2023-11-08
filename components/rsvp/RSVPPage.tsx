@@ -99,8 +99,8 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
         </PageTitle>
 
         <Section className="bg-white" pt="pt-0" pr="pr-0" pb="pb-0" pl="pl-0">
-          <div className="relative grid grid-cols-1 lg:grid-cols-5">
-            <div className="gutter flex flex-col justify-between text-black md:col-span-3">
+          <div className="gap relative grid grid-cols-1 lg:grid-cols-5">
+            <article className="gutter flex flex-col justify-between text-black md:col-span-3">
               <div className="mb-16 lg:mb-24">
                 <h2 className="mb-4">
                   We&apos;re personally inviting you to come see the future of
@@ -150,9 +150,9 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
                   1120 Strategic Parkway, Suite 300, Springdale, OH 45246
                 </p>
               </div>
-            </div>
+            </article>
 
-            <div
+            <aside
               id="register"
               className="gutter-x gutter-y bg-silver-100/60 md:col-span-2"
             >
@@ -169,7 +169,7 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
               <div className="mt-10">
                 <Form />
               </div>
-            </div>
+            </aside>
           </div>
         </Section>
 
