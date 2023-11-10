@@ -104,7 +104,7 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
               <div className="mb-16 lg:mb-24">
                 <h2 className="mb-4">
                   We&apos;re personally inviting you to come see the future of
-                  advanced manufacturing, on Wednesday, December 6th.
+                  advanced manufacturing, on Thursday, December 7th.
                 </h2>
 
                 <p>
