@@ -23,7 +23,7 @@ export const formSchema = z.object({
     .string()
     .email('Invalid email address')
     .nonempty('Email is required'),
-  additionalInfo: z.string().min(10).max(500).nonempty('Message is required'),
+  additionalInfo: z.string().min(2).max(500).optional(),
 })
 
 export type FormSchemaType = z.ZodType<typeof formSchema>
@@ -158,6 +158,7 @@ const RSVPForm = () => {
                   placeholder="Additional info (food allergies, etc.)"
                   {...field}
                   rows={6}
+                  required={false}
                 />
               </FormControl>
               <FormMessage />

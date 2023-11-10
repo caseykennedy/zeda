@@ -32,8 +32,8 @@ const handleSpamDetection = (honeypot: string) => {
 }
 
 const validateForm = (data: FormDataShape) => {
-  const { firstName, lastName, email, additionalInfo } = data
-  return firstName && lastName && email && additionalInfo
+  const { firstName, lastName, email } = data
+  return firstName && lastName && email
 }
 
 const validateEmail = (email: string) => {
