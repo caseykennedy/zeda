@@ -86,7 +86,7 @@ export const ContactPage = ({ settings }: Props) => {
               <p className="">
                 <b>Zeda Holdings, Inc.</b>
                 <br />
-                47929 Fremont Blvd
+                4026 Clipper Court,
                 <br />
                 Fremont, CA 94538
               </p>

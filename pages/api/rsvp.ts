@@ -60,9 +60,9 @@ const buildConfirmationData = (firstName: string) => {
 
     Here's what you should know: rn rn
     
-    <b>Event date:</b> December 6th, 2023 rn rn
+    <b>Event date:</b> December 7th, 2023 rn rn
     <b>Location:</b> 1120 Strategic Parkway, Suite 300, Springdale, OH 45246 rn rn
-    <b>Time:</b> 9AM EST to 1:30PM EST rn rn
+    <b>Time:</b> 10AM EST to 1:30PM EST rn rn
     <b>Exclusive Preview:</b> Be among the first to experience our groundbreaking digital manufacturing platform. rn rn
     <b>Keynote Speeches:</b> Gain insights from our leadership and key partners. rn rn
     <b>Networking Opportunities:</b> Connect with other prominent figures and thought leaders. rn rn

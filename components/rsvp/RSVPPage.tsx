@@ -81,9 +81,9 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
                   Witness the future of advanced manufacturing technologies
                 </h1>
                 <p className="font-medium">
-                  Wednesday, December 6th
+                  Thursday, December 7th
                   <br />
-                  9:30AM-1:30PM EST
+                  10:00AM-1:30PM EST
                 </p>
               </Heading1FadeIn>
             </div>
@@ -147,7 +147,9 @@ export const RSVPPage = ({ leadership, settings }: Props) => {
 
                 <h3 className="mb-10">Location</h3>
                 <p className="mb-4 border-l border-silver-500 pl-4">
-                  1120 Strategic Parkway, Suite 300, Springdale, OH 45246
+                  1120 Strategic Parkway, Suite 300
+                  <br />
+                  Springdale, OH 45246
                 </p>
               </div>
             </article>
