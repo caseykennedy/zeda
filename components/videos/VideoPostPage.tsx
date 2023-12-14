@@ -1,8 +1,9 @@
 import type { Settings, VideoPost } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
+import { LayoutThemes } from 'utils/constants'
 
 import Layout from 'components/Layout'
-import { PostBody, PostPageHead } from 'components/post'
+import { PostBody, PostHeader, PostPageHead } from 'components/post'
 
 import VideoPlayer from './VideoPlayer'
 
@@ -25,15 +26,23 @@ const VideoPostPage = ({ preview, loading, post, settings }: Props) => {
     <>
       <PostPageHead settings={settings} post={post} />
 
-      <Layout preview={preview!} loading={loading}>
+      <Layout preview={preview!} loading={loading} theme={LayoutThemes.DARK}>
         {preview && !post ? (
           <div>Loading…</div>
         ) : (
           <>
-            <article>
-              <VideoPlayer videoURL={post.videoURL} />
-              <PostBody content={post.content} />
-              {/* <PostMeta notes={post.notes} slug={slug} tags={post.tags} /> */}
+            <article className="bg-black pt-header">
+              <section>
+                <section className="gutter-x gutter-y w-full">
+                  <div className="container mx-auto max-w-2xl">
+                    <div className="aspect-video">
+                      <VideoPlayer videoURL={post.videoURL} />
+                    </div>
+                    <PostBody content={post.content} />
+                    {/* <PostMeta notes={post.notes} slug={slug} tags={post.tags} /> */}
+                  </div>
+                </section>
+              </section>
             </article>
             {/* <Separator className="bg-silver-100" /> */}
             {/* {morePosts?.length > 0 && <RelatedPosts posts={morePosts} />} */}
