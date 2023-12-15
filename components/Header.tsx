@@ -57,16 +57,16 @@ export const insightsNav = [
     icon: <LightningBoltIcon />,
   },
   {
-    title: 'videos',
-    href: '/videos',
-    desc: 'Interviews, b-roll &amp; more',
-    icon: <VideoIcon />,
-  },
-  {
     title: 'white papers',
     href: '/insights/#white-papers',
     desc: 'Industry experience &amp; knowledge',
     icon: <PaperPlaneIcon />,
+  },
+  {
+    title: 'videos',
+    href: '/videos',
+    desc: 'Interviews, b-roll &amp; more',
+    icon: <VideoIcon />,
   },
 ]
 

@@ -36,6 +36,7 @@ const whitePaperFields = groq`
 const videoPostFields = groq`
   _id,
   date,
+  private,
   tags,
   title,
   videoURL,
@@ -375,6 +376,7 @@ export interface VideoPost {
   _id: string
   content?: any
   date: string
+  private: boolean
   slug: string
   tags: string[]
   title: string

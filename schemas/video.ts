@@ -74,6 +74,11 @@ export default defineType({
       of: [{ type: 'string' }],
       description: 'Tag the topics in the post.',
     }),
+    defineField({
+      name: 'private',
+      title: 'Private',
+      type: 'boolean',
+    }),
   ],
   preview: {
     select: {

@@ -21,9 +21,10 @@ interface Query {
 }
 
 const Page = ({ posts, featuredPosts, settings }: PageProps) => {
+  const filteredPosts = posts.filter((post) => !post.private)
   return (
     <VideosPage
-      posts={posts}
+      posts={filteredPosts}
       featuredPosts={featuredPosts}
       settings={settings}
     />
