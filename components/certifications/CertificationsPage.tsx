@@ -16,8 +16,6 @@ import { Heading1FadeIn } from 'components/PageTitle'
 import PageTitle from 'components/PageTitle'
 import { Button, Section } from 'components/ui'
 
-const emailAddress = 'info@z8a.com'
-
 interface Props {
   settings: Settings
 }
@@ -77,6 +75,19 @@ export const CertificationsPage = ({ settings }: Props) => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
+          </div>
+        </Section>
+        <Section className="bg-violet-500">
+          <div className="flex justify-center">
+            <Button variant="outline" size="lg" asChild>
+              <a
+                href="/supplier-manual-policy.pdf"
+                target="_blank"
+                className="text-link m-auto flex items-center gap-2 font-medium"
+              >
+                Supplier Manual Policy
+              </a>
+            </Button>
           </div>
         </Section>
       </Layout>

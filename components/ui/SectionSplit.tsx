@@ -15,6 +15,8 @@ interface Props {
   alt: string
   theme?: LayoutTheme
   reverse?: boolean
+  link?: string
+  linkText?: string
 }
 
 const SectionSplit = ({
@@ -27,6 +29,8 @@ const SectionSplit = ({
   alt,
   theme = LayoutThemes.DARK,
   reverse,
+  link,
+  linkText,
 }: Props) => {
   return (
     <Section
@@ -60,7 +64,14 @@ const SectionSplit = ({
           )}
         >
           {title && <h2 className="mb-4 max-w-[20ch]">{title}</h2>}
-          {description && <p className="mb-0 text-silver-400">{description}</p>}
+          {description && <p className="text-silver-400">{description}</p>}
+          {link && (
+            <p className="mb-0">
+              <a href={link} className="text-link">
+                {linkText}
+              </a>
+            </p>
+          )}
 
           <div className={cn(title && `mt-16 md:mt-24`)}>{children}</div>
         </div>

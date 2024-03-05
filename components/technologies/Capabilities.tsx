@@ -37,6 +37,8 @@ const Capabilities = () => (
     alt="Zeda Inc. manufacturing capabilities"
     id="capabilities"
     reverse={true}
+    link="/certifications"
+    linkText="View our certifications"
   >
     <ul className="flex flex-col">
       {capabilities.map(({ title }, idx) => (
