@@ -1,8 +1,4 @@
-import {
-  EnvelopeClosedIcon,
-  EnvelopeOpenIcon,
-  GlobeIcon,
-} from '@radix-ui/react-icons'
+import { DownloadIcon } from '@radix-ui/react-icons'
 import type { Settings } from 'lib/sanity.queries'
 import certAs from 'public/images/certificates/as-9100d.png'
 import certIso from 'public/images/certificates/iso-13485.png'
@@ -41,6 +37,14 @@ export const CertificationsPage = ({ settings }: Props) => {
                 </p>
               </Heading1FadeIn>
             </div>
+            <div className="flex w-full flex-1 flex-row justify-end">
+              <Button variant="outline" size="sm" asChild>
+                <a href="/supplier-manual-policy.pdf" target="_blank">
+                  <DownloadIcon className="relative -translate-x-1 transition-all group-hover:translate-x-1" />
+                  Supplier Manual Policy
+                </a>
+              </Button>
+            </div>
           </div>
         </PageTitle>
         <Section>
@@ -75,19 +79,6 @@ export const CertificationsPage = ({ settings }: Props) => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-          </div>
-        </Section>
-        <Section className="bg-violet-500">
-          <div className="flex justify-center">
-            <Button variant="outline" size="lg" asChild>
-              <a
-                href="/supplier-manual-policy.pdf"
-                target="_blank"
-                className="text-link m-auto flex items-center gap-2 font-medium"
-              >
-                Supplier Manual Policy
-              </a>
-            </Button>
           </div>
         </Section>
       </Layout>
