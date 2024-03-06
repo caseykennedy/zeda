@@ -95,10 +95,9 @@ const NavigationSheet = ({ children }: { children: React.ReactNode }) => {
                       </div> */}
                       <ListItem href="/about" title="About Zeda" />
                       <ListItem href="/about/#leadership" title="Leadership" />
-                      <ListItem href="/about/#partners" title="Partners" />
                     </div>
                     <div className="flex flex-col items-start justify-start">
-                      <ListItem href="/certifactions" title="Certifications" />
+                      <ListItem href="/about/#partners" title="Partners" />
                       <ListItem href="/contact" title="Contact" />
                     </div>
                   </div>

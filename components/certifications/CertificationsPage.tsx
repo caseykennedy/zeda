@@ -59,7 +59,7 @@ export const CertificationsPage = ({ settings }: Props) => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <div className="">
+            {/* <div className="">
               <Img
                 src={certIso}
                 alt="ISO 13485:2016"
@@ -68,7 +68,7 @@ export const CertificationsPage = ({ settings }: Props) => {
                 height={963}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-            </div>
+            </div> */}
             <div className="">
               <Img
                 src={certIsoVertex}

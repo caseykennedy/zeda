@@ -114,7 +114,7 @@ const Footer = ({ brand }: { brand?: BrandTheme }) => {
         <div className="flex flex-col items-start justify-between pt-4 text-xs uppercase text-silver-700 sm:flex-row">
           <div className="flex-1">© {currentYear} Zeda, Inc.</div>
           <div className="flex-1 sm:text-center">
-            <Link href="/certifications">Certifications</Link>
+            <Link href="/certifications">Zeda Is An ISO 13485 Facility</Link>
           </div>
           <div className="flex-1 sm:text-right">All rights reserved</div>
         </div>

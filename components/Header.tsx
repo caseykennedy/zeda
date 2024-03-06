@@ -112,12 +112,14 @@ const Navigation = () => {
               <li className="flex flex-col">
                 <div className="gap group grid grid-cols-2 content-center lg:-mb-14">
                   <div className="flex flex-col items-start justify-end">
+                    <div className="mb-6 font-display text-sm font-medium uppercase tracking-wider text-silver-500">
+                      Company
+                    </div>
                     <ListItem href="/about" title="About Zeda" />
                     <ListItem href="/about/#leadership" title="Leadership" />
-                    <ListItem href="/about/#partners" title="Partners" />
                   </div>
-                  <div className="flex flex-col items-start justify-start">
-                    <ListItem href="/certifications" title="Certifications" />
+                  <div className="flex flex-col items-start justify-end">
+                    <ListItem href="/about/#partners" title="Partners" />
                     <ListItem href="/contact" title="Contact" />
                   </div>
                 </div>

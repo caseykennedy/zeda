@@ -1,3 +1,5 @@
+import { ArrowRightIcon } from '@radix-ui/react-icons'
+import Link from 'next/link'
 import ImgBigMachine from 'public/images/technologies/big-machine-2.jpg'
 import LatticeStructure from 'public/images/technologies/lattice-structure.jpg'
 import MfgJumpsuit from 'public/images/technologies/mfg-jumpsuit.jpg'
@@ -5,6 +7,7 @@ import ZedaEngines from 'public/images/technologies/zeda-engines.png'
 
 import Countup from 'components/Countup'
 import Img from 'components/Img'
+import { Button } from 'components/ui'
 import Section from 'components/ui/Section'
 import SectionTitle from 'components/ui/SectionTitle'
 
@@ -100,11 +103,20 @@ const WhyUs = () => {
       </div>
 
       <div className="gutter-t relative">
-        <div className="">
-          <h2 className="relative z-20 max-w-[37ch]">
+        <div>
+          <h2 className="relative z-20 mb-12 max-w-[37ch]">
             Our objective is to better lives through investing in cutting-edge
             tech, innovative companies, and groundbreaking ideas.
           </h2>
+
+          <div className="relative z-20">
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/certifications">
+                <ArrowRightIcon className="relative -translate-x-1 transition-all group-hover:translate-x-1" />
+                Certifications
+              </Link>
+            </Button>
+          </div>
 
           <div className="relative z-20 mt-64 flex w-fit -translate-x-6 flex-row flex-nowrap justify-end gap-2 rounded-br-full rounded-tr-full border border-l-0 border-silver-900 bg-black/60 p-4 backdrop-blur-sm md:-translate-x-10 md:p-8">
             {certBadges.map(({ image, alt }, i) => (
