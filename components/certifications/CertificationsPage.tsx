@@ -49,7 +49,7 @@ export const CertificationsPage = ({ settings }: Props) => {
         </PageTitle>
         <Section>
           <div className="gap grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            <div className="">
+            {/* <div className="">
               <Img
                 src={certAs}
                 alt="AS9100D"
@@ -58,7 +58,7 @@ export const CertificationsPage = ({ settings }: Props) => {
                 height={963}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-            </div>
+            </div> */}
             {/* <div className="">
               <Img
                 src={certIso}
@@ -69,7 +69,7 @@ export const CertificationsPage = ({ settings }: Props) => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div> */}
-            <div className="">
+            {/* <div className="">
               <Img
                 src={certIsoVertex}
                 alt="ISO 13485:2016"
@@ -78,7 +78,7 @@ export const CertificationsPage = ({ settings }: Props) => {
                 height={963}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-            </div>
+            </div> */}
           </div>
         </Section>
       </Layout>

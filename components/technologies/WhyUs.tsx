@@ -33,9 +33,9 @@ const stats = [
 
 const WhyUs = () => {
   const certBadges = [
-    { image: 'badge-as.png', alt: 'as9100d certification' },
+    // { image: 'badge-as.png', alt: 'as9100d certification' },
     { image: 'badge-itar.png', alt: 'International Traffic in Arms Compliant' },
-    { image: 'badge-iso.png', alt: 'Medical Devices Quality Management' },
+    // { image: 'badge-iso.png', alt: 'Medical Devices Quality Management' },
     { image: 'badge-firearms-cert.png', alt: 'USA Firearms Dealer' },
   ]
 
@@ -109,14 +109,14 @@ const WhyUs = () => {
             tech, innovative companies, and groundbreaking ideas.
           </h2>
 
-          <div className="relative z-20">
+          {/* <div className="relative z-20">
             <Button variant="outline" size="lg" asChild>
               <Link href="/certifications">
                 <ArrowRightIcon className="relative -translate-x-1 transition-all group-hover:translate-x-1" />
                 Certifications
               </Link>
             </Button>
-          </div>
+          </div> */}
 
           <div className="relative z-20 mt-64 flex w-fit -translate-x-6 flex-row flex-nowrap justify-end gap-2 rounded-br-full rounded-tr-full border border-l-0 border-silver-900 bg-black/60 p-4 backdrop-blur-sm md:-translate-x-10 md:p-8">
             {certBadges.map(({ image, alt }, i) => (
