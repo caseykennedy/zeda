@@ -1,6 +1,9 @@
+import { DownloadIcon } from '@radix-ui/react-icons'
 import type { Leadership, Partner, Settings } from 'lib/sanity.queries'
+import Link from 'next/link'
 import ctaImgSrc from 'public/images/hands-on.jpg'
 import HeroImg from 'public/images/technologies/mfg-orange-suit.jpg'
+import { cn } from 'utils'
 import { BrandThemes, LayoutThemes } from 'utils/constants'
 
 import { FooterCTA, FooterCTAFigure } from 'components/FooterCTA'
@@ -16,6 +19,36 @@ import Capabilities from './Capabilities'
 import Intro from './Intro'
 import Services from './Services'
 import WhyUs from './WhyUs'
+
+const SolutionLink = ({
+  id,
+  title,
+  href,
+  className,
+}: {
+  id: number
+  title: string
+  href: string
+  className?: string
+}) => (
+  <Link
+    href={href}
+    className={cn(
+      `group relative w-full border-t border-black bg-black text-silver-200 transition-all before:absolute before:left-0 before:z-0 before:h-full before:w-0 before:transition-all before:duration-500 hover:text-black hover:before:w-full data-[state=open]:border-silver-900`,
+      className
+    )}
+    target="_blank"
+  >
+    <div className="gutter-y relative z-10 mx-auto flex w-full max-w-site flex-1 items-center justify-between text-left">
+      <div className="gutter-x flex flex-nowrap items-center gap-4 md:gap-12">
+        <h3 className="font-sans text-xl font-medium md:text-2xl">{title}</h3>
+      </div>
+      <div className="gutter-r">
+        <DownloadIcon className="relative mr-1 h-6 w-6 shrink-0 transition-all" />
+      </div>
+    </div>
+  </Link>
+)
 
 interface Props {
   leadership: Leadership
@@ -85,6 +118,12 @@ export const TechnologiesPage = ({ leadership, settings }: Props) => {
           className="opacity-20 mix-blend-hard-light grayscale"
         />
       </FooterCTA>
+      <SolutionLink
+        id={1}
+        title="Supplier Manual Policy"
+        href="/supplier-manual-policy.pdf"
+        className="before:bg-blue-500"
+      />
     </Layout>
   )
 }
