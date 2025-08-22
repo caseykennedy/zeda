@@ -103,7 +103,7 @@ export const ContactPage = ({ settings }: Props) => {
                 168582, Singapore
               </p>
 
-              <p className="text-base">
+              {/* <p className="text-base">
                 <b>Zeda Technologies</b>
                 <br />
                 1120 Strategic Parkway
@@ -111,7 +111,7 @@ export const ContactPage = ({ settings }: Props) => {
                 Suite 300
                 <br />
                 Springdale, OH, 45246
-              </p>
+              </p> */}
             </div>
           </div>
         </Section>

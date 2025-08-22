@@ -33,13 +33,13 @@ import LinkArrow from 'components/ui/LinkArrow'
 export const INSIGHTS_SLUG = 'insights'
 
 export const solutionsNav = [
-  {
-    title: 'zeda technologies',
-    href: '/technologies',
-    desc: 'Space, defense &amp; aerospace',
-    icon: <LogoSymbol brand={BrandThemes.TECHNOLOGIES} width={32} />,
-    className: 'hover:border-blue-500',
-  },
+  // {
+  //   title: 'zeda technologies',
+  //   href: '/technologies',
+  //   desc: 'Space, defense &amp; aerospace',
+  //   icon: <LogoSymbol brand={BrandThemes.TECHNOLOGIES} width={32} />,
+  //   className: 'hover:border-blue-500',
+  // },
   {
     title: 'zeda health',
     href: '/health',
@@ -179,7 +179,7 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger
             className={cn(
-              router.asPath.includes('technologies') && activeClasses,
+              // router.asPath.includes('technologies') && activeClasses,
               router.asPath.includes('health') && activeClasses
             )}
           >

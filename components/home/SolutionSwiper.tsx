@@ -74,7 +74,7 @@ const SolutionSwiper = () => {
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <Slide
             heading="What can we do to better lives and what can we build together?"
             message="<strong>Zeda Technologies</strong><br />We win together."
@@ -83,7 +83,7 @@ const SolutionSwiper = () => {
             href="/technologies"
             btnText="Technologies"
           />
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         <SwiperSlide>
           <Slide

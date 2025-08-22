@@ -9,7 +9,7 @@ if (!process.env.SENDGRID_API_KEY) {
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 
-const TO_EMAIL = [`${process.env.SENDGRID_TO_EMAIL}`] || ''
+const TO_EMAIL = [`${process.env.SENDGRID_TO_EMAIL}`]
 const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL || ''
 
 const parseRequestBody = (body: string) => {
